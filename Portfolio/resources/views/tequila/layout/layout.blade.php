@@ -10,20 +10,20 @@
         <meta property="og:description" content="テキーラ飲み比べ紹介サイト">
         <meta property="og:image" content="/image/tequila/icon/apple-touch-icon.png">
         <title>@yield('title')</title>
-        <link rel="stylesheet" type="text/css" href="{{ mix('css/tequila/tequila.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ mix('css/tequila.css') }}">
     </head>
     <body>
         <center>
             <header id="top" class="title">
-                <a href="tequila#top">
+                <a href="tequila">
                     <img src="/image/tequila/tequila-new3.png" alt="テキーラ全書">
                 </a>
             </header>
-            <h1 id="menu" class="menu">MENU<br>
-                <p class="menu"><a href="tequila#tequilatoha">テキーラとは</a></p>
+            <h1 id="menu" class="menu fixed">MENU<br>
+                <p class="menu"><a href="tequila">TOP</a></p>
                 <p class="menu"><a href="maker_intro" target="blank">ブランド紹介</a></p>
                 <p class="menu"><a href="syouhin_1" target="blank">商品紹介</a></p>
-                <p class="menu"><a href="tenpo" target="blank">テキーラ取扱店紹介</a></p>
+                <p class="menu"><a href="tenpo" target="blank">取扱店紹介</a></p>
                 <p class="menu"><a href="bunken" target="blank">参考文献</a></p>
             </h1>
             <h2 id="tequilatoha">@yield('section')</a></h2>

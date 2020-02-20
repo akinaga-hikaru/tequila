@@ -83,14 +83,14 @@
                 <div class="box">{{-- １段目 --}}
                     @component('tequila.component.syouhin_parts',[
                         'url' => 'https://www.musashiya-net.co.jp/products/detail.php?product_id=3084',
-                        'image' => 'sauza_silver.jpg',
-                        'name' => 'サウザ シルバー',
-                        'aging' => 'Silver',
+                        'image' => 'cuervo_silver.jpg',
+                        'name' => 'クエルボ シルバー',
+                        'aging' => 'Especial Silver',
                         'contents_alc' => '40%',
-                        'contents_dest' => 'サウザ',
-                        'contents_nom' => '1102',
+                        'contents_dest' => 'クエルボ',
+                        'contents_nom' => '1122',
                         'contents_area' => 'バジェス地方 テキーラ地区',
-                        'contents_review' => '・爽やかな香りとキレのある王道テイスト'
+                        'contents_review' => '・甘さ引き立つ上品漂う香り'
                     ])
                     @endcomponent
                     @component('tequila.component.syouhin_parts',[
@@ -124,7 +124,7 @@
                         'image' => 'sauza_three_generations.jpg',
                         'name' => 'サウザ スリージェネレーション プラタ',
                         'aging' => 'Tres Generaciones Plata',
-                        'contents_alc' => '40% / 100%AGAVE',
+                        'contents_alc' => '40% / 100%AGAVE'
                         'contents_dest' => 'サウザ',
                         'contents_nom' => '1102',
                         'contents_area' => 'バジェス地方 テキーラ地区',

@@ -2,7 +2,7 @@
 
         <div>
             <p>
-                <a href="{{ $url }}" alt="{{ $name }} 商品紹介" target="blank">
+                <a href="{{ $url }}" alt="{{ $name }} 商品紹介" target="_blank">
                     <img src="/image/tequila/{{ $image }}" alt="{{ $name }}" width="300" height="300">
                 </a><br>
             </p>
