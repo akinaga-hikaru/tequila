@@ -124,7 +124,7 @@
                         'image' => 'sauza_three_generations.jpg',
                         'name' => 'サウザ スリージェネレーション プラタ',
                         'aging' => 'Tres Generaciones Plata',
-                        'contents_alc' => '40% / 100%AGAVE'
+                        'contents_alc' => '40% / 100%AGAVE',
                         'contents_dest' => 'サウザ',
                         'contents_nom' => '1102',
                         'contents_area' => 'バジェス地方 テキーラ地区',
