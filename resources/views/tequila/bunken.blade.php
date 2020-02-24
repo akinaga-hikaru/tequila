@@ -2,6 +2,7 @@
 
 @section('title','参考文献')
 @section('section','参考文献')
+@section('body_class','bunken')
 
 @section('main')
 <center>

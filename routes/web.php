@@ -23,6 +23,4 @@ Route::get('maker_intro', function () {
 Route::get('tenpo', function () {
     return view('tequila/tenpo');
 });
-Route::get('syouhin_1', function () {
-    return view('tequila/syouhin_1');
-});
+Route::get('syouhin', 'SyouhinController@syouhin');

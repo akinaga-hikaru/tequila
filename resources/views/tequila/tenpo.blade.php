@@ -2,6 +2,7 @@
 
 @section('title','テキーラ取扱店紹介')
 @section('section','テキーラ取扱店紹介')
+@section('body_class','tenpo')
 
 @section('main')
 <table>

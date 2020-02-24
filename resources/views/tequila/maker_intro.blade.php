@@ -2,6 +2,7 @@
 
 @section('title','ブランド紹介')
 @section('section','ブランド紹介')
+@section('body_class','maker_intro')
 
 @section('main')
 

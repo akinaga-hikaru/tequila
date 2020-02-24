@@ -2,6 +2,7 @@
 
 @section('title','テキーラ全書')
 @section('section','はじめに')
+@section('body_class','top_page')
 
 @section('main')
 
