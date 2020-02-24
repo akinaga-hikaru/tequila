@@ -74,12 +74,12 @@ div.box img {
 }
 
 strong.syohin {
-    font-size: 24px;
-    color: green;
-    line-height: 2em;
+    font-size: 20px;
+    color:black;
+    line-height: 3em;
     background-color: rgba(255,255,255,0.4);
-    padding: 0px 10px;
-    border-radius: 16px;
+    padding: 5px 10px;
+    box-shadow: 1px 2px 4px 2px;
 }
 
 p.letters {
@@ -170,9 +170,10 @@ nav {
         text-align: center;
         bottom: 30px;
         left: 30px;
-        background: rgba(255,255,255,0.6);
+        background: url(/image/tequila/bg005.jpg);
         padding: 10px;
-        border-radius: 32px;
+        border-radius: 6px;
+        box-shadow: beige 1px 1px 68px 3px;
     }
 }
 
