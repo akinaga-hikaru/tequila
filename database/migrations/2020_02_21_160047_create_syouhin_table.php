@@ -833,7 +833,7 @@ class CreateSyouhinTable extends Migration
             ],
             // Chilecariente
             [
-                'class_name' => 'まろやかな甘味',
+                'class_name' => 'chilecariente',
                 'alt_name' => 'chilecariente_blanco',
                 'url' => 'http://www.premium-tequila.jp/products/list.php?category_id=232',
                 'image' => 'chilecariente_blanco.jpg',
@@ -845,7 +845,7 @@ class CreateSyouhinTable extends Migration
                 'contents_info' => '',
                 'contents_review_flavor' => 'アガベ草感残る芳香',
                 'contents_review_top' => '甘味の抑えたスパイシーな口当たり',
-                'contents_review_after' => '',
+                'contents_review_after' => 'まろやかな甘味',
             ],
             // Tres Magueyes
             [

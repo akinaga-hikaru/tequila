@@ -11,8 +11,8 @@
     <main>
         {{-- ブランドタイトル --}}
             @component('tequila.component.syouhin_container',[
-                'syouhin_id' => 'sauza',
-                'syouhin_name' => '◇SUAZA',
+                'syouhin_id' => '',
+                'syouhin_name' => '',
                 ])
             @endcomponent
         {{-- 商品コンテナ --}}
