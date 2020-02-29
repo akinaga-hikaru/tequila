@@ -4,8 +4,8 @@
             <img src="/image/tequila/{{ $image }}" alt="{{ $alt_name }}" width="300" height="300">
         </a><br>
     </p>
-    <p class="syohin">
-        <strong class="syohin">{{ $aging }}</strong><br>
+    <p class="syouhin-coment-area">
+        <strong class="syouhin-title">{{ $aging }}</strong><br>
         ■ ALC：{!! $contents_alc !!}<br>
         ■ DEST：{!! $contents_dest !!}<br>
         ■ DEST.NUM：NOM {!! $contents_nom !!}<br>

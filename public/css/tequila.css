@@ -10,14 +10,14 @@ body {
 
 h1 {
   background: green url(/image/tequila/ryuzeturan3.jpg);
-  color: white;
+  color: beige;
   box-shadow: 0px 5px 10px;
   font-size: 1.5em;
 }
 
 h2 {
   background: rgba(255, 165, 0, 0.5);
-  color: white;
+  color: beige;
   box-shadow: black 0px 5px 10px;
   text-align: center;
   height: 40px;
@@ -37,10 +37,19 @@ p {
 
 aside {
   width: 300px;
+  background: rgba(232, 223, 213, 0.5);
+  padding: 20px;
 }
 
 main {
   width: 1100px;
+  background: rgba(232, 223, 213, 0.5);
+  padding: 20px;
+}
+
+.contents-frame {
+  background: rgba(232, 223, 213, 0.5);
+  padding: 20px;
 }
 
 td {
@@ -66,12 +75,12 @@ th {
 }
 
 a:link {
-  color: green;
+  color: #5e3d1e;
   text-decoration: none;
 }
 
 a:visited {
-  color: green;
+  color: #5e3d1e;
   text-decoration: underline;
 }
 
@@ -96,7 +105,7 @@ div.box img {
   border-radius: 16px;
 }
 
-strong.syohin {
+.syouhin-title {
   font-size: 20px;
   color: black;
   line-height: 3em;
@@ -114,8 +123,8 @@ p.letters {
      border-image: url(/image/tequila/bg005.jpg) 15 round;
 }
 
-p.syohin {
-  background: gold url(/image/tequila/bg004.jpg);
+p.syouhin-coment-area {
+  background: url(/image/tequila/bg004.jpg);
   border: 10px solid black;
   border-radius: 0;
   padding: 10px;
@@ -125,7 +134,7 @@ p.syohin {
 }
 
 p.menu {
-  background: gold url(/image/tequila/bg025.gif);
+  background: beige;
   padding: 10px;
   padding-left: 50px;
   padding-right: 50px;
@@ -134,7 +143,6 @@ p.menu {
 }
 
 p.list {
-  background: url(/image/tequila/bg037.gif);
   padding: 0px;
   font-weight: bold;
   box-shadow: 0px 5px 5px;
@@ -149,9 +157,15 @@ p.list a:hover {
   background: rgba(255, 255, 255, 0.5);
 }
 
+.list {
+  background: url(/image/tequila/bg037.gif);
+}
+
 .list-type {
-  background: url(/image/tequila/bg005.jpg);
+  background: beige;
+  color: #5e3d1e;
   border-radius: 8px;
+  text-align: center;
 }
 
 .list-type a:hover {
@@ -193,7 +207,7 @@ h1.menu p {
 
 h1.menu p a {
   display: block;
-  padding: 20px;
+  padding: 10px 20px;
   margin: 0px;
 }
 
@@ -210,7 +224,7 @@ nav a {
   text-align: center;
   bottom: 30px;
   left: 30px;
-  background: url(/image/tequila/bg005.jpg);
+  background: beige;
   padding: 10px;
   border-radius: 6px;
   box-shadow: beige 1px 1px 68px 3px;

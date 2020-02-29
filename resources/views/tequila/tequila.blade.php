@@ -7,15 +7,17 @@
 @section('main')
 
 <center>
-    <p class="letters">
-        こちらはテキーラが大好きな私によるテキーラの紹介サイトでございます。<br>
-        各種メーカーのテキーラを飲み比べて評価していこうというサイトです。<br>
-        あくまで個人の主観によるものですので、興味ある方の参考程度に紹介できればいいなと思います。<br>
-        また、飲み方を勘違いされがちなテキーラですが、素晴らしいテキーラの飲み方の参照動画をご紹介しますので、ご覧ください。
-    </p>
-    <p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Fv5uRy9OSJA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </p>
+    <div class="contents-frame">
+        <p class="letters">
+            こちらはテキーラが大好きな私によるテキーラの紹介サイトでございます。<br>
+            各種メーカーのテキーラを飲み比べて評価していこうというサイトです。<br>
+            あくまで個人の主観によるものですので、興味ある方の参考程度に紹介できればいいなと思います。<br>
+            また、飲み方を勘違いされがちなテキーラですが、素晴らしいテキーラの飲み方の参照動画をご紹介しますので、ご覧ください。
+        </p>
+        <p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Fv5uRy9OSJA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
+    </div>
 
     <h2 id="tequilatoha">テキーラとは</a></h2>
 </center>
@@ -56,43 +58,43 @@
         </p>
 
         <p class="letters">
-            <strong class="syohin">1.テキーラ5州にて育成された「アガベ・アスール・テキラーナ」を使用すること</strong><br>
+            <strong class="syouhin-title">1.テキーラ5州にて育成された「アガベ・アスール・テキラーナ」を使用すること</strong><br>
             テキーラ5州とは、「ハリスコ州」「グアナファト州」「タマウリパス州」「ミチョアカン州」「ナヤリ州」で、<br>この特定の地域で育成・栽培されたものを使用することが義務付けられている。上記5州のうち大半はハリスコ州のものである。<br>
-            <strong class="syohin">2.テキーラ5州とその周辺で蒸留されていること</strong><br>
+            <strong class="syouhin-title">2.テキーラ5州とその周辺で蒸留されていること</strong><br>
             CRT認定の蒸留所番号「NOM 4桁」を必ずボトルに表示する。<br>
-            <strong class="syohin">3.原材料に「アガベ・アスール・テキラーナ」を51％以上使用すること</strong><br>
+            <strong class="syouhin-title">3.原材料に「アガベ・アスール・テキラーナ」を51％以上使用すること</strong><br>
             ブランドによっては80%近く使っているものもあるが、大半は100%使用した「100%アガベ・テキーラ」である。<br>混合しているものは「ミクストテキーラ」という。<br>
-            <strong class="syohin">4.最低2回蒸留すること</strong><br>
-            <strong class="syohin">5.最終アルコール度数が35～55%内であること</strong><br>
+            <strong class="syouhin-title">4.最低2回蒸留すること</strong><br>
+            <strong class="syouhin-title">5.最終アルコール度数が35～55%内であること</strong><br>
             ブランドにより異なるが、40%ととして出されているものがほとんどである。<br>
-            <strong class="syohin">6.人体に有害なメタノール（メチルアルコール）が3mg/1ml以下であること</strong><br>
+            <strong class="syouhin-title">6.人体に有害なメタノール（メチルアルコール）が3mg/1ml以下であること</strong><br>
             日本では1mg/1ml以下となっているが、製菓用と記載することで、輸入販売が許可されている。<br>
-            <strong class="syohin">7.水以外に加える添加物は1%以下であること</strong><br>
+            <strong class="syouhin-title">7.水以外に加える添加物は1%以下であること</strong><br>
             固形物が添加されていれば「メスカル」、香料・糖蜜が規定以上だと「リキュール」となる。
         </p>
 
     <h3 id="kigen">テキーラの起源</h3>
         <p class="letters">
-            <strong class="syohin">1.醸造酒「プルケ」</strong><br>
+            <strong class="syouhin-title">1.醸造酒「プルケ」</strong><br>
             山の大火事が原因でたまたまできたとされるテキーラ。<br>
             先住民が山火事の跡から焼けたリュウゼツランの芳香に誘われ口にしてみたところ甘い味がしたそうだ。<br>
             これがきっかけで多くの仲間の手に渡され、アガベの食物としての価値が見いだされてきた。<br><br>
             この機に誕生したのがメスカル、テキーラのもとになる「プルケ」である。<br>
             これは醸造酒のため、このプルケを蒸留してできたのが、メスカル、テキーラである。<br>
             <br>
-            <strong class="syohin">2.スペインの蒸留技術</strong><br>
+            <strong class="syouhin-title">2.スペインの蒸留技術</strong><br>
             その蒸留技術は、16世紀頃スペイン人によって持ち込まれたとされる。
             大海賊時代と呼ばれる16世紀。<br>各国に並びスペインも大きな開拓に活躍し、「太陽の沈まない国」と称されていたが、その活動の一環がテキーラの誕生に一役買っていたようだ。<br>
             スペイン人はその蒸留技術を使い、当時輸入により手に入らなくなったというブランデーに代わるアルコール飲料をメキシコにて製造することに乗り出した。<br>
             <br>
-            <strong class="syohin">3.「メスカルワイン」の製造</strong><br>
+            <strong class="syouhin-title">3.「メスカルワイン」の製造</strong><br>
             そこで「プルケ」を蒸留し、よりアルコール度数の高いお酒を造ろうとした。<br>
             その時造られたのが、「メスカルワイン」というお酒である。<br>
             <br>
             スペインはこのメスカルワインが自国のアルコール飲料と競合することを恐れ、メキシコ国内では製造禁止とする時期もあった。<br>
             この期間メキシコ国内では、秘密裏に造られ続けてその多大な生産量から、スペイン政府の資金繰りのために製造が合法化された。<br>
             <br>
-            <strong class="syohin">4.「テキーラ」の輸出</strong><br>
+            <strong class="syouhin-title">4.「テキーラ」の輸出</strong><br>
             それに伴いメスカルワインと並んでメスカル・デ・テキーラの製造も行われるようになり、メキシコ国内では、スペインからのスペイン人向けの輸入品が流通し、代わりに輸出が盛んになってくる。<br>
             1821年のメキシコ独立運動により、スペインからの輸入が難しくなり、国内生産量が盛んになり、世界へ知られるようになっていく。
         </p>
@@ -104,10 +106,10 @@
         </p>
         <p class="letters">
             ■100%アガベ・テキーラの規則■<br>
-            <strong class="syohin">1.原料にアガベ・アスール・テキラーナ以外のものを使用しない</strong><br>
-            <strong class="syohin">2.ハリスコ州（または生産現地）にて瓶詰めしたものであること</strong><br>
+            <strong class="syouhin-title">1.原料にアガベ・アスール・テキラーナ以外のものを使用しない</strong><br>
+            <strong class="syouhin-title">2.ハリスコ州（または生産現地）にて瓶詰めしたものであること</strong><br>
             ミクストテキーラはバルクで輸出して外部での瓶詰めが認められている。<br>
-            <strong class="syohin">3.ラベルに「100% de Agave」と表示すること</strong>
+            <strong class="syouhin-title">3.ラベルに「100% de Agave」と表示すること</strong>
         </p>
 
     <h3 id="kosyou">熟成度合いによる呼称</h3>
@@ -189,11 +191,11 @@
             </table>
             <div class="box">
                 <p>
-                    <strong class="syohin">メキシコ地図 / テキーラ5州</strong><br>
+                    <strong class="syouhin-title">メキシコ地図 / テキーラ5州</strong><br>
                     <img src="/image/tequila/mexico_whitemap3.gif" width="500" height="500">
                 </p>
                 <p>
-                    <strong class="syohin">ハリスコ州地図</strong><br>
+                    <strong class="syouhin-title">ハリスコ州地図</strong><br>
                     <img src="/image/tequila/jalisco_colormap2.png" width="500" height="500">
                 </p>
             </div>

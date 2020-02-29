@@ -12,12 +12,12 @@
         <p class="list list-type dest-list"><a>蒸留所別</a></p>
         <p class="maker">
         @foreach ($syouhin_titles as $title)
-            <p class="list js-maker-list {{ $title[2] }} js-title_{{ $title[0] }} " hidden><a href="syouhin#syouhin_title">{{ $title[1] }}</a></p>
+            <p class="list js-maker-list {{ $title[2] }} js-title_{{ $title[0] }} " hidden><a href=#tequilatoha>{{ $title[1] }}</a></p>
         @endforeach
         </p>
         <p class="dest">
         @foreach ($noms as $dest_number)
-            <p class="list js-dest-list nom{{ $dest_number[2] }}_" hidden><a href="syouhin#syouhin_title">NOM {{ $dest_number[2] }}</a></p>
+            <p class="list js-dest-list nom{{ $dest_number[2] }}_" hidden><a href="#tequilatoha">NOM {{ $dest_number[2] }}</a></p>
         @endforeach
         </p>
     </aside>
@@ -25,7 +25,7 @@
         {{-- ブランドタイトル --}}
             @component('tequila.component.syouhin_container',[
                 'syouhin_id' => '',
-                'syouhin_name' => '',
+                'syouhin_name' => '左から表示種別を選択してください',
                 ])
             @endcomponent
         {{-- 商品コンテナ --}}
