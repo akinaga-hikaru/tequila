@@ -19,6 +19,7 @@ class SyouhinController extends Controller
         // DB(tequila)のTable(syouhin)から全てのデータを取得
         $syouhin_contents = DB::table('syouhin')->get();
 
+        // タイトルに入れる値を定義
         $syouhin_titles =[
             ['sauza','SAUZA','1102'],
             ['josecuervo','Jose Cuervo','1122'],
@@ -59,11 +60,12 @@ class SyouhinController extends Controller
             ['donacelia','DONA CELIA','1438'],
             ['donfernando','Don Fernando','1473'],
             ['rehiletepapalote','Rehilete PAPALOTE','1548'],
-            ['hussons','Husson\'s','1489'],
+            ['hussongs','Hussong\'s','1489'],
             ['tesoroazul','TESORO AZUL','1416'],
             ['santo','Santo','-'],
         ];
 
+        // 配列内の重複するnomを削除
         $nom = [];
         $noms = [];
         foreach ($syouhin_titles as $item) {
