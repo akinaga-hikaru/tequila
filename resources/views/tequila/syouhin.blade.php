@@ -1,13 +1,26 @@
 @extends('tequila.layout.layout')
 
-@section('title','ブランド別商品紹介')
-@section('section','ブランド別商品紹介')
+@section('title','商品紹介')
+@section('section','商品紹介')
 @section('body_class','syouhin')
 
 @section('main')
 
 <div class="box">
-    @include('tequila.component.syouhin_list')
+    <aside>
+        <p class="list list-type maker-list"><a>ブランド別</a></p>
+        <p class="list list-type dest-list"><a>蒸留所別</a></p>
+        <p class="maker">
+        @foreach ($syouhin_titles as $title)
+            <p class="list js-maker-list {{ $title[2] }} js-title_{{ $title[0] }} " hidden><a href="syouhin#syouhin_title">{{ $title[1] }}</a></p>
+        @endforeach
+        </p>
+        <p class="dest">
+        @foreach ($noms as $dest_number)
+            <p class="list js-dest-list nom{{ $dest_number[2] }}_" hidden><a href="syouhin#syouhin_title">NOM {{ $dest_number[2] }}</a></p>
+        @endforeach
+        </p>
+    </aside>
     <main>
         {{-- ブランドタイトル --}}
             @component('tequila.component.syouhin_container',[

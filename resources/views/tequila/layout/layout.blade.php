@@ -25,8 +25,8 @@
                 </a>
             </header>
             <h1 id="menu" class="menu fixed">MENU<br>
-                <p class="menu"><a href="tequila">TOP</a></p>
-                <p class="menu"><a href="syouhin" target="blank">ブランド別商品紹介</a></p>
+                <p class="menu"><a href="tequila">テキーラとは</a></p>
+                <p class="menu"><a href="syouhin" target="blank">商品紹介</a></p>
                 <p class="menu"><a href="tenpo" target="blank">取扱店紹介</a></p>
                 <p class="menu"><a href="bunken" target="blank">参考文献</a></p>
             </h1>

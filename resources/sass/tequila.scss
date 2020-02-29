@@ -106,7 +106,7 @@ p.menu {
     color:black;
 }
 p.list {
-    background: gold url(/image/tequila/bg037.gif);
+    background: url(/image/tequila/bg037.gif);
     // border:2px solid black;
     // border-radius: 16px;
     padding: 0px;
@@ -120,6 +120,13 @@ p.list a {
 }
 p.list a:hover {
     background: rgba(255,255,255,0.5);
+}
+.list-type {
+    background: url(/image/tequila/bg005.jpg);
+    border-radius: 8px;
+    a:hover {
+        border-radius: 8px;
+    }
 }
 
 td.none {
