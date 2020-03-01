@@ -18,25 +18,27 @@
         </script>
     </head>
     <body class="@yield('body_class')">
-        <center>
-            <header id="top" class="title">
+        <div class="center">
+            <header id="top" class="title center">
                 <a href="tequila">
-                    <img src="/image/tequila/tequila-new3.png" alt="テキーラ全書">
+                    <p class="main-title">テキーラ全書</p>
+                    <p class="sub-title">〜Tequipedia〜</p>
                 </a>
-            </header>
-            <h1 id="menu" class="menu fixed">MENU<br>
-                <p class="menu"><a href="tequila">テキーラとは</a></p>
-                <p class="menu"><a href="syouhin" target="blank">商品紹介</a></p>
-                <p class="menu"><a href="tenpo" target="blank">取扱店紹介</a></p>
-                <p class="menu"><a href="bunken" target="blank">参考文献</a></p>
-            </h1>
+
+            <div class="global-menu">
+                <p class="global-menu-btn"><a href="tequila">テキーラとは</a></p>
+                <p class="global-menu-btn"><a href="syouhin" target="blank">商品紹介</a></p>
+                <p class="global-menu-btn"><a href="tenpo" target="blank">取扱店紹介</a></p>
+                <p class="global-menu-btn"><a href="bunken" target="blank">参考文献</a></p>
+            </div>
+        </header>
             <h2 id="tequilatoha">@yield('section')</a></h2>
-        </center>
+        </div>
 
         @yield('main')
 
         <center>
-            <nav>
+            <nav class="nav-top-btn">
                 <a href="#top">トップに戻る</a>
             </nav>
         </center>

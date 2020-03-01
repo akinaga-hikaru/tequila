@@ -6,26 +6,26 @@
 
 @section('main')
 
-<div class="box">
-    <aside>
-        <p class="list list-type maker-list"><a>ブランド別</a></p>
-        <p class="list list-type dest-list"><a>蒸留所別</a></p>
+<div class="flex-box">
+    <aside class="contents-frame">
+        <p class="list-btn list-btn--syouhin-type maker-list"><a>ブランド別</a></p>
+        <p class="list-btn list-btn--syouhin-type dest-list"><a>蒸留所別</a></p>
         <p class="maker">
         @foreach ($syouhin_titles as $title)
-            <p class="list js-maker-list {{ $title[2] }} js-title_{{ $title[0] }} " hidden><a href=#tequilatoha>{{ $title[1] }}</a></p>
+            <p class="list-btn js-maker-list {{ $title[2] }} js-title_{{ $title[0] }} " hidden><a href=#tequilatoha>{{ $title[1] }}</a></p>
         @endforeach
         </p>
         <p class="dest">
         @foreach ($noms as $dest_number)
-            <p class="list js-dest-list nom{{ $dest_number[2] }}_" hidden><a href="#tequilatoha">NOM {{ $dest_number[2] }}</a></p>
+            <p class="list-btn js-dest-list nom{{ $dest_number[2] }}_" hidden><a href="#tequilatoha">NOM {{ $dest_number[2] }}</a></p>
         @endforeach
         </p>
     </aside>
-    <main>
+    <main class="contents-frame">
         {{-- ブランドタイトル --}}
             @component('tequila.component.syouhin_container',[
                 'syouhin_id' => '',
-                'syouhin_name' => '左から表示種別を選択してください',
+                'syouhin_name' => '左の表示から選択してください',
                 ])
             @endcomponent
         {{-- 商品コンテナ --}}

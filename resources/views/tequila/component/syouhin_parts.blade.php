@@ -1,11 +1,11 @@
-<div class="box syouhin_container nom{{ $contents_nom }}_ js-title_{{ $class_name }}">
+<div class="flex-box syouhin-container nom{{ $contents_nom }}_ js-title_{{ $class_name }}">
     <p>
         <a href="{{ $url }}" alt="{{ $alt_name }} 商品紹介" target="_blank">
             <img src="/image/tequila/{{ $image }}" alt="{{ $alt_name }}" width="300" height="300">
         </a><br>
     </p>
-    <p class="syouhin-coment-area">
-        <strong class="syouhin-title">{{ $aging }}</strong><br>
+    <p class="letters-area">
+        <strong class="letters-title">{{ $aging }}</strong><br>
         ■ ALC：{!! $contents_alc !!}<br>
         ■ DEST：{!! $contents_dest !!}<br>
         ■ DEST.NUM：NOM {!! $contents_nom !!}<br>

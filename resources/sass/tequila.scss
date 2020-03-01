@@ -1,28 +1,25 @@
- body {
-    background: url(/image/tequila/wood1.jpg);
-    color: black;
+body {
+    background: url(/image/tequila/bg005.jpg);
+    color: rgb(94,61,30);
     font-weight: bold;
     font-size: 1em;
     margin: 0 auto;
     width: 1500px;
     zoom: 75%;
 }
-h1 {
-    background: green url(/image/tequila/ryuzeturan3.jpg);
-    color: beige;
-    box-shadow: 0px 5px 10px;
-    font-size: 1.5em;
-}
+
 h2 {
     background: rgba(255,165,0,0.5);
     color: beige;
-    box-shadow: black 0px 5px 10px;
     text-align: center;
     height: 40px;
+    margin: 0;
+    border: 1px solid rgb(94,61,30);
+    border-left: none;
+    border-right: none;
 }
 h3 {
     background: url(/image/tequila/bg005.jpg);
-    border-radius: 32px;
     color: beige;
     box-shadow: 0px 5px 10px beige;
     text-align: center;
@@ -31,26 +28,20 @@ p {
     line-height: 2em;
 }
 aside {
-    width: 300px;
-    background: rgba(232, 223, 213, 0.5);
-    padding: 20px;
+    width: 25%;
+    border-right: 1px solid rgb(94,61,30);
 }
 main {
-    width: 1100px;
-    background: rgba(232, 223, 213, 0.5);
-    padding: 20px;
+    width: 75%;
 }
-.contents-frame {
-    background: rgba(232, 223, 213, 0.5);
-    padding: 20px;
-}
+
 td {
     font-weight: bold;
     font-style: italic;
     padding: 4px;
     text-align: center;
     border: 2px solid green;
-    background: gold url(/image/tequila/bg037.gif);
+    background: url(/image/tequila/bg037.gif);
     border-image: url(/image/tequila/bg005.jpg) 15 round;
 }
 th {
@@ -59,88 +50,17 @@ th {
     padding: 4px;
     text-align: center;
     border: 2px solid green;
-    background: gold url(/image/tequila/bg025.gif);
-    border-image: url(/image/tequila/bg005.jpg) 15 round;
-}
-
-a:link { color: rgb(94,61,30); text-decoration: none; }
-a:visited { color: rgb(94,61,30); text-decoration: underline; }
-a:hover { color: orange; text-decoration: none;}
-
-header.title {
-    width: 1000px;
-    height: 300px;
-}
-
-.box { display: flex;
-    justify-content: space-around;
-}
-div.box img {
-    box-shadow: 10px 10px 10px;
-    color: black;
-    border-radius: 16px;
-}
-
-.syouhin-title {
-    font-size: 20px;
-    color:black;
-    line-height: 3em;
-    background-color: rgba(255,255,255,0.4);
-    padding: 5px 10px;
-    box-shadow: 1px 2px 4px 2px;
-}
-
-p.letters {
-    background: gold url(/image/tequila/bg004.jpg);
-    border:10px solid black;
-    border-radius: 0;
-    padding: 10px;
-    border-image: url(/image/tequila/bg005.jpg) 15 round;
-}
-p.syouhin-coment-area {
-    background: url(/image/tequila/bg004.jpg);
-    border:10px solid black;
-    border-radius: 0;
-    padding: 10px;
-    border-image: url(/image/tequila/bg005.jpg) 15 round;
-    width: 50%;
-}
-p.menu {
     background: beige;
-    padding: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
-    box-shadow: 0px 5px 5px;
-    color:black;
+    border-image: url(/image/tequila/bg005.jpg) 15 round;
 }
-p.list {
-    // border:2px solid black;
-    // border-radius: 16px;
-    padding: 0px;
-    // border-image: url(/image/tequila/bg005.jpg) 15 round;
-    font-weight: bold;
-    box-shadow: 0px 5px 5px;
-    a {
-        display:block;
-        padding: 10px;
-        &:hover {
-            background: rgba(255,255,255,0.5);
-        }
-    }
+a {
+    &:link { color: rgb(94,61,30); text-decoration: none; }
+    &:visited { color: rgb(94,61,30); text-decoration: underline; }
+    &:hover { color: orange; text-decoration: none;}
 }
-.list {
-    background: url(/image/tequila/bg037.gif);
+img {
+    box-shadow: 3px 3px 4px 4px;
 }
-.list-type {
-    background: beige;
-    color: rgb(94,61,30);
-    border-radius: 8px;
-    a:hover {
-        border-radius: 8px;
-    }
-    text-align: center;
-}
-
 td.none {
     font-weight: bold;
     font-style: italic;
@@ -159,34 +79,106 @@ td.chiho {
     color: white;
     border-image: url(/image/tequila/bg005.jpg) 15 round;
 }
+// 共通：テーブル設定
+.table-setting {
+    padding: 20px;
+    border: 1px solid rgb(94,61,30);
+}
 
+// 共通：テキストインデント
+.indent {
+    padding-left: 20px;
+    margin: 0;
+    margin-bottom: 10px;
+}
 
-h1.menu {
+// 共通：メインタイトル
+.title {
+    background: url(/image/tequila/tequila-lineup-sepia4.png);
+    padding: 20px;
+    padding-bottom: 0;
+}
+.main-title {
+    font-style: italic;
+    font-size: 100px;
+    color: rgb(94,61,30);
+    display: inline;
+    line-height: 1.5;
+}
+.sub-title {
+    font-style: italic;
+    font-size: 50px;
+    color: rgb(94,61,30);
+    line-height: 0;
+    display: inline;
+}
+
+// 共通：中央揃え
+.center {
+    margin: 0 auto;
+    text-align: center;
+}
+
+// 共通：フレックスボックス
+.flex-box {
     display: flex;
     justify-content: space-around;
-    p {
+}
+
+// 共通：コンテンツコンテナ
+.contents-frame {
+    background: rgba(232, 223, 213, 0.5);
+    padding: 20px;
+}
+
+// 共通：リストボタン
+.list-btn {
+    padding: 0px;
+    background: url(/image/tequila/bg037.gif);
+    box-shadow: 3px 3px 4px 4px;
+    border-bottom: 1px solid rgb(94,61,30);
+    margin: 0;
+    a {
+        display:block;
+        padding: 10px;
+        &:hover {
+            background: rgba(255,255,255,0.5);
+        }
+    }
+}
+
+// 共通：グローバルメニュー
+.global-menu {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5em;
+    border-top: 2px solid rgb(94,61,30);
+    padding: 5px;
+    .global-menu-btn {
         display: inline-block;
         padding: 0px;
         margin: 10px;
-        border-radius: 10px;
+        background: url(/image/tequila/bg005.jpg);
+        box-shadow: 0px 5px 5px;
+        border-radius: 8px;
+        color: beige;
         a {
+            color: beige;
             display: block;
             padding: 10px 20px;
             margin: 0px;
             &:hover {
                 background: rgba(200,200,200,0.4);
-                color: orange;
             }
        }
     }
 }
 
-nav {
+// 共通：トップへ戻るボタン
+.nav-top-btn {
     margin: 50px;
     a {
         text-align: center;
-        bottom: 30px;
-        left: 30px;
         background: beige;
         padding: 10px;
         border-radius: 6px;
@@ -194,4 +186,59 @@ nav {
     }
 }
 
+ // 共通：文章エリア
+ .letters-area {
+    background: url(/image/tequila/bg037.gif);
+    border-radius: 0;
+    padding: 15px;
+    box-shadow: 3px 3px 4px 4px;
+}
 
+// 共通：文章エリア見出し
+.letters-title {
+    font-size: 20px;
+    line-height: 3em;
+    background: rgba(255,165,0,0.5);
+    padding: 5px 10px;
+    border-bottom: 1.5px solid rgb(94,61,30);
+    border-right: 1.5px solid rgb(94,61,30);
+}
+
+// ページ：テキーラとは
+.top_page {
+    // 文章エリアーーテキーラとは限定使用
+    .letters-area {
+        margin-bottom: 40px;
+    }
+    // 文章エリア見出しーーテキーラとは限定使用
+    .letters-title {
+        background: none;
+        border-right: none;
+        border-bottom: 2px solid rgb(255,165,0);
+        padding: 5px 0px;
+    }
+}
+
+// ページ：商品紹介
+.syouhin {
+    // リストボタンーー表示種別ボタン
+    .list-btn--syouhin-type {
+        background: beige;
+        border-radius: 8px;
+        text-align: center;
+        margin-bottom: 20px;
+        a:hover {
+            border-radius: 8px;
+        }
+    }
+    // 文章エリアーー商品紹介限定使用
+    .letters-area {
+        width: 50%;
+    }
+    // 画像エリア
+    .syouhin-container {
+        a:hover {
+            color: beige;
+        }
+    }
+}

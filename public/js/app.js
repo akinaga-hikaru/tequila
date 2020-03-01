@@ -19284,25 +19284,28 @@ module.exports = function(module) {
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // syouhin.blade.phpの処理
 
 
-$('.syouhin_container').hide(); // $('.syouhin_title').hide();
+$('.syouhin-container').hide(); // $('.syouhin_title').hide();
 
 $('.js-maker-list').click(function () {
   // クリックした.listのみのテキストを取得し、タイトルを変更
   var text = $(this).text();
   $('.syouhin_title').text(text); // 選択中のリストのCSS指定
 
-  $('.js-maker-list').css({
-    background: "url(/image/tequila/bg037.gif)"
+  $('.js-maker-list').find('a').css({
+    background: "none"
   });
-  $(this).css({
-    background: "rgb(255,165,0)"
+  $('.js-dest-list').find('a').css({
+    background: "none"
+  });
+  $(this).find('a').css({
+    background: "rgba(255,165,0,0.5)"
   }); // クリックした.listのみのjs-〜のクラス名を取得
 
   var rep = /js-title_.*/;
   var jsClass = $(this).attr('class').match(rep);
   var showClass = '.' + jsClass; // クリックした商品コンテナのみを表示する
 
-  $('.syouhin_container').hide();
+  $('.syouhin-container').hide();
   $(showClass).show();
   $('.syouhin_title').hide();
   $('.syouhin_title').show();
@@ -19312,18 +19315,21 @@ $('.js-dest-list').click(function () {
   var text = $(this).text();
   $('.syouhin_title').text(text); // 選択中のリストのCSS指定
 
-  $('.js-dest-list').css({
-    background: "url(/image/tequila/bg037.gif)"
+  $('.js-dest-list').find('a').css({
+    background: "none"
   });
-  $(this).css({
-    background: "rgb(255,165,0)"
+  $('.js-maker-list').find('a').css({
+    background: "none"
+  });
+  $(this).find('a').css({
+    background: "rgba(255,165,0,0.5)"
   }); // クリックした.listのみのjs-〜のクラス名を取得
 
   var _int = /nom.*_/;
   var jsClassInt = $(this).attr('class').match(_int);
   var showClassInt = '.' + jsClassInt; // クリックした商品コンテナのみを表示する
 
-  $('.syouhin_container').hide();
+  $('.syouhin-container').hide();
   $(showClassInt).show();
   $('.syouhin_title').hide();
   $('.syouhin_title').show();

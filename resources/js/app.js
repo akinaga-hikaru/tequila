@@ -1,7 +1,7 @@
 require('./bootstrap');
 
 // syouhin.blade.phpの処理
-$('.syouhin_container').hide();
+$('.syouhin-container').hide();
 // $('.syouhin_title').hide();
 
 $('.js-maker-list').click(function(){
@@ -11,8 +11,9 @@ $('.js-maker-list').click(function(){
     $('.syouhin_title').text(text);
 
     // 選択中のリストのCSS指定
-    $('.js-maker-list').css({background:"url(/image/tequila/bg037.gif)"});
-    $(this).css({background:"rgb(255,165,0)"});
+    $('.js-maker-list').find('a').css({background:"none"});
+    $('.js-dest-list').find('a').css({background:"none"});
+    $(this).find('a').css({background:"rgba(255,165,0,0.5)"});
 
     // クリックした.listのみのjs-〜のクラス名を取得
     var rep = /js-title_.*/;
@@ -20,7 +21,7 @@ $('.js-maker-list').click(function(){
     var showClass = '.' + jsClass
 
     // クリックした商品コンテナのみを表示する
-    $('.syouhin_container').hide();
+    $('.syouhin-container').hide();
     $(showClass).show();
     $('.syouhin_title').hide();
     $('.syouhin_title').show();
@@ -34,8 +35,10 @@ $('.js-dest-list').click(function(){
     $('.syouhin_title').text(text);
 
     // 選択中のリストのCSS指定
-    $('.js-dest-list').css({background:"url(/image/tequila/bg037.gif)"});
-    $(this).css({background:"rgb(255,165,0)"});
+    $('.js-dest-list').find('a').css({background:"none"});
+    $('.js-maker-list').find('a').css({background:"none"});
+    $(this).find('a').css({background:"rgba(255,165,0,0.5)"});
+
 
     // クリックした.listのみのjs-〜のクラス名を取得
     var int = /nom.*_/;
@@ -43,7 +46,7 @@ $('.js-dest-list').click(function(){
     var showClassInt = '.' + jsClassInt
 
     // クリックした商品コンテナのみを表示する
-    $('.syouhin_container').hide();
+    $('.syouhin-container').hide();
     $(showClassInt).show();
     $('.syouhin_title').hide();
     $('.syouhin_title').show();
