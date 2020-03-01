@@ -1,22 +1,10 @@
 @extends('tequila.layout.layout')
 
 @section('title','テキーラ全書')
-@section('section','はじめに')
+@section('section','テキーラとは')
 @section('body_class','top_page')
 
 @section('main')
-    <div class="contents-frame">
-        <p class="letters-area">
-            　こちらはテキーラが大好きな私によるテキーラの紹介サイトでございます。
-            各種メーカーのテキーラを飲み比べて評価していこうというサイトです。
-            あくまで個人の主観によるものですので、興味ある方の参考程度に紹介できればいいなと思います。
-            また、飲み方を勘違いされがちなテキーラですが、素晴らしいテキーラの飲み方の参照動画をご紹介しますので、ご覧ください。
-        </p>
-        <p class="center">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Fv5uRy9OSJA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </p>
-    </div>
-    <h2 id="tequilatoha">テキーラとは</a></h2>
     <div class="flex-box">
         <aside class="contents-frame">
             <h3>ジャンプリスト</h3>

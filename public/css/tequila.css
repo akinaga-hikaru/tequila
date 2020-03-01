@@ -1,3 +1,9 @@
+*,
+*:after,
+*:before {
+  font-family: "MS Mincho", sans-serif;
+}
+
 body {
   background: url(/image/tequila/bg005.jpg);
   color: #5e3d1e;
