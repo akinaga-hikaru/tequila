@@ -283,7 +283,11 @@ img {
     // 文章エリア
     .letters-area {
         width: 50%;
+        @media screen and(max-width: 768px) {
+            width: 100%;
+        }
     }
+
     // 画像エリア
     .syouhin-container {
         margin-bottom: 20px;
