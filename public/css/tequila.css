@@ -1,8 +1,21 @@
+@charset "UTF-8";
+
+/* -----------------------------------------------
+    初期設定用
+----------------------------------------------- */
+
 *,
 *:after,
 *:before {
   font-family: "MS Mincho", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+/* -----------------------------------------------
+    要素固定設定
+----------------------------------------------- */
 
 body {
   background: url(/image/tequila/bg005.jpg);
@@ -10,8 +23,30 @@ body {
   font-weight: bold;
   font-size: 1em;
   margin: 0 auto;
-  width: 1500px;
+  width: 100%;
+  max-width: 1500px;
   zoom: 75%;
+}
+
+aside {
+  width: 25%;
+  border-right: 1px solid #5e3d1e;
+}
+
+@media screen and (max-width: 768px) {
+  aside {
+    width: 100%;
+  }
+}
+
+main {
+  width: 75%;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    width: 100%;
+  }
 }
 
 h2 {
@@ -34,37 +69,23 @@ h3 {
 
 p {
   line-height: 2em;
+  margin: 10px;
 }
 
-aside {
-  width: 25%;
-  border-right: 1px solid #5e3d1e;
-}
-
-main {
-  width: 75%;
+th,
+td {
+  font-style: italic;
+  padding: 4px;
+  text-align: center;
+  border: 2px solid #5e3d1e;
 }
 
 td {
-  font-weight: bold;
-  font-style: italic;
-  padding: 4px;
-  text-align: center;
-  border: 2px solid green;
   background: url(/image/tequila/bg037.gif);
-  -o-border-image: url(/image/tequila/bg005.jpg) 15 round;
-     border-image: url(/image/tequila/bg005.jpg) 15 round;
 }
 
 th {
-  font-weight: bold;
-  font-style: italic;
-  padding: 4px;
-  text-align: center;
-  border: 2px solid green;
   background: beige;
-  -o-border-image: url(/image/tequila/bg005.jpg) 15 round;
-     border-image: url(/image/tequila/bg005.jpg) 15 round;
 }
 
 a:link {
@@ -83,28 +104,28 @@ a:hover {
 }
 
 img {
+  width: 100%;
   box-shadow: 3px 3px 4px 4px;
 }
 
-td.none {
-  font-weight: bold;
-  font-style: italic;
-  padding: 4px;
-  text-align: center;
-  border: 2px none green;
-  background: none;
+/* -----------------------------------------------
+    共通設定
+----------------------------------------------- */
+
+.contents-frame {
+  background: rgba(232, 223, 213, 0.5);
+  padding: 20px;
 }
 
-td.chiho {
-  font-weight: bold;
-  font-style: italic;
-  padding: 4px;
-  text-align: center;
-  border: 2px solid white;
-  background: green url(/image/tequila/bg005.jpg);
-  color: white;
-  -o-border-image: url(/image/tequila/bg005.jpg) 15 round;
-     border-image: url(/image/tequila/bg005.jpg) 15 round;
+.flex-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 768px) {
+  .flex-box {
+    display: block;
+  }
 }
 
 .table-setting {
@@ -112,10 +133,45 @@ td.chiho {
   border: 1px solid #5e3d1e;
 }
 
+.chiho {
+  background: url(/image/tequila/bg005.jpg);
+  color: beige;
+  border: 2px solid beige;
+  -o-border-image: url(/image/tequila/bg005.jpg) 15 round;
+     border-image: url(/image/tequila/bg005.jpg) 15 round;
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
 .indent {
   padding-left: 20px;
   margin: 0;
   margin-bottom: 10px;
+}
+
+.letters-area {
+  background: url(/image/tequila/bg037.gif);
+  border-radius: 0;
+  padding: 15px;
+  box-shadow: 3px 3px 4px 4px;
+}
+
+.letters-area img {
+  width: 100%;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.letters-title {
+  font-size: 20px;
+  line-height: 3em;
+  background: rgba(255, 165, 0, 0.5);
+  padding: 5px 10px;
+  border-bottom: 1.5px solid #5e3d1e;
+  border-right: 1.5px solid #5e3d1e;
 }
 
 .title {
@@ -132,6 +188,12 @@ td.chiho {
   line-height: 1.5;
 }
 
+@media screen and (max-width: 768px) {
+  .main-title {
+    font-size: 50px;
+  }
+}
+
 .sub-title {
   font-style: italic;
   font-size: 50px;
@@ -140,19 +202,10 @@ td.chiho {
   display: inline;
 }
 
-.center {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.flex-box {
-  display: flex;
-  justify-content: space-around;
-}
-
-.contents-frame {
-  background: rgba(232, 223, 213, 0.5);
-  padding: 20px;
+@media screen and (max-width: 768px) {
+  .sub-title {
+    font-size: 25px;
+  }
 }
 
 .list-btn {
@@ -172,9 +225,13 @@ td.chiho {
   background: rgba(255, 255, 255, 0.5);
 }
 
+@media screen and (max-width: 768px) {
+  .list-btn {
+    text-align: center;
+  }
+}
+
 .global-menu {
-  display: flex;
-  justify-content: space-around;
   font-size: 1.5em;
   border-top: 2px solid #5e3d1e;
   padding: 5px;
@@ -188,6 +245,7 @@ td.chiho {
   box-shadow: 0px 5px 5px;
   border-radius: 8px;
   color: beige;
+  width: 300px;
 }
 
 .global-menu .global-menu-btn a {
@@ -213,21 +271,9 @@ td.chiho {
   box-shadow: beige 1px 1px 68px 3px;
 }
 
-.letters-area {
-  background: url(/image/tequila/bg037.gif);
-  border-radius: 0;
-  padding: 15px;
-  box-shadow: 3px 3px 4px 4px;
-}
-
-.letters-title {
-  font-size: 20px;
-  line-height: 3em;
-  background: rgba(255, 165, 0, 0.5);
-  padding: 5px 10px;
-  border-bottom: 1.5px solid #5e3d1e;
-  border-right: 1.5px solid #5e3d1e;
-}
+/* -----------------------------------------------
+    ページ別：テキーラとは
+----------------------------------------------- */
 
 .top_page .letters-area {
   margin-bottom: 40px;
@@ -239,6 +285,10 @@ td.chiho {
   border-bottom: 2px solid orange;
   padding: 5px 0px;
 }
+
+/* -----------------------------------------------
+    ページ別：商品紹介
+----------------------------------------------- */
 
 .syouhin .list-btn--syouhin-type {
   background: beige;
@@ -255,7 +305,15 @@ td.chiho {
   width: 50%;
 }
 
+.syouhin .syouhin-container {
+  margin-bottom: 20px;
+}
+
 .syouhin .syouhin-container a:hover {
   color: beige;
+}
+
+.syouhin .syouhin_title {
+  margin-bottom: 30px;
 }
 

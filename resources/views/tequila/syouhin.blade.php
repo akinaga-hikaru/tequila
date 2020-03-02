@@ -25,7 +25,7 @@
         {{-- ブランドタイトル --}}
             @component('tequila.component.syouhin_container',[
                 'syouhin_id' => '',
-                'syouhin_name' => '左の表示から選択してください',
+                'syouhin_name' => '選択すると表示します',
                 ])
             @endcomponent
         {{-- 商品コンテナ --}}

@@ -1,12 +1,12 @@
 require('./bootstrap');
 
-// syouhin.blade.phpの処理
+// 商品紹介ページで使用
 $('.syouhin-container').hide();
-// $('.syouhin_title').hide();
 
+// ブランド別の商品一覧を押下した時の処理
 $('.js-maker-list').click(function(){
 
-    // クリックした.listのみのテキストを取得し、タイトルを変更
+    // クリックしたリストのみのテキストを取得し、タイトル(h3)のテキストを変更
     var text =  $(this).text();
     $('.syouhin_title').text(text);
 
@@ -25,7 +25,6 @@ $('.js-maker-list').click(function(){
     $(showClass).show();
     $('.syouhin_title').hide();
     $('.syouhin_title').show();
-
 
 });
 $('.js-dest-list').click(function(){

@@ -19281,13 +19281,13 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // syouhin.blade.phpの処理
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // 商品紹介ページで使用
 
 
-$('.syouhin-container').hide(); // $('.syouhin_title').hide();
+$('.syouhin-container').hide(); // ブランド別の商品一覧を押下した時の処理
 
 $('.js-maker-list').click(function () {
-  // クリックした.listのみのテキストを取得し、タイトルを変更
+  // クリックしたリストのみのテキストを取得し、タイトル(h3)のテキストを変更
   var text = $(this).text();
   $('.syouhin_title').text(text); // 選択中のリストのCSS指定
 

@@ -1,7 +1,7 @@
 <div class="flex-box syouhin-container nom{{ $contents_nom }}_ js-title_{{ $class_name }}">
     <p>
         <a href="{{ $url }}" alt="{{ $alt_name }} 商品紹介" target="_blank">
-            <img src="/image/tequila/{{ $image }}" alt="{{ $alt_name }}" width="300" height="300">
+            <img src="/image/tequila/{{ $image }}" alt="{{ $alt_name }}">
         </a><br>
     </p>
     <p class="letters-area">
