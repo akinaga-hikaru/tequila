@@ -319,6 +319,11 @@ img {
   color: beige;
 }
 
+.syouhin .syouhin-container img {
+  width: 300px;
+  height: 300px;
+}
+
 .syouhin .syouhin_title {
   margin-bottom: 30px;
 }
