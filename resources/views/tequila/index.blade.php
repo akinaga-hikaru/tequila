@@ -7,8 +7,10 @@
 @section('main')
     <div class="flex-box">
         <aside class="contents-frame">
-            <h3>ジャンプリスト</h3>
-            <p class="maker">
+            <div>
+            <h3 class="side-menu js-side-btn--open">項目一覧</h3>
+            </div>
+            <div class="js-side-list hide-sp">
                 <p class="list-btn"><a href="#genryou">テキーラの原料</a></p>
                 <p class="list-btn"><a href="#teigi">テキーラの定義</a></p>
                 <p class="list-btn"><a href="#kigen">テキーラの起源</a></p>
@@ -16,7 +18,7 @@
                 <p class="list-btn"><a href="#kosyou">熟成度合いによる呼称</a></p>
                 <p class="list-btn"><a href="#gosyu">テキーラ5州</a></p>
                 <p class="list-btn"><a href="#joryujo">蒸留所リスト</a></p>
-            </p>
+            </div>
         </aside>
         <main class="contents-frame">
 

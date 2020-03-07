@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('tequila', function () {
-    return view('tequila/tequila');
+Route::get('/', function () {
+    return view('tequila/index');
 });
 Route::get('bunken', function () {
     return view('tequila/bunken');

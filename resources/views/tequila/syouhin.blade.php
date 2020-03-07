@@ -12,12 +12,12 @@
         <p class="list-btn list-btn--syouhin-type dest-list"><a>蒸留所別</a></p>
         <p class="maker">
         @foreach ($syouhin_titles as $title)
-            <p class="list-btn js-maker-list {{ $title[2] }} js-title_{{ $title[0] }} " hidden><a href=#tequilatoha>{{ $title[1] }}</a></p>
+            <p class="list-btn js-maker-list {{ $title[2] }} js-title_{{ $title[0] }} " hidden><a href="#syouhin_title">{{ $title[1] }}</a></p>
         @endforeach
         </p>
         <p class="dest">
         @foreach ($noms as $dest_number)
-            <p class="list-btn js-dest-list nom{{ $dest_number[2] }}_" hidden><a href="#tequilatoha">NOM {{ $dest_number[2] }}</a></p>
+            <p class="list-btn js-dest-list nom{{ $dest_number[2] }}_" hidden><a href="#syouhin_title">NOM {{ $dest_number[2] }}</a></p>
         @endforeach
         </p>
     </aside>

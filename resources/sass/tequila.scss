@@ -1,13 +1,17 @@
 /* -----------------------------------------------
     初期設定用
 ----------------------------------------------- */
+@import 'reset';
+
 *,
 *:after,
 *:before {
-    font-family: 'MS Mincho',sans-serif;
+    font-family: 'Noto Serif JP', serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-size: 15px;
+    line-height: 1.8;
 }
 
 /* -----------------------------------------------
@@ -17,11 +21,10 @@ body {
     background: url(/image/tequila/bg005.jpg);
     color: rgb(94,61,30);
     font-weight: bold;
-    font-size: 1em;
     margin: 0 auto;
     width: 100%;
-    max-width: 1500px;
-    zoom: 75%;
+    max-width: 1280px;
+    line-height: 0;
 }
 
 aside {
@@ -39,20 +42,25 @@ main {
     }
 }
 
+// 大項目
 h2 {
     background: rgba(255,165,0,0.5);
     color: beige;
+    font-size: 25px;
+    padding-bottom: 6px;
     text-align: center;
-    height: 40px;
     margin: 0;
     border: 1px solid rgb(94,61,30);
     border-left: none;
     border-right: none;
 }
 
+// 中項目
 h3 {
     background: url(/image/tequila/bg005.jpg);
     color: beige;
+    font-size: 20px;
+    padding-bottom: 6px;
     box-shadow: 0px 5px 10px beige;
     text-align: center;
     margin-bottom: 20px;
@@ -115,6 +123,20 @@ img {
     }
 }
 
+// 表示非表示設定
+.hide-pc {
+    display: none;
+    @media screen and(max-width: 768px) {
+        display: block;
+    }
+}
+.hide-sp {
+    display: block;
+    @media screen and(max-width: 768px) {
+        display: none;
+    }
+}
+
 // テーブル設定
 .table-setting {
     padding: 20px;
@@ -125,8 +147,6 @@ img {
 .chiho {
     background: url(/image/tequila/bg005.jpg);
     color: beige;
-    border: 2px solid beige;
-    border-image: url(/image/tequila/bg005.jpg) 15 round;
 }
 
 // 中央揃え
@@ -163,6 +183,9 @@ img {
     padding: 5px 10px;
     border-bottom: 1.5px solid rgb(94,61,30);
     border-right: 1.5px solid rgb(94,61,30);
+    @media screen and(max-width: 768px) {
+        font-size: 15px;
+    }
 }
 
 // メインタイトル
@@ -176,7 +199,7 @@ img {
     font-size: 100px;
     color: rgb(94,61,30);
     display: inline;
-    line-height: 1.5;
+    line-height: 1;
     @media screen and(max-width: 768px) {
         font-size: 50px;
     }
@@ -185,7 +208,7 @@ img {
     font-style: italic;
     font-size: 50px;
     color: rgb(94,61,30);
-    line-height: 0;
+    line-height: 2;
     display: inline;
     @media screen and(max-width: 768px) {
         font-size: 25px;
@@ -201,7 +224,7 @@ img {
     margin: 0;
     a {
         display:block;
-        padding: 10px;
+        padding: 10px 20px;
         &:hover {
             background: rgba(255,255,255,0.5);
         }
@@ -224,11 +247,12 @@ img {
         box-shadow: 0px 5px 5px;
         border-radius: 8px;
         color: beige;
-        width: 300px;
+        max-width: 300px;
+        width: 100%;
         a {
             color: beige;
             display: block;
-            padding: 10px 20px;
+            padding-bottom: 6px;
             margin: 0px;
             &:hover {
                 background: rgba(200,200,200,0.4);
@@ -256,6 +280,9 @@ img {
     // 文章エリア
     .letters-area {
         margin-bottom: 40px;
+        p {
+            margin-bottom: 10px;
+        }
     }
     // 文章エリア見出し
     .letters-title {
@@ -263,6 +290,11 @@ img {
         border-right: none;
         border-bottom: 2px solid rgb(255,165,0);
         padding: 5px 0px;
+    }
+    .side-menu {
+        @media screen and(max-width: 768px) {
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -288,7 +320,7 @@ img {
         }
     }
 
-    // 画像エリア
+    // 商品コンテナ内
     .syouhin-container {
         margin-bottom: 20px;
         a:hover {
@@ -297,6 +329,24 @@ img {
         img {
         width: 300px;
         height: 300px;
+        @media screen and(max-width: 768px) {
+            width: 100%;
+            height: 100%;
+            max-width: 375px;
+            max-height: 375px;
+        }
+        }
+        @media screen and(max-width: 768px) {
+            p {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    @media screen and(max-width: 768px) {
+        .syouhin-container {
+            border-bottom: 2px solid rgb(94,61,30);
+            padding: 20px 0;
+            margin: 0 auto;
         }
     }
 
