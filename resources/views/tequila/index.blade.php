@@ -61,7 +61,7 @@
                         ブランドによっては80%近く使っているものもあるが、大半は100%使用した「100%アガベ・テキーラ」である。
                         混合しているものは「ミクストテキーラ」という。
                     </p>
-                    <strong class="letters-title">4. 最低2回蒸留すること</strong>
+                    <strong class="letters-title">4. 最低2回蒸留すること</strong><br>
                     <strong class="letters-title">5. 最終アルコール度数が35～55%内であること</strong>
                     <p class="indent">
                         ブランドにより異なるが、40%ととして出されているものがほとんどである。

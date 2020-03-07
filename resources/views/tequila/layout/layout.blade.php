@@ -1,4 +1,4 @@
-～<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta property="og:url" content="https://moon-gm.github.io/tequipedia">
         <meta property="og:title" content="テキーラ全書～Tequipedia～">
-        <meta property="og:description" content="テキーラ商品紹介">
+        <meta property="og:description" content="各種テキーラを飲み比べてデータ化したサイト。テキーラの基礎知識も記載しているため、入門用に。">
         <meta property="og:image" content="./image/tequila/icon/tequila-icon.png">
         <title>@yield('title')</title>
         <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet">
