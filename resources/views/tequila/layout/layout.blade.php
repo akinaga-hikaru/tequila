@@ -8,7 +8,7 @@
         <meta property="og:url" content="https://moon-gm.github.io/tequipedia">
         <meta property="og:title" content="テキーラ全書～Tequipedia～">
         <meta property="og:description" content="テキーラ商品紹介">
-            <meta property="og:image" content="">
+        <meta property="og:image" content="./image/tequila/icon/tequila-icon.png">
         <title>@yield('title')</title>
         <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{ mix('css/tequila.css') }}">
