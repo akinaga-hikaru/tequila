@@ -10,16 +10,22 @@
     <aside class="contents-frame">
         <p class="list-btn list-btn--syouhin-type maker-list"><a>ブランド別</a></p>
         <p class="list-btn list-btn--syouhin-type dest-list"><a>蒸留所別</a></p>
-        <p class="maker">
-        @foreach ($syouhin_titles as $title)
-            <p class="list-btn js-maker-list {{ $title[2] }} js-title_{{ $title[0] }} " hidden><a href="#syouhin_title">{{ $title[1] }}</a></p>
-        @endforeach
-        </p>
-        <p class="dest">
-        @foreach ($noms as $dest_number)
-            <p class="list-btn js-dest-list nom{{ $dest_number[2] }}_" hidden><a href="#syouhin_title">NOM {{ $dest_number[2] }}</a></p>
-        @endforeach
-        </p>
+        {{-- ブランドリスト --}}
+            <ul class="maker">
+                @foreach ($syouhin_titles as $title)
+                    <li class="list-btn js-maker-list {{ $title[2] }} js-title_{{ $title[0] }} " hidden>
+                        <a href="#syouhin_title">{{ $title[1] }}</a>
+                    </li>
+                @endforeach
+            </ul>
+        {{-- 蒸留所リスト --}}
+            <ul class="dest">
+                @foreach ($noms as $dest_number)
+                    <li class="list-btn js-dest-list nom{{ $dest_number[2] }}_" hidden>
+                        <a href="#syouhin_title">NOM {{ $dest_number[2] }}</a>
+                    </li>
+                @endforeach
+            </ul>
     </aside>
     <main class="contents-frame">
         {{-- ブランドタイトル --}}

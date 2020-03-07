@@ -25,16 +25,15 @@
                     <p class="main-title">テキーラ全書</p><br>
                     <p class="sub-title">〜Tequipedia〜</p>
                 </a>
-
-            <div class="global-menu hide-pc">
-                <p class="global-menu-btn js-menu-btn--open">Menu</p>
-            </div>
-            <div class="global-menu js-global-menu-list hide-sp">
-                <p class="global-menu-btn"><a href="/">テキーラとは</a></p>
-                <p class="global-menu-btn"><a href="syouhin">商品紹介</a></p>
-                <p class="global-menu-btn"><a href="tenpo">取扱店紹介</a></p>
-                <p class="global-menu-btn"><a href="bunken">参考文献</a></p>
-            </div>
+            <ul class="global-menu hide-pc">
+                <li class="global-menu-btn js-menu-btn--open">Menu</li>
+            </ul>
+            <ul class="global-menu js-global-menu-list hide-sp">
+                <li class="global-menu-btn"><a href="/">テキーラとは</a></li>
+                <li class="global-menu-btn"><a href="syouhin">商品紹介</a></li>
+                <li class="global-menu-btn"><a href="tenpo">取扱店紹介</a></li>
+                <li class="global-menu-btn"><a href="bunken">参考文献</a></li>
+            </ul>
         </header>
             <h2 id="tequilatoha">@yield('section')</a></h2>
         </div>
