@@ -119,7 +119,7 @@ img {
 }
 
 /* -----------------------------------------------
-    共通設定
+    共通：レイアウト関連
 ----------------------------------------------- */
 // コンテンツコンテナ
 .contents-frame {
@@ -136,35 +136,9 @@ img {
     }
 }
 
-// 表示非表示設定
-.hide-pc {
-    display: none;
-    @media screen and(max-width: $sp) {
-        display: block;
-    }
-}
-.hide-sp {
-    display: block;
-    @media screen and(max-width: $sp) {
-        display: none;
-    }
-}
-
-// テーブル設定
-.table-setting {
-    padding-bottom: 20px;
-    width: 1000px;
-}
-
 // スクロール設定
 .scroll-area {
     overflow: scroll;
-}
-
-// テーブルヘッダー設定
-.chiho {
-    background: $bg_wood_dark;
-    color: $beige;
 }
 
 // 中央揃え
@@ -173,6 +147,40 @@ img {
     text-align: center;
 }
 
+// PCで非表示設定
+.hide-pc {
+    display: none;
+    @media screen and(max-width: $sp) {
+        display: block;
+    }
+}
+
+// SPで非表示設定
+.hide-sp {
+    display: block;
+    @media screen and(max-width: $sp) {
+        display: none;
+    }
+}
+
+/* -----------------------------------------------
+    共通：テーブル関連
+----------------------------------------------- */
+// テーブル設定
+.table-setting {
+    padding-bottom: 20px;
+    width: 1000px;
+}
+
+// テーブルヘッダー設定
+.chiho {
+    background: $bg_wood_dark;
+    color: $beige;
+}
+
+/* -----------------------------------------------
+    共通：テキスト関連
+----------------------------------------------- */
 // テキストインデント
 .indent {
     padding-left: 20px;
@@ -205,7 +213,9 @@ img {
     }
 }
 
-// メインタイトル
+/* -----------------------------------------------
+    共通：タイトル
+----------------------------------------------- */
 .title {
     background: url(/image/tequila/tequila-lineup-sepia4.png);
     padding: 20px;
@@ -231,6 +241,9 @@ img {
     }
 }
 
+/* -----------------------------------------------
+    共通：リスト関連
+----------------------------------------------- */
 // リストボタン
 .list-btn {
     padding: 0px;
@@ -239,7 +252,7 @@ img {
     border-bottom: 1px solid $brown;
     margin: 0;
     a {
-        display:block;
+        display: block;
         padding: 10px 20px;
         &:hover {
             background: rgba(255,255,255,0.5);
@@ -277,7 +290,9 @@ img {
     }
 }
 
-// トップへ戻るボタン
+/* -----------------------------------------------
+    共通：トップへ戻るボタン
+----------------------------------------------- */
 .nav-top-btn {
     margin: 50px;
     a {
