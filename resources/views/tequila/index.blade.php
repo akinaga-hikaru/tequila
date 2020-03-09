@@ -8,7 +8,7 @@
     <div class="flex-box">
         <aside class="contents-frame">
             <div>
-            <h3 class="side-menu js-side-btn--open">項目一覧</h3>
+                <h3 class="side-menu js-side-btn--open">項目一覧</h3>
             </div>
             <ul class="js-side-list hide-sp">
                 <li class="list-btn"><a href="#genryou">テキーラの原料</a></li>
@@ -130,41 +130,42 @@
                 </div>
 
             <h3 id="kosyou">熟成度合いによる呼称</h3>
-                <div class="center">
-                    <table class="table-setteing">
-                        <tr>
-                            <th>呼称</th>
-                            <th>意味</th>
-                            <th>詳細</th>
-                        </tr>
-                        <tr>
-                            <td>ブランコ</td>
-                            <td>シルバー、プラタ<br>ホワイト、クリスタル</td>
-                            <td>オーク樽による熟成をしないもの。または、熟成期間が60日以内であること。</td>
-                        </tr>
-                        <tr>
-                            <td>ホベン / オロ</td>
-                            <td>ブランコ＋レポサドorアネホ</td>
-                            <td>ブランコと、レポサドまたはアネホと混ぜたもの</td>
-                        </tr>
-                        <tr>
-                            <td>レポサド</td>
-                            <td>休ませたの意味</td>
-                            <td>最低2ヶ月間のオーク樽により熟成したもの</td>
-                        </tr>
-                        <tr>
-                            <td>アネホ</td>
-                            <td>熟成させたの意味</td>
-                            <td>最低1年間のオーク樽により熟成したもの。オーク樽は600L以下のサイズであること。</td>
-                        </tr>
-                        <tr>
-                            <td>エクストラアネホ</td>
-                            <td>アネホを超えた熟成</td>
-                            <td>最低3年間のオーク樽により熟成したもの。オーク樽は600L以下のサイズであること。</td>
-                        </tr>
-                    </table>
+                <div class="scroll-area">
+                    <div class="table-setting">
+                        <table class="">
+                            <tr>
+                                <th>呼称</th>
+                                <th>意味</th>
+                                <th>詳細</th>
+                            </tr>
+                            <tr>
+                                <td>ブランコ</td>
+                                <td>シルバー、プラタ<br>ホワイト、クリスタル</td>
+                                <td>オーク樽による熟成をしないもの。または、熟成期間が60日以内であること。</td>
+                            </tr>
+                            <tr>
+                                <td>ホベン / オロ</td>
+                                <td>ブランコ＋レポサドorアネホ</td>
+                                <td>ブランコと、レポサドまたはアネホと混ぜたもの</td>
+                            </tr>
+                            <tr>
+                                <td>レポサド</td>
+                                <td>休ませたの意味</td>
+                                <td>最低2ヶ月間のオーク樽により熟成したもの</td>
+                            </tr>
+                            <tr>
+                                <td>アネホ</td>
+                                <td>熟成させたの意味</td>
+                                <td>最低1年間のオーク樽により熟成したもの。オーク樽は600L以下のサイズであること。</td>
+                            </tr>
+                            <tr>
+                                <td>エクストラアネホ</td>
+                                <td>アネホを超えた熟成</td>
+                                <td>最低3年間のオーク樽により熟成したもの。オーク樽は600L以下のサイズであること。</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-
             <h3 id="gosyu">テキーラ5州</h3>
                 <div class="letters-area">
                     <div>
@@ -199,198 +200,215 @@
                         蒸留所のほとんどがハリスコ州内にあるのだが、以下にリストとして掲載する。
                     </p>
                 </div>
-                <div>
-                    <table>
-                        <tr>
-                            <td class="chiho">ハリスコ州 バジェス地方</td>
-                        </tr>
-                        <tr>
-                            <th>蒸留所</th>
-                            <th>NOM</th>
-                            <th>取扱銘柄</th>
-                            <th>所在地</th>
-                        </tr>
-                        <tr>
-                            <td>サウザ蒸留所</td>
-                            <td>1102</td>
-                            <td>Sauza</td>
-                            <td>テキーラ地区</td>
-                        </tr>
-                        <tr>
-                            <td>オレンダイン蒸留所</td>
-                            <td>1110</td>
-                            <td>Orendain</td>
-                            <td>テキーラ地区</td>
-                        </tr>
-                        <tr>
-                            <td>クエルボ蒸留所</td>
-                            <td>1122</td>
-                            <td>Jose Cuervo / 1800</td>
-                            <td>テキーラ地区</td>
-                        </tr>
-                        <tr>
-                            <td>ラ・コフラディア蒸留所</td>
-                            <td>1137</td>
-                            <td>Casa Noble / Tres Alegres</td>
-                            <td>テキーラ地区</td>
-                        </tr>
-                        <tr>
-                            <td>ニュートン・エ・イホス蒸留所</td>
-                            <td>1173</td>
-                            <td>EL DESTILADOR</td>
-                            <td>テキーラ地区</td>
-                        </tr>
-                        <tr>
-                            <td>フィノス・デ・アガベ蒸留所</td>
-                            <td>1416</td>
-                            <td>ALACRAN</td>
-                            <td>テキーラ地区</td>
-                        </tr>
-                        <tr>
-                            <td>デル・バジェ・デ・テキーラ蒸留所</td>
-                            <td>1438</td>
-                            <td>Agavales / EL PADRINO</td>
-                            <td>テキーラ地区</td>
-                        </tr>
-                        <tr>
-                            <td>テキーラス・フィノス蒸留所</td>
-                            <td>1472</td>
-                            <td>KAH</td>
-                            <td>テキーラ地区</td>
-                        </tr>
-                        <tr>
-                            <td>カーサ・エラドゥーラ蒸留所</td>
-                            <td>1119</td>
-                            <td>HERRADURA / el Jimador</td>
-                            <td>アマティタン地区</td>
-                        </tr>
-                        <tr>
-                            <td>トレス・ムヘレス蒸留所</td>
-                            <td>1466</td>
-                            <td>Casino AZUL</td>
-                            <td>アマティタン地区</td>
-                        </tr>
-                        <tr>
-                            <td>インモビリアリア・マスト蒸留所</td>
-                            <td>1462</td>
-                            <td>PORFIDIO</td>
-                            <td>ラス・フンタス地区</td>
-                        </tr>
-
-                        <tr>
-                            <td class="chiho">ハリスコ州 ロスアルトス地方</td>
-                        </tr>
-                        <tr>
-                            <th>蒸留所</th>
-                            <th>NOM</th>
-                            <th>取扱銘柄</th>
-                            <th>所在地</th>
-                        </tr>
-                        <tr>
-                            <td>ペルノ・リカール蒸留所</td>
-                            <td>1111</td>
-                            <td>OLMECA / MARIACHI</td>
-                            <td>アランダス地区</td>
-                        </tr>
-                        <tr>
-                            <td>ラ・アルテーニャ蒸留所</td>
-                            <td>1139</td>
-                            <td>El Tesoro</td>
-                            <td>アランダス地区</td>
-                        </tr>
-                        <tr>
-                            <td>カーサ・カマレナ蒸留所</td>
-                            <td>1456</td>
-                            <td>Casco Viejo</td>
-                            <td>アランダス地区</td>
-                        </tr>
-                        <tr>
-                            <td>カンパニャ・テキレラ・デ・アランダス蒸留所</td>
-                            <td>1460</td>
-                            <td>EL CHARRO / TRES REYS</td>
-                            <td>アランダス地区</td>
-                        </tr>
-                        <tr>
-                            <td>カミノ・レアル蒸留所</td>
-                            <td>1487(カサドレス傘下)</td>
-                            <td>Camino Real</td>
-                            <td>アランダス地区</td>
-                        </tr>
-                        <tr>
-                            <td>カサドレス蒸留所</td>
-                            <td>1487</td>
-                            <td>CASADORES</td>
-                            <td>アランダス地区</td>
-                        </tr>
-                        <tr>
-                            <td>グルポ・テキレロ・デ・ロスアルトス蒸留所</td>
-                            <td>1548</td>
-                            <td>AHA TORO / Chile Caliente</td>
-                            <td>アランダス地区</td>
-                        </tr>
-                        <tr>
-                            <td>ドン・フリオ蒸留所</td>
-                            <td>1449</td>
-                            <td>DonJurio / Tres Magueyes</td>
-                            <td>アトトニルコ地区</td>
-                        </tr>
-                        <tr>
-                            <td>パトロン蒸留所</td>
-                            <td>1492</td>
-                            <td>PATRON</td>
-                            <td>アトトニルコ地区</td>
-                        </tr>
-                        <tr>
-                            <td>ロス・アルトス・ラ・ホヤ蒸留所</td>
-                            <td>1555</td>
-                            <td>RANCHO LA JOYA</td>
-                            <td>アヨトラン地区</td>
-                        </tr>
-                        <tr>
-                            <td>エクセハシエンダ・ロス・カミチネス蒸留所</td>
-                            <td>1122(クエルボ傘下)</td>
-                            <td>GRAN CENTENARIO</td>
-                            <td>ラ・ラハ地区</td>
-                        </tr>
-
-                        <tr>
-                            <td class="chiho">ハリスコ州 ソナ・セントロ地方</td>
-                        </tr>
-                        <tr>
-                            <th>蒸留所</th>
-                            <th>NOM</th>
-                            <th>取扱銘柄</th>
-                            <th>所在地</th>
-                        </tr>
-                        <tr>
-                            <td>ゴンザレス・ゴンザレス蒸留所</td>
-                            <td>1143</td>
-                            <td>Ole</td>
-                            <td>サポパン地区</td>
-                        </tr>
-                        <tr>
-                            <td>ファナカトラン蒸留所</td>
-                            <td>1551</td>
-                            <td>CASA DE LUNA / La Tilica / MUCHA LIGA</td>
-                            <td>ファナカトラン地区</td>
-                        </tr>
-
-                        <tr>
-                            <td class="chiho">グアナファト州</td>
-                        </tr>
-                        <tr>
-                            <th>蒸留所</th>
-                            <th>NOM</th>
-                            <th>取扱銘柄</th>
-                            <th>所在地</th>
-                        </tr>
-                        <tr>
-                            <td>コラレホ蒸留所</td>
-                            <td>1368</td>
-                            <td>CORRALEJO</td>
-                            <td>ペンハモ地区</td>
-                        </tr>
-                    </table>
+                <div class="scroll-area">
+                    <div class="table-setting">
+                        <table>
+                            <tr>
+                                <td class="chiho">ハリスコ州 バジェス地方</td>
+                            </tr>
+                            <tr>
+                                <th>蒸留所</th>
+                                <th>NOM</th>
+                                <th>取扱銘柄</th>
+                                <th>所在地</th>
+                            </tr>
+                            <tr>
+                                <td>サウザ蒸留所</td>
+                                <td>1102</td>
+                                <td>Sauza</td>
+                                <td>テキーラ地区</td>
+                            </tr>
+                            <tr>
+                                <td>オレンダイン蒸留所</td>
+                                <td>1110</td>
+                                <td>Orendain</td>
+                                <td>テキーラ地区</td>
+                            </tr>
+                            <tr>
+                                <td>クエルボ蒸留所</td>
+                                <td>1122</td>
+                                <td>Jose Cuervo / 1800</td>
+                                <td>テキーラ地区</td>
+                            </tr>
+                            <tr>
+                                <td>ラ・コフラディア蒸留所</td>
+                                <td>1137</td>
+                                <td>Casa Noble / Tres Alegres</td>
+                                <td>テキーラ地区</td>
+                            </tr>
+                            <tr>
+                                <td>ニュートン・エ・イホス蒸留所</td>
+                                <td>1173</td>
+                                <td>EL DESTILADOR</td>
+                                <td>テキーラ地区</td>
+                            </tr>
+                            <tr>
+                                <td>フィノス・デ・アガベ蒸留所</td>
+                                <td>1416</td>
+                                <td>ALACRAN</td>
+                                <td>テキーラ地区</td>
+                            </tr>
+                            <tr>
+                                <td>デル・バジェ・デ・テキーラ蒸留所</td>
+                                <td>1438</td>
+                                <td>Agavales / EL PADRINO</td>
+                                <td>テキーラ地区</td>
+                            </tr>
+                            <tr>
+                                <td>テキーラス・フィノス蒸留所</td>
+                                <td>1472</td>
+                                <td>KAH</td>
+                                <td>テキーラ地区</td>
+                            </tr>
+                            <tr>
+                                <td>カーサ・エラドゥーラ蒸留所</td>
+                                <td>1119</td>
+                                <td>HERRADURA / el Jimador</td>
+                                <td>アマティタン地区</td>
+                            </tr>
+                            <tr>
+                                <td>トレス・ムヘレス蒸留所</td>
+                                <td>1466</td>
+                                <td>Casino AZUL</td>
+                                <td>アマティタン地区</td>
+                            </tr>
+                            <tr>
+                                <td>インモビリアリア・マスト蒸留所</td>
+                                <td>1462</td>
+                                <td>PORFIDIO</td>
+                                <td>ラス・フンタス地区</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="scroll-area">
+                    <div class="table-setting">
+                        <table>
+                            <tr>
+                                <td class="chiho">ハリスコ州 ロスアルトス地方</td>
+                            </tr>
+                            <tr>
+                                <th>蒸留所</th>
+                                <th>NOM</th>
+                                <th>取扱銘柄</th>
+                                <th>所在地</th>
+                            </tr>
+                            <tr>
+                                <td>ペルノ・リカール蒸留所</td>
+                                <td>1111</td>
+                                <td>OLMECA / MARIACHI</td>
+                                <td>アランダス地区</td>
+                            </tr>
+                            <tr>
+                                <td>ラ・アルテーニャ蒸留所</td>
+                                <td>1139</td>
+                                <td>El Tesoro</td>
+                                <td>アランダス地区</td>
+                            </tr>
+                            <tr>
+                                <td>カーサ・カマレナ蒸留所</td>
+                                <td>1456</td>
+                                <td>Casco Viejo</td>
+                                <td>アランダス地区</td>
+                            </tr>
+                            <tr>
+                                <td>カンパニャ・テキレラ・デ・アランダス蒸留所</td>
+                                <td>1460</td>
+                                <td>EL CHARRO / TRES REYS</td>
+                                <td>アランダス地区</td>
+                            </tr>
+                            <tr>
+                                <td>カミノ・レアル蒸留所</td>
+                                <td>1487(カサドレス傘下)</td>
+                                <td>Camino Real</td>
+                                <td>アランダス地区</td>
+                            </tr>
+                            <tr>
+                                <td>カサドレス蒸留所</td>
+                                <td>1487</td>
+                                <td>CASADORES</td>
+                                <td>アランダス地区</td>
+                            </tr>
+                            <tr>
+                                <td>グルポ・テキレロ・デ・ロスアルトス蒸留所</td>
+                                <td>1548</td>
+                                <td>AHA TORO / Chile Caliente</td>
+                                <td>アランダス地区</td>
+                            </tr>
+                            <tr>
+                                <td>ドン・フリオ蒸留所</td>
+                                <td>1449</td>
+                                <td>DonJurio / Tres Magueyes</td>
+                                <td>アトトニルコ地区</td>
+                            </tr>
+                            <tr>
+                                <td>パトロン蒸留所</td>
+                                <td>1492</td>
+                                <td>PATRON</td>
+                                <td>アトトニルコ地区</td>
+                            </tr>
+                            <tr>
+                                <td>ロス・アルトス・ラ・ホヤ蒸留所</td>
+                                <td>1555</td>
+                                <td>RANCHO LA JOYA</td>
+                                <td>アヨトラン地区</td>
+                            </tr>
+                            <tr>
+                                <td>エクセハシエンダ・ロス・カミチネス蒸留所</td>
+                                <td>1122(クエルボ傘下)</td>
+                                <td>GRAN CENTENARIO</td>
+                                <td>ラ・ラハ地区</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="scroll-area">
+                    <div class="table-setting">
+                        <table>
+                            <tr>
+                                <td class="chiho">ハリスコ州 ソナ・セントロ地方</td>
+                            </tr>
+                            <tr>
+                                <th>蒸留所</th>
+                                <th>NOM</th>
+                                <th>取扱銘柄</th>
+                                <th>所在地</th>
+                            </tr>
+                            <tr>
+                                <td>ゴンザレス・ゴンザレス蒸留所</td>
+                                <td>1143</td>
+                                <td>Ole</td>
+                                <td>サポパン地区</td>
+                            </tr>
+                            <tr>
+                                <td>ファナカトラン蒸留所</td>
+                                <td>1551</td>
+                                <td>CASA DE LUNA / La Tilica / MUCHA LIGA</td>
+                                <td>ファナカトラン地区</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="scroll-area">
+                    <div class="table-setting">
+                        <table>
+                            <tr>
+                                <td class="chiho">グアナファト州</td>
+                            </tr>
+                            <tr>
+                                <th>蒸留所</th>
+                                <th>NOM</th>
+                                <th>取扱銘柄</th>
+                                <th>所在地</th>
+                            </tr>
+                            <tr>
+                                <td>コラレホ蒸留所</td>
+                                <td>1368</td>
+                                <td>CORRALEJO</td>
+                                <td>ペンハモ地区</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
         </main>
     </div>

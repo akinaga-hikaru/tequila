@@ -1,0 +1,300 @@
+/* -----------------------------------------------
+    初期設定用
+----------------------------------------------- */
+@import 'reset';
+
+*,
+*:after,
+*:before {
+    font-family: 'Noto Serif JP', serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+p {
+    line-height: 2.0;
+}
+
+/* -----------------------------------------------
+    変数設定
+----------------------------------------------- */
+// width
+$body_width: 1280px;
+$sp: 768px;
+
+// color
+$brown: rgb(94,61,30);
+$beige: beige;
+$bg_wood_dark: url(/image/tequila/bg005.jpg);
+$bg_wood_light: url(/image/tequila/bg037.gif);
+
+/* -----------------------------------------------
+    要素固定設定
+----------------------------------------------- */
+body {
+    background: $bg_wood_dark;
+    color: $brown;
+    font-weight: bold;
+    margin: 0 auto;
+    width: 100%;
+    max-width: $body_width;
+    line-height: 0;
+}
+
+// 枠組み設定
+aside {
+    width: 25%;
+    border-right: 1px solid $brown;
+    @media screen and(max-width: $sp) {
+        width: 100%;
+    }
+}
+main {
+    width: 75%;
+    @media screen and(max-width: $sp) {
+        width: 100%;
+    }
+}
+
+// 大項目
+h2 {
+    background: rgba(255,165,0,0.5);
+    color: $beige;
+    font-size: 25px;
+    padding-bottom: 6px;
+    text-align: center;
+    margin: 0;
+    border: 1px solid $brown;
+    border-left: none;
+    border-right: none;
+}
+
+// 中項目
+h3 {
+    background: $bg_wood_dark;
+    color: $beige;
+    font-size: 20px;
+    padding-bottom: 6px;
+    box-shadow: 0px 5px 10px $beige;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+// テーブルセル設定
+th,td {
+    font-style: italic;
+    padding: 4px;
+    border: 2px solid $brown;
+}
+td {
+    background: $bg_wood_light;
+}
+th {
+    background: $beige;
+}
+
+// リンク設定
+a {
+    &:link {
+        color: $brown;
+        text-decoration: none;
+    }
+    &:visited {
+        color: $brown;
+        text-decoration: underline;
+    }
+    &:hover {
+        color: orange;
+        text-decoration: none;
+    }
+}
+
+// 画像設定
+img {
+    width: 100%;
+    box-shadow: 3px 3px 4px 4px;
+}
+
+/* -----------------------------------------------
+    共通設定
+----------------------------------------------- */
+// コンテンツコンテナ
+.contents-frame {
+    background: rgba(232, 223, 213, 0.5);
+    padding: 20px;
+}
+
+// フレックスボックス
+.flex-box {
+    display: flex;
+    justify-content: space-around;
+    @media screen and(max-width: $sp) {
+        display: block;
+    }
+}
+
+// 表示非表示設定
+.hide-pc {
+    display: none;
+    @media screen and(max-width: $sp) {
+        display: block;
+    }
+}
+.hide-sp {
+    display: block;
+    @media screen and(max-width: $sp) {
+        display: none;
+    }
+}
+
+// テーブル設定
+.table-setting {
+    padding-bottom: 20px;
+    width: 1000px;
+}
+
+// スクロール設定
+.scroll-area {
+    overflow: scroll;
+}
+
+// テーブルヘッダー設定
+.chiho {
+    background: $bg_wood_dark;
+    color: $beige;
+}
+
+// 中央揃え
+.center {
+    margin: 0 auto;
+    text-align: center;
+}
+
+// テキストインデント
+.indent {
+    padding-left: 20px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+// 文章エリア
+.letters-area {
+    background: $bg_wood_light;
+    padding: 15px;
+    box-shadow: 3px 3px 4px 4px;
+    img {
+        width: 100%;
+        max-width: 300px;
+        max-height: 300px;
+    }
+}
+
+// 文章エリア見出し
+.letters-title {
+    font-size: 20px;
+    line-height: 3em;
+    background: rgba(255,165,0,0.5);
+    padding: 5px 10px;
+    border-bottom: 1.5px solid $brown;
+    border-right: 1.5px solid $brown;
+    @media screen and(max-width: $sp) {
+        font-size: 15px;
+    }
+}
+
+// メインタイトル
+.title {
+    background: url(/image/tequila/tequila-lineup-sepia4.png);
+    padding: 20px;
+    padding-bottom: 0;
+}
+.main-title {
+    font-style: italic;
+    font-size: 100px;
+    color: $brown;
+    display: inline;
+    line-height: 1;
+    @media screen and(max-width: $sp) {
+        font-size: 50px;
+    }
+}
+.sub-title {
+    font-style: italic;
+    font-size: 50px;
+    line-height: 2;
+    display: inline;
+    @media screen and(max-width: $sp) {
+        font-size: 25px;
+    }
+}
+
+// リストボタン
+.list-btn {
+    padding: 0px;
+    background: $bg_wood_light;
+    box-shadow: 3px 3px 4px 4px;
+    border-bottom: 1px solid $brown;
+    margin: 0;
+    a {
+        display:block;
+        padding: 10px 20px;
+        &:hover {
+            background: rgba(255,255,255,0.5);
+        }
+    }
+    @media screen and(max-width: $sp) {
+        text-align: center;
+    }
+}
+
+// グローバルメニュー
+.global-menu {
+    font-size: 20px;
+    border-top: 2px solid $brown;
+    padding: 5px;
+    .global-menu-btn {
+        display: inline-block;
+        padding: 0px;
+        margin: 10px;
+        background: $bg_wood_dark;
+        box-shadow: 0px 5px 5px;
+        border-radius: 8px;
+        color: $beige;
+        max-width: 300px;
+        width: 100%;
+        a {
+            color: $beige;
+            display: block;
+            padding-bottom: 4px;
+            margin: 0px;
+            &:hover {
+                background: rgba(200,200,200,0.4);
+            }
+       }
+    }
+}
+
+// トップへ戻るボタン
+.nav-top-btn {
+    margin: 50px;
+    a {
+        text-align: center;
+        background: $beige;
+        padding: 10px;
+        border-radius: 6px;
+        box-shadow: $beige 1px 1px 68px 3px;
+    }
+}
+
+/* -----------------------------------------------
+    ページ別：テキーラとは
+----------------------------------------------- */
+@import 'index';
+
+/* -----------------------------------------------
+    ページ別：商品紹介
+----------------------------------------------- */
+@import 'syouhin';

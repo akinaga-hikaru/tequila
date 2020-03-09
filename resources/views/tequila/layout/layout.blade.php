@@ -11,7 +11,7 @@
         <meta property="og:image" content="./image/tequila/icon/tequila-icon.png">
         <title>@yield('title')</title>
         <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="{{ mix('css/tequila.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
         <script
             src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="

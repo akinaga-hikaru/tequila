@@ -1,0 +1,585 @@
+@charset "UTF-8";
+
+/* -----------------------------------------------
+    初期設定用
+----------------------------------------------- */
+
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* change colours to suit your needs */
+
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* change colours to suit your needs */
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+*,
+*:after,
+*:before {
+  font-family: "Noto Serif JP", serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+p {
+  line-height: 2;
+}
+
+/* -----------------------------------------------
+    変数設定
+----------------------------------------------- */
+
+/* -----------------------------------------------
+    要素固定設定
+----------------------------------------------- */
+
+body {
+  background: url(/image/tequila/bg005.jpg);
+  color: #5e3d1e;
+  font-weight: bold;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
+  line-height: 0;
+}
+
+aside {
+  width: 25%;
+  border-right: 1px solid #5e3d1e;
+}
+
+@media screen and (max-width: 768px) {
+  aside {
+    width: 100%;
+  }
+}
+
+main {
+  width: 75%;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    width: 100%;
+  }
+}
+
+h2 {
+  background: rgba(255, 165, 0, 0.5);
+  color: beige;
+  font-size: 25px;
+  padding-bottom: 6px;
+  text-align: center;
+  margin: 0;
+  border: 1px solid #5e3d1e;
+  border-left: none;
+  border-right: none;
+}
+
+h3 {
+  background: url(/image/tequila/bg005.jpg);
+  color: beige;
+  font-size: 20px;
+  padding-bottom: 6px;
+  box-shadow: 0px 5px 10px beige;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  font-style: italic;
+  padding: 4px;
+  border: 2px solid #5e3d1e;
+}
+
+td {
+  background: url(/image/tequila/bg037.gif);
+}
+
+th {
+  background: beige;
+}
+
+a:link {
+  color: #5e3d1e;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #5e3d1e;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: orange;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  box-shadow: 3px 3px 4px 4px;
+}
+
+/* -----------------------------------------------
+    共通設定
+----------------------------------------------- */
+
+.contents-frame {
+  background: rgba(232, 223, 213, 0.5);
+  padding: 20px;
+}
+
+.flex-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 768px) {
+  .flex-box {
+    display: block;
+  }
+}
+
+.hide-pc {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .hide-pc {
+    display: block;
+  }
+}
+
+.hide-sp {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .hide-sp {
+    display: none;
+  }
+}
+
+.table-setting {
+  padding-bottom: 20px;
+  width: 1000px;
+}
+
+.scroll-area {
+  overflow: scroll;
+}
+
+.chiho {
+  background: url(/image/tequila/bg005.jpg);
+  color: beige;
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.indent {
+  padding-left: 20px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.letters-area {
+  background: url(/image/tequila/bg037.gif);
+  padding: 15px;
+  box-shadow: 3px 3px 4px 4px;
+}
+
+.letters-area img {
+  width: 100%;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.letters-title {
+  font-size: 20px;
+  line-height: 3em;
+  background: rgba(255, 165, 0, 0.5);
+  padding: 5px 10px;
+  border-bottom: 1.5px solid #5e3d1e;
+  border-right: 1.5px solid #5e3d1e;
+}
+
+@media screen and (max-width: 768px) {
+  .letters-title {
+    font-size: 15px;
+  }
+}
+
+.title {
+  background: url(/image/tequila/tequila-lineup-sepia4.png);
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+.main-title {
+  font-style: italic;
+  font-size: 100px;
+  color: #5e3d1e;
+  display: inline;
+  line-height: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .main-title {
+    font-size: 50px;
+  }
+}
+
+.sub-title {
+  font-style: italic;
+  font-size: 50px;
+  line-height: 2;
+  display: inline;
+}
+
+@media screen and (max-width: 768px) {
+  .sub-title {
+    font-size: 25px;
+  }
+}
+
+.list-btn {
+  padding: 0px;
+  background: url(/image/tequila/bg037.gif);
+  box-shadow: 3px 3px 4px 4px;
+  border-bottom: 1px solid #5e3d1e;
+  margin: 0;
+}
+
+.list-btn a {
+  display: block;
+  padding: 10px 20px;
+}
+
+.list-btn a:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+  .list-btn {
+    text-align: center;
+  }
+}
+
+.global-menu {
+  font-size: 20px;
+  border-top: 2px solid #5e3d1e;
+  padding: 5px;
+}
+
+.global-menu .global-menu-btn {
+  display: inline-block;
+  padding: 0px;
+  margin: 10px;
+  background: url(/image/tequila/bg005.jpg);
+  box-shadow: 0px 5px 5px;
+  border-radius: 8px;
+  color: beige;
+  max-width: 300px;
+  width: 100%;
+}
+
+.global-menu .global-menu-btn a {
+  color: beige;
+  display: block;
+  padding-bottom: 4px;
+  margin: 0px;
+}
+
+.global-menu .global-menu-btn a:hover {
+  background: rgba(200, 200, 200, 0.4);
+}
+
+.nav-top-btn {
+  margin: 50px;
+}
+
+.nav-top-btn a {
+  text-align: center;
+  background: beige;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: beige 1px 1px 68px 3px;
+}
+
+/* -----------------------------------------------
+    ページ別：テキーラとは
+----------------------------------------------- */
+
+/* -----------------------------------------------
+    ページ別：テキーラとは
+----------------------------------------------- */
+
+.top_page .letters-area {
+  margin-bottom: 40px;
+}
+
+.top_page .letters-area p {
+  margin-bottom: 10px;
+}
+
+.top_page .letters-title {
+  background: none;
+  border-right: none;
+  border-bottom: 2px solid orange;
+  padding: 5px 0px;
+}
+
+@media screen and (max-width: 768px) {
+  .top_page .side-menu {
+    margin-bottom: 0;
+  }
+}
+
+/* -----------------------------------------------
+    ページ別：商品紹介
+----------------------------------------------- */
+
+/* -----------------------------------------------
+    ページ別：商品紹介
+----------------------------------------------- */
+
+.syouhin .list-btn--syouhin-type {
+  background: beige;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.syouhin .list-btn--syouhin-type a:hover {
+  border-radius: 8px;
+}
+
+.syouhin .letters-area {
+  width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .syouhin .letters-area {
+    width: 100%;
+  }
+}
+
+.syouhin .syouhin-container {
+  margin-bottom: 20px;
+}
+
+.syouhin .syouhin-container a:hover {
+  color: beige;
+}
+
+.syouhin .syouhin-container img {
+  width: 300px;
+  height: 300px;
+}
+
+@media screen and (max-width: 768px) {
+  .syouhin .syouhin-container img {
+    width: 100%;
+    height: 100%;
+    max-width: 375px;
+    max-height: 375px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .syouhin .syouhin-container p {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .syouhin .syouhin-container {
+    border-bottom: 2px solid #5e3d1e;
+    padding: 20px 0;
+    margin: 0 auto;
+  }
+}
+
+.syouhin .syouhin_title {
+  margin-bottom: 30px;
+}
+

@@ -1,0 +1,24 @@
+/* -----------------------------------------------
+    ページ別：テキーラとは
+----------------------------------------------- */
+.top_page {
+    // 文章エリア
+    .letters-area {
+        margin-bottom: 40px;
+        p {
+            margin-bottom: 10px;
+        }
+    }
+    // 文章エリア見出し
+    .letters-title {
+        background: none;
+        border-right: none;
+        border-bottom: 2px solid rgb(255,165,0);
+        padding: 5px 0px;
+    }
+    .side-menu {
+        @media screen and(max-width: $sp) {
+            margin-bottom: 0;
+        }
+    }
+}
