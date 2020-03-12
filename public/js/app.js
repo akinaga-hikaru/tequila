@@ -19363,7 +19363,6 @@ $('.js-maker-list').click(function () {
   $(showClass).fadeIn(1000);
   $('.syouhin_title').hide();
   $('.syouhin_title').show();
-  $('.maker').hide();
 }); // 蒸留所別の商品一覧を押下した時の処理
 
 $('.js-dest-list').click(function () {

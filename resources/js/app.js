@@ -76,7 +76,6 @@ $('.js-maker-list').click(function(){
     $(showClass).fadeIn(1000);
     $('.syouhin_title').hide();
     $('.syouhin_title').show();
-    $('.maker').hide();
 
 });
 
