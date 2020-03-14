@@ -24,3 +24,6 @@ Route::get('tenpo', function () {
     return view('tequila/tenpo');
 });
 Route::get('syouhin', 'SyouhinController@syouhin');
+Route::get('form-input', 'FormController@input');
+Route::post('form-input', 'FormController@postInput');
+Route::get('form-confirm', 'FormController@confirm');
