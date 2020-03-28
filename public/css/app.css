@@ -294,6 +294,8 @@ a:hover {
 
 img {
   width: 100%;
+  height: auto;
+  max-width: 300px;
   box-shadow: 3px 3px 4px 4px;
 }
 
@@ -352,7 +354,8 @@ img {
 
 .table-setting {
   padding-bottom: 20px;
-  width: 1000px;
+  width: 100%;
+  min-width: 1000px;
 }
 
 .chiho {
@@ -527,6 +530,7 @@ img {
   border-right: none;
   border-bottom: 2px solid orange;
   padding: 5px 0px;
+  padding-bottom: 0;
 }
 
 @media screen and (max-width: 768px) {

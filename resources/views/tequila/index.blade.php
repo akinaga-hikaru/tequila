@@ -112,14 +112,18 @@
             <h3 id="bunrui">テキーラの分類</h3>
                 <div class="letters-area">
                     <p>
-                        ■ 原材料の混合度合いによる呼称
+                        <strong class="letters-title">
+                            ■ 原材料の混合度合いによる呼称
+                        </strong>
                     </p>
                     <p class="indent">
                         ・100%アガベ・テキーラ　ー　アガベ・アスール・テキラーナのみを使用<br>
                         ・ミクスト・テキーラ　ー　アガベ・アスール・テキラーナを51％以上使用
                     </p>
                     <p>
-                        ■ 100%アガベ・テキーラの規則
+                        <strong class="letters-title">
+                            ■ 100%アガベ・テキーラの規則
+                        </strong>
                     </p>
                     <p class="indent">
                         1. 原料にアガベ・アスール・テキラーナ以外のものを使用しない<br>
@@ -132,7 +136,7 @@
             <h3 id="kosyou">熟成度合いによる呼称</h3>
                 <div class="scroll-area">
                     <div class="table-setting">
-                        <table class="">
+                        <table>
                             <tr>
                                 <th>呼称</th>
                                 <th>意味</th>
@@ -183,11 +187,11 @@
                     </div>
                     <div class="flex-box">
                         <p>
-                            <strong class="letters-title">メキシコ地図 / テキーラ5州</strong><br>
+                            <strong class="letters-title">■ メキシコ地図（テキーラ5州）</strong><br>
                             <img src="/image/tequila/mexico_whitemap3.gif">
                         </p>
                         <p>
-                            <strong class="letters-title">ハリスコ州地図</strong><br>
+                            <strong class="letters-title">■ ハリスコ州地図</strong><br>
                             <img src="/image/tequila/jalisco_colormap2.png">
                         </p>
                     </div>

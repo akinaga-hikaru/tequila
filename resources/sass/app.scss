@@ -116,6 +116,8 @@ a {
 // 画像設定
 img {
     width: 100%;
+    height: auto;
+    max-width: 300px;
     box-shadow: 3px 3px 4px 4px;
 }
 
@@ -170,7 +172,8 @@ img {
 // テーブル設定
 .table-setting {
     padding-bottom: 20px;
-    width: 1000px;
+    width: 100%;
+    min-width: 1000px;
 }
 
 // テーブルヘッダー設定
