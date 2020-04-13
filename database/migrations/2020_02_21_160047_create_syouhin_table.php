@@ -1037,6 +1037,54 @@ class CreateSyouhinTable extends Migration
                 'contents_review_top' => '甘味&硬めの舌触り',
                 'contents_review_after' => 'テキーラの発酵とメスカルの爽快さの融合したまろやかさ',
             ],
+            // Los Corrales
+            [
+                'class_name' => 'loscorrales',
+                'alt_name' => 'los_corrales_gold',
+                'url' => 'https://www.tequilamatchmaker.com/tequilas/3733-los-corrales-reposado',
+                'image' => 'los_corrales_gold.jpg',
+                'aging' => 'Gold',
+                'contents_alc' => '38%',
+                'contents_dest' => 'ニュートン・エ・イホス蒸留所',
+                'contents_nom' => '1173',
+                'contents_area' => 'ソナ・セントロ地方/サポパン地区',
+                'contents_info' => '',
+                'contents_review_flavor' => 'するりと柔らかなマイルドな香り',
+                'contents_review_top' => '少しとろみのある甘い舌触り',
+                'contents_review_after' => 'アルコール感ありながらも滑らか',
+            ],
+            // Tres Sombreros
+            [
+                'class_name' => 'tressombreros',
+                'alt_name' => 'tres_sombreros_silver',
+                'url' => 'https://www.amazon.co.jp/%E3%83%88%E3%83%AC%E3%82%B9%E3%83%BB%E3%82%BD%E3%83%B3%E3%83%96%E3%83%AC%E3%83%AD%E3%82%B9-12878-%E3%82%B7%E3%83%AB%E3%83%90%E3%83%BC-%E3%83%86%E3%82%AD%E3%83%BC%E3%83%A9-700ml/dp/B00AFBJE24',
+                'image' => 'tres_sombreros_silver.jpg',
+                'aging' => 'Silver',
+                'contents_alc' => '38%',
+                'contents_dest' => 'テキレラ・ラ・マグダレナ蒸留所',
+                'contents_nom' => '1463',
+                'contents_area' => 'ソナ・セントロ地方/サポパン地区',
+                'contents_info' => '81%アガベのミクスト',
+                'contents_review_flavor' => '柔らかな甘みの鼻通り',
+                'contents_review_top' => '舌に転がる滑らかな甘み',
+                'contents_review_after' => 'さっぱりと微アガベのアルコール感',
+            ],
+            // Lokita
+            [
+                'class_name' => 'lokita',
+                'alt_name' => 'lokita_gold',
+                'url' => 'https://www.amazon.co.jp/%E3%83%AD%E3%82%AD%E3%83%BC%E3%82%BF-%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%89-700ml-%E3%83%96%E3%83%AB%E3%83%BC%E3%82%A2%E3%82%AC%E3%83%99100%EF%BC%85-%E3%82%B9%E3%83%94%E3%83%AA%E3%83%83%E3%83%84/dp/B07XCHVBVD',
+                'image' => 'lokita_gold.jpg',
+                'aging' => 'Gold',
+                'contents_alc' => '35%/100%AGAVE',
+                'contents_dest' => 'フィノス・デ・アガベ蒸留所',
+                'contents_nom' => '1416',
+                'contents_area' => 'バジェス地方/テキーラ地区',
+                'contents_info' => '',
+                'contents_review_flavor' => '樽熟成とアガベの甘い香り',
+                'contents_review_top' => 'アガベの甘さが際立つ旨み',
+                'contents_review_after' => '微かなアルコール感と苦味',
+            ],
         ];
 
         // データを初期化
@@ -1060,7 +1108,6 @@ class CreateSyouhinTable extends Migration
                 'contents_review_after' => $each_syouhin['contents_review_after'],
             ]);
         }
-
     }
 
     /**

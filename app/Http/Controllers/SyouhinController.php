@@ -62,6 +62,9 @@ class SyouhinController extends Controller
             ['rehiletepapalote','Rehilete PAPALOTE','1548'],
             ['hussongs','Hussong\'s','1489'],
             ['tesoroazul','TESORO AZUL','1416'],
+            ['loscorrales','Los Corrales','1173'],
+            ['tressombreros','Tres Sombreros','1463'],
+            ['lokita','Lokita','1416'],
             ['santo','Santo','-'],
         ];
 

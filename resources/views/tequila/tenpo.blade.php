@@ -68,6 +68,12 @@
                         <td>港区新橋</td>
                         <td>テキーラ専門の通販サイト。50ブランド近く扱い、国内屈指の品揃え</td>
                     </tr>
+                    <tr>
+                        <td><a href="http://www.premium-tequila.jp/" target="blank">Premium Tequila.jp</a></td>
+                        <td>03-6759-9796</td>
+                        <td>-</td>
+                        <td>テキーラ専門の通販サイト。ブランド別・蒸留所別などで検索でき、また、丁寧に詳細が書いてありファンにはたまらない</td>
+                    </tr>
             </table>
         </div>
     </div>
