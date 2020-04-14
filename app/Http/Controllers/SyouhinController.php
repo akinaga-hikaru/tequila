@@ -17,70 +17,43 @@ class SyouhinController extends Controller
     public function syouhin()
     {
         // DB(tequila)のTable(syouhin)から全てのデータを取得
-        $syouhin_contents = DB::table('syouhin')->get();
+        $syouhin_data_all = DB::table('syouhin')->get();
 
-        // タイトルに入れる値を定義
-        $syouhin_titles =[
-            ['sauza','SAUZA','1102'],
-            ['josecuervo','Jose Cuervo','1122'],
-            ['olmeca','OLMECA','1111'],
-            ['mariachi','MARIACHI','1111'],
-            ['alacran','ALACRAN','1416'],
-            ['ahatoro','AHA TORO','1548'],
-            ['eltesoro','El Tesoro','1139'],
-            ['agavales','Agavales','1438'],
-            ['ole','Ole','1143'],
-            ['orendain','Orendain','1110'],
-            ['camino','Camino','1487'],
-            ['elcharro','EL CHARRO','1460'],
-            ['herradura','HERRADURA','1119'],
-            ['corralejo','CORRALEJO','1368'],
-            ['cazadores','CAZADORES','1487'],
-            ['porfidio','PORFIDIO','1462'],
-            ['casadeluna','CASA DE LUNA','1551'],
-            ['tresreyes','TRES REYES','1460'],
-            ['eljimador','el Jimador','1119'],
-            ['donjurio','DonJurio','1449'],
-            ['casanoble','Casa Noble','1137'],
-            ['kah','KAH','1472'],
-            ['patron','PATRON','1492'],
-            ['latilica','La Tilica','1551'],
-            ['muchaliga','MUCHA LIGA','1551'],
-            ['rancholajoya','RANCHO LA JOYA','1555'],
-            ['cascoviejo','Casco Viejo','1456'],
-            ['eldestilador','EL DESTILADOR','1173'],
-            ['tresalegrescompadres','Tres Alegres Compadres','1137'],
-            ['hijosdevilla','Hijos de Villa','1433'],
-            ['grancentenario','GRAN CENTENARIO','1122'],
-            ['chilecariente','Chile Cariente','1548'],
-            ['tresmagueyes','Tres Magueyes','1449'],
-            ['casinoazul','Casino AZUL','1466'],
-            ['elpadrino','EL PADRINO','1438'],
-            ['lacofradia','LA COFRADIA','1137'],
-            ['donacelia','DONA CELIA','1438'],
-            ['donfernando','Don Fernando','1473'],
-            ['rehiletepapalote','Rehilete PAPALOTE','1548'],
-            ['hussongs','Hussong\'s','1489'],
-            ['tesoroazul','TESORO AZUL','1416'],
-            ['loscorrales','Los Corrales','1173'],
-            ['tressombreros','Tres Sombreros','1463'],
-            ['lokita','Lokita','1416'],
-            ['santo','Santo','-'],
-        ];
-
-        // 配列内の重複するnomを削除
-        $nom = [];
+        // DB取得したデータから'NOM'を抽出し、配列内の重複するnomを削除
         $noms = [];
-        foreach ($syouhin_titles as $item) {
-            if (!in_array($item[2], $nom)) {
-                $nom[] = $item[2];
-                $noms[] = $item;
+        foreach ($syouhin_data_all as $item) {
+            if (!in_array($item->contents_nom, $noms)) {
+                $noms[] = $item->contents_nom;
+            }
+        }
+        // 昇順に並び替え
+        asort($noms);
+
+        // DB取得したデータから必要箇所を抽出し、連想配列化
+        $title = [];
+        foreach ($syouhin_data_all as $item) {
+                $title[] = [
+                    'class' => $item->class_name,
+                    'title' => $item->title_name,
+                    'nom' => $item->contents_nom,
+                ];
+        }
+
+        // 配列内の重複する'title_name'を削除
+        $value_confirm = $titles = [];
+        foreach ($title as $value) {
+            if (!in_array($value['title'], $value_confirm)) {
+                $value_confirm[] = $value['title'];
+                $titles[] = $value;
             }
         }
 
+        // 昇順に並び替え
+        asort($titles);
+
         return view('tequila.syouhin')
-            ->with('syouhin_contents', $syouhin_contents)
-            ->with('syouhin_titles', $syouhin_titles)
+            ->with('syouhin_data_all', $syouhin_data_all)
+            ->with('titles', $titles)
             ->with('noms', $noms);
     }
 }

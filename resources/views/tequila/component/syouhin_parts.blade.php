@@ -5,7 +5,7 @@
         </a><br>
     </p>
     <p class="letters-area">
-        <strong class="letters-title">{{ $aging }}</strong><br>
+        <strong class="letters-title">{{ $title_name }} / {{ $aging }}</strong><br>
         ■ 度数：{!! $contents_alc !!}<br>
         ■ 蒸留所：{!! $contents_dest !!}<br>
         ■ 蒸留所番号：NOM {!! $contents_nom !!}<br>

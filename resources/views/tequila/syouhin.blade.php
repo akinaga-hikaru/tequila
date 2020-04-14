@@ -12,17 +12,17 @@
         <p class="list-btn list-btn--syouhin-type dest-list"><a>蒸留所別</a></p>
         {{-- ブランドリスト --}}
             <ul class="maker">
-                @foreach ($syouhin_titles as $title)
-                    <li class="list-btn js-maker-list {{ $title[2] }} js-title_{{ $title[0] }} " hidden>
-                        <a href="#syouhin_title">{{ $title[1] }}</a>
+                @foreach ($titles as $title)
+                    <li class="list-btn js-maker-list js-title_{{ $title['class'] }} " hidden>
+                        <a href="#syouhin_title">{{ $title['title'] }}</a>
                     </li>
                 @endforeach
             </ul>
         {{-- 蒸留所リスト --}}
             <ul class="dest">
-                @foreach ($noms as $dest_number)
-                    <li class="list-btn js-dest-list nom{{ $dest_number[2] }}_" hidden>
-                        <a href="#syouhin_title">NOM {{ $dest_number[2] }}</a>
+                @foreach ($noms as $nom)
+                    <li class="list-btn js-dest-list nom{{ $nom }}_" hidden>
+                        <a href="#syouhin_title">NOM {{ $nom }}</a>
                     </li>
                 @endforeach
             </ul>
@@ -35,9 +35,10 @@
                 ])
             @endcomponent
         {{-- 商品コンテナ --}}
-            @foreach ($syouhin_contents as $content)
+            @foreach ($syouhin_data_all as $content)
                     @component('tequila.component.syouhin_parts',[
                         'class_name' => $content->class_name,
+                        'title_name' => $content->title_name,
                         'alt_name' => $content->alt_name,
                         'url' => $content->url,
                         'image' => $content->image,
