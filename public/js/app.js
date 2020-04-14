@@ -19308,150 +19308,75 @@ $(function () {
 ----------------------------------------------- */
 // 全商品コンテナを非表示
 
-$('.syouhin-container').hide(); // ブランド別・・・ボタン押下時処理
+$('.syouhin-container').hide(); // 変数設定
 
-$('.maker-list').click(function () {
-  // 選択中のリストのCSS指定
-  $('.dest-list').css({
-    background: "beige",
-    color: "rgb(94,61,30)"
+var bg_beige = {
+  background: "beige",
+  color: "rgb(94,61,30)"
+};
+var bg_wood = {
+  background: "url(/image/tequila/bg005.jpg)",
+  color: "beige"
+};
+var lists = [{
+  'name': 'maker',
+  'time': 1000,
+  'match': /js-maker_[a-z -]*/
+}, // ブランド別
+{
+  'name': 'dest',
+  'time': 1000,
+  'match': /js-dest_[0-9 -]*/
+}, // 蒸留所別
+{
+  'name': 'local',
+  'time': 500,
+  'match': /js-local_[a-z  -]*/
+} // 生産地方別
+]; // 種別ボタン押下時処理
+
+function sortBtn(name, time) {
+  $('.' + name + '-list').click(function () {
+    // 選択中のリストのCSS指定
+    $('.list-btn--syouhin-type').css(bg_beige);
+    $(this).css(bg_wood); // ブランド名リストのみを表示する
+
+    $('.js-list').hide();
+    $('.js-' + name + '-list').slideToggle(time);
   });
-  $('.local-list').css({
-    background: "beige",
-    color: "rgb(94,61,30)"
+}
+
+;
+$.each(lists, function (index, list) {
+  sortBtn(list['name'], list['time']);
+}); // 商品一覧ボタン押下時処理
+
+function listBtn(name, match) {
+  $('.js-' + name + '-list').click(function () {
+    // クリックしたリストのみのテキストを取得し、タイトル(h3)のテキストを変更
+    var text = $(this).text();
+    $('.syouhin_title').text(text); // 選択中のリストのCSS指定
+
+    $('.js-list').find('a').css({
+      background: "none"
+    });
+    $(this).find('a:hover').css({
+      background: "rgba(255,165,0,0.5)"
+    }); // クリックしたリストのみのjs-〜のクラス名を取得
+
+    var js_class = $(this).attr('class').match(match);
+    var show_class = '.' + js_class; // クリックしたリストの商品コンテナのみを表示する
+
+    $('.syouhin-container').hide();
+    $(show_class).fadeIn(1000);
+    $('.syouhin_title').hide();
+    $('.syouhin_title').show();
   });
-  $(this).css({
-    background: "url(/image/tequila/bg005.jpg)",
-    color: "beige"
-  }); // ブランド名リストのみを表示する
+}
 
-  $('.js-dest-list').hide();
-  $('.js-local-list').hide();
-  $('.js-maker-list').slideToggle(1000);
-}); // 蒸留所別・・・ボタン押下時処理
-
-$('.dest-list').click(function () {
-  // 選択中のリストのCSS指定
-  $('.maker-list').css({
-    background: "beige",
-    color: "rgb(94,61,30)"
-  });
-  $('.local-list').css({
-    background: "beige",
-    color: "rgb(94,61,30)"
-  });
-  $(this).css({
-    background: "url(/image/tequila/bg005.jpg)",
-    color: "beige"
-  }); // 蒸留所リストのみを表示する
-
-  $('.js-maker-list').hide();
-  $('.js-local-list').hide();
-  $('.js-dest-list').slideToggle(1000);
-}); // 生産地方別・・・ボタン押下時処理
-
-$('.local-list').click(function () {
-  // 選択中のリストのCSS指定
-  $('.maker-list').css({
-    background: "beige",
-    color: "rgb(94,61,30)"
-  });
-  $('.dest-list').css({
-    background: "beige",
-    color: "rgb(94,61,30)"
-  });
-  $(this).css({
-    background: "url(/image/tequila/bg005.jpg)",
-    color: "beige"
-  }); // 蒸留所リストのみを表示する
-
-  $('.js-maker-list').hide();
-  $('.js-dest-list').hide();
-  $('.js-local-list').slideToggle(500);
-}); // ブランド別・・・商品一覧を押下した時の処理
-
-$('.js-maker-list').click(function () {
-  // クリックしたリストのみのテキストを取得し、タイトル(h3)のテキストを変更
-  var text = $(this).text();
-  $('.syouhin_title').text(text); // 選択中のリストのCSS指定
-
-  $('.js-maker-list').find('a').css({
-    background: "none"
-  });
-  $('.js-dest-list').find('a').css({
-    background: "none"
-  });
-  $('.js-local-list').find('a').css({
-    background: "none"
-  });
-  $(this).find('a').css({
-    background: "rgba(255,165,0,0.5)"
-  }); // クリックしたリストのみのjs-〜のクラス名を取得
-
-  var rep = /js-title_.*/;
-  var jsClass = $(this).attr('class').match(rep);
-  var showClass = '.' + jsClass; // クリックしたリストの商品コンテナのみを表示する
-
-  $('.syouhin-container').hide();
-  $(showClass).fadeIn(1000);
-  $('.syouhin_title').hide();
-  $('.syouhin_title').show();
-}); // 蒸留所別・・・商品一覧を押下した時の処理
-
-$('.js-dest-list').click(function () {
-  // クリックしたリストのみのテキストを取得し、タイトル（h3）を変更
-  var text = $(this).text();
-  $('.syouhin_title').text(text); // 選択中のリストのCSS指定
-
-  $('.js-dest-list').find('a').css({
-    background: "none"
-  });
-  $('.js-maker-list').find('a').css({
-    background: "none"
-  });
-  $('.js-local-list').find('a').css({
-    background: "none"
-  });
-  $(this).find('a').css({
-    background: "rgba(255,165,0,0.5)"
-  }); // クリックしたリストのみのjs-〜のクラス名を取得
-
-  var _int = /nom.*_/;
-  var jsClassInt = $(this).attr('class').match(_int);
-  var showClassInt = '.' + jsClassInt; // クリックしたリストの商品コンテナのみを表示する
-
-  $('.syouhin-container').hide();
-  $(showClassInt).fadeIn(1000);
-  $('.syouhin_title').hide();
-  $('.syouhin_title').show();
-}); // 生産地方別・・・商品一覧を押下した時の処理
-
-$('.js-local-list').click(function () {
-  // クリックしたリストのみのテキストを取得し、タイトル（h3）を変更
-  var text = $(this).text();
-  $('.syouhin_title').text(text); // 選択中のリストのCSS指定
-
-  $('.js-dest-list').find('a').css({
-    background: "none"
-  });
-  $('.js-maker-list').find('a').css({
-    background: "none"
-  });
-  $('.js-local-list').find('a').css({
-    background: "none"
-  });
-  $(this).find('a').css({
-    background: "rgba(255,165,0,0.5)"
-  }); // クリックしたリストのみのjs-〜のクラス名を取得
-
-  var _int2 = /js-local_.*/;
-  var jsClassInt = $(this).attr('class').match(_int2);
-  var showClassInt = '.' + jsClassInt; // クリックしたリストの商品コンテナのみを表示する
-
-  $('.syouhin-container').hide();
-  $(showClassInt).fadeIn(1000);
-  $('.syouhin_title').hide();
-  $('.syouhin_title').show();
+;
+$.each(lists, function (index, list) {
+  listBtn(list['name'], list['match']);
 });
 
 /***/ }),

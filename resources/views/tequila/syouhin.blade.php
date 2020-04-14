@@ -5,16 +5,21 @@
 @section('body_class','syouhin')
 
 @section('main')
+@php
+    $maker = count($titles);
+    $dest = count($noms);
+    $area = count($locals);
+@endphp
 
 <div class="flex-box">
     <aside class="contents-frame">
-        <p class="list-btn list-btn--syouhin-type maker-list"><a>ブランド別</a></p>
-        <p class="list-btn list-btn--syouhin-type dest-list"><a>蒸留所別</a></p>
-        <p class="list-btn list-btn--syouhin-type local-list"><a>生産地方別</a></p>
+        <p class="list-btn list-btn--syouhin-type maker-list"><a>ブランド別（{{ $maker }}）</a></p>
+        <p class="list-btn list-btn--syouhin-type dest-list"><a>蒸留所別（{{ $dest }}）</a></p>
+        <p class="list-btn list-btn--syouhin-type local-list"><a>生産地方別（{{ $area }}）</a></p>
         {{-- ブランドリスト --}}
             <ul class="maker">
                 @foreach ($titles as $title)
-                    <li class="list-btn js-maker-list js-title_{{ $title['title_id'] }} " hidden>
+                    <li class="list-btn js-list js-maker-list js-maker_{{ $title['title_id'] }} " hidden>
                         <a href="#syouhin_title">{{ $title['title'] }}</a>
                     </li>
                 @endforeach
@@ -22,7 +27,7 @@
         {{-- 蒸留所リスト --}}
             <ul class="dest">
                 @foreach ($noms as $nom)
-                    <li class="list-btn js-dest-list nom{{ $nom['nom'] }}_" hidden>
+                    <li class="list-btn js-list js-dest-list js-dest_{{ $nom['nom'] }}" hidden>
                         <a href="#syouhin_title">
                             NOM {{ $nom['nom'] }} <br>
                             <span class="small-text">{{ $nom['dest'] }}</span>
@@ -33,7 +38,7 @@
         {{-- 生産地方リスト --}}
         <ul class="local">
             @foreach ($locals as $local)
-                <li class="list-btn js-local-list js-local_{{ $local['local_id'] }}" hidden>
+                <li class="list-btn js-list js-local-list js-local_{{ $local['local_id'] }}" hidden>
                     <a href="#syouhin_title">{{ $local['local'] }}</a>
                 </li>
             @endforeach
