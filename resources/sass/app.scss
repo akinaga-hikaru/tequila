@@ -224,6 +224,10 @@ img {
     background: url(/image/tequila/tequila-lineup-sepia4.png);
     padding: 20px;
     padding-bottom: 0;
+    background-size: 2080px;
+    @media screen and(max-width: $sp) {
+        background-size: 1080px;
+    }
 }
 .main-title {
     font-style: italic;
@@ -258,6 +262,12 @@ img {
     a {
         display: block;
         padding: 10px 20px;
+        .small-text {
+            font-size: 11px;
+            @media screen and(max-width: $sp) {
+                font-size: 13px;
+            }
+        }
         &:hover {
             background: rgba(255,255,255,0.5);
         }

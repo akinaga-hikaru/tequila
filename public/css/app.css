@@ -408,6 +408,13 @@ img {
   background: url(/image/tequila/tequila-lineup-sepia4.png);
   padding: 20px;
   padding-bottom: 0;
+  background-size: 2080px;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    background-size: 1080px;
+  }
 }
 
 .main-title {
@@ -452,6 +459,16 @@ img {
 .list-btn a {
   display: block;
   padding: 10px 20px;
+}
+
+.list-btn a .small-text {
+  font-size: 11px;
+}
+
+@media screen and (max-width: 768px) {
+  .list-btn a .small-text {
+    font-size: 13px;
+  }
 }
 
 .list-btn a:hover {

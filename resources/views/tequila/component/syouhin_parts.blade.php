@@ -1,4 +1,4 @@
-<div class="flex-box syouhin-container nom{{ $contents_nom }}_ js-title_{{ $class_name }}">
+<div class="flex-box syouhin-container nom{{ $contents_nom }}_ js-title_{{ $title_id }} js-local_{{ $contents_local_id }}">
     <p>
         <a href="{{ $url }}" alt="{{ $alt_name }} 商品紹介" target="_blank">
             <img src="/image/tequila/{{ $image }}" alt="{{ $alt_name }}">
@@ -9,7 +9,7 @@
         ■ 度数：{!! $contents_alc !!}<br>
         ■ 蒸留所：{!! $contents_dest !!}<br>
         ■ 蒸留所番号：NOM {!! $contents_nom !!}<br>
-        ■ 生産地域：{!! $contents_area !!}<br>
+        ■ 生産地域：{!! $contents_local !!} / {!! $contents_area !!}<br>
         @if (!empty($contents_info))
             ■ 情報：{!! $contents_info !!}<br>
         @endif

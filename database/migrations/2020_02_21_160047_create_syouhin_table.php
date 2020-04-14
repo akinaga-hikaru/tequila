@@ -18,8 +18,8 @@ class CreateSyouhinTable extends Migration
         // カラム作成
         Schema::create('syouhin', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('class_name')->comment('ブランド名');
-            $table->string('title_name')->comment('タイトル');
+            $table->string('title_id')->comment('ブランド名ID');
+            $table->string('title_name')->comment('ブランド名');
             $table->string('alt_name')->comment('種類');
             $table->string('url')->comment('商品の外部URL');
             $table->string('image')->comment('イメージ画像');
@@ -27,6 +27,8 @@ class CreateSyouhinTable extends Migration
             $table->string('contents_alc')->comment('度数');
             $table->string('contents_dest')->comment('蒸留所');
             $table->string('contents_nom')->comment('蒸留所番号');
+            $table->string('contents_local_id')->comment('蒸留地方ID');
+            $table->string('contents_local')->comment('蒸留地方');
             $table->string('contents_area')->comment('蒸留エリア');
             $table->string('contents_info')->comment('情報');
             $table->string('contents_review_flavor')->comment('レビュー：香り');
@@ -44,7 +46,7 @@ class CreateSyouhinTable extends Migration
         // テーブルにデータを挿入
         foreach ($syouhin as $each_syouhin) {
             DB::table('syouhin')->insert([
-                'class_name' => $each_syouhin['class_name'],
+                'title_id' => $each_syouhin['title_id'],
                 'title_name' => $each_syouhin['title_name'],
                 'alt_name' => $each_syouhin['alt_name'],
                 'url' => $each_syouhin['url'],
@@ -53,6 +55,8 @@ class CreateSyouhinTable extends Migration
                 'contents_alc' => $each_syouhin['contents_alc'],
                 'contents_dest' => $each_syouhin['contents_dest'],
                 'contents_nom' => $each_syouhin['contents_nom'],
+                'contents_local_id' => $each_syouhin['contents_local_id'],
+                'contents_local' => $each_syouhin['contents_local'],
                 'contents_area' => $each_syouhin['contents_area'],
                 'contents_info' => $each_syouhin['contents_info'],
                 'contents_review_flavor' => $each_syouhin['contents_review_flavor'],
