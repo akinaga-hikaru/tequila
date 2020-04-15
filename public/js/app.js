@@ -19318,22 +19318,27 @@ var bg_wood = {
   background: "url(/image/tequila/bg005.jpg)",
   color: "beige"
 };
-var lists = [{
+var lists = [// ブランド別
+{
   'name': 'maker',
   'time': 1000,
   'match': /js-maker_[a-z -]*/
-}, // ブランド別
+}, // 蒸留所別
 {
   'name': 'dest',
   'time': 1000,
   'match': /js-dest_[0-9 -]*/
-}, // 蒸留所別
+}, // 生産地方別
 {
   'name': 'local',
   'time': 500,
   'match': /js-local_[a-z  -]*/
-} // 生産地方別
-]; // 種別ボタン押下時処理
+}, // 熟成度合い別
+{
+  'name': 'aging',
+  'time': 750,
+  'match': /js-aging_[A-z -]*/
+}]; // 種別ボタン押下時処理
 
 function sortBtn(name, time) {
   $('.' + name + '-list').click(function () {

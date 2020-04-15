@@ -23,6 +23,7 @@ class CreateSyouhinTable extends Migration
             $table->string('alt_name')->comment('種類');
             $table->string('url')->comment('商品の外部URL');
             $table->string('image')->comment('イメージ画像');
+            $table->string('aging_sort')->comment('熟成度合い大分類');
             $table->string('aging')->comment('熟成名称');
             $table->string('contents_alc')->comment('度数');
             $table->string('contents_dest')->comment('蒸留所');
@@ -51,6 +52,7 @@ class CreateSyouhinTable extends Migration
                 'alt_name' => $each_syouhin['alt_name'],
                 'url' => $each_syouhin['url'],
                 'image' => $each_syouhin['image'],
+                'aging_sort' => $each_syouhin['aging_sort'],
                 'aging' => $each_syouhin['aging'],
                 'contents_alc' => $each_syouhin['contents_alc'],
                 'contents_dest' => $each_syouhin['contents_dest'],

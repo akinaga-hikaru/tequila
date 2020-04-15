@@ -32,9 +32,14 @@ $('.syouhin-container').hide();
 var bg_beige = {background:"beige",color:"rgb(94,61,30)"};
 var bg_wood = {background:"url(/image/tequila/bg005.jpg)",color:"beige"};
 var lists = [
-    {'name': 'maker', 'time': 1000, 'match': /js-maker_[a-z -]*/}, // ブランド別
-    {'name': 'dest', 'time': 1000, 'match': /js-dest_[0-9 -]*/}, // 蒸留所別
-    {'name': 'local', 'time': 500, 'match': /js-local_[a-z  -]*/}, // 生産地方別
+    // ブランド別
+    {'name': 'maker', 'time': 1000, 'match': /js-maker_[a-z -]*/},
+    // 蒸留所別
+    {'name': 'dest', 'time': 1000, 'match': /js-dest_[0-9 -]*/},
+    // 生産地方別
+    {'name': 'local', 'time': 500, 'match': /js-local_[a-z  -]*/},
+    // 熟成度合い別
+    {'name': 'aging', 'time': 750, 'match': /js-aging_[A-z -]*/},
 ];
 
 // 種別ボタン押下時処理

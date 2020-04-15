@@ -9,6 +9,7 @@
     $maker = count($titles);
     $dest = count($noms);
     $area = count($locals);
+    $taste = count($agings);
 @endphp
 
 <div class="flex-box">
@@ -17,6 +18,7 @@
             <p class="list-btn list-btn--syouhin-type maker-list"><a>ブランド別（{{ $maker }}）</a></p>
             <p class="list-btn list-btn--syouhin-type dest-list"><a>蒸留所別（{{ $dest }}）</a></p>
             <p class="list-btn list-btn--syouhin-type local-list"><a>生産地方別（{{ $area }}）</a></p>
+            <p class="list-btn list-btn--syouhin-type aging-list"><a>熟成度合い別（{{ $taste }}）</a></p>
         {{-- 種別ボタンend --}}
         {{-- ブランドリストstart --}}
             <ul class="maker">
@@ -48,6 +50,18 @@
                 @endforeach
             </ul>
         {{-- 生産地方リストstart --}}
+        {{-- 熟成度合いリストstart --}}
+            <ul class="aging">
+                @foreach ($agings as $aging)
+                    <li class="list-btn js-list js-aging-list js-aging_{{ $aging['aging_id'] }}" hidden>
+                        <a href="#syouhin_title">
+                            {{ $aging['aging_name'] }} <br>
+                            <span class="small-text">{{ $aging['description'] }}</span>
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+        {{-- 熟成度合いリストend --}}
     </aside>
     <main class="contents-frame">
         {{-- ブランドタイトルstart --}}
@@ -64,6 +78,7 @@
                         'alt_name' => $content->alt_name,
                         'url' => $content->url,
                         'image' => $content->image,
+                        'aging_sort' => $content->aging_sort,
                         'aging' => $content->aging,
                         'contents_alc' => $content->contents_alc,
                         'contents_dest' => $content->contents_dest,

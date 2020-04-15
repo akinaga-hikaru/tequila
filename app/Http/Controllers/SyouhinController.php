@@ -66,10 +66,24 @@ class SyouhinController extends Controller
         }
         $locals = doubleDelete($local, 'local');
 
+        // 熟成度合い設定・・・連想配列化
+        $agings =[
+            ['aging_id' => 'Blanco', 'aging_name' => 'ブランコ', 'description' => '〜熟成期間1ヶ月未満（シルバー・プラタ）〜'],
+            ['aging_id' => 'Hoben', 'aging_name' => 'ホベン', 'description' => '〜ブランコにレポサドかアネホを混合〜'],
+            ['aging_id' => 'Gold', 'aging_name' => 'ゴールド', 'description' => '〜特に規定なし〜'],
+            ['aging_id' => 'Reposado', 'aging_name' => 'レポサド', 'description' => '〜熟成期間最低2ヶ月〜'],
+            ['aging_id' => 'Anejo', 'aging_name' => 'アネホ', 'description' => '〜熟成期間最低1年〜'],
+            ['aging_id' => 'ExtraAnejo', 'aging_name' => 'エクストラアネホ', 'description' => '〜熟成期間最低3年〜'],
+            ['aging_id' => 'Others', 'aging_name' => 'その他', 'description' => '〜上記以外の特殊なもの〜'],
+            ['aging_id' => 'Mezcal', 'aging_name' => '※メスカル', 'description' => '〜原材料は同じでもテキーラではないもの〜'],
+            ['aging_id' => 'Cocktail', 'aging_name' => '※カクテル', 'description' => '〜添加物ありのリキュール〜'],
+        ];
+
         return view('tequila.syouhin')
             ->with('syouhin_data_all', $syouhin_data_all)
             ->with('titles', $titles)
             ->with('locals', $locals)
-            ->with('noms', $noms);
+            ->with('noms', $noms)
+            ->with('agings', $agings);
     }
 }
