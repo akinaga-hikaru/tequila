@@ -612,6 +612,10 @@ img {
 }
 
 @media screen and (max-width: 768px) {
+  .syouhin .syouhin-container {
+    width: 80%;
+  }
+
   .syouhin .syouhin-container p {
     margin-bottom: 20px;
   }
