@@ -13,10 +13,12 @@
 
 <div class="flex-box">
     <aside class="contents-frame">
-        <p class="list-btn list-btn--syouhin-type maker-list"><a>ブランド別（{{ $maker }}）</a></p>
-        <p class="list-btn list-btn--syouhin-type dest-list"><a>蒸留所別（{{ $dest }}）</a></p>
-        <p class="list-btn list-btn--syouhin-type local-list"><a>生産地方別（{{ $area }}）</a></p>
-        {{-- ブランドリスト --}}
+        {{-- 種別ボタンstart --}}
+            <p class="list-btn list-btn--syouhin-type maker-list"><a>ブランド別（{{ $maker }}）</a></p>
+            <p class="list-btn list-btn--syouhin-type dest-list"><a>蒸留所別（{{ $dest }}）</a></p>
+            <p class="list-btn list-btn--syouhin-type local-list"><a>生産地方別（{{ $area }}）</a></p>
+        {{-- 種別ボタンend --}}
+        {{-- ブランドリストstart --}}
             <ul class="maker">
                 @foreach ($titles as $title)
                     <li class="list-btn js-list js-maker-list js-maker_{{ $title['title_id'] }} " hidden>
@@ -24,7 +26,8 @@
                     </li>
                 @endforeach
             </ul>
-        {{-- 蒸留所リスト --}}
+        {{-- ブランドリストend --}}
+        {{-- 蒸留所リストstart --}}
             <ul class="dest">
                 @foreach ($noms as $nom)
                     <li class="list-btn js-list js-dest-list js-dest_{{ $nom['nom'] }}" hidden>
@@ -35,22 +38,25 @@
                     </li>
                 @endforeach
             </ul>
-        {{-- 生産地方リスト --}}
-        <ul class="local">
-            @foreach ($locals as $local)
-                <li class="list-btn js-list js-local-list js-local_{{ $local['local_id'] }}" hidden>
-                    <a href="#syouhin_title">{{ $local['local'] }}</a>
-                </li>
-            @endforeach
-        </ul>
+        {{-- 蒸留所リストend --}}
+        {{-- 生産地方リストstart --}}
+            <ul class="local">
+                @foreach ($locals as $local)
+                    <li class="list-btn js-list js-local-list js-local_{{ $local['local_id'] }}" hidden>
+                        <a href="#syouhin_title">{{ $local['local'] }}</a>
+                    </li>
+                @endforeach
+            </ul>
+        {{-- 生産地方リストstart --}}
     </aside>
     <main class="contents-frame">
-        {{-- ブランドタイトル --}}
+        {{-- ブランドタイトルstart --}}
             @component('tequila.component.syouhin_container',[
                 'syouhin_name' => '選択すると表示します',
                 ])
             @endcomponent
-        {{-- 商品コンテナ --}}
+        {{-- ブランドタイトルend --}}
+        {{-- 商品コンテナstart --}}
             @foreach ($syouhin_data_all as $content)
                     @component('tequila.component.syouhin_parts',[
                         'title_id' => $content->title_id,
@@ -72,7 +78,7 @@
                     ])
                     @endcomponent
             @endforeach
-
+        {{-- 商品コンテナend --}}
     </main>
 </div>
 @endsection
