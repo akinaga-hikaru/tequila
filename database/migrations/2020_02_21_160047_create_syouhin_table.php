@@ -32,8 +32,8 @@ class CreateSyouhinTable extends Migration
             $table->string('contents_area')->comment('蒸留エリア');
             $table->string('contents_info')->comment('情報');
             $table->string('contents_review_flavor')->comment('レビュー：香り');
-            $table->string('contents_review_top')->comment('レビュー：トップノート');
-            $table->string('contents_review_after')->comment('レビュー：後味');
+            $table->string('contents_review_top')->comment('レビュー：味');
+            $table->string('contents_review_after')->comment('レビュー：余韻');
             $table->timestamps();
         });
 

@@ -972,7 +972,7 @@ class SyouhinTable extends Model
             'contents_local_id' => 'altos',
             'contents_local' => 'ロスアルトス地方',
             'contents_area' => 'ラ・ラハ地区',
-            'contents_info' => '',
+            'contents_info' => 'クエルボ蒸留所の傘下',
             'contents_review_flavor' => '華やかに口の中に広がるバニラの薫香',
             'contents_review_top' => 'まろやかな甘味',
             'contents_review_after' => '',
