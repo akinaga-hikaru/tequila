@@ -17,6 +17,10 @@
 
 p {
     line-height: 2.0;
+    font-size: 15px;
+    @media screen and(max-width: 768px) {
+        font-size: 12px;
+    }
 }
 
 /* -----------------------------------------------
@@ -71,6 +75,11 @@ h2 {
     border: 1px solid $brown;
     border-left: none;
     border-right: none;
+    @media screen and(max-width: $sp) {
+        font-size: 20px;
+        line-height: 1.5;
+        padding-bottom: 3px;
+    }
 }
 
 // 中項目
@@ -82,6 +91,10 @@ h3 {
     box-shadow: 0px 5px 10px $beige;
     text-align: center;
     margin-bottom: 20px;
+    @media screen and(max-width: $sp) {
+        font-size: 16px;
+        padding-bottom: 3px;
+    }
 }
 
 // テーブルセル設定
@@ -89,6 +102,9 @@ th,td {
     font-style: italic;
     padding: 8px 12px;
     border: 2px solid $brown;
+    @media screen and(max-width: $sp) {
+        font-size: 12px;
+    }
 }
 td {
     background: $bg_wood_light;
@@ -286,6 +302,9 @@ img {
     font-size: 20px;
     border-top: 2px solid $brown;
     padding: 5px;
+    @media screen and(max-width: $sp) {
+        font-size: 16px;
+    }
     .global-menu-btn {
         display: inline-block;
         padding: 0px;
