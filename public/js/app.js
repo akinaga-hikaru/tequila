@@ -19308,7 +19308,8 @@ $(function () {
 ----------------------------------------------- */
 // 全商品コンテナを非表示
 
-$('.syouhin-container').hide(); // 変数設定
+$('.syouhin-container').hide();
+$('.list-btn--syouhin-type').hide(); // 変数設定
 
 var bg_beige = {
   background: "beige",
@@ -19338,13 +19339,27 @@ var lists = [// ブランド別
   'name': 'aging',
   'time': 750,
   'match': /js-aging_[A-z -]*/
-}]; // 種別ボタン押下時処理
+}];
+$('.js-list-toggle').click(function () {
+  // 種別ボタンの表示非表示
+  $('.list-btn--syouhin-type').slideToggle(500); // 全てのリストを非表示
+
+  $('.js-list').hide(); // テキスト表示変更
+
+  var btn_text = $(this).text();
+
+  if (btn_text == "ボタンを表示") {
+    $('.js-list-toggle').text('ボタンを非表示');
+  } else {
+    $('.js-list-toggle').text('ボタンを表示');
+  }
+}); // 種別ボタン押下時処理
 
 function sortBtn(name, time) {
   $('.' + name + '-list').click(function () {
     // 選択中のリストのCSS指定
     $('.list-btn--syouhin-type').css(bg_beige);
-    $(this).css(bg_wood); // ブランド名リストのみを表示する
+    $(this).css(bg_wood); // クリックしたリストのみを表示する
 
     $('.js-list').hide();
     $('.js-' + name + '-list').slideToggle(time);
@@ -19360,7 +19375,7 @@ function listBtn(name, match) {
   $('.js-' + name + '-list').click(function () {
     // クリックしたリストのみのテキストを取得し、タイトル(h3)のテキストを変更
     var text = $(this).text();
-    $('.syouhin_title').text(text); // 選択中のリストのCSS指定
+    $('.js-syouhin-title').text(text); // 選択中のリストのCSS指定
 
     $('.js-list').find('a').css({
       background: "none"

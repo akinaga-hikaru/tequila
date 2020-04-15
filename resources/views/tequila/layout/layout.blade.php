@@ -19,22 +19,22 @@
         </script>
     </head>
     <body class="@yield('body_class')">
-        <div class="center">
+        <div class="center title-area">
             <header id="top" class="title center">
                 <a href="tequila">
                     <p class="main-title">テキーラ全書</p><br>
                     <p class="sub-title">〜Tequipedia〜</p>
                 </a>
-            <ul class="global-menu hide-pc">
-                <li class="global-menu-btn js-menu-btn--open">Menu</li>
-            </ul>
-            <ul class="global-menu js-global-menu-list hide-sp">
-                <li class="global-menu-btn"><a href="/">テキーラとは</a></li>
-                <li class="global-menu-btn"><a href="syouhin">商品紹介</a></li>
-                <li class="global-menu-btn"><a href="tenpo">取扱店紹介</a></li>
-                <li class="global-menu-btn"><a href="bunken">参考文献</a></li>
-            </ul>
-        </header>
+                <p class="hide-pc global-menu-open js-menu-btn--open">≡</p>
+                <ul class="global-menu js-global-menu-list hide-sp">
+                    <li class="global-menu-btn"><a href="/">テキーラとは</a></li>
+                    <li class="global-menu-btn"><a href="syouhin">商品紹介</a></li>
+                    <li class="global-menu-btn"><a href="tenpo">取扱店紹介</a></li>
+                    <li class="global-menu-btn"><a href="bunken">参考文献</a></li>
+                </ul>
+            </header>
+        </div>
+        <div>
             <h2 id="tequilatoha">@yield('section')</a></h2>
         </div>
 

@@ -15,9 +15,15 @@
     // 文章エリア
     .letters-area {
         width: 50%;
+        max-width: 460px;
         @media screen and(max-width: $sp) {
             width: 100%;
+            font-size: 13px;
         }
+    }
+    // 文章エリア
+    .text-area {
+        width: 430px;
     }
 
     // 商品コンテナ内
@@ -42,9 +48,6 @@
         }
         @media screen and(max-width: $sp) {
             width: 80%;
-            p {
-                margin-bottom: 20px;
-            }
         }
     }
 

@@ -221,17 +221,21 @@ img {
     共通：タイトル
 ----------------------------------------------- */
 .title {
-    background: url(/image/tequila/tequila-lineup-sepia4.png);
+    background-color: rgba(220,220,220,0.5);
     padding: 20px;
     padding-bottom: 0;
+}
+.title-area {
+    background-image: url(/image/tequila/tequila-lineup-sepia4.png);
     background-size: 2080px;
     @media screen and(max-width: $sp) {
-        background-size: 1080px;
+        background-size: 780px;
     }
 }
 .main-title {
     font-style: italic;
     font-size: 100px;
+    font-weight: bolder;
     color: $brown;
     display: inline;
     line-height: 1;
@@ -301,6 +305,17 @@ img {
                 background: rgba(200,200,200,0.4);
             }
        }
+    }
+    // SPのメニューボタン（≡）
+    &-open {
+        font-size: 50px;
+        font-style: normal;
+        line-height: 1;
+        border-radius: 4px;
+        float: right;
+        position: relative;
+        top: -2px;
+        right: -10px;
     }
 }
 

@@ -14,6 +14,14 @@
 
 <div class="flex-box">
     <aside class="contents-frame">
+        {{-- 種別ボタン表示ボタンstart --}}
+            @component('tequila.component.syouhin_container',[
+                'title_id' => '',
+                'syouhin_id' => 'js-list-toggle',
+                'syouhin_name' => 'ボタンを表示',
+                ])
+            @endcomponent
+        {{-- 種別ボタン表示ボタンend --}}
         {{-- 種別ボタンstart --}}
             <p class="list-btn list-btn--syouhin-type maker-list"><a>ブランド別（{{ $maker }}）</a></p>
             <p class="list-btn list-btn--syouhin-type dest-list"><a>蒸留所別（{{ $dest }}）</a></p>
@@ -66,6 +74,8 @@
     <main class="contents-frame">
         {{-- ブランドタイトルstart --}}
             @component('tequila.component.syouhin_container',[
+                'title_id' => 'syouhin_title',
+                'syouhin_id' => 'js-syouhin-title',
                 'syouhin_name' => '選択すると表示します',
                 ])
             @endcomponent
