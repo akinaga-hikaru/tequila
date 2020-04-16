@@ -19348,10 +19348,10 @@ $('.js-list-toggle').click(function () {
 
   var btn_text = $(this).text();
 
-  if (btn_text == "ボタンを表示") {
-    $('.js-list-toggle').text('ボタンを非表示');
+  if (btn_text == "ボタンを表示 ▼") {
+    $('.js-list-toggle').text('ボタンを非表示 ▲');
   } else {
-    $('.js-list-toggle').text('ボタンを表示');
+    $('.js-list-toggle').text('ボタンを表示 ▼');
   }
 }); // 種別ボタン押下時処理
 

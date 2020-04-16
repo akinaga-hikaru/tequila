@@ -51,10 +51,10 @@ $('.js-list-toggle').click(function(){
     $('.js-list').hide();
     // テキスト表示変更
     var btn_text = $(this).text();
-    if (btn_text == "ボタンを表示"){
-        $('.js-list-toggle').text('ボタンを非表示');
+    if (btn_text == "ボタンを表示 ▼"){
+        $('.js-list-toggle').text('ボタンを非表示 ▲');
     }else{
-        $('.js-list-toggle').text('ボタンを表示');
+        $('.js-list-toggle').text('ボタンを表示 ▼');
     }
 });
 

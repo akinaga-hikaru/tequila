@@ -8,7 +8,7 @@
     <div class="flex-box">
         <aside class="contents-frame">
             <div>
-                <h3 class="side-menu js-side-btn--open">項目一覧</h3>
+                <h3 class="side-menu js-side-btn--open">項目一覧 ▼</h3>
             </div>
             <ul class="js-side-list hide-sp">
                 <li class="list-btn"><a href="#genryou">テキーラの原料</a></li>

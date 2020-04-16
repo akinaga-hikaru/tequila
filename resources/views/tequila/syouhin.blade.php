@@ -18,7 +18,7 @@
             @component('tequila.component.syouhin_container',[
                 'title_id' => '',
                 'syouhin_id' => 'js-list-toggle',
-                'syouhin_name' => 'ボタンを表示',
+                'syouhin_name' => 'ボタンを表示 ▼',
                 ])
             @endcomponent
         {{-- 種別ボタン表示ボタンend --}}
@@ -53,7 +53,10 @@
             <ul class="local">
                 @foreach ($locals as $local)
                     <li class="list-btn js-list js-local-list js-local_{{ $local['local_id'] }}" hidden>
-                        <a href="#syouhin_title">{{ $local['local'] }}</a>
+                        <a href="#syouhin_title">
+                            {{ $local['local'] }} <br>
+                            <span class="small-text">{{ $local['description'] }}</span>
+                        </a>
                     </li>
                 @endforeach
             </ul>
@@ -76,7 +79,7 @@
             @component('tequila.component.syouhin_container',[
                 'title_id' => 'syouhin_title',
                 'syouhin_id' => 'js-syouhin-title',
-                'syouhin_name' => '選択すると表示します',
+                'syouhin_name' => '選択すると表示されます',
                 ])
             @endcomponent
         {{-- ブランドタイトルend --}}

@@ -57,17 +57,24 @@ class SyouhinController extends Controller
         $noms = doubleDelete($nom, 'nom');
 
         // 生産地方抽出・・・DB取得したデータから生産地方を抽出し、連想配列化
-        $local = [];
-        foreach ($syouhin_data_all as $item) {
-            $local[] = [
-                'local' => $item->contents_local,
-                'local_id' => $item->contents_local_id,
-            ];
-        }
-        $locals = doubleDelete($local, 'local');
+        $locals = [
+            ['local_id' => 'valles', 'local' => 'バジェス地方', 'description' => '〜新樽を用い辛味・苦味が特徴〜'],
+            ['local_id' => 'altos', 'local' => 'ロスアルトス地方', 'description' => '〜中古樽を用い旨味・甘味が特徴〜'],
+            ['local_id' => 'centro', 'local' => 'ソナ・セントロ地方', 'description' => '〜上記二つの地方の中間に位置する〜'],
+            ['local_id' => 'others', 'local' => 'その他', 'description' => '〜テキーラ5州で作られたもの〜'],
+
+        ];
+        // $local = [];
+        // foreach ($syouhin_data_all as $item) {
+        //     $local[] = [
+        //         'local' => $item->contents_local,
+        //         'local_id' => $item->contents_local_id,
+        //     ];
+        // }
+        // $locals = doubleDelete($local, 'local');
 
         // 熟成度合い設定・・・連想配列化
-        $agings =[
+        $agings = [
             ['aging_id' => 'Blanco', 'aging_name' => 'ブランコ', 'description' => '〜熟成期間1ヶ月未満（シルバー・プラタ）〜'],
             ['aging_id' => 'Hoben', 'aging_name' => 'ホベン', 'description' => '〜ブランコにレポサドかアネホを混合〜'],
             ['aging_id' => 'Gold', 'aging_name' => 'ゴールド', 'description' => '〜特に規定なし〜'],
