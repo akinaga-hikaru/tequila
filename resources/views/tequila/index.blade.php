@@ -2,13 +2,13 @@
 
 @section('title','テキーラ全書')
 @section('section','テキーラとは')
-@section('body_class','top_page')
+@section('body_class','body top_page')
 
 @section('main')
     <div class="flex-box">
-        <aside class="contents-frame">
+        <aside class="aside contents-frame">
             <div>
-                <h3 class="side-menu js-side-btn--open">項目一覧 ▼</h3>
+                <h3 class="section-2 js-side-btn--open">項目一覧 ▼</h3>
             </div>
             <ul class="js-side-list hide-sp">
                 <li class="list-btn"><a href="#genryou">テキーラの原料</a></li>
@@ -20,15 +20,15 @@
                 <li class="list-btn"><a href="#joryujo">蒸留所リスト</a></li>
             </ul>
         </aside>
-        <main class="contents-frame">
+        <main class="main contents-frame">
 
-            <h3 id="genryou">テキーラの原料</h3>
+            <h3 id="genryou" class="section-2">テキーラの原料</h3>
                 <div class="letters-area">
-                    <p>
+                    <p class="letters-area__paragraph">
                         　テキーラとは、メキシコはハリスコ州にあるテキーラ村を語源とするヒガンバナ科の多肉植物である竜舌蘭（リュウゼツラン）を用いた蒸留酒である。
                         また、メキシコでは「アガベ」と呼び、植物学者リンネの命名によるものである。シエラ・マドレ山脈の北側に位置するテキーラ村に因んでテキーラという名がついたという。
                     </p>
-                    <p>
+                    <p class="letters-area__paragraph">
                         　300種以上にわたる竜舌蘭の品種のうち、酒の原料として用いられるのは「アガベ・アメリカーナ」、「アガベ・アトロビレンス」、「アガベ・アスール・テキラーナ」の3種
                         そのうちテキーラの原料として使えるものは「アガベ・アスール・テキラーナ」のみであると法律で定められている。
                         メキシコのテキーラ5州以外で生産されたものは、例え同じ原料・製法を用いたとしても、「テキーラ」と名乗れず、「メスカル」と呼ぶ。
@@ -40,92 +40,88 @@
                     </div>
                 </div>
 
-            <h3 id="teigi">テキーラの定義</h3>
+            <h3 id="teigi" class="section-2">テキーラの定義</h3>
                 <div class="letters-area">
-                    <p>
+                    <p class="letters-area__paragraph">
                         　メキシコの半官半民機関の「CRT」（テキーラ管理評議委員会）により、以下の事項を全て満たすものが「テキーラ」となり、
                         一つでも満たさなければ、「メスカル」または「リキュール」などの表記になる。
                     </p>
-                    <strong class="letters-title">1. テキーラ5州にて育成された「アガベ・アスール・テキラーナ」を使用すること</strong>
-                    <p class="indent">
+                    <h4 class="letters-area__title">1. テキーラ5州にて育成された「アガベ・アスール・テキラーナ」を使用すること</h4>
+                    <p class="letters-area__paragraph indent">
                         テキーラ5州とは、「ハリスコ州」「グアナファト州」「タマウリパス州」「ミチョアカン州」「ナヤリ州」で、
                         この特定の地域で育成・栽培されたものを使用することが義務付けられている。
                         上記5州のうち大半はハリスコ州のものである。
                     </p>
-                    <strong class="letters-title">2. テキーラ5州とその周辺で蒸留されていること</strong>
-                    <p class="indent">
+                    <h4 class="letters-area__title">2. テキーラ5州とその周辺で蒸留されていること</h4>
+                    <p class="letters-area__paragraph indent">
                         CRT認定の蒸留所番号「NOM 4桁」を必ずボトルに表示する。
                     </p>
-                    <strong class="letters-title">3. 原材料に「アガベ・アスール・テキラーナ」を51％以上使用すること</strong>
-                    <p class="indent">
+                    <h4 class="letters-area__title">3. 原材料に「アガベ・アスール・テキラーナ」を51％以上使用すること</h4>
+                    <p class="letters-area__paragraph indent">
                         ブランドによっては80%近く使っているものもあるが、大半は100%使用した「100%アガベ・テキーラ」である。
                         混合しているものは「ミクストテキーラ」という。
                     </p>
-                    <strong class="letters-title">4. 最低2回蒸留すること</strong><br>
-                    <strong class="letters-title">5. 最終アルコール度数が35～55%内であること</strong>
-                    <p class="indent">
+                    <h4 class="letters-area__title">4. 最低2回蒸留すること</h4><br>
+                    <h4 class="letters-area__title">5. 最終アルコール度数が35～55%内であること</h4>
+                    <p class="letters-area__paragraph indent">
                         ブランドにより異なるが、40%ととして出されているものがほとんどである。
                     </p>
-                    <strong class="letters-title">6. 人体に有害なメタノール（メチルアルコール）が3mg/1ml以下であること</strong>
-                    <p class="indent">
+                    <h4 class="letters-area__title">6. 人体に有害なメタノール（メチルアルコール）が3mg/1ml以下であること</h4>
+                    <p class="letters-area__paragraph indent">
                         日本では1mg/1ml以下となっているが、製菓用と記載することで、輸入販売が許可されている。
                     </p>
-                    <strong class="letters-title">7. 水以外に加える添加物は1%以下であること</strong>
-                    <p class="indent">
+                    <h4 class="letters-area__title">7. 水以外に加える添加物は1%以下であること</h4>
+                    <p class="letters-area__paragraph indent">
                         固形物が添加されていれば「メスカル」、香料・糖蜜が規定以上だと「リキュール」となる。
                     </p>
                 </div>
 
-            <h3 id="kigen">テキーラの起源</h3>
+            <h3 id="kigen" class="section-2">テキーラの起源</h3>
                 <div class="letters-area">
-                    <strong class="letters-title">1. 醸造酒「プルケ」</strong>
-                    <p class="indent">
+                    <h4 class="letters-area__title">1. 醸造酒「プルケ」</h4>
+                    <p class="letters-area__paragraph indent">
                         　山の大火事が原因でたまたまできたとされるテキーラ。
                         先住民が山火事の跡から焼けたリュウゼツランの芳香に誘われ口にしてみたところ甘い味がしたそうだ。
                         これがきっかけで多くの仲間の手に渡され、アガベの食物としての価値が見いだされてきた。
                         この機に誕生したのがメスカル、テキーラのもとになる「プルケ」である。
                         これは醸造酒のため、このプルケを蒸留してできたのが、メスカル、テキーラである。
                     </p>
-                    <strong class="letters-title">2. スペインの蒸留技術</strong>
-                    <p class="indent">
+                    <h4 class="letters-area__title">2. スペインの蒸留技術</h4>
+                    <p class="letters-area__paragraph indent">
                         　その蒸留技術は、16世紀頃スペイン人によって持ち込まれたとされる。
                         大海賊時代と呼ばれる16世紀。各国に並びスペインも大きな開拓に活躍し、
                         「太陽の沈まない国」と称されていたが、その活動の一環がテキーラの誕生に一役買っていたようだ。
                         スペイン人はその蒸留技術を使い、当時輸入により手に入らなくなったという
                         ブランデーに代わるアルコール飲料をメキシコにて製造することに乗り出した。
                     </p>
-                    <strong class="letters-title">3.「メスカルワイン」の製造</strong>
-                    <p class="indent">
+                    <h4 class="letters-area__title">3.「メスカルワイン」の製造</h4>
+                    <p class="letters-area__paragraph indent">
                         　そこで「プルケ」を蒸留し、よりアルコール度数の高いお酒を造ろうとした。
                         その時造られたのが、「メスカルワイン」というお酒である。
                         スペインはこのメスカルワインが自国のアルコール飲料と競合することを恐れ、メキシコ国内では製造禁止とする時期もあった。
                         この期間メキシコ国内では、秘密裏に造られ続けてその多大な生産量から、スペイン政府の資金繰りのために製造が合法化された。
                     </p>
-                    <strong class="letters-title">4.「テキーラ」の輸出</strong>
-                    <p class="indent">
+                    <h4 class="letters-area__title">4.「テキーラ」の輸出</h4>
+                    <p class="letters-area__paragraph indent">
                         　それに伴いメスカルワインと並んでメスカル・デ・テキーラの製造も行われるようになり、メキシコ国内では、
                         スペインからのスペイン人向けの輸入品が流通し、代わりに輸出が盛んになってくる。
                         1821年のメキシコ独立運動により、スペインからの輸入が難しくなり、国内生産量が盛んになり、世界へ知られるようになっていく。
                     </p>
                 </div>
 
-            <h3 id="bunrui">テキーラの分類</h3>
+            <h3 id="bunrui" class="section-2">テキーラの分類</h3>
                 <div class="letters-area">
-                    <p>
-                        <strong class="letters-title">
-                            ■ 原材料の混合度合いによる呼称
-                        </strong>
-                    </p>
-                    <p class="indent">
+                    <h4 class="letters-area__title">
+                        ■ 原材料の混合度合いによる呼称
+                    </h4>
+                    <p class="letters-area__paragraph indent">
                         ・100%アガベ・テキーラ　ー　アガベ・アスール・テキラーナのみを使用<br>
                         ・ミクスト・テキーラ　ー　アガベ・アスール・テキラーナを51％以上使用
                     </p>
-                    <p>
-                        <strong class="letters-title">
-                            ■ 100%アガベ・テキーラの規則
-                        </strong>
-                    </p>
-                    <p class="indent">
+                    <h4 class="letters-area__title">
+                        ■ 100%アガベ・テキーラの規則
+                    </h4>
+                    <p class="letters-area__paragraph indent">
                         1. 原料にアガベ・アスール・テキラーナ以外のものを使用しない<br>
                         2. ハリスコ州（または生産現地）にて瓶詰めしたものであること<br>
                         　ミクスト・テキーラはバルクで輸出して外部での瓶詰めが認められている。<br>
@@ -133,10 +129,10 @@
                     </p>
                 </div>
 
-            <h3 id="kosyou">熟成度合いによる呼称</h3>
+            <h3 id="kosyou" class="section-2">熟成度合いによる呼称</h3>
                 <div class="scroll-area">
-                    <div class="table-setting">
-                        <table>
+                    <div class="table-area__scroll-frame">
+                        <table class="table-area">
                             <tr>
                                 <th>呼称</th>
                                 <th>意味</th>
@@ -170,45 +166,41 @@
                         </table>
                     </div>
                 </div>
-            <h3 id="gosyu">テキーラ5州</h3>
+            <h3 id="gosyu" class="section-2">テキーラ5州</h3>
                 <div class="letters-area">
-                    <div>
-                        <strong class="letters-title">■ ハリスコ州</strong>
-                        <p class="indent">
-                            バジェス地方 - テキーラ地区/アマティタン地区/ラス・フンタス地区/etc..<br>
-                            ロスアルトス地方 - アランダス地区/ヘススマリア地区/アトトニルコ地区/アヨトラン地区/ラ・ラハ地区/etc..<br>
-                            ソナ・セントロ地方 - ファナカトラン地区/サポパン地区/etc..
-                        </p>
-                        <strong class="letters-title">■ グアナファト州</strong>
-                        <p class="indent">
-                            ペンハモ地区/etc..
-                        </p>
-                        <strong class="letters-title">■ タマウリパス州/ナヤリ州/ミチョアカン州</strong><br>
-                    </div>
-                    <div class="flex-box">
-                        <p>
-                            <strong class="letters-title">■ メキシコ地図（テキーラ5州）</strong><br>
-                            <img src="/image/tequila/mexico_whitemap3.gif">
-                        </p>
-                        <p>
-                            <strong class="letters-title">■ ハリスコ州地図</strong><br>
-                            <img src="/image/tequila/jalisco_colormap2.png">
-                        </p>
-                    </div>
+                    <h4 class="letters-area__title">■ ハリスコ州</h4>
+                    <p class="letters-area__paragraph indent">
+                        バジェス地方 - テキーラ地区/アマティタン地区/ラス・フンタス地区/etc..<br>
+                        ロスアルトス地方 - アランダス地区/ヘススマリア地区/アトトニルコ地区/アヨトラン地区/ラ・ラハ地区/etc..<br>
+                        ソナ・セントロ地方 - ファナカトラン地区/サポパン地区/etc..
+                    </p>
+                    <h4 class="letters-area__title">■ グアナファト州</h4>
+                    <p class="letters-area__paragraph indent">
+                        ペンハモ地区/etc..
+                    </p>
+                    <h4 class="letters-area__title">■ タマウリパス州/ナヤリ州/ミチョアカン州</h4><br>
+                    <h4 class="letters-area__title">■ メキシコ地図（テキーラ5州）</h4><br>
+                    <p class="letters-area__paragraph">
+                        <img src="/image/tequila/mexico_whitemap3.gif">
+                    </p>
+                    <h4 class="letters-area__title">■ ハリスコ州地図</h4><br>
+                    <p class="letters-area__paragraph">
+                        <img src="/image/tequila/jalisco_colormap2.png">
+                    </p>
                 </div>
-            <h3 id="joryujo">蒸留所リスト</h3>
+            <h3 id="joryujo" class="section-2">蒸留所リスト</h3>
                 <div class="letters-area">
-                    <p>
+                    <p class="letters-area__paragraph">
                         　テキーラは必ず蒸留を行うが、ボトルには必ずどこの蒸留所で行われたのかが分かるように番号が記載される。
                         その番号は、蒸留所ごとに、前述のCRT（テキーラ評議委員会）により定められた「NOM 4桁数字」が与えられる。
                         蒸留所のほとんどがハリスコ州内にあるのだが、以下にリストとして掲載する。
                     </p>
                 </div>
                 <div class="scroll-area">
-                    <div class="table-setting">
-                        <table>
+                    <div class="table-area__scroll-frame">
+                        <table class="table-area">
                             <tr>
-                                <td class="chiho">ハリスコ州 バジェス地方</td>
+                                <td class="table-area__header">ハリスコ州 バジェス地方</td>
                             </tr>
                             <tr>
                                 <th>蒸留所</th>
@@ -286,10 +278,10 @@
                     </div>
                 </div>
                 <div class="scroll-area">
-                    <div class="table-setting">
-                        <table>
+                    <div class="table-area__scroll-frame">
+                        <table class="table-area">
                             <tr>
-                                <td class="chiho">ハリスコ州 ロスアルトス地方</td>
+                                <td class="table-area__header">ハリスコ州 ロスアルトス地方</td>
                             </tr>
                             <tr>
                                 <th>蒸留所</th>
@@ -367,10 +359,10 @@
                     </div>
                 </div>
                 <div class="scroll-area">
-                    <div class="table-setting">
-                        <table>
+                    <div class="table-area__scroll-frame">
+                        <table class="table-area">
                             <tr>
-                                <td class="chiho">ハリスコ州 ソナ・セントロ地方</td>
+                                <td class="table-area__header">ハリスコ州 ソナ・セントロ地方</td>
                             </tr>
                             <tr>
                                 <th>蒸留所</th>
@@ -394,10 +386,10 @@
                     </div>
                 </div>
                 <div class="scroll-area">
-                    <div class="table-setting">
-                        <table>
+                    <div class="table-area__scroll-frame">
+                        <table class="table-area">
                             <tr>
-                                <td class="chiho">グアナファト州</td>
+                                <td class="table-area__header">グアナファト州</td>
                             </tr>
                             <tr>
                                 <th>蒸留所</th>

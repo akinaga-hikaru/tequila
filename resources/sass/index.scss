@@ -5,23 +5,27 @@
     // 文章エリア
     .letters-area {
         margin-bottom: 40px;
-        p {
+        // 見出し
+        &__title {
+            padding: 1px 5px;
+            margin-bottom: 2px;
+            @media screen and(max-width: $sp) {
+                font-size: 13px;
+            }
+        }
+        // 内容
+        &__paragraph {
             margin-bottom: 10px;
         }
     }
-    // 文章エリア見出し
-    .letters-title {
-        line-height: 2;
-        border-radius: 16px;
-        box-shadow: 0px 0px 16px 7px rgba(255,165,0,0.5);
-        padding: 0px 10px;
-        @media screen and(max-width: $sp) {
-            font-size: 13px;
-        }
-    }
-    .side-menu {
-        @media screen and(max-width: $sp) {
-            margin-bottom: 0;
+
+    // テーブルエリア
+    .table-area {
+        // スクロール領域
+        &__scroll-frame {
+            padding-bottom: 20px;
+            width: 100%;
+            min-width: 1000px;
         }
     }
 }

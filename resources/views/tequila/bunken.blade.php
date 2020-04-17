@@ -2,12 +2,12 @@
 
 @section('title','参考文献')
 @section('section','参考文献')
-@section('body_class','bunken')
+@section('body_class','body bunken')
 
 @section('main')
 <div class="contents-frame">
     <center>
-        <table>
+        <table class="table-area">
             <tr>
                 <th>著者名</th>
                 <th>文献名</th>

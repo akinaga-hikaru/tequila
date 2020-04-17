@@ -2,7 +2,7 @@
 
 @section('title','商品紹介')
 @section('section','商品紹介')
-@section('body_class','syouhin')
+@section('body_class','body syouhin')
 
 @section('main')
 @php
@@ -13,7 +13,7 @@
 @endphp
 
 <div class="flex-box">
-    <aside class="contents-frame">
+    <aside class="aside contents-frame">
         {{-- 種別ボタン表示ボタンstart --}}
             @component('tequila.component.syouhin_container',[
                 'title_id' => '',
@@ -32,7 +32,7 @@
             <ul class="maker">
                 @foreach ($titles as $title)
                     <li class="list-btn js-list js-maker-list js-maker_{{ $title['title_id'] }} " hidden>
-                        <a href="#syouhin_title">{{ $title['title'] }}</a>
+                        <a href="#section-2">{{ $title['title'] }}</a>
                     </li>
                 @endforeach
             </ul>
@@ -41,7 +41,7 @@
             <ul class="dest">
                 @foreach ($noms as $nom)
                     <li class="list-btn js-list js-dest-list js-dest_{{ $nom['nom'] }}" hidden>
-                        <a href="#syouhin_title">
+                        <a href="#section-2">
                             NOM {{ $nom['nom'] }} <br>
                             <span class="small-text">{{ $nom['dest'] }}</span>
                         </a>
@@ -53,7 +53,7 @@
             <ul class="local">
                 @foreach ($locals as $local)
                     <li class="list-btn js-list js-local-list js-local_{{ $local['local_id'] }}" hidden>
-                        <a href="#syouhin_title">
+                        <a href="#section-2">
                             {{ $local['local'] }} <br>
                             <span class="small-text">{{ $local['description'] }}</span>
                         </a>
@@ -65,7 +65,7 @@
             <ul class="aging">
                 @foreach ($agings as $aging)
                     <li class="list-btn js-list js-aging-list js-aging_{{ $aging['aging_id'] }}" hidden>
-                        <a href="#syouhin_title">
+                        <a href="#section-2">
                             {{ $aging['aging_name'] }} <br>
                             <span class="small-text">{{ $aging['description'] }}</span>
                         </a>
@@ -74,10 +74,10 @@
             </ul>
         {{-- 熟成度合いリストend --}}
     </aside>
-    <main class="contents-frame">
+    <main class="main contents-frame">
         {{-- ブランドタイトルstart --}}
             @component('tequila.component.syouhin_container',[
-                'title_id' => 'syouhin_title',
+                'title_id' => 'section-2',
                 'syouhin_id' => 'js-syouhin-title',
                 'syouhin_name' => '選択すると表示されます',
                 ])

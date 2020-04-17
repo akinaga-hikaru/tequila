@@ -5,8 +5,8 @@ require('./bootstrap');
 ----------------------------------------------- */
 // SPのグローバルメニューのリスト表示非表示
 $(function() {
-    $('.js-menu-btn--open').on('click', function(){
-        $('.js-global-menu-list').slideToggle();
+    $('.js-global-menu__btn-sp').on('click', function(){
+        $('.js-global-menu').slideToggle();
     });
 });
 
@@ -18,6 +18,12 @@ $(function() {
 $(function() {
     $('.js-side-btn--open').on('click', function(){
         $('.js-side-list').slideToggle();
+        var text = $(this).text();
+        if(text == '項目一覧 ▼') {
+            $(this).text('項目一覧 ▲');
+        }else{
+            $(this).text('項目一覧 ▼');
+        }
     });
 });
 
@@ -31,7 +37,7 @@ $('.list-btn--syouhin-type').hide();
 
 // 変数設定
 var bg_beige = {background:"beige",color:"rgb(94,61,30)"};
-var bg_wood = {background:"url(/image/tequila/bg005.jpg)",color:"beige"};
+var bg_orange = {background:"rgba(255,165,0,0.5)",color:"beige"};
 var lists = [
     // ブランド別
     {'name': 'maker', 'time': 1000, 'match': /js-maker_[a-z -]*/},
@@ -63,7 +69,7 @@ function sortBtn(name, time){
     $('.'+name+'-list').click(function(){
         // 選択中のリストのCSS指定
         $('.list-btn--syouhin-type').css(bg_beige);
-        $(this).css(bg_wood);
+        $(this).css(bg_orange);
         // クリックしたリストのみを表示する
         $('.js-list').hide();
         $('.js-'+name+'-list').slideToggle(time);
@@ -88,8 +94,8 @@ function listBtn(name, match){
         // クリックしたリストの商品コンテナのみを表示する
         $('.syouhin-container').hide();
         $(show_class).fadeIn(1000);
-        $('.syouhin_title').hide();
-        $('.syouhin_title').show();
+        $('.js-syouhin-title').hide();
+        $('.js-syouhin-title').show();
     });
 };
 $.each(lists, function(index, list){

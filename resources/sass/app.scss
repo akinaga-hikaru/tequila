@@ -1,29 +1,4 @@
 /* -----------------------------------------------
-    初期設定用
------------------------------------------------ */
-@import 'reset';
-
-*,
-*:after,
-*:before {
-    font-family: 'Noto Serif JP', serif;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-size: 15px;
-    line-height: 1.8;
-    font-style: italic;
-}
-
-p {
-    line-height: 2.0;
-    font-size: 15px;
-    @media screen and(max-width: 768px) {
-        font-size: 12px;
-    }
-}
-
-/* -----------------------------------------------
     変数設定
 ----------------------------------------------- */
 // width
@@ -33,99 +8,57 @@ $sp: 768px;
 // color
 $brown: rgb(94,61,30);
 $beige: rgb(245, 245, 220);
+$orange: rgba(255,165,0,1);
+$orange_skelton: rgba(255,165,0,0.5);
+$white_skelton: rgba(232, 223, 213, 0.5);
 $bg_wood_dark: url(/image/tequila/bg005.jpg);
-$bg_wood_light: url(/image/tequila/bg037.gif);
+$bg_colk: url(/image/tequila/bg037.gif);
+$bg_header: url(/image/tequila/tequila-lineup-sepia4.png);
 
 /* -----------------------------------------------
-    要素固定設定
+    リセットCSS
 ----------------------------------------------- */
-body {
-    background: $bg_wood_dark;
-    color: $brown;
-    font-weight: bold;
-    margin: 0 auto;
+@import 'reset';
+
+/* -----------------------------------------------
+    初期設定
+----------------------------------------------- */
+.body {
     width: 100%;
     max-width: $body_width;
-    line-height: 0;
+    margin: 0 auto;
+    background: $bg_wood_dark;
+    color: $brown;
+    line-height: 1.8;
+    font-family: 'Noto Serif JP', serif;
+    font-style: italic;
+    font-size: 15px;
+    @media screen and(max-width: $sp) {
+        font-size: 12px;
+    }
 }
 
-// 枠組み設定
-aside {
+.aside {
     width: 25%;
     border-right: 1px solid $brown;
     @media screen and(max-width: $sp) {
         width: 100%;
+        border-right: none;
     }
 }
-main {
+.main {
     width: 75%;
     @media screen and(max-width: $sp) {
         width: 100%;
     }
 }
 
-// 大項目
-h2 {
-    background: rgba(255,165,0,0.5);
-    color: $beige;
-    font-size: 25px;
-    padding-bottom: 6px;
-    text-align: center;
-    margin: 0;
-    border: 1px solid $brown;
-    border-left: none;
-    border-right: none;
-    @media screen and(max-width: $sp) {
-        font-size: 20px;
-        line-height: 1.5;
-        padding-bottom: 3px;
-    }
-}
-
-// 中項目
-h3 {
-    background: $bg_wood_dark;
-    color: $beige;
-    font-size: 20px;
-    padding-bottom: 6px;
-    box-shadow: 0px 5px 10px $beige;
-    text-align: center;
-    margin-bottom: 20px;
-    @media screen and(max-width: $sp) {
-        font-size: 16px;
-        padding-bottom: 3px;
-    }
-}
-
-// テーブルセル設定
-th,td {
-    font-style: italic;
-    padding: 8px 12px;
-    border: 2px solid $brown;
-    @media screen and(max-width: $sp) {
-        font-size: 12px;
-    }
-}
-td {
-    background: $bg_wood_light;
-}
-th {
-    background: $beige;
-}
-
 // リンク設定
 a {
-    &:link {
-        color: $brown;
-        text-decoration: none;
-    }
-    &:visited {
-        color: $brown;
-        text-decoration: underline;
-    }
+    text-decoration: none;
+    color: $brown;
     &:hover {
-        color: orange;
-        text-decoration: none;
+        color: $orange;
     }
 }
 
@@ -133,16 +66,14 @@ a {
 img {
     width: 100%;
     height: auto;
-    max-width: 300px;
-    box-shadow: 3px 3px 4px 4px;
 }
 
 /* -----------------------------------------------
-    共通：レイアウト関連
+    共通：レイアウトメソッド
 ----------------------------------------------- */
 // コンテンツコンテナ
 .contents-frame {
-    background: rgba(232, 223, 213, 0.5);
+    background: $white_skelton;
     padding: 20px;
 }
 
@@ -166,6 +97,11 @@ img {
     text-align: center;
 }
 
+// テキストインデント
+.indent {
+    padding-left: 20px;
+}
+
 // PCで非表示設定
 .hide-pc {
     display: none;
@@ -183,89 +119,165 @@ img {
 }
 
 /* -----------------------------------------------
-    共通：テーブル関連
+    共通：テーブルエリア
 ----------------------------------------------- */
-// テーブル設定
-.table-setting {
-    padding-bottom: 20px;
-    width: 100%;
-    min-width: 1000px;
-}
-
-// テーブルヘッダー設定
-.chiho {
-    background: $bg_wood_dark;
-    color: $beige;
+.table-area {
+    // テーブルセル設定
+    th,td {
+        padding: 8px 12px;
+        border: 1px solid $brown;
+    }
+    th {
+        background: $beige;
+    }
+    td {
+        background: $bg_colk;
+    }
+    // ヘッダー
+    .table-area__header {
+        background: $bg_wood_dark;
+        color: $beige;
+    }
 }
 
 /* -----------------------------------------------
-    共通：テキスト関連
+    共通：文章エリア
 ----------------------------------------------- */
-// テキストインデント
-.indent {
-    padding-left: 20px;
-    margin: 0;
-    margin-bottom: 10px;
-}
-
-// 文章エリア
 .letters-area {
-    background: $bg_wood_light;
+    background: $bg_colk;
     padding: 15px;
-    box-shadow: 3px 3px 4px 4px;
     img {
-        width: 100%;
         max-width: 300px;
-        max-height: 300px;
+    }
+    // 見出し
+    &__title {
+        display: block;
+        font-size: 20px;
+        line-height: 2;
+        text-shadow: 1px 1px 4px $orange;
+        border-bottom: 2px dotted $brown;
+        @media screen and(max-width: $sp) {
+            font-size: 15px;
+        }
     }
 }
 
-// 文章エリア見出し
-.letters-title {
-    font-size: 20px;
-    line-height: 3em;
-    background: rgba(255,165,0,0.5);
-    padding: 5px 10px;
-    // border-bottom: 1.5px solid $brown;
-    // border-right: 1.5px solid $brown;
-    @media screen and(max-width: $sp) {
-        font-size: 15px;
-    }
-}
 
 /* -----------------------------------------------
-    共通：タイトル
+    共通：ヘッダーエリア
 ----------------------------------------------- */
-.title {
-    background-color: rgba(220,220,220,0.5);
-    padding: 20px;
-    padding-bottom: 0;
-}
-.title-area {
-    background-image: url(/image/tequila/tequila-lineup-sepia4.png);
+.header-area {
+    background-image: $bg_header;
     background-size: 2080px;
     @media screen and(max-width: $sp) {
         background-size: 780px;
     }
-}
-.main-title {
-    font-style: italic;
-    font-size: 100px;
-    font-weight: bolder;
-    color: $brown;
-    display: inline;
-    line-height: 1;
-    @media screen and(max-width: $sp) {
+    // 背景フレーム設定
+    &__bg-frame {
+        background-color: rgba(220,220,220,0.5);
+        padding: 20px;
+        padding-bottom: 0;
+    }
+    // メインロゴ
+    &__main-logo {
+        font-size: 100px;
+        font-weight: bolder;
+        color: $brown;
+        display: inline;
+        line-height: 1;
+        text-shadow: 3px 3px 1px $orange_skelton;
+        @media screen and(max-width: $sp) {
+            font-size: 50px;
+            text-shadow: 1px 1px 1px $orange_skelton;
+        }
+    }
+    // サブロゴ
+    &__sub-logo {
+        font-style: italic;
         font-size: 50px;
+        line-height: 2;
+        display: inline;
+        text-shadow: 3px 3px 1px $orange_skelton;
+        @media screen and(max-width: $sp) {
+            font-size: 25px;
+            text-shadow: 1px 1px 1px $orange_skelton;
+        }
+    }
+
+    // グローバルメニュー
+    .global-menu {
+        font-size: 20px;
+        border-top: 2px solid $brown;
+        padding: 5px;
+        @media screen and(max-width: $sp) {
+            font-size: 16px;
+        }
+        &__btn {
+            display: inline-block;
+            padding: 0px;
+            margin: 5px 0;
+            background: $bg_wood_dark;
+            color: $beige;
+            max-width: 240px;
+            width: 100%;
+            @media screen and(max-width: $sp) {
+                max-width: 300px;
+                margin-bottom: 5px;
+            }
+            a {
+                color: $beige;
+                display: block;
+                padding-bottom: 4px;
+                margin: 0px;
+                &:hover {
+                    background: rgba(200,200,200,0.4);
+                }
+            }
+        }
+        // SPのメニューボタン（≡）
+        &__btn-sp {
+            font-size: 50px;
+            font-style: normal;
+            line-height: 1;
+            border-radius: 4px;
+            float: right;
+            position: relative;
+            top: -2px;
+            right: -10px;
+        }
     }
 }
-.sub-title {
-    font-style: italic;
-    font-size: 50px;
-    line-height: 2;
-    display: inline;
+
+/* -----------------------------------------------
+    共通：見出し部分
+----------------------------------------------- */
+// 大項目
+.section-1 {
+    background: $orange_skelton;
+    color: $beige;
+    font-size: 25px;
+    padding-bottom: 6px;
+    text-align: center;
+    border: 1px solid $brown;
+    border-left: none;
+    border-right: none;
     @media screen and(max-width: $sp) {
-        font-size: 25px;
+        font-size: 20px;
+        line-height: 1.5;
+        padding-bottom: 3px;
+    }
+}
+
+// 中項目
+.section-2 {
+    background: $bg_wood_dark;
+    color: $beige;
+    font-size: 20px;
+    padding-bottom: 6px;
+    text-align: center;
+    @media screen and(max-width: $sp) {
+        font-size: 16px;
+        padding-bottom: 3px;
     }
 }
 
@@ -275,10 +287,12 @@ img {
 // リストボタン
 .list-btn {
     padding: 0px;
-    background: $bg_wood_light;
-    box-shadow: 3px 3px 4px 4px;
+    background: $bg_colk;
     border-bottom: 1px solid $brown;
     margin: 0;
+    &:last-child {
+        border-bottom: none;
+    }
     a {
         display: block;
         padding: 10px 20px;
@@ -297,61 +311,22 @@ img {
     }
 }
 
-// グローバルメニュー
-.global-menu {
-    font-size: 20px;
-    border-top: 2px solid $brown;
-    padding: 5px;
-    @media screen and(max-width: $sp) {
-        font-size: 16px;
-    }
-    .global-menu-btn {
-        display: inline-block;
-        padding: 0px;
-        margin: 10px;
-        background: $bg_wood_dark;
-        box-shadow: 0px 5px 5px;
-        border-radius: 8px;
-        color: $beige;
-        max-width: 240px;
-        width: 100%;
-        @media screen and(max-width: $sp) {
-            max-width: 300px;
-        }
-        a {
-            color: $beige;
-            display: block;
-            padding-bottom: 4px;
-            margin: 0px;
-            &:hover {
-                background: rgba(200,200,200,0.4);
-            }
-       }
-    }
-    // SPのメニューボタン（≡）
-    &-open {
-        font-size: 50px;
-        font-style: normal;
-        line-height: 1;
-        border-radius: 4px;
-        float: right;
-        position: relative;
-        top: -2px;
-        right: -10px;
-    }
-}
-
 /* -----------------------------------------------
     共通：トップへ戻るボタン
 ----------------------------------------------- */
-.nav-top-btn {
-    margin: 50px;
-    a {
-        text-align: center;
-        background: $beige;
-        padding: 10px;
-        border-radius: 6px;
-        box-shadow: $beige 1px 1px 68px 3px;
+.footer-area {
+    // トップに戻るボタン
+    &__top-btn {
+        margin: 50px;
+        a {
+            color: beige;
+            text-align: center;
+            background: $orange_skelton;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 1px 1px 68px 3px $beige;
+            font-style: normal;
+        }
     }
 }
 

@@ -1,14 +1,18 @@
 @charset "UTF-8";
 
 /* -----------------------------------------------
-    初期設定用
+    変数設定
 ----------------------------------------------- */
 
-/* 
+/* -----------------------------------------------
+    リセットCSS
+----------------------------------------------- */
+
+/*
 html5doctor.com Reset Stylesheet
 v1.6.1
 Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com 
+Author: Richard Clark - http://richclarkdesign.com
 Twitter: @rich_clark
 */
 
@@ -188,148 +192,71 @@ select {
 *,
 *:after,
 *:before {
-  font-family: "Noto Serif JP", serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 15px;
-  line-height: 1.8;
-  font-style: italic;
 }
 
-p {
-  line-height: 2;
+/* -----------------------------------------------
+    初期設定
+----------------------------------------------- */
+
+.body {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  background: url(/image/tequila/bg005.jpg);
+  color: #5e3d1e;
+  line-height: 1.8;
+  font-family: "Noto Serif JP", serif;
+  font-style: italic;
   font-size: 15px;
 }
 
 @media screen and (max-width: 768px) {
-  p {
+  .body {
     font-size: 12px;
   }
 }
 
-/* -----------------------------------------------
-    変数設定
------------------------------------------------ */
-
-/* -----------------------------------------------
-    要素固定設定
------------------------------------------------ */
-
-body {
-  background: url(/image/tequila/bg005.jpg);
-  color: #5e3d1e;
-  font-weight: bold;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 1280px;
-  line-height: 0;
-}
-
-aside {
+.aside {
   width: 25%;
   border-right: 1px solid #5e3d1e;
 }
 
 @media screen and (max-width: 768px) {
-  aside {
+  .aside {
     width: 100%;
+    border-right: none;
   }
 }
 
-main {
+.main {
   width: 75%;
 }
 
 @media screen and (max-width: 768px) {
-  main {
+  .main {
     width: 100%;
   }
 }
 
-h2 {
-  background: rgba(255, 165, 0, 0.5);
-  color: beige;
-  font-size: 25px;
-  padding-bottom: 6px;
-  text-align: center;
-  margin: 0;
-  border: 1px solid #5e3d1e;
-  border-left: none;
-  border-right: none;
-}
-
-@media screen and (max-width: 768px) {
-  h2 {
-    font-size: 20px;
-    line-height: 1.5;
-    padding-bottom: 3px;
-  }
-}
-
-h3 {
-  background: url(/image/tequila/bg005.jpg);
-  color: beige;
-  font-size: 20px;
-  padding-bottom: 6px;
-  box-shadow: 0px 5px 10px beige;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-@media screen and (max-width: 768px) {
-  h3 {
-    font-size: 16px;
-    padding-bottom: 3px;
-  }
-}
-
-th,
-td {
-  font-style: italic;
-  padding: 8px 12px;
-  border: 2px solid #5e3d1e;
-}
-
-@media screen and (max-width: 768px) {
-  th,
-  td {
-    font-size: 12px;
-  }
-}
-
-td {
-  background: url(/image/tequila/bg037.gif);
-}
-
-th {
-  background: beige;
-}
-
-a:link {
-  color: #5e3d1e;
+a {
   text-decoration: none;
-}
-
-a:visited {
   color: #5e3d1e;
-  text-decoration: underline;
 }
 
 a:hover {
   color: orange;
-  text-decoration: none;
 }
 
 img {
   width: 100%;
   height: auto;
-  max-width: 300px;
-  box-shadow: 3px 3px 4px 4px;
 }
 
 /* -----------------------------------------------
-    共通：レイアウト関連
+    共通：レイアウトメソッド
 ----------------------------------------------- */
 
 .contents-frame {
@@ -357,6 +284,10 @@ img {
   text-align: center;
 }
 
+.indent {
+  padding-left: 20px;
+}
+
 .hide-pc {
   display: none;
 }
@@ -378,101 +309,193 @@ img {
 }
 
 /* -----------------------------------------------
-    共通：テーブル関連
+    共通：テーブルエリア
 ----------------------------------------------- */
 
-.table-setting {
-  padding-bottom: 20px;
-  width: 100%;
-  min-width: 1000px;
+.table-area th,
+.table-area td {
+  padding: 8px 12px;
+  border: 1px solid #5e3d1e;
 }
 
-.chiho {
+.table-area th {
+  background: beige;
+}
+
+.table-area td {
+  background: url(/image/tequila/bg037.gif);
+}
+
+.table-area .table-area__header {
   background: url(/image/tequila/bg005.jpg);
   color: beige;
 }
 
 /* -----------------------------------------------
-    共通：テキスト関連
+    共通：文章エリア
 ----------------------------------------------- */
-
-.indent {
-  padding-left: 20px;
-  margin: 0;
-  margin-bottom: 10px;
-}
 
 .letters-area {
   background: url(/image/tequila/bg037.gif);
   padding: 15px;
-  box-shadow: 3px 3px 4px 4px;
 }
 
 .letters-area img {
-  width: 100%;
   max-width: 300px;
-  max-height: 300px;
 }
 
-.letters-title {
+.letters-area__title {
+  display: block;
   font-size: 20px;
-  line-height: 3em;
-  background: rgba(255, 165, 0, 0.5);
-  padding: 5px 10px;
+  line-height: 2;
+  text-shadow: 1px 1px 4px orange;
+  border-bottom: 2px dotted #5e3d1e;
 }
 
 @media screen and (max-width: 768px) {
-  .letters-title {
+  .letters-area__title {
     font-size: 15px;
   }
 }
 
 /* -----------------------------------------------
-    共通：タイトル
+    共通：ヘッダーエリア
 ----------------------------------------------- */
 
-.title {
-  background-color: rgba(220, 220, 220, 0.5);
-  padding: 20px;
-  padding-bottom: 0;
-}
-
-.title-area {
+.header-area {
   background-image: url(/image/tequila/tequila-lineup-sepia4.png);
   background-size: 2080px;
 }
 
 @media screen and (max-width: 768px) {
-  .title-area {
+  .header-area {
     background-size: 780px;
   }
 }
 
-.main-title {
-  font-style: italic;
+.header-area__bg-frame {
+  background-color: rgba(220, 220, 220, 0.5);
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+.header-area__main-logo {
   font-size: 100px;
   font-weight: bolder;
   color: #5e3d1e;
   display: inline;
   line-height: 1;
+  text-shadow: 3px 3px 1px rgba(255, 165, 0, 0.5);
 }
 
 @media screen and (max-width: 768px) {
-  .main-title {
+  .header-area__main-logo {
     font-size: 50px;
+    text-shadow: 1px 1px 1px rgba(255, 165, 0, 0.5);
   }
 }
 
-.sub-title {
+.header-area__sub-logo {
   font-style: italic;
   font-size: 50px;
   line-height: 2;
   display: inline;
+  text-shadow: 3px 3px 1px rgba(255, 165, 0, 0.5);
 }
 
 @media screen and (max-width: 768px) {
-  .sub-title {
+  .header-area__sub-logo {
     font-size: 25px;
+    text-shadow: 1px 1px 1px rgba(255, 165, 0, 0.5);
+  }
+}
+
+.header-area .global-menu {
+  font-size: 20px;
+  border-top: 2px solid #5e3d1e;
+  padding: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .header-area .global-menu {
+    font-size: 16px;
+  }
+}
+
+.header-area .global-menu__btn {
+  display: inline-block;
+  padding: 0px;
+  margin: 5px 0;
+  background: url(/image/tequila/bg005.jpg);
+  color: beige;
+  max-width: 240px;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .header-area .global-menu__btn {
+    max-width: 300px;
+    margin-bottom: 5px;
+  }
+}
+
+.header-area .global-menu__btn a {
+  color: beige;
+  display: block;
+  padding-bottom: 4px;
+  margin: 0px;
+}
+
+.header-area .global-menu__btn a:hover {
+  background: rgba(200, 200, 200, 0.4);
+}
+
+.header-area .global-menu__btn-sp {
+  font-size: 50px;
+  font-style: normal;
+  line-height: 1;
+  border-radius: 4px;
+  float: right;
+  position: relative;
+  top: -2px;
+  right: -10px;
+}
+
+/* -----------------------------------------------
+    共通：見出し部分
+----------------------------------------------- */
+
+.section-1 {
+  background: rgba(255, 165, 0, 0.5);
+  color: beige;
+  font-size: 25px;
+  padding-bottom: 6px;
+  text-align: center;
+  border: 1px solid #5e3d1e;
+  border-left: none;
+  border-right: none;
+}
+
+@media screen and (max-width: 768px) {
+  .section-1 {
+    font-size: 20px;
+    line-height: 1.5;
+    padding-bottom: 3px;
+  }
+}
+
+.section-2 {
+  background: url(/image/tequila/bg005.jpg);
+  color: beige;
+  font-size: 20px;
+  padding-bottom: 6px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .section-2 {
+    font-size: 16px;
+    padding-bottom: 3px;
   }
 }
 
@@ -483,9 +506,12 @@ img {
 .list-btn {
   padding: 0px;
   background: url(/image/tequila/bg037.gif);
-  box-shadow: 3px 3px 4px 4px;
   border-bottom: 1px solid #5e3d1e;
   margin: 0;
+}
+
+.list-btn:last-child {
+  border-bottom: none;
 }
 
 .list-btn a {
@@ -513,72 +539,22 @@ img {
   }
 }
 
-.global-menu {
-  font-size: 20px;
-  border-top: 2px solid #5e3d1e;
-  padding: 5px;
-}
-
-@media screen and (max-width: 768px) {
-  .global-menu {
-    font-size: 16px;
-  }
-}
-
-.global-menu .global-menu-btn {
-  display: inline-block;
-  padding: 0px;
-  margin: 10px;
-  background: url(/image/tequila/bg005.jpg);
-  box-shadow: 0px 5px 5px;
-  border-radius: 8px;
-  color: beige;
-  max-width: 240px;
-  width: 100%;
-}
-
-@media screen and (max-width: 768px) {
-  .global-menu .global-menu-btn {
-    max-width: 300px;
-  }
-}
-
-.global-menu .global-menu-btn a {
-  color: beige;
-  display: block;
-  padding-bottom: 4px;
-  margin: 0px;
-}
-
-.global-menu .global-menu-btn a:hover {
-  background: rgba(200, 200, 200, 0.4);
-}
-
-.global-menu-open {
-  font-size: 50px;
-  font-style: normal;
-  line-height: 1;
-  border-radius: 4px;
-  float: right;
-  position: relative;
-  top: -2px;
-  right: -10px;
-}
-
 /* -----------------------------------------------
     共通：トップへ戻るボタン
 ----------------------------------------------- */
 
-.nav-top-btn {
+.footer-area__top-btn {
   margin: 50px;
 }
 
-.nav-top-btn a {
+.footer-area__top-btn a {
+  color: beige;
   text-align: center;
-  background: beige;
+  background: rgba(255, 165, 0, 0.5);
   padding: 10px;
-  border-radius: 6px;
-  box-shadow: beige 1px 1px 68px 3px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 68px 3px beige;
+  font-style: normal;
 }
 
 /* -----------------------------------------------
@@ -593,27 +569,25 @@ img {
   margin-bottom: 40px;
 }
 
-.top_page .letters-area p {
+.top_page .letters-area__title {
+  padding: 1px 5px;
+  margin-bottom: 2px;
+}
+
+@media screen and (max-width: 768px) {
+  .top_page .letters-area__title {
+    font-size: 13px;
+  }
+}
+
+.top_page .letters-area__paragraph {
   margin-bottom: 10px;
 }
 
-.top_page .letters-title {
-  line-height: 2;
-  border-radius: 16px;
-  box-shadow: 0px 0px 16px 7px rgba(255, 165, 0, 0.5);
-  padding: 0px 10px;
-}
-
-@media screen and (max-width: 768px) {
-  .top_page .letters-title {
-    font-size: 13px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .top_page .side-menu {
-    margin-bottom: 0;
-  }
+.top_page .table-area__scroll-frame {
+  padding-bottom: 20px;
+  width: 100%;
+  min-width: 1000px;
 }
 
 /* -----------------------------------------------
@@ -623,38 +597,14 @@ img {
 /* -----------------------------------------------
     ページ別：商品紹介
 ----------------------------------------------- */
+
+.syouhin .section-2 {
+  margin-bottom: 30px;
+}
 
 .syouhin .list-btn--syouhin-type {
   background: beige;
-  border-radius: 8px;
   text-align: center;
-  margin-bottom: 20px;
-}
-
-.syouhin .list-btn--syouhin-type a:hover {
-  border-radius: 8px;
-}
-
-.syouhin .letters-area {
-  width: 50%;
-  max-width: 460px;
-}
-
-@media screen and (max-width: 768px) {
-  .syouhin .letters-area {
-    width: 100%;
-    font-size: 13px;
-  }
-}
-
-.syouhin .letters-title {
-  border-radius: 16px;
-  box-shadow: 0px 0px 16px 10px rgba(255, 165, 0, 0.5);
-  padding: 0px 10px;
-}
-
-.syouhin .text-area {
-  width: 430px;
 }
 
 .syouhin .syouhin-container {
@@ -665,32 +615,65 @@ img {
   align-items: center;
 }
 
-.syouhin .syouhin-container a:hover {
-  color: beige;
-}
-
-.syouhin .syouhin-container img {
-  width: 300px;
-  height: 300px;
-}
-
-@media screen and (max-width: 768px) {
-  .syouhin .syouhin-container img {
-    width: 100%;
-    height: 100%;
-    max-width: 375px;
-    max-height: 375px;
-  }
-}
-
 @media screen and (max-width: 768px) {
   .syouhin .syouhin-container {
     width: 80%;
   }
 }
 
-.syouhin .syouhin_title {
-  margin-bottom: 30px;
+.syouhin .syouhin-container a:hover {
+  color: beige;
+}
+
+.syouhin .syouhin-container .image-area,
+.syouhin .syouhin-container img,
+.syouhin .syouhin-container a {
+  width: 300px;
+  height: 300px;
+}
+
+@media screen and (max-width: 768px) {
+  .syouhin .syouhin-container .image-area,
+  .syouhin .syouhin-container img,
+  .syouhin .syouhin-container a {
+    width: 100%;
+    height: 100%;
+    max-width: 460px;
+    max-height: 460px;
+  }
+}
+
+.syouhin .syouhin-container .letters-area {
+  width: 50%;
+  max-width: 460px;
+  padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .syouhin .syouhin-container .letters-area {
+    width: 100%;
+  }
+}
+
+.syouhin .syouhin-container .letters-area__title {
+  padding: 0px 10px;
+  margin-bottom: 15px;
+}
+
+.syouhin .syouhin-container .letters-area__paragraph {
+  font-size: 14px;
+}
+
+.syouhin .syouhin-container .letters-area__scroll-frame {
+  padding: 15px;
+  width: 460px;
+  height: 300px;
+}
+
+@media screen and (max-width: 768px) {
+  .syouhin .syouhin-container .letters-area__scroll-frame {
+    height: auto;
+  }
 }
 
 /* -----------------------------------------------
@@ -701,8 +684,10 @@ img {
     ページ別：店舗紹介
 ----------------------------------------------- */
 
-.tenpo .table-setting {
+.tenpo .table-area__scroll-frame {
   padding: 20px;
   margin: 0 auto;
+  width: 100%;
+  min-width: 1000px;
 }
 

@@ -19,33 +19,32 @@
         </script>
     </head>
     <body class="@yield('body_class')">
-        <div class="center title-area">
-            <header id="top" class="title center">
-                <a href="tequila">
-                    <p class="main-title">テキーラ全書</p><br>
-                    <p class="sub-title">〜Tequipedia〜</p>
+        <div class="header-area center">
+            <header id="top" class="header-area__bg-frame center">
+                <a href="/">
+                    <h1 class="header-area__main-logo">テキーラ全書</h1><br>
+                    <h1 class="header-area__sub-logo">〜Tequipedia〜</h1>
                 </a>
-                <p class="hide-pc global-menu-open js-menu-btn--open">≡</p>
-                <ul class="global-menu js-global-menu-list hide-sp">
-                    <li class="global-menu-btn"><a href="/">テキーラとは</a></li>
-                    <li class="global-menu-btn"><a href="syouhin">商品紹介</a></li>
-                    <li class="global-menu-btn"><a href="tenpo">取扱店紹介</a></li>
-                    <li class="global-menu-btn"><a href="bunken">参考文献</a></li>
+                <p class="global-menu__btn-sp js-global-menu__btn-sp hide-pc">≡</p>
+                <ul class="global-menu js-global-menu hide-sp">
+                    <li class="global-menu__btn"><a href="/">テキーラとは</a></li>
+                    <li class="global-menu__btn"><a href="syouhin">商品紹介</a></li>
+                    <li class="global-menu__btn"><a href="tenpo">取扱店紹介</a></li>
+                    <li class="global-menu__btn"><a href="bunken">参考文献</a></li>
                 </ul>
             </header>
         </div>
         <div>
-            <h2 id="tequilatoha">@yield('section')</a></h2>
+            <h2 class="section-1">@yield('section')</a></h2>
         </div>
 
         @yield('main')
 
-        <center>
-            <nav class="nav-top-btn">
-                <a href="#top">トップに戻る</a>
-            </nav>
-        </center>
+        <footer class="footer-area center">
+            <div class="footer-area__top-btn">
+                <a href="#top">TOP</a>
+            </div>
+        </footer>
         <script src="{{ mix('js/app.js') }}"></script>
-        @stack('scripts')
     </body>
 </html>

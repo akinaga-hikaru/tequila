@@ -2,14 +2,14 @@
 
 @section('title','テキーラ取扱店紹介')
 @section('section','テキーラ取扱店紹介')
-@section('body_class','tenpo')
+@section('body_class','body tenpo')
 
 @section('main')
 <div class="contents-frame">
     <div class="scroll-area">
-        <div class="table-setting">
-            <table>
-                <tr><td class="chiho">BAR</th></tr>
+        <div class="table-area__scroll-frame">
+            <table class="table-area">
+                <tr><td class="table-area__header">BAR</th></tr>
                     <tr>
                         <th>店名</th>
                         <th>住所</th>
@@ -29,7 +29,7 @@
                         <td>カクテルだけでなく100種類以上のテキーラを取り揃えている。</td>
                     </tr>
 
-                <tr><td class="chiho">店舗販売</th></tr>
+                <tr><td class="table-area__header">店舗販売</th></tr>
                     <tr>
                         <th>店名</th>
                         <th>住所</th>
@@ -49,7 +49,7 @@
                         <td>クエルボを始めエルテソロ、グランパトロンなど高級ブランドまで40～50種類ほど。</td>
                     </tr>
 
-                    <tr><td class="chiho">通信販売</th></tr>
+                    <tr><td class="table-area__header">通信販売</th></tr>
                     <tr>
                         <th>店名</th>
                         <th>問い合わせ</th>

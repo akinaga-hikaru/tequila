@@ -2,7 +2,7 @@
 
 @section('title','フォーム入力')
 @section('section','フォーム入力')
-@section('body_class','form-input')
+@section('body_class','body form-input')
 
 @section('main')
 <div class="contents-frame center">
@@ -10,7 +10,7 @@
         <div>
             <form method="POST" action="form-input">
             @csrf
-                <table>
+                <table class="table-area">
                     <tr><th><label for="family-name">姓</label></th><td><input type="text" name="family-name"></td></tr>
                     <tr><th><label for="first-name">名</label></th><td><input type="text" name="first-name"></td></tr>
                     <tr><th><label for="mail">メールアドレス</label></th><td><input type="mail" name="mail"></td></tr>

@@ -2,8 +2,14 @@
     ページ別：店舗紹介
 ----------------------------------------------- */
 .tenpo {
-    .table-setting {
-        padding: 20px;
-        margin: 0 auto;
+    // テーブルエリア
+    .table-area {
+        // スクロール領域
+        &__scroll-frame {
+            padding: 20px;
+            margin: 0 auto;
+            width: 100%;
+            min-width: 1000px;
+        }
     }
 }
