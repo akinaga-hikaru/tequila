@@ -7,7 +7,7 @@
 @section('main')
     <div class="flex-box">
         <aside class="aside contents-frame">
-            {{--項目一覧ボタンstart --}}
+            {{-- 項目一覧ボタンstart --}}
                 @component('tequila.component.section-2',[
                     'section_id' => '',
                     'js_class' => 'js-type-toggle',
@@ -15,19 +15,44 @@
                     ])
                 @endcomponent
             {{-- 項目一覧ボタンend --}}
-            <ul class="js-btn--type hide-sp">
-                <li class="common-btn common-btn--type"><a href="#genryou">テキーラの原料</a></li>
-                <li class="common-btn common-btn--type"><a href="#teigi">テキーラの定義</a></li>
-                <li class="common-btn common-btn--type"><a href="#kigen">テキーラの起源</a></li>
-                <li class="common-btn common-btn--type"><a href="#bunrui">テキーラの分類</a></li>
-                <li class="common-btn common-btn--type"><a href="#kosyou">熟成度合いによる呼称</a></li>
-                <li class="common-btn common-btn--type"><a href="#gosyu">テキーラ5州</a></li>
-                <li class="common-btn common-btn--type"><a href="#joryujo">蒸留所リスト</a></li>
-            </ul>
+            {{-- 項目選択ボタンstart --}}
+                @php
+                    $arrays = [
+                        ['0' => '#genryou', '1' => 'テキーラの原料'],
+                        ['0' => '#teigi', '1' => 'テキーラの定義'],
+                        ['0' => '#kigen', '1' => 'テキーラの起源'],
+                        ['0' => '#bunrui', '1' => 'テキーラの分類'],
+                        ['0' => '#kosyou', '1' => '熟成度合いによる呼称'],
+                        ['0' => '#gosyu', '1' => 'テキーラ5州'],
+                        ['0' => '#joryujo', '1' => '蒸留所リスト'],
+                    ];
+                @endphp
+                <ul>
+                    @foreach ($arrays as $item)
+                        @component('tequila.component.common-btn',[
+                            'btn' => 'type',
+                            'js_class_1' => '',
+                            'js_class_2' => '',
+                            'hidden' => '',
+                            'link' => $item[0],
+                            'text' => $item[1],
+                            'small_text' => '',
+                            ])
+                        @endcomponent
+                    @endforeach
+                </ul>
+            {{-- 項目選択ボタンend --}}
         </aside>
         <main class="main contents-frame">
-
-            <h3 id="genryou" class="section-2">テキーラの原料</h3>
+            {{--セクションタイトル〜テキーラの原料〜start --}}
+                @component('tequila.component.section-2',[
+                    'section_id' => 'genryou',
+                    'js_class' => '',
+                    'section_name' => 'テキーラの原料',
+                    ])
+                @endcomponent
+            {{-- セクションタイトル〜テキーラの原料〜end --}}
+            {{--コンテンツ〜テキーラの原料〜start --}}
                 <div class="letters-area">
                     <p class="letters-area__paragraph">
                         　テキーラとは、メキシコはハリスコ州にあるテキーラ村を語源とするヒガンバナ科の多肉植物である竜舌蘭（リュウゼツラン）を用いた蒸留酒である。
@@ -44,8 +69,16 @@
                         <p><img src="/image/tequila/ryuzeturan2.jpg" alt="竜舌蘭2"></p>
                     </div>
                 </div>
-
-            <h3 id="teigi" class="section-2">テキーラの定義</h3>
+            {{-- コンテンツ〜テキーラの原料〜end --}}
+            {{--セクションタイトル〜テキーラの定義〜start --}}
+                @component('tequila.component.section-2',[
+                    'section_id' => 'teigi',
+                    'js_class' => '',
+                    'section_name' => 'テキーラの定義',
+                    ])
+                @endcomponent
+            {{-- セクションタイトル〜テキーラの定義〜end --}}
+            {{--コンテンツ〜テキーラの定義〜start --}}
                 <div class="letters-area">
                     <p class="letters-area__paragraph">
                         　メキシコの半官半民機関の「CRT」（テキーラ管理評議委員会）により、以下の事項を全て満たすものが「テキーラ」となり、
@@ -80,8 +113,16 @@
                         固形物が添加されていれば「メスカル」、香料・糖蜜が規定以上だと「リキュール」となる。
                     </p>
                 </div>
-
-            <h3 id="kigen" class="section-2">テキーラの起源</h3>
+            {{-- コンテンツ〜テキーラの定義〜end --}}
+            {{--セクションタイトル〜テキーラの起源〜start --}}
+                @component('tequila.component.section-2',[
+                    'section_id' => 'kigen',
+                    'js_class' => '',
+                    'section_name' => 'テキーラの起源',
+                    ])
+                @endcomponent
+            {{-- セクションタイトル〜テキーラの起源〜end --}}
+            {{--コンテンツ〜テキーラの起源〜start --}}
                 <div class="letters-area">
                     <h4 class="letters-area__title">1. 醸造酒「プルケ」</h4>
                     <p class="letters-area__paragraph indent">
@@ -113,8 +154,16 @@
                         1821年のメキシコ独立運動により、スペインからの輸入が難しくなり、国内生産量が盛んになり、世界へ知られるようになっていく。
                     </p>
                 </div>
-
-            <h3 id="bunrui" class="section-2">テキーラの分類</h3>
+            {{-- コンテンツ〜テキーラの起源〜end --}}
+            {{--セクションタイトル〜テキーラの分類〜start --}}
+                @component('tequila.component.section-2',[
+                    'section_id' => 'bunrui',
+                    'js_class' => '',
+                    'section_name' => 'テキーラの分類',
+                    ])
+                @endcomponent
+            {{-- セクションタイトル〜テキーラの分類〜end --}}
+            {{--コンテンツ〜テキーラの分類〜start --}}
                 <div class="letters-area">
                     <h4 class="letters-area__title">
                         ■ 原材料の混合度合いによる呼称
@@ -133,8 +182,16 @@
                         3. ラベルに「100% de Agave」と表示すること
                     </p>
                 </div>
-
-            <h3 id="kosyou" class="section-2">熟成度合いによる呼称</h3>
+            {{-- コンテンツ〜テキーラの分類〜end --}}
+            {{--セクションタイトル〜熟成度合いによる呼称〜start --}}
+                @component('tequila.component.section-2',[
+                    'section_id' => 'kosyou',
+                    'js_class' => '',
+                    'section_name' => '熟成度合いによる呼称',
+                    ])
+                @endcomponent
+            {{-- セクションタイトル〜熟成度合いによる呼称〜end --}}
+            {{--コンテンツ〜熟成度合いによる呼称〜start --}}
                 <div class="scroll-area">
                     <div class="table-area__scroll-frame">
                         <table class="table-area">
@@ -171,7 +228,16 @@
                         </table>
                     </div>
                 </div>
-            <h3 id="gosyu" class="section-2">テキーラ5州</h3>
+            {{-- コンテンツ〜熟成度合いによる呼称〜end --}}
+            {{--セクションタイトル〜テキーラ5州〜start --}}
+                @component('tequila.component.section-2',[
+                    'section_id' => 'gosyu',
+                    'js_class' => '',
+                    'section_name' => 'テキーラ5州',
+                    ])
+                @endcomponent
+            {{-- セクションタイトル〜テキーラ5州〜end --}}
+            {{--コンテンツ〜テキーラの5州〜start --}}
                 <div class="letters-area">
                     <h4 class="letters-area__title">■ ハリスコ州</h4>
                     <p class="letters-area__paragraph indent">
@@ -193,7 +259,16 @@
                         <img src="/image/tequila/jalisco_colormap2.png">
                     </p>
                 </div>
-            <h3 id="joryujo" class="section-2">蒸留所リスト</h3>
+            {{-- コンテンツ〜テキーラの5州〜end --}}
+            {{--セクションタイトル〜蒸留所リスト〜start --}}
+                @component('tequila.component.section-2',[
+                    'section_id' => 'joryujo',
+                    'js_class' => '',
+                    'section_name' => '蒸留所リスト',
+                    ])
+                @endcomponent
+            {{-- セクションタイトル〜蒸留所リスト〜end --}}
+            {{--コンテンツ〜蒸留所リスト〜start --}}
                 <div class="letters-area">
                     <p class="letters-area__paragraph">
                         　テキーラは必ず蒸留を行うが、ボトルには必ずどこの蒸留所で行われたのかが分かるように番号が記載される。
@@ -411,6 +486,7 @@
                         </table>
                     </div>
                 </div>
+            {{-- コンテンツ〜蒸留所リスト〜end --}}
         </main>
     </div>
 @endsection

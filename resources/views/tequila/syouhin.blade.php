@@ -7,7 +7,7 @@
 @section('main')
     <div class="flex-box">
         <aside class="aside contents-frame">
-            {{--項目一覧ボタンstart --}}
+            {{-- 項目一覧ボタンstart --}}
                 @component('tequila.component.section-2',[
                     'section_id' => '',
                     'js_class' => 'js-type-toggle',
@@ -15,72 +15,83 @@
                     ])
                 @endcomponent
             {{-- 項目一覧ボタンend --}}
-            {{-- タイプ選択ボタンstart --}}
-                @php
-                    $arrays = [
-                        ['0' => 'js-maker-type', '1' => 'ブランド別（' . count($titles) . '）'],
-                        ['0' => 'js-dest-type', '1' => '蒸留所別（' . count($noms) . '）'],
-                        ['0' => 'js-local-type', '1' => '生産地方別（' . count($locals) . '）'],
-                        ['0' => 'js-aging-type', '1' => '熟成度合い別（' . count($agings) . '）'],
-                    ];
-                @endphp
-                <ul class="hide-sp">
-                    @foreach ($arrays as $item)
+            {{-- 項目選択ボタンstart --}}
+                <ul>
+                    @foreach ($types as $type)
                         @component('tequila.component.common-btn',[
                             'btn' => 'type',
-                            'js_class_1' => $item[0],
+                            'js_class_1' => $type['js_class_1'],
                             'js_class_2' => '',
                             'hidden' => '',
                             'link' => '',
-                            'text' => $item[1],
+                            'text' => $type['title'],
                             'small_text' => '',
                             ])
                         @endcomponent
                     @endforeach
                 </ul>
-            {{-- タイプ選択ボタンend --}}
+            {{-- 項目選択ボタンend --}}
             {{-- ブランドリストstart --}}
-                <ul class="maker">
+                <ul>
                     @foreach ($titles as $title)
-                        <li class="common-btn common-btn--list js-btn--list js-maker-list js-maker_{{ $title['title_id'] }} " hidden>
-                            <a href="#section-2">{{ $title['title'] }}</a>
-                        </li>
+                        @component('tequila.component.common-btn',[
+                            'btn' => 'list',
+                            'js_class_1' => 'js-maker-list',
+                            'js_class_2' => 'js-maker_' . $title['title_id'],
+                            'hidden' => 'hidden',
+                            'link' => '#section-2',
+                            'text' => $title['title'],
+                            'small_text' => '',
+                            ])
+                        @endcomponent
                     @endforeach
                 </ul>
             {{-- ブランドリストend --}}
             {{-- 蒸留所リストstart --}}
-                <ul class="dest">
+                <ul>
                     @foreach ($noms as $nom)
-                        <li class="common-btn common-btn--list js-btn--list js-dest-list js-dest_{{ $nom['nom'] }}" hidden>
-                            <a href="#section-2">
-                                NOM {{ $nom['nom'] }} <br>
-                                <span class="small-text">{{ $nom['dest'] }}</span>
-                            </a>
-                        </li>
+                        @component('tequila.component.common-btn',[
+                            'btn' => 'list',
+                            'js_class_1' => 'js-dest-list',
+                            'js_class_2' => 'js-dest_' . $nom['nom'],
+                            'hidden' => 'hidden',
+                            'link' => '#section-2',
+                            'text' => 'NOM ' . $nom['nom'],
+                            'small_text' => $nom['dest'],
+                            ])
+                        @endcomponent
                     @endforeach
                 </ul>
             {{-- 蒸留所リストend --}}
             {{-- 生産地方リストstart --}}
-                <ul class="local">
+                <ul>
                     @foreach ($locals as $local)
-                        <li class="common-btn common-btn--list js-btn--list js-local-list js-local_{{ $local['local_id'] }}" hidden>
-                            <a href="#section-2">
-                                {{ $local['local'] }} <br>
-                                <span class="small-text">{{ $local['description'] }}</span>
-                            </a>
-                        </li>
+                        @component('tequila.component.common-btn',[
+                            'btn' => 'list',
+                            'js_class_1' => 'js-local-list',
+                            'js_class_2' => 'js-local_' . $local['local_id'],
+                            'hidden' => 'hidden',
+                            'link' => '#section-2',
+                            'text' => $local['local'],
+                            'small_text' => $local['description'],
+                            ])
+                        @endcomponent
                     @endforeach
                 </ul>
             {{-- 生産地方リストstart --}}
             {{-- 熟成度合いリストstart --}}
-                <ul class="aging">
+                <ul>
                     @foreach ($agings as $aging)
-                        <li class="common-btn common-btn--list js-btn--list js-aging-list js-aging_{{ $aging['aging_id'] }}" hidden>
-                            <a href="#section-2">
-                                {{ $aging['aging_name'] }} <br>
-                                <span class="small-text">{{ $aging['description'] }}</span>
-                            </a>
-                        </li>
+                        @component('tequila.component.common-btn',[
+                            'btn' => 'list',
+                            'js_class_1' => 'js-aging-list',
+                            'js_class_2' => 'js-aging_' . $aging['aging_id'],
+                            'hidden' => 'hidden',
+                            'link' => '#section-2',
+                            'text' => $aging['aging_name'],
+                            'small_text' => $aging['description'],
+                            ])
+                        @endcomponent
                     @endforeach
                 </ul>
             {{-- 熟成度合いリストend --}}

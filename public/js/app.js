@@ -19296,10 +19296,10 @@ $(function () {
 /* -----------------------------------------------
     画面：テキーラとは
 ----------------------------------------------- */
-// サイドメニュー表示非表示
+// サイドメニュー表示非表示（2回目以降）
 
-$('.js-type-toggle').click(function () {
-  // 種別ボタンの表示非表示
+$('.js-type-toggle').on('click', function () {
+  // 項目選択ボタンの表示非表示
   $('.js-btn--type').slideToggle(500); // 全てのリストを非表示
 
   $('.js-btn--list').hide(); // テキスト表示変更
@@ -19317,8 +19317,8 @@ $('.js-type-toggle').click(function () {
 ----------------------------------------------- */
 // 全商品コンテナを非表示
 
-$('.js-syouhin-container').hide(); // $('.js-btn--type').hide();
-// 変数設定
+$('.js-syouhin-container').hide();
+$('.js-btn--type').hide(); // 変数設定
 
 var bg_beige = {
   background: "beige",
@@ -19383,7 +19383,7 @@ function listBtn(name, match) {
     var show_class = '.' + js_class; // クリックしたリストの商品コンテナのみを表示する
 
     $('.js-syouhin-container').hide();
-    $(show_class).fadeIn(1000);
+    $(show_class).slideDown(1000);
     $('.js-syouhin-title').hide();
     $('.js-syouhin-title').show();
   });

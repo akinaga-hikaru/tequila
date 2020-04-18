@@ -64,14 +64,6 @@ class SyouhinController extends Controller
             ['local_id' => 'others', 'local' => 'その他', 'description' => '〜テキーラ5州で作られたもの〜'],
 
         ];
-        // $local = [];
-        // foreach ($syouhin_data_all as $item) {
-        //     $local[] = [
-        //         'local' => $item->contents_local,
-        //         'local_id' => $item->contents_local_id,
-        //     ];
-        // }
-        // $locals = doubleDelete($local, 'local');
 
         // 熟成度合い設定・・・連想配列化
         $agings = [
@@ -86,11 +78,20 @@ class SyouhinController extends Controller
             ['aging_id' => 'Cocktail', 'aging_name' => '※カクテル', 'description' => '〜添加物ありのリキュール〜'],
         ];
 
+        // 項目選択ボタンの定義
+        $types = [
+            ['js_class_1' => 'js-maker-type', 'title' => 'ブランド別（' . count($titles) . '）'],
+            ['js_class_1' => 'js-dest-type', 'title' => '蒸留所別（' . count($noms) . '）'],
+            ['js_class_1' => 'js-local-type', 'title' => '生産地方別（' . count($locals) . '）'],
+            ['js_class_1' => 'js-aging-type', 'title' => '熟成度合い別（' . count($agings) . '）'],
+        ];
+
         return view('tequila.syouhin')
             ->with('syouhin_data_all', $syouhin_data_all)
             ->with('titles', $titles)
             ->with('locals', $locals)
             ->with('noms', $noms)
-            ->with('agings', $agings);
+            ->with('agings', $agings)
+            ->with('types', $types);
     }
 }
