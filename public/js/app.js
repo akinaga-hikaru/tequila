@@ -19330,17 +19330,17 @@ var lists = [// ブランド別
 {
   'name': 'maker',
   'time': 1000,
-  'match': /js-maker_[a-z -]*/
+  'match': /js-maker_[a-z-]*/
 }, // 蒸留所別
 {
   'name': 'dest',
   'time': 1000,
-  'match': /js-dest_[0-9 -]*/
+  'match': /js-dest_[0-9-]*/
 }, // 熟成度合い別
 {
   'name': 'aging',
   'time': 750,
-  'match': /js-aging_[A-z -]*/
+  'match': /js-aging_[A-z-]*/
 }]; // プルダウンのある商品一覧ボタン（list）の定義
 
 var areas = [// 生産地方別
@@ -19352,7 +19352,7 @@ var areas = [// 生産地方別
   'time': 500,
   'match': {
     '0': 'valles',
-    '1': /js-area_valles_[a-z -]*/
+    '1': /js-area_valles_[a-z-]*/
   },
   'hide': {
     '0': 'altos',
@@ -19367,7 +19367,7 @@ var areas = [// 生産地方別
   'time': 500,
   'match': {
     '0': 'altos',
-    '1': /js-area_altos_[a-z -]*/
+    '1': /js-area_altos_[a-z-]*/
   },
   'hide': {
     '0': 'valles',
@@ -19382,7 +19382,7 @@ var areas = [// 生産地方別
   'time': 500,
   'match': {
     '0': 'centro',
-    '1': /js-area_centro_[a-z -]*/
+    '1': /js-area_centro_[a-z-]*/
   },
   'hide': {
     '0': 'altos',
@@ -19397,7 +19397,7 @@ var areas = [// 生産地方別
   'time': 500,
   'match': {
     '0': 'others',
-    '1': /js-area_others_[a-z -]*/
+    '1': /js-area_others_[a-z-]*/
   },
   'hide': {
     '0': 'altos',
@@ -19440,7 +19440,7 @@ function listBtn(name, match) {
     }); // クリックしたリストのみのjs-〜のクラス名を取得
 
     var js_class = $(this).attr('class').match(match);
-    var show_class = '.' + js_class; // クリックしたリストの商品コンテナのみを表示する
+    var show_class = '.' + js_class + '_'; // クリックしたリストの商品コンテナのみを表示する
 
     $('.js-syouhin-container').hide();
     $(show_class).slideDown(1000);
@@ -19471,7 +19471,7 @@ function listBtnWithDown(name, time, match, hide) {
 
     $('.js-syouhin-container').hide();
     $('.js-' + name[1] + '_' + match).slideDown(time);
-    $('.js-' + name[0] + '_' + match).slideDown(time);
+    $('.js-' + name[0] + '_' + match + '_').slideDown(time);
   });
 }
 
@@ -19498,7 +19498,7 @@ function DownBtn(name, time, match, hide) {
     }); // クリックしたリストのみのjs-〜のクラス名を取得
 
     var js_class = $(this).attr('class').match(match[1]);
-    var show_class = '.' + js_class; // クリックしたリストの商品コンテナのみを表示する
+    var show_class = '.' + js_class + '_'; // クリックしたリストの商品コンテナのみを表示する
 
     $('.js-syouhin-container').hide();
     $(show_class).slideDown(time);
