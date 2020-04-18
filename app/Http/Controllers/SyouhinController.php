@@ -56,7 +56,7 @@ class SyouhinController extends Controller
         }
         $noms = doubleDelete($nom, 'nom');
 
-        // 生産地方抽出・・・DB取得したデータから生産地方を抽出し、連想配列化
+        // 生産地方設定・・・連想配列化
         $locals = [
             ['local_id' => 'valles', 'local' => 'バジェス地方', 'description' => '〜新樽を用い辛味・苦味が特徴〜'],
             ['local_id' => 'altos', 'local' => 'ロスアルトス地方', 'description' => '〜中古樽を用い旨味・甘味が特徴〜'],
@@ -78,7 +78,20 @@ class SyouhinController extends Controller
             ['aging_id' => 'Cocktail', 'aging_name' => '※カクテル', 'description' => '〜添加物ありのリキュール〜'],
         ];
 
-        // 項目選択ボタンの定義
+        // 生産地区抽出・・・DB取得したデータから生産地区を抽出し、連想配列化
+        $area = [];
+        foreach ($syouhin_data_all as $item) {
+            $area[] = [
+                'area_id' => $item->contents_area_id,
+                'area' => $item->contents_area,
+                'local_id' => $item->contents_local_id,
+                'local' => $item->contents_local,
+            ];
+        }
+        $areas = doubleDelete($area, 'area_id');
+        arsort($areas);
+
+        // 項目選択ボタンの定義・・・連想配列化
         $types = [
             ['js_class_1' => 'js-maker-type', 'title' => 'ブランド別（' . count($titles) . '）'],
             ['js_class_1' => 'js-dest-type', 'title' => '蒸留所別（' . count($noms) . '）'],
@@ -92,6 +105,7 @@ class SyouhinController extends Controller
             ->with('locals', $locals)
             ->with('noms', $noms)
             ->with('agings', $agings)
+            ->with('areas', $areas)
             ->with('types', $types);
     }
 }

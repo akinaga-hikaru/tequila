@@ -493,7 +493,7 @@ img {
 
 @media screen and (max-width: 768px) {
   .section-2 {
-    font-size: 16px;
+    font-size: 14px;
     padding-bottom: 3px;
   }
 }
@@ -529,12 +529,22 @@ img {
   background: rgba(255, 255, 255, 0.5);
 }
 
-.common-btn--list {
-  background: url(/image/tequila/background/bg037.gif);
+.common-btn--type {
+  background: url(/image/tequila/background/bg005.jpg);
+  border-bottom: none;
+  border-top: 1px solid beige;
 }
 
-.common-btn--type {
+.common-btn--type a {
+  color: beige;
+}
+
+.common-btn--list {
   background: beige;
+}
+
+.common-btn--down {
+  background: url(/image/tequila/background/bg037.gif);
 }
 
 /* -----------------------------------------------
@@ -626,9 +636,8 @@ img {
   .syouhin .syouhin-container img,
   .syouhin .syouhin-container a {
     width: 100%;
-    height: 100%;
     max-width: 460px;
-    max-height: 460px;
+    height: auto;
   }
 }
 
@@ -651,6 +660,12 @@ img {
 
 .syouhin .syouhin-container .letters-area__paragraph {
   font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  .syouhin .syouhin-container .letters-area__paragraph {
+    font-size: 12px;
+  }
 }
 
 .syouhin .syouhin-container .letters-area__scroll-frame {

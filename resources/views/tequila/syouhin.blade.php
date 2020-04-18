@@ -65,6 +65,23 @@
             {{-- 蒸留所リストend --}}
             {{-- 生産地方リストstart --}}
                 <ul>
+                    @php
+                        $valles =[];
+                        $altos = [];
+                        $centro = [];
+                        $others = [];
+                        foreach ($areas as $key => $value) {
+                            if ($value['local_id'] == 'valles') {
+                                $valles[] = $value;
+                            }elseif ($value['local_id'] == 'altos') {
+                                $altos[] = $value;
+                            }elseif ($value['local_id'] == 'centro') {
+                                $centro[] = $value;
+                            }else {
+                                $others[] = $value;
+                            }
+                        }
+                    @endphp
                     @foreach ($locals as $local)
                         @component('tequila.component.common-btn',[
                             'btn' => 'list',
@@ -76,6 +93,63 @@
                             'small_text' => $local['description'],
                             ])
                         @endcomponent
+                        @if($local['local_id'] == 'valles')
+                            @foreach ($valles as $item)
+                                @component('tequila.component.common-btn',[
+                                    'btn' => 'down',
+                                    'js_class_1' => 'js-area-list',
+                                    'js_class_2' => 'js-area_' . $item['local_id'],
+                                    'js_class_3' => 'js-area_' . $item['local_id'] . '_' . $item['area_id'],
+                                    'hidden' => 'hidden',
+                                    'link' => '#section-2',
+                                    'text' => $item['area'],
+                                    'small_text' => '',
+                                    ])
+                                @endcomponent
+                            @endforeach
+                        @elseif($local['local_id'] == 'altos')
+                            @foreach ($altos as $item)
+                                @component('tequila.component.common-btn',[
+                                    'btn' => 'down',
+                                    'js_class_1' => 'js-area-list',
+                                    'js_class_2' => 'js-area_' . $item['local_id'],
+                                    'js_class_3' => 'js-area_' . $item['local_id'] . '_' . $item['area_id'],
+                                    'hidden' => 'hidden',
+                                    'link' => '#section-2',
+                                    'text' => $item['area'],
+                                    'small_text' => '',
+                                    ])
+                                @endcomponent
+                            @endforeach
+                        @elseif($local['local_id'] == 'centro')
+                            @foreach ($centro as $item)
+                                @component('tequila.component.common-btn',[
+                                    'btn' => 'down',
+                                    'js_class_1' => 'js-area-list',
+                                    'js_class_2' => 'js-area_' . $item['local_id'],
+                                    'js_class_3' => 'js-area_' . $item['local_id'] . '_' . $item['area_id'],
+                                    'hidden' => 'hidden',
+                                    'link' => '#section-2',
+                                    'text' => $item['area'],
+                                    'small_text' => '',
+                                    ])
+                                @endcomponent
+                            @endforeach
+                        @else
+                            @foreach ($others as $item)
+                                @component('tequila.component.common-btn',[
+                                    'btn' => 'down',
+                                    'js_class_1' => 'js-area-list',
+                                    'js_class_2' => 'js-area_' . $item['local_id'],
+                                    'js_class_3' => 'js-area_' . $item['local_id'] . '_' . $item['area_id'],
+                                    'hidden' => 'hidden',
+                                    'link' => '#section-2',
+                                    'text' => $item['local'] . $item['area'],
+                                    'small_text' => '',
+                                    ])
+                                @endcomponent
+                            @endforeach
+                        @endif
                     @endforeach
                 </ul>
             {{-- 生産地方リストstart --}}
@@ -107,7 +181,7 @@
             {{-- ブランドタイトルend --}}
             {{-- 商品コンテナstart --}}
                 @foreach ($syouhin_data_all as $content)
-                        @component('tequila.component.syouhin_parts',[
+                        @component('tequila.component.syouhin-parts',[
                             'title_id' => $content->title_id,
                             'title_name' => $content->title_name,
                             'alt_name' => $content->alt_name,
@@ -120,6 +194,7 @@
                             'contents_nom' => $content->contents_nom,
                             'contents_local_id' => $content->contents_local_id,
                             'contents_local' => $content->contents_local,
+                            'contents_area_id' => $content->contents_local_id . '_' . $content->contents_area_id,
                             'contents_area' => $content->contents_area,
                             'contents_info' => $content->contents_info,
                             'contents_review_flavor' => $content->contents_review_flavor,

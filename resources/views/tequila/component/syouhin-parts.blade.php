@@ -1,4 +1,4 @@
-<div class="flex-box syouhin-container js-syouhin-container js-dest_{{ $contents_nom }} js-maker_{{ $title_id }} js-local_{{ $contents_local_id }} js-aging_{{ $aging_sort }}">
+<div class="flex-box syouhin-container js-syouhin-container js-dest_{{ $contents_nom }} js-maker_{{ $title_id }} js-local_{{ $contents_local_id }} js-area_{{ $contents_area_id }} js-aging_{{ $aging_sort }}">
     <div class="image-area">
         <a href="{{ $url }}" alt="{{ $alt_name }} 商品紹介" target="_blank">
             <img src="/image/tequila/syouhin/{{ $image }}" alt="{{ $alt_name }}">

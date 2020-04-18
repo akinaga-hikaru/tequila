@@ -10,15 +10,13 @@ $(function() {
     });
 });
 
-/* -----------------------------------------------
-    画面：テキーラとは
------------------------------------------------ */
-// サイドメニュー表示非表示（2回目以降）
+// サイドメニュー表示非表示
 $('.js-type-toggle').on('click', function(){
     // 項目選択ボタンの表示非表示
     $('.js-btn--type').slideToggle(500);
     // 全てのリストを非表示
     $('.js-btn--list').hide();
+    $('.js-btn--down').hide();
     // テキスト表示変更
     var btn_text = $(this).text();
     if (btn_text == "項目一覧 ▼"){
@@ -38,31 +36,41 @@ $('.js-btn--type').hide();
 // 変数設定
 var bg_beige = {background:"beige",color:"rgb(94,61,30)"};
 var bg_orange = {background:"rgba(255,165,0,0.5)",color:"beige"};
+// プルダウンのない商品一覧ボタン（list）の定義
 var lists = [
     // ブランド別
     {'name': 'maker', 'time': 1000, 'match': /js-maker_[a-z -]*/},
     // 蒸留所別
     {'name': 'dest', 'time': 1000, 'match': /js-dest_[0-9 -]*/},
-    // 生産地方別
-    {'name': 'local', 'time': 500, 'match': /js-local_[a-z  -]*/},
     // 熟成度合い別
     {'name': 'aging', 'time': 750, 'match': /js-aging_[A-z -]*/},
 ];
 
-// 種別ボタン押下時処理
+// プルダウンのある商品一覧ボタン（list）の定義
+var areas = [
+    // 生産地方別
+    {'name': {'0': 'local', '1': 'area'}, 'time': 500, 'match': {'0': 'valles', '1': /js-area_valles_[a-z -]*/}, 'hide': {'0': 'altos', '1': 'centro', '2': 'others',}},
+    {'name': {'0': 'local', '1': 'area'}, 'time': 500, 'match': {'0': 'altos', '1': /js-area_altos_[a-z -]*/}, 'hide': {'0': 'valles', '1': 'centro', '2': 'others',}},
+    {'name': {'0': 'local', '1': 'area'}, 'time': 500, 'match': {'0': 'centro', '1': /js-area_centro_[a-z -]*/}, 'hide': {'0': 'altos', '1': 'valles', '2': 'others',}},
+    {'name': {'0': 'local', '1': 'area'}, 'time': 500, 'match': {'0': 'others', '1': /js-area_others_[a-z -]*/}, 'hide': {'0': 'altos', '1': 'centro', '2': 'valles',}},
+];
+
+// 項目選択ボタン押下時処理
 function sortBtn(name, time){
     $('.js-'+name+'-type').click(function(){
         // 選択中のリストのCSS指定
-        $('.js-btn--type').css(bg_beige);
-        $(this).css(bg_orange);
+        $('.js-btn--type').find('a').css({background:"none"});
+        $(this).find('a').css(bg_orange);
         // クリックしたリストのみを表示する
         $('.js-btn--list').hide();
+        $('.js-btn--down').hide();
         $('.js-'+name+'-list').slideToggle(time);
     });
 };
 $.each(lists, function(index, list){
     sortBtn(list['name'], list['time']);
 });
+sortBtn(areas[0]['name'][0], areas[0]['time']);
 
 // 商品一覧ボタン押下時処理
 function listBtn(name, match){
@@ -79,10 +87,57 @@ function listBtn(name, match){
         // クリックしたリストの商品コンテナのみを表示する
         $('.js-syouhin-container').hide();
         $(show_class).slideDown(1000);
-        $('.js-syouhin-title').hide();
-        $('.js-syouhin-title').show();
     });
 };
 $.each(lists, function(index, list){
     listBtn(list['name'], list['match']);
 });
+
+// プルダウンボタン付き商品一覧ボタン押下時処理
+function listBtnWithDown(name, time, match, hide){
+    $('.js-'+name[0]+'_'+match).click(function(){
+        // 対象のエリアのリストを表示
+        $('.js-'+name[1]+'_'+hide[0]).hide();
+        $('.js-'+name[1]+'_'+hide[1]).hide();
+        $('.js-'+name[1]+'_'+hide[2]).hide();
+        // クリックしたリストのみのテキストを取得し、タイトル(h3)のテキストを変更
+        var text =  $(this).text();
+        $('.js-syouhin-title').text(text);
+        // 選択中のリストのCSS指定
+        $('.js-btn--list').find('a').css({background:"none"});
+        $(this).find('a:hover').css({background:"rgba(255,165,0,0.5)"});
+        // クリックしたリストの商品コンテナのみを表示する
+        $('.js-syouhin-container').hide();
+        $('.js-'+name[1]+'_'+match).slideDown(time);
+        $('.js-'+name[0]+'_'+match).slideDown(time);
+    });
+};
+$.each(areas, function(index, list){
+    listBtnWithDown(list['name'], list['time'], list['match'][0], list['hide']);
+});
+
+// プルダウン押下時処理
+function DownBtn(name, time, match, hide){
+    $('.js-'+name[1]+'_'+match[0]).click(function(){
+        // 対象のエリアのリストを表示
+        $('.js-'+name[1]+'_'+hide[0]).hide();
+        $('.js-'+name[1]+'_'+hide[1]).hide();
+        $('.js-'+name[1]+'_'+hide[2]).hide();
+        // クリックしたリストのみのテキストを取得し、タイトル(h3)のテキストを変更
+        var text =  $(this).text();
+        $('.js-syouhin-title').text(text);
+        // 選択中のリストのCSS指定
+        $('.js-btn--down').find('a').css({background:"none"});
+        $(this).find('a:hover').css({background:"rgba(255,165,0,0.5)"});
+        // クリックしたリストのみのjs-〜のクラス名を取得
+        var js_class = $(this).attr('class').match(match[1]);
+        var show_class = '.' + js_class
+        // クリックしたリストの商品コンテナのみを表示する
+        $('.js-syouhin-container').hide();
+        $(show_class).slideDown(time);
+    });
+};
+$.each(areas, function(index, list){
+    DownBtn(list['name'], list['time'], list['match'], list['hide']);
+});
+

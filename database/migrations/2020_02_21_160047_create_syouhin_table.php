@@ -30,6 +30,7 @@ class CreateSyouhinTable extends Migration
             $table->string('contents_nom')->comment('蒸留所番号');
             $table->string('contents_local_id')->comment('蒸留地方ID');
             $table->string('contents_local')->comment('蒸留地方');
+            $table->string('contents_area_id')->comment('蒸留エリアID');
             $table->string('contents_area')->comment('蒸留エリア');
             $table->string('contents_info')->comment('情報');
             $table->string('contents_review_flavor')->comment('レビュー：香り');
@@ -59,6 +60,7 @@ class CreateSyouhinTable extends Migration
                 'contents_nom' => $each_syouhin['contents_nom'],
                 'contents_local_id' => $each_syouhin['contents_local_id'],
                 'contents_local' => $each_syouhin['contents_local'],
+                'contents_area_id' => $each_syouhin['contents_area_id'],
                 'contents_area' => $each_syouhin['contents_area'],
                 'contents_info' => $each_syouhin['contents_info'],
                 'contents_review_flavor' => $each_syouhin['contents_review_flavor'],

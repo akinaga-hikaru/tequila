@@ -276,7 +276,7 @@ img {
     padding-bottom: 6px;
     text-align: center;
     @media screen and(max-width: $sp) {
-        font-size: 16px;
+        font-size: 14px;
         padding-bottom: 3px;
     }
 }
@@ -303,14 +303,24 @@ img {
             background: rgba(255,255,255,0.5);
         }
     }
-    // リストボタン
-    &--list {
-        background: $bg_colk;
-    }
-
     // 項目選択ボタン
     &--type {
+        background: $bg_wood_dark;
+        border-bottom: none;
+        border-top: 1px solid $beige;
+        a {
+            color: $beige;
+        }
+    }
+
+    // リストボタン
+    &--list {
         background: $beige;
+    }
+
+    // プルダウンボタン
+    &--down {
+        background: $bg_colk;
     }
 }
 
