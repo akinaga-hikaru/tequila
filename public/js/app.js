@@ -19298,25 +19298,27 @@ $(function () {
 ----------------------------------------------- */
 // サイドメニュー表示非表示
 
-$(function () {
-  $('.js-side-btn--open').on('click', function () {
-    $('.js-side-list').slideToggle();
-    var text = $(this).text();
+$('.js-type-toggle').click(function () {
+  // 種別ボタンの表示非表示
+  $('.js-btn--type').slideToggle(500); // 全てのリストを非表示
 
-    if (text == '項目一覧 ▼') {
-      $(this).text('項目一覧 ▲');
-    } else {
-      $(this).text('項目一覧 ▼');
-    }
-  });
+  $('.js-btn--list').hide(); // テキスト表示変更
+
+  var btn_text = $(this).text();
+
+  if (btn_text == "項目一覧 ▼") {
+    $(this).text('項目一覧 ▲');
+  } else {
+    $(this).text('項目一覧 ▼');
+  }
 });
 /* -----------------------------------------------
     画面：商品紹介
 ----------------------------------------------- */
 // 全商品コンテナを非表示
 
-$('.syouhin-container').hide();
-$('.list-btn--syouhin-type').hide(); // 変数設定
+$('.js-syouhin-container').hide(); // $('.js-btn--type').hide();
+// 変数設定
 
 var bg_beige = {
   background: "beige",
@@ -19346,29 +19348,15 @@ var lists = [// ブランド別
   'name': 'aging',
   'time': 750,
   'match': /js-aging_[A-z -]*/
-}];
-$('.js-list-toggle').click(function () {
-  // 種別ボタンの表示非表示
-  $('.list-btn--syouhin-type').slideToggle(500); // 全てのリストを非表示
-
-  $('.js-list').hide(); // テキスト表示変更
-
-  var btn_text = $(this).text();
-
-  if (btn_text == "ボタンを表示 ▼") {
-    $('.js-list-toggle').text('ボタンを非表示 ▲');
-  } else {
-    $('.js-list-toggle').text('ボタンを表示 ▼');
-  }
-}); // 種別ボタン押下時処理
+}]; // 種別ボタン押下時処理
 
 function sortBtn(name, time) {
-  $('.' + name + '-list').click(function () {
+  $('.js-' + name + '-type').click(function () {
     // 選択中のリストのCSS指定
-    $('.list-btn--syouhin-type').css(bg_beige);
+    $('.js-btn--type').css(bg_beige);
     $(this).css(bg_orange); // クリックしたリストのみを表示する
 
-    $('.js-list').hide();
+    $('.js-btn--list').hide();
     $('.js-' + name + '-list').slideToggle(time);
   });
 }
@@ -19384,7 +19372,7 @@ function listBtn(name, match) {
     var text = $(this).text();
     $('.js-syouhin-title').text(text); // 選択中のリストのCSS指定
 
-    $('.js-list').find('a').css({
+    $('.js-btn--list').find('a').css({
       background: "none"
     });
     $(this).find('a:hover').css({
@@ -19394,7 +19382,7 @@ function listBtn(name, match) {
     var js_class = $(this).attr('class').match(match);
     var show_class = '.' + js_class; // クリックしたリストの商品コンテナのみを表示する
 
-    $('.syouhin-container').hide();
+    $('.js-syouhin-container').hide();
     $(show_class).fadeIn(1000);
     $('.js-syouhin-title').hide();
     $('.js-syouhin-title').show();

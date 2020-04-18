@@ -69,7 +69,7 @@ img {
 }
 
 /* -----------------------------------------------
-    共通：レイアウトメソッド
+    共通メソッド：レイアウト
 ----------------------------------------------- */
 // コンテンツコンテナ
 .contents-frame {
@@ -212,9 +212,9 @@ img {
         @media screen and(max-width: $sp) {
             font-size: 16px;
         }
+        // メニューボタン
         &__btn {
             display: inline-block;
-            padding: 0px;
             margin: 5px 0;
             background: $bg_wood_dark;
             color: $beige;
@@ -249,7 +249,7 @@ img {
 }
 
 /* -----------------------------------------------
-    共通：見出し部分
+    共通パーツ：見出し
 ----------------------------------------------- */
 // 大項目
 .section-1 {
@@ -282,14 +282,14 @@ img {
 }
 
 /* -----------------------------------------------
-    共通：リスト関連
+    共通パーツ：ボタン
 ----------------------------------------------- */
-// リストボタン
-.list-btn {
-    padding: 0px;
-    background: $bg_colk;
+// 共通ボタン
+.common-btn {
     border-bottom: 1px solid $brown;
-    margin: 0;
+    @media screen and(max-width: $sp) {
+        text-align: center;
+    }
     &:last-child {
         border-bottom: none;
     }
@@ -298,21 +298,24 @@ img {
         padding: 10px 20px;
         .small-text {
             font-size: 11px;
-            @media screen and(max-width: $sp) {
-                font-size: 13px;
-            }
         }
         &:hover {
             background: rgba(255,255,255,0.5);
         }
     }
-    @media screen and(max-width: $sp) {
-        text-align: center;
+    // リストボタン
+    &--list {
+        background: $bg_colk;
+    }
+
+    // タイプ選択ボタン
+    &--type {
+        background: $beige;
     }
 }
 
 /* -----------------------------------------------
-    共通：トップへ戻るボタン
+    共通：フッターエリア
 ----------------------------------------------- */
 .footer-area {
     // トップに戻るボタン

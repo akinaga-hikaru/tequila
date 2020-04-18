@@ -7,17 +7,22 @@
 @section('main')
     <div class="flex-box">
         <aside class="aside contents-frame">
-            <div>
-                <h3 class="section-2 js-side-btn--open">項目一覧 ▼</h3>
-            </div>
-            <ul class="js-side-list hide-sp">
-                <li class="list-btn"><a href="#genryou">テキーラの原料</a></li>
-                <li class="list-btn"><a href="#teigi">テキーラの定義</a></li>
-                <li class="list-btn"><a href="#kigen">テキーラの起源</a></li>
-                <li class="list-btn"><a href="#bunrui">テキーラの分類</a></li>
-                <li class="list-btn"><a href="#kosyou">熟成度合いによる呼称</a></li>
-                <li class="list-btn"><a href="#gosyu">テキーラ5州</a></li>
-                <li class="list-btn"><a href="#joryujo">蒸留所リスト</a></li>
+            {{--項目一覧ボタンstart --}}
+                @component('tequila.component.section-2',[
+                    'section_id' => '',
+                    'js_class' => 'js-type-toggle',
+                    'section_name' => '項目一覧 ▼',
+                    ])
+                @endcomponent
+            {{-- 項目一覧ボタンend --}}
+            <ul class="js-btn--type hide-sp">
+                <li class="common-btn common-btn--type"><a href="#genryou">テキーラの原料</a></li>
+                <li class="common-btn common-btn--type"><a href="#teigi">テキーラの定義</a></li>
+                <li class="common-btn common-btn--type"><a href="#kigen">テキーラの起源</a></li>
+                <li class="common-btn common-btn--type"><a href="#bunrui">テキーラの分類</a></li>
+                <li class="common-btn common-btn--type"><a href="#kosyou">熟成度合いによる呼称</a></li>
+                <li class="common-btn common-btn--type"><a href="#gosyu">テキーラ5州</a></li>
+                <li class="common-btn common-btn--type"><a href="#joryujo">蒸留所リスト</a></li>
             </ul>
         </aside>
         <main class="main contents-frame">
