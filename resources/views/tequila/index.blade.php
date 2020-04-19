@@ -250,11 +250,11 @@
                         ペンハモ地区/etc..
                     </p>
                     <h4 class="letters-area__title">■ タマウリパス州/ナヤリ州/ミチョアカン州</h4><br>
-                    <h4 class="letters-area__title">■ メキシコ地図（テキーラ5州）</h4><br>
+                    <h4 class="letters-area__title">■ メキシコ地図（テキーラ5州）</h4>
                     <p class="letters-area__paragraph">
                         <img src="/image/tequila/mexico_whitemap3.gif">
                     </p>
-                    <h4 class="letters-area__title">■ ハリスコ州地図</h4><br>
+                    <h4 class="letters-area__title">■ ハリスコ州地図</h4>
                     <p class="letters-area__paragraph">
                         <img src="/image/tequila/jalisco_colormap2.png">
                     </p>

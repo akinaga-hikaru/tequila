@@ -358,6 +358,12 @@ img {
   }
 }
 
+.letters-area__paragraph {
+  background: rgba(232, 223, 213, 0.5);
+  padding: 7px;
+  margin: 5px;
+}
+
 /* -----------------------------------------------
     共通：ヘッダーエリア
 ----------------------------------------------- */
@@ -594,6 +600,7 @@ img {
 .top_page .letters-area__title {
   padding: 1px 5px;
   margin-bottom: 2px;
+  line-height: 1.3;
 }
 
 @media screen and (max-width: 768px) {
