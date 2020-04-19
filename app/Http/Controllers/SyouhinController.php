@@ -74,7 +74,7 @@ class SyouhinController extends Controller
             ['aging_id' => 'Anejo', 'aging_name' => 'アネホ', 'description' => '〜熟成期間最低1年〜'],
             ['aging_id' => 'ExtraAnejo', 'aging_name' => 'エクストラアネホ', 'description' => '〜熟成期間最低3年〜'],
             ['aging_id' => 'Others', 'aging_name' => 'その他', 'description' => '〜上記以外の特殊なもの〜'],
-            ['aging_id' => 'Mezcal', 'aging_name' => '※メスカル', 'description' => '〜原材料は同じでもテキーラではないもの〜'],
+            ['aging_id' => 'Mezcal', 'aging_name' => '※メスカル', 'description' => '〜産地の違い等によりテキーラと呼べないもの〜'],
             ['aging_id' => 'Cocktail', 'aging_name' => '※カクテル', 'description' => '〜添加物ありのリキュール〜'],
         ];
 

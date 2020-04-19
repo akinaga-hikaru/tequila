@@ -62,6 +62,7 @@ function sortBtn(name, time){
         $('.js-btn--type').find('a').css({background:"none"});
         $(this).find('a').css(bg_orange);
         // クリックしたリストのみを表示する
+        $('.error-message').hide();
         $('.js-btn--list').hide();
         $('.js-btn--down').hide();
         $('.js-'+name+'-list').slideToggle(time);
@@ -86,11 +87,16 @@ function listBtn(name, match){
         var show_class = '.' + js_class + '_';
         // クリックしたリストの商品コンテナのみを表示する
         $('.js-syouhin-container').hide();
+        $('.error-message').hide();
         $(show_class).slideDown(1000);
     });
 };
 $.each(lists, function(index, list){
     listBtn(list['name'], list['match']);
+});
+// エラーを表示させる商品
+$('.js-aging_Hoben').on('click', function(){
+    $('.error-message').show();
 });
 
 // プルダウンボタン付き商品一覧ボタン押下時処理
@@ -108,6 +114,7 @@ function listBtnWithDown(name, time, match, hide){
         $(this).find('a:hover').css({background:"rgba(255,165,0,0.5)"});
         // クリックしたリストの商品コンテナのみを表示する
         $('.js-syouhin-container').hide();
+        $('.error-message').hide();
         $('.js-'+name[1]+'_'+match).slideDown(time);
         $('.js-'+name[0]+'_'+match+'_').slideDown(time);
     });
@@ -134,6 +141,7 @@ function DownBtn(name, time, match, hide){
         var show_class = '.' + js_class + '_';
         // クリックしたリストの商品コンテナのみを表示する
         $('.js-syouhin-container').hide();
+        $('.error-message').hide();
         $(show_class).slideDown(time);
     });
 };

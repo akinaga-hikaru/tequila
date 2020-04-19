@@ -123,6 +123,11 @@
                             @endforeach
                         @elseif($local['local_id'] == 'centro')
                             @foreach ($centro as $item)
+                                @php
+                                    if($item['area'] == '-') {
+                                        $item['area'] = 'その他地区';
+                                    }
+                                @endphp
                                 @component('tequila.component.common-btn',[
                                     'btn' => 'down',
                                     'js_class_1' => 'js-area-list',
@@ -203,6 +208,11 @@
                         ])
                         @endcomponent
                 @endforeach
+                <div class="error-message" hidden>
+                    <p>
+                        現在、選択された区分に商品はありません。
+                    </p>
+                </div>
             {{-- 商品コンテナend --}}
         </main>
     </div>

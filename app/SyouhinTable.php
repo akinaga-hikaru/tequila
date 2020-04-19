@@ -1318,7 +1318,7 @@ class SyouhinTable extends Model
             'alt_name' => 'santo_mezquila_blanaco',
             'url' => 'https://wazawaza.jp/products/detail.php?product_id=725',
             'image' => 'santo_mezquila_blanaco.jpg',
-            'aging_sort' => 'Others',
+            'aging_sort' => 'Mezcal',
             'aging' => 'Mezquila Blanco',
             'contents_alc' => '40%/100%AGAVE',
             'contents_dest' => '-',
