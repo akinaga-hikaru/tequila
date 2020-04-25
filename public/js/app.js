@@ -19315,6 +19315,7 @@ $('.js-type-toggle').on('click', function () {
 // 全商品コンテナを非表示
 
 $('.js-syouhin-container').hide();
+$('.form-confirm').find('.js-syouhin-container').show();
 $('.js-btn--type').hide(); // 変数設定
 
 var bg_beige = {
@@ -19414,7 +19415,7 @@ function sortBtn(name, time) {
     });
     $(this).find('a').css(bg_orange); // クリックしたリストのみを表示する
 
-    $('.error-message').hide();
+    $('.message').hide();
     $('.js-btn--list').hide();
     $('.js-btn--down').hide();
     $('.js-' + name + '-list').slideToggle(time);
@@ -19444,7 +19445,7 @@ function listBtn(name, match) {
     var show_class = '.' + js_class + '_'; // クリックしたリストの商品コンテナのみを表示する
 
     $('.js-syouhin-container').hide();
-    $('.error-message').hide();
+    $('.message').hide();
     $(show_class).slideDown(1000);
   });
 }
@@ -19455,7 +19456,7 @@ $.each(lists, function (index, list) {
 }); // エラーを表示させる商品
 
 $('.js-aging_Hoben').on('click', function () {
-  $('.error-message').show();
+  $('.message').show();
 }); // プルダウンボタン付き商品一覧ボタン押下時処理
 
 function listBtnWithDown(name, time, match, hide) {
@@ -19476,7 +19477,7 @@ function listBtnWithDown(name, time, match, hide) {
     }); // クリックしたリストの商品コンテナのみを表示する
 
     $('.js-syouhin-container').hide();
-    $('.error-message').hide();
+    $('.message').hide();
     $('.js-' + name[1] + '_' + match).slideDown(time);
     $('.js-' + name[0] + '_' + match + '_').slideDown(time);
   });
@@ -19508,7 +19509,7 @@ function DownBtn(name, time, match, hide) {
     var show_class = '.' + js_class + '_'; // クリックしたリストの商品コンテナのみを表示する
 
     $('.js-syouhin-container').hide();
-    $('.error-message').hide();
+    $('.message').hide();
     $(show_class).slideDown(time);
   });
 }

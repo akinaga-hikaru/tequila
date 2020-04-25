@@ -208,7 +208,7 @@
                         ])
                         @endcomponent
                 @endforeach
-                <div class="error-message" hidden>
+                <div class="message" hidden>
                     <p>
                         現在、選択された区分に商品はありません。
                     </p>
