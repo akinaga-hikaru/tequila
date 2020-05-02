@@ -9,7 +9,6 @@
         <aside class="aside contents-frame">
             {{-- 項目一覧ボタンstart --}}
                 @component('tequila.component.section-2',[
-                    'section_id' => '',
                     'js_class' => 'js-type-toggle',
                     'section_name' => '項目一覧 ▼',
                     ])
@@ -21,11 +20,8 @@
                         @component('tequila.component.common-btn',[
                             'btn' => 'type',
                             'js_class_1' => $type['js_class_1'],
-                            'js_class_2' => '',
-                            'hidden' => '',
-                            'link' => '',
+                            'hidden' => false,
                             'text' => $type['title'],
-                            'small_text' => '',
                             ])
                         @endcomponent
                     @endforeach
@@ -38,10 +34,9 @@
                             'btn' => 'list',
                             'js_class_1' => 'js-maker-list',
                             'js_class_2' => 'js-maker_' . $title['title_id'],
-                            'hidden' => 'hidden',
+                            'hidden' => true,
                             'link' => '#section-2',
                             'text' => $title['title'],
-                            'small_text' => '',
                             ])
                         @endcomponent
                     @endforeach
@@ -54,7 +49,7 @@
                             'btn' => 'list',
                             'js_class_1' => 'js-dest-list',
                             'js_class_2' => 'js-dest_' . $nom['nom'],
-                            'hidden' => 'hidden',
+                            'hidden' => true,
                             'link' => '#section-2',
                             'text' => 'NOM ' . $nom['nom'],
                             'small_text' => $nom['dest'],
@@ -87,7 +82,7 @@
                             'btn' => 'list',
                             'js_class_1' => 'js-local-list',
                             'js_class_2' => 'js-local_' . $local['local_id'],
-                            'hidden' => 'hidden',
+                            'hidden' => true,
                             'link' => '#section-2',
                             'text' => $local['local'],
                             'small_text' => $local['description'],
@@ -100,10 +95,9 @@
                                     'js_class_1' => 'js-area-list',
                                     'js_class_2' => 'js-area_' . $item['local_id'],
                                     'js_class_3' => 'js-area_' . $item['local_id'] . '_' . $item['area_id'],
-                                    'hidden' => 'hidden',
+                                    'hidden' => true,
                                     'link' => '#section-2',
                                     'text' => $item['area'],
-                                    'small_text' => '',
                                     ])
                                 @endcomponent
                             @endforeach
@@ -114,10 +108,9 @@
                                     'js_class_1' => 'js-area-list',
                                     'js_class_2' => 'js-area_' . $item['local_id'],
                                     'js_class_3' => 'js-area_' . $item['local_id'] . '_' . $item['area_id'],
-                                    'hidden' => 'hidden',
+                                    'hidden' => true,
                                     'link' => '#section-2',
                                     'text' => $item['area'],
-                                    'small_text' => '',
                                     ])
                                 @endcomponent
                             @endforeach
@@ -133,10 +126,9 @@
                                     'js_class_1' => 'js-area-list',
                                     'js_class_2' => 'js-area_' . $item['local_id'],
                                     'js_class_3' => 'js-area_' . $item['local_id'] . '_' . $item['area_id'],
-                                    'hidden' => 'hidden',
+                                    'hidden' => true,
                                     'link' => '#section-2',
                                     'text' => $item['area'],
-                                    'small_text' => '',
                                     ])
                                 @endcomponent
                             @endforeach
@@ -147,10 +139,9 @@
                                     'js_class_1' => 'js-area-list',
                                     'js_class_2' => 'js-area_' . $item['local_id'],
                                     'js_class_3' => 'js-area_' . $item['local_id'] . '_' . $item['area_id'],
-                                    'hidden' => 'hidden',
+                                    'hidden' => true,
                                     'link' => '#section-2',
                                     'text' => $item['local'] . $item['area'],
-                                    'small_text' => '',
                                     ])
                                 @endcomponent
                             @endforeach
@@ -165,7 +156,7 @@
                             'btn' => 'list',
                             'js_class_1' => 'js-aging-list',
                             'js_class_2' => 'js-aging_' . $aging['aging_id'],
-                            'hidden' => 'hidden',
+                            'hidden' => true,
                             'link' => '#section-2',
                             'text' => $aging['aging_name'],
                             'small_text' => $aging['description'],

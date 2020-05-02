@@ -9,34 +9,19 @@
         <aside class="aside contents-frame">
             {{-- 項目一覧ボタンstart --}}
                 @component('tequila.component.section-2',[
-                    'section_id' => '',
                     'js_class' => 'js-type-toggle',
                     'section_name' => '項目一覧 ▼',
                     ])
                 @endcomponent
             {{-- 項目一覧ボタンend --}}
             {{-- 項目選択ボタンstart --}}
-                @php
-                    $arrays = [
-                        ['0' => '#genryou', '1' => 'テキーラの原料'],
-                        ['0' => '#teigi', '1' => 'テキーラの定義'],
-                        ['0' => '#kigen', '1' => 'テキーラの起源'],
-                        ['0' => '#bunrui', '1' => 'テキーラの分類'],
-                        ['0' => '#kosyou', '1' => '熟成度合いによる呼称'],
-                        ['0' => '#gosyu', '1' => 'テキーラ5州'],
-                        ['0' => '#joryujo', '1' => '蒸留所リスト'],
-                    ];
-                @endphp
                 <ul>
-                    @foreach ($arrays as $item)
+                    @foreach (config('app_index') as $item)
                         @component('tequila.component.common-btn',[
                             'btn' => 'type',
-                            'js_class_1' => '',
-                            'js_class_2' => '',
-                            'hidden' => '',
-                            'link' => $item[0],
-                            'text' => $item[1],
-                            'small_text' => '',
+                            'hidden' => false,
+                            'link' => $item['link'],
+                            'text' => $item['text'],
                             ])
                         @endcomponent
                     @endforeach
@@ -47,7 +32,6 @@
             {{--セクションタイトル〜テキーラの原料〜start --}}
                 @component('tequila.component.section-2',[
                     'section_id' => 'genryou',
-                    'js_class' => '',
                     'section_name' => 'テキーラの原料',
                     ])
                 @endcomponent
@@ -73,7 +57,6 @@
             {{--セクションタイトル〜テキーラの定義〜start --}}
                 @component('tequila.component.section-2',[
                     'section_id' => 'teigi',
-                    'js_class' => '',
                     'section_name' => 'テキーラの定義',
                     ])
                 @endcomponent
@@ -117,14 +100,15 @@
             {{--セクションタイトル〜テキーラの起源〜start --}}
                 @component('tequila.component.section-2',[
                     'section_id' => 'kigen',
-                    'js_class' => '',
                     'section_name' => 'テキーラの起源',
                     ])
                 @endcomponent
             {{-- セクションタイトル〜テキーラの起源〜end --}}
             {{--コンテンツ〜テキーラの起源〜start --}}
                 <div class="letters-area">
-                    <h4 class="letters-area__title">1. 醸造酒「プルケ」</h4>
+                    <h4 class="letters-area__title">
+                        1. 醸造酒「プルケ」
+                    </h4>
                     <p class="letters-area__paragraph indent">
                         　山の大火事が原因でたまたまできたとされるテキーラ。
                         先住民が山火事の跡から焼けたリュウゼツランの芳香に誘われ口にしてみたところ甘い味がしたそうだ。
@@ -132,7 +116,9 @@
                         この機に誕生したのがメスカル、テキーラのもとになる「プルケ」である。
                         これは醸造酒のため、このプルケを蒸留してできたのが、メスカル、テキーラである。
                     </p>
-                    <h4 class="letters-area__title">2. スペインの蒸留技術</h4>
+                    <h4 class="letters-area__title">
+                        2. スペインの蒸留技術
+                    </h4>
                     <p class="letters-area__paragraph indent">
                         　その蒸留技術は、16世紀頃スペイン人によって持ち込まれたとされる。
                         大海賊時代と呼ばれる16世紀。各国に並びスペインも大きな開拓に活躍し、
@@ -140,14 +126,18 @@
                         スペイン人はその蒸留技術を使い、当時輸入により手に入らなくなったという
                         ブランデーに代わるアルコール飲料をメキシコにて製造することに乗り出した。
                     </p>
-                    <h4 class="letters-area__title">3.「メスカルワイン」の製造</h4>
+                    <h4 class="letters-area__title">
+                        3.「メスカルワイン」の製造
+                    </h4>
                     <p class="letters-area__paragraph indent">
                         　そこで「プルケ」を蒸留し、よりアルコール度数の高いお酒を造ろうとした。
                         その時造られたのが、「メスカルワイン」というお酒である。
                         スペインはこのメスカルワインが自国のアルコール飲料と競合することを恐れ、メキシコ国内では製造禁止とする時期もあった。
                         この期間メキシコ国内では、秘密裏に造られ続けてその多大な生産量から、スペイン政府の資金繰りのために製造が合法化された。
                     </p>
-                    <h4 class="letters-area__title">4.「テキーラ」の輸出</h4>
+                    <h4 class="letters-area__title">
+                        4.「テキーラ」の輸出
+                    </h4>
                     <p class="letters-area__paragraph indent">
                         　それに伴いメスカルワインと並んでメスカル・デ・テキーラの製造も行われるようになり、メキシコ国内では、
                         スペインからのスペイン人向けの輸入品が流通し、代わりに輸出が盛んになってくる。
@@ -158,7 +148,6 @@
             {{--セクションタイトル〜テキーラの分類〜start --}}
                 @component('tequila.component.section-2',[
                     'section_id' => 'bunrui',
-                    'js_class' => '',
                     'section_name' => 'テキーラの分類',
                     ])
                 @endcomponent
@@ -186,7 +175,6 @@
             {{--セクションタイトル〜熟成度合いによる呼称〜start --}}
                 @component('tequila.component.section-2',[
                     'section_id' => 'kosyou',
-                    'js_class' => '',
                     'section_name' => '熟成度合いによる呼称',
                     ])
                 @endcomponent
@@ -232,29 +220,39 @@
             {{--セクションタイトル〜テキーラ5州〜start --}}
                 @component('tequila.component.section-2',[
                     'section_id' => 'gosyu',
-                    'js_class' => '',
                     'section_name' => 'テキーラ5州',
                     ])
                 @endcomponent
             {{-- セクションタイトル〜テキーラ5州〜end --}}
             {{--コンテンツ〜テキーラの5州〜start --}}
                 <div class="letters-area">
-                    <h4 class="letters-area__title">■ ハリスコ州</h4>
+                    <h4 class="letters-area__title">
+                        ■ ハリスコ州
+                    </h4>
                     <p class="letters-area__paragraph indent">
                         バジェス地方 - テキーラ地区/アマティタン地区/ラス・フンタス地区/etc..<br>
                         ロスアルトス地方 - アランダス地区/ヘススマリア地区/アトトニルコ地区/アヨトラン地区/ラ・ラハ地区/etc..<br>
                         ソナ・セントロ地方 - ファナカトラン地区/サポパン地区/etc..
                     </p>
-                    <h4 class="letters-area__title">■ グアナファト州</h4>
+                    <h4 class="letters-area__title">
+                        ■ グアナファト州
+                    </h4>
                     <p class="letters-area__paragraph indent">
                         ペンハモ地区/etc..
                     </p>
-                    <h4 class="letters-area__title">■ タマウリパス州/ナヤリ州/ミチョアカン州</h4><br>
-                    <h4 class="letters-area__title">■ メキシコ地図（テキーラ5州）</h4>
+                    <h4 class="letters-area__title">
+                        ■ タマウリパス州/ナヤリ州/ミチョアカン州
+                    </h4>
+                    <br>
+                    <h4 class="letters-area__title">
+                        ■ メキシコ地図（テキーラ5州）
+                    </h4>
                     <p class="letters-area__paragraph">
                         <img src="/image/tequila/mexico_whitemap3.gif">
                     </p>
-                    <h4 class="letters-area__title">■ ハリスコ州地図</h4>
+                    <h4 class="letters-area__title">
+                        ■ ハリスコ州地図
+                    </h4>
                     <p class="letters-area__paragraph">
                         <img src="/image/tequila/jalisco_colormap2.png">
                     </p>
@@ -263,7 +261,6 @@
             {{--セクションタイトル〜蒸留所リスト〜start --}}
                 @component('tequila.component.section-2',[
                     'section_id' => 'joryujo',
-                    'js_class' => '',
                     'section_name' => '蒸留所リスト',
                     ])
                 @endcomponent
@@ -280,7 +277,9 @@
                     <div class="table-area__scroll-frame">
                         <table class="table-area">
                             <tr>
-                                <td class="table-area__header">ハリスコ州 バジェス地方</td>
+                                <td class="table-area__header">
+                                    ハリスコ州 バジェス地方
+                                </td>
                             </tr>
                             <tr>
                                 <th>蒸留所</th>
@@ -361,7 +360,9 @@
                     <div class="table-area__scroll-frame">
                         <table class="table-area">
                             <tr>
-                                <td class="table-area__header">ハリスコ州 ロスアルトス地方</td>
+                                <td class="table-area__header">
+                                    ハリスコ州 ロスアルトス地方
+                                </td>
                             </tr>
                             <tr>
                                 <th>蒸留所</th>
@@ -442,7 +443,9 @@
                     <div class="table-area__scroll-frame">
                         <table class="table-area">
                             <tr>
-                                <td class="table-area__header">ハリスコ州 ソナ・セントロ地方</td>
+                                <td class="table-area__header">
+                                    ハリスコ州 ソナ・セントロ地方
+                                </td>
                             </tr>
                             <tr>
                                 <th>蒸留所</th>
@@ -469,7 +472,9 @@
                     <div class="table-area__scroll-frame">
                         <table class="table-area">
                             <tr>
-                                <td class="table-area__header">グアナファト州</td>
+                                <td class="table-area__header">
+                                    グアナファト州
+                                </td>
                             </tr>
                             <tr>
                                 <th>蒸留所</th>

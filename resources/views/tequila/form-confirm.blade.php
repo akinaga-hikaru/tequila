@@ -8,7 +8,6 @@
     <main class="contents-frame ">
         {{-- ブランドタイトルstart --}}
             @component('tequila.component.section-2',[
-                'section_id' => '',
                 'js_class' => 'js-syouhin-title',
                 'section_name' => '項目名 / 入力内容',
                 ])
@@ -141,7 +140,6 @@
         <aside class="aside contents-frame">
             {{-- 項目一覧ボタンstart --}}
                 @component('tequila.component.section-2',[
-                    'section_id' => '',
                     'js_class' => 'js-type-toggle',
                     'section_name' => '項目一覧 ▼',
                     ])

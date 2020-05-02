@@ -15,22 +15,14 @@
                 <th>出版年</th>
             </tr>
             <tr>
-                <td>マルコ・ドミンゲス</td>
-                <td>『PREMIUM TEQUILA』</td>
-                <td>駒草出版</td>
-                <td>2012年9月20日</td>
-            </tr>
-            <tr>
-                <td>林生馬</td>
-                <td>『テキーラ大鑑』</td>
-                <td>廣済堂出版</td>
-                <td>2012年7月5日</td>
-            </tr>
-            <tr>
-                <td>橋口孝司</td>
-                <td>『スピリッツ銘酒辞典』</td>
-                <td>新星出版社</td>
-                <td>2002年4月5日</td>
+                {{-- conifgで作品を著者ごとに定義 --}}
+                @foreach (config('app_bunken') as $author)
+                    <tr>
+                        @foreach ($author as $value)
+                            <td>{{ $value }}</td>
+                        @endforeach
+                    </tr>
+                @endforeach
             </tr>
         </table>
     </center>
