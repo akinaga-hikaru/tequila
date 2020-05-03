@@ -24,7 +24,7 @@ return [
         'type' => 'text',
         'description' => '画像が表示できない時の説明文',
         'terms' => '半角英数字推奨',
-        'sample' => '「Tres Reyes Silver」 => 「tres_reyes_silver.jpg」',
+        'sample' => '「Tres Reyes Silver」 => 「tres_reyes_silver」',
     ],
     'url' => [
         'title' => 'リンク',
@@ -94,14 +94,14 @@ return [
         'type' => 'text',
         'description' => '生産エリアの識別ID',
         'terms' => '半角小文字英数字',
-        'sample' => 'テキーラ地区」 => 「tequila」',
+        'sample' => '「テキーラ地区」 => 「tequila」',
     ],
     'contents_area' => [
         'title' => '生産エリア名',
         'type' => 'text',
         'description' => '生産されたエリア名',
         'terms' => '全角文字',
-        'sample' => 'テキーラ地区」 => 「テキーラ地区」',
+        'sample' => '「テキーラ地区」 => 「テキーラ地区」',
     ],
     'contents_info' => [
         'title' => '内容（情報）',

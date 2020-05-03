@@ -25,7 +25,7 @@
                                 <tr>
                                     <label>
                                         <th>{{ $value['title'] }}</th>
-                                        <td><input type="{{ $value['type'] }}" name="{{ $key }}"></td>
+                                        <td><input type="{{ $value['type'] }}" name="{{ $key }}" value="{{ !empty(session($key)) ? session($key) : old($key) }}"></td>
                                     </label>
                                     <td>{{ $value['description'] }}</td>
                                     <td>{{ $value['terms'] }}</td>

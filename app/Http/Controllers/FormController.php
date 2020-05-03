@@ -9,23 +9,24 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Helpers\Helper;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class FormController extends Controller
 {
-    public function input()
+    public function input(Request $request)
     {
         return view('tequila.form-input');
     }
 
-
     public function postInput(Request $request)
     {
-        $input = [
+        // 入力項目をセッションに保存
+        $request->session()->put([
             'title_id' => $request->input('title_id'),
             'title_name' => $request->input('title_name'),
             'alt_name' => $request->input('alt_name'),
             'url' => $request->input('url'),
-            'image' => $request->input('image'),
             'aging_sort' => $request->input('aging_sort'),
             'aging' => $request->input('aging'),
             'contents_alc' => $request->input('contents_alc'),
@@ -39,15 +40,82 @@ class FormController extends Controller
             'contents_review_flavor' => $request->input('contents_review_flavor'),
             'contents_review_top' => $request->input('contents_review_top'),
             'contents_review_after' => $request->input('contents_review_after'),
+        ]);
+
+        // アップロードファイル定義
+        if (!empty($request->file('image'))) {
+            $upload_file = $request->file('image');
+        } else {
+            $upload_file = null;
+        }
+
+        // インプット項目をセッションから取得
+        $input = [
+            'title_id' => session('title_id'),
+            'title_name' => session('title_name'),
+            'alt_name' => session('alt_name'),
+            'url' => session('url'),
+            'image' => session('alt_name') . '.jpg',
+            'aging_sort' => session('aging_sort'),
+            'aging' => session('aging'),
+            'contents_alc' => session('contents_alc'),
+            'contents_dest' => session('contents_dest'),
+            'contents_nom' => session('contents_nom'),
+            'contents_local_id' => session('contents_local_id'),
+            'contents_local' => session('contents_local'),
+            'contents_area_id' => session('contents_area_id'),
+            'contents_area' => session('contents_area'),
+            'contents_info' => session('contents_info'),
+            'contents_review_flavor' => session('contents_review_flavor'),
+            'contents_review_top' => session('contents_review_top'),
+            'contents_review_after' => session('contents_review_after'),
         ];
 
-        return view('tequila.form-confirm')->with('input', $input);
+        // アップロードファイルがあれば一時フォルダに格納（プレビュー表示させるため）
+        if (!empty($request->file('image')) && !empty($input['alt_name'])) {
+            $file = $input['alt_name'] . '.jpg';
+            $upload_file->storeAs('upload', $file);
+            $upload_file->move('./image/tequila/syouhin/sample', $file);
+        }
 
+        return view('tequila.form-confirm')
+            ->with('input', $input);
     }
 
     public function confirm()
     {
         return view('tequila.form-confirm');
+    }
+
+    public function complete(Request $request)
+    {
+        // DBにデータを挿入
+        $file = session('alt_name') . '.jpg';
+        DB::table('syouhin')->insert([
+            'title_id' => session('title_id'),
+            'title_name' => session('title_name'),
+            'alt_name' => session('alt_name'),
+            'url' => session('url'),
+            'image' => $file,
+            'aging_sort' => session('aging_sort'),
+            'aging' => session('aging'),
+            'contents_alc' => session('contents_alc'),
+            'contents_dest' => session('contents_dest'),
+            'contents_nom' => session('contents_nom'),
+            'contents_local_id' => session('contents_local_id'),
+            'contents_local' => session('contents_local'),
+            'contents_area_id' => session('contents_area_id'),
+            'contents_area' => session('contents_area'),
+            'contents_info' => session('contents_info'),
+            'contents_review_flavor' => session('contents_review_flavor'),
+            'contents_review_top' => session('contents_review_top'),
+            'contents_review_after' => session('contents_review_after'),
+        ]);
+        // アップロードしたファイルを正規フォルダに移動
+        File::move('./image/tequila/syouhin/sample/' . $file, './image/tequila/syouhin/' . $file);
+        // セッションクリア
+        $request->session()->flush();
+        return view('tequila.form-complete');
     }
 
 }

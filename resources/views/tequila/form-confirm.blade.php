@@ -165,7 +165,7 @@
                     'title_name' => $input['title_name'],
                     'alt_name' => $input['alt_name'],
                     'url' => $input['url'],
-                    'image' => $input['image'],
+                    'image' => 'sample/' . $input['image'],
                     'aging_sort' => $input['aging_sort'],
                     'aging' => $input['aging'],
                     'contents_alc' => $input['contents_alc'],
@@ -192,7 +192,7 @@
         </div>
         <div class="center">
             <br>
-            <button type="button" name="submit">登録する</button>
+            <button type="button" name="submit" onclick="location.href='form-complete'">登録する</button>
         </div>
     </div>
 @endsection
