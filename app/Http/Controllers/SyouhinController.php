@@ -5,21 +5,26 @@ namespace App\Http\Controllers;
 use App\SyouhinTable;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
-use App\ApplyInfo\ApplyInfo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Helpers\Helper;
 use Illuminate\View\View;
 
 class SyouhinController extends Controller
 {
-
+    /*
+    |--------------------------------------------------------------------------
+    | GET遷移時の商品紹介画面処理
+    |--------------------------------------------------------------------------
+    */
     public function syouhin()
     {
-        // DB(tequila)のTable(syouhin)から全てのデータを取得
-        $syouhin_data_all = DB::table('syouhin')->get();
-
-        // function・・・配列内の重複する値を削除して昇順にする
+        /**
+         * 配列内の重複する値を削除して昇順にする
+         *
+         * @param array $list・・・重複削除する配列
+         * @param string $delete_key・・・重複削除のキー
+         * @return array $lists・・・重複削除後の配列
+         */
         function doubleDelete($list, $delete_key)
         {
             // 連想配列の（$delete_key）のValueで重複を削除
@@ -36,7 +41,14 @@ class SyouhinController extends Controller
             return $lists;
         }
 
-        // ブランド名設定・・・DB取得したデータからタイトルを抽出し、連想配列化
+        /** - 商品データ設定 -
+         * 設定変数：$syouhin_data_all
+         * 〜 DB(tequila)のTable(syouhin)から全てのデータを取得 〜 */
+        $syouhin_data_all = DB::table('syouhin')->get();
+
+        /** - ブランド名設定 -
+         * 設定変数：$titles
+         * 〜 DBデータからブランド名を抽出し、連想配列化 〜 */
         $title = [];
         foreach ($syouhin_data_all as $item) {
             $title[] = [
@@ -46,7 +58,9 @@ class SyouhinController extends Controller
         }
         $titles = doubleDelete($title, 'title');
 
-        // NOM設定・・・DB取得したデータからNOMを抽出し、連想配列化
+        /** - NOM設定 -
+         * 設定変数：$noms
+         * 〜 DBデータからNOMを抽出し、連想配列化 〜 */
         $nom = [];
         foreach ($syouhin_data_all as $item) {
             $nom[] = [
@@ -56,13 +70,19 @@ class SyouhinController extends Controller
         }
         $noms = doubleDelete($nom, 'nom');
 
-        // 生産地方設定・・・連想配列
+        /** - 生産地方設定 -
+         * 設定変数：$locals
+         * 〜 configで定義 〜 */
         $locals = config('app_syouhin.locals');
 
-        // 熟成度合い設定・・・連想配列
+        /** - 熟成度合い設定 -
+         * 設定変数：$agings
+         * 〜 configで定義 〜 */
         $agings = config('app_syouhin.agings');
 
-        // 生産地区設定・・・DB取得したデータから生産地区を抽出し、連想配列化
+        /** - 生産地区設定 -
+         * 設定変数：$areas
+         * 〜 DBデータから生産地区を抽出し、連想配列化 〜 */
         $area = [];
         foreach ($syouhin_data_all as $item) {
             $area[] = [
@@ -75,21 +95,35 @@ class SyouhinController extends Controller
         $areas = doubleDelete($area, 'area_id');
         arsort($areas);
 
-        // 項目選択ボタンの定義・・・連想配列化
+        /** - 項目選択ボタン設定 -
+         * 設定変数：$types */
         $types = [
-            ['js_class_1' => 'js-maker-type', 'title' => 'ブランド別（' . count($titles) . '）'],
-            ['js_class_1' => 'js-dest-type', 'title' => '蒸留所別（' . count($noms) . '）'],
-            ['js_class_1' => 'js-local-type', 'title' => '生産地方別（' . count($locals) . '）'],
-            ['js_class_1' => 'js-aging-type', 'title' => '熟成度合い別（' . count($agings) . '）'],
+            [
+                'js_class_1' => 'js-maker-type',
+                'title' => 'ブランド別（' . count($titles) . '）'
+            ],
+            [
+                'js_class_1' => 'js-dest-type',
+                'title' => '蒸留所別（' . count($noms) . '）'
+            ],
+            [
+                'js_class_1' => 'js-local-type',
+                'title' => '生産地方別（' . count($locals) . '）'
+            ],
+            [
+                'js_class_1' => 'js-aging-type',
+                'title' => '熟成度合い別（' . count($agings) . '）'
+            ],
         ];
 
-        return view('tequila.syouhin')
-            ->with('syouhin_data_all', $syouhin_data_all)
-            ->with('titles', $titles)
-            ->with('locals', $locals)
-            ->with('noms', $noms)
-            ->with('agings', $agings)
-            ->with('areas', $areas)
-            ->with('types', $types);
+        return view('tequila.syouhin')->with([
+            'syouhin_data_all' => $syouhin_data_all,
+            'titles' => $titles,
+            'locals' => $locals,
+            'noms' => $noms,
+            'agings' => $agings,
+            'areas' => $areas,
+            'types' => $types,
+        ]);
     }
 }

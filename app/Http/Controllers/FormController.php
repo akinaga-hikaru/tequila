@@ -7,18 +7,27 @@ use Carbon\Carbon;
 use App\ApplyInfo\ApplyInfo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Helpers\Helper;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 
 class FormController extends Controller
 {
+    /*
+    |--------------------------------------------------------------------------
+    | GET遷移時のform-input画面処理
+    |--------------------------------------------------------------------------
+    */
     public function input(Request $request)
     {
         return view('tequila.form-input');
     }
 
+    /*
+    |--------------------------------------------------------------------------
+    | POST遷移時のform-input画面処理
+    |--------------------------------------------------------------------------
+    */
     public function postInput(Request $request)
     {
         // 入力項目をセッションに保存
@@ -78,16 +87,25 @@ class FormController extends Controller
             $upload_file->move('./image/tequila/syouhin/sample', $file);
         }
 
-        return view('tequila.form-confirm')
-            ->with('input', $input);
+        return view('tequila.form-confirm')->with('input', $input);
     }
 
+    /*
+    |--------------------------------------------------------------------------
+    | GET遷移時のform-confirm画面処理
+    |--------------------------------------------------------------------------
+    */
     public function confirm()
     {
         return view('tequila.form-confirm');
     }
 
-    public function complete(Request $request)
+    /*
+    |--------------------------------------------------------------------------
+    | POST遷移時のform-comnfirm画面処理
+    |--------------------------------------------------------------------------
+    */
+    public function postConfirm(Request $request)
     {
         // DBにデータを挿入
         $file = session('alt_name') . '.jpg';
@@ -118,4 +136,13 @@ class FormController extends Controller
         return view('tequila.form-complete');
     }
 
+    /*
+    |--------------------------------------------------------------------------
+    | GET遷移時のform-complete画面処理
+    |--------------------------------------------------------------------------
+    */
+    public function complete()
+    {
+        return view('tequila.form-complete');
+    }
 }

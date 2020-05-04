@@ -17,9 +17,7 @@ Route::get('/', function () {
 Route::get('bunken', function () {
     return view('tequila/bunken');
 });
-Route::get('maker_intro', function () {
-    return view('tequila/maker_intro');
-});
+
 Route::get('tenpo', function () {
     return view('tequila/tenpo');
 });
@@ -27,4 +25,5 @@ Route::get('syouhin', 'SyouhinController@syouhin');
 Route::get('form-input', 'FormController@input');
 Route::post('form-input', 'FormController@postInput');
 Route::get('form-confirm', 'FormController@confirm');
+Route::post('form-confirm', 'FormController@postConfirm');
 Route::get('form-complete', 'FormController@complete');
