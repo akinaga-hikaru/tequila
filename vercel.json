@@ -1,0 +1,11 @@
+{
+    "regions": ["hnd1"],
+    "functions": {
+      "public/index.php": {
+        "runtime": "now-php@0.0.10"
+      }
+    },
+    "routes": [
+      { "src": "/(.*)",  "dest": "/public/index.php" }
+    ]
+  }
