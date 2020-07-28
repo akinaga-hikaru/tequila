@@ -8,7 +8,7 @@
 <div class="contents-frame center">
     <div class="center">
         <div>
-            <form method="POST" action="form-input" enctype="multipart/form-data">
+            <form method="POST" action="form-confirm" enctype="multipart/form-data">
             @csrf
             <div class="scroll-area">
                 <div class="table-area__scroll-frame">

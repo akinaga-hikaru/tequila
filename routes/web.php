@@ -23,7 +23,5 @@ Route::get('tenpo', function () {
 });
 Route::get('syouhin', 'SyouhinController@syouhin');
 Route::get('form-input', 'FormController@input');
-Route::post('form-input', 'FormController@postInput');
-Route::get('form-confirm', 'FormController@confirm');
-Route::post('form-confirm', 'FormController@postConfirm');
-Route::get('form-complete', 'FormController@complete');
+Route::post('form-confirm', 'FormController@postInput');
+Route::get('form-complete', 'FormController@postConfirm');
