@@ -1,11 +1,8 @@
 {
     "regions": ["hnd1"],
     "functions": {
-      "public/index.php": {
-        "runtime": "now-php@0.0.10"
+      "api/*.php": {
+        "runtime": "vercel-php@0.3.1"
       }
-    },
-    "routes": [
-      { "src": "/(.*)",  "dest": "/public/index.php" }
-    ]
+    }
   }
