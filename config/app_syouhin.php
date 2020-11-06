@@ -37,7 +37,7 @@ return [
             'description' => '〜熟成期間1ヶ月未満（シルバー・プラタ）〜'
         ],
         [
-            'aging_id' => 'Hoben',
+            'aging_id' => 'Joven',
             'aging_name' => 'ホベン',
             'description' => '〜ブランコにレポサドかアネホを混合〜'
         ],

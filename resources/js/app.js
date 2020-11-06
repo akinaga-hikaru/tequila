@@ -149,7 +149,7 @@ $.each(lists, function(index, list){
 });
 
 // 対象商品がないメッセージを表示させる商品
-$('.js-aging_Hoben').on('click', function(){
+$('.js-aging_Joven').on('click', function(){
     $('.message').show();
 });
 

@@ -19481,7 +19481,7 @@ $.each(lists, function (index, list) {
   listBtn(list['name'], list['match']);
 }); // 対象商品がないメッセージを表示させる商品
 
-$('.js-aging_Hoben').on('click', function () {
+$('.js-aging_Joven').on('click', function () {
   $('.message').show();
 });
 /**
