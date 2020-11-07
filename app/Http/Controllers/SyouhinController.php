@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\SyouhinTable;
 use App\Http\Controllers\Controller;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\View\View;
 
 class SyouhinController extends Controller
 {
