@@ -19278,30 +19278,38 @@ module.exports = function(module) {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+/* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_bootstrap__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _data_listData_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data/listData.js */ "./resources/js/data/listData.js");
+/* harmony import */ var _data_listDataWithPulldown_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data/listDataWithPulldown.js */ "./resources/js/data/listDataWithPulldown.js");
+ // data
+
+
+
 /* -----------------------------------------------
     画面共通処理
 ----------------------------------------------- */
 
-/* SPのグローバルメニューのリスト表示非表示 */
-
+/* --------------- SPのグローバルメニューのリスト表示設定 --------------- */
 
 $(function () {
   $('.js-global-menu__btn-sp').on('click', function () {
     $('.js-global-menu').slideToggle();
   });
 });
-/* サイドメニュー表示非表示 */
+/* --------------- サイドメニュー表示設定 --------------- */
 
 $('.js-type-toggle').on('click', function () {
-  // [項目選択]ボタンの表示非表示
-  $('.js-btn--type').slideToggle(500); // 全てのリストを非表示
+  // 1. [項目選択]ボタンの表示非表示
+  $('.js-btn--type').slideToggle(500); // 2. 全てのリストを非表示
 
   $('.js-btn--list').hide();
-  $('.js-btn--down').hide(); // テキスト表示変更
+  $('.js-btn--down').hide(); // 3. テキスト表示変更
 
   var btn_text = $(this).text();
 
@@ -19315,109 +19323,25 @@ $('.js-type-toggle').on('click', function () {
     画面：商品紹介
 ----------------------------------------------- */
 
-/* 初期表示設定 */
+/* --------------- 初期表示設定 --------------- */
 // 全商品コンテナ・項目選択ボタン非表示
 
 $('.js-syouhin-container').hide();
-$('.js-btn--type').hide(); // 登録内容確認画面時のみ表示
+$('.js-btn--type').hide(); // 登録内容確認画面時のみ表示（※例外パターン）
 
 $('.form-confirm').find('.js-syouhin-container').show();
-/* 変数設定 */
+/* ---------------　変数設定 ---------------　*/
 // CSS定義
 
-var bg_beige = {
-  background: "beige",
-  color: "rgb(94,61,30)"
-};
 var bg_orange = {
   background: "rgba(255,165,0,0.5)",
   color: "beige"
 }; // ボタン定義（[項目選択]-[商品一覧]）
 
-var lists = [// [ブランド別]
-{
-  'name': 'maker',
-  'time': 1000,
-  'match': /js-maker_[a-z-]*/
-}, // [蒸留所別]
-{
-  'name': 'dest',
-  'time': 1000,
-  'match': /js-dest_[0-9-]*/
-}, // [熟成度合い別]
-{
-  'name': 'aging',
-  'time': 750,
-  'match': /js-aging_[A-z-]*/
-}]; // ボタン定義（[項目選択]-[商品一覧]-[プルダウン]）
-// [生産地方別]
+var lists = _data_listData_js__WEBPACK_IMPORTED_MODULE_1__["default"]; // ボタン定義（[項目選択]-[商品一覧]-[プルダウン]）
 
-var pulldown__area = [// [バジェス地方]
-{
-  'name': {
-    '0': 'local',
-    '1': 'area'
-  },
-  'time': 500,
-  'match': {
-    '0': 'valles',
-    '1': /js-area_valles_[a-z-]*/
-  },
-  'hide': {
-    '0': 'altos',
-    '1': 'centro',
-    '2': 'others'
-  }
-}, // [ロスアルトス地方]
-{
-  'name': {
-    '0': 'local',
-    '1': 'area'
-  },
-  'time': 500,
-  'match': {
-    '0': 'altos',
-    '1': /js-area_altos_[a-z-]*/
-  },
-  'hide': {
-    '0': 'valles',
-    '1': 'centro',
-    '2': 'others'
-  }
-}, // [ソナセントロ地方]
-{
-  'name': {
-    '0': 'local',
-    '1': 'area'
-  },
-  'time': 500,
-  'match': {
-    '0': 'centro',
-    '1': /js-area_centro_[a-z-]*/
-  },
-  'hide': {
-    '0': 'altos',
-    '1': 'valles',
-    '2': 'others'
-  }
-}, // [その他]
-{
-  'name': {
-    '0': 'local',
-    '1': 'area'
-  },
-  'time': 500,
-  'match': {
-    '0': 'others',
-    '1': /js-area_others_[a-z-]*/
-  },
-  'hide': {
-    '0': 'altos',
-    '1': 'centro',
-    '2': 'valles'
-  }
-}];
-/* 各ボタン押下時処理　*/
+var pulldown__area = _data_listDataWithPulldown_js__WEBPACK_IMPORTED_MODULE_2__["default"]['area'];
+/* ---------------　実行処理 ---------------　*/
 
 /**
  * 〜 [項目選択]ボタン押下時処理 〜
@@ -19594,6 +19518,119 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/data/listData.js":
+/*!***************************************!*\
+  !*** ./resources/js/data/listData.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// 各項目にプルダウンのないリスト項目
+/* harmony default export */ __webpack_exports__["default"] = ([// [ブランド別]
+{
+  'name': 'maker',
+  'time': 1000,
+  'match': /js-maker_[a-z-]*/
+}, // [蒸留所別]
+{
+  'name': 'dest',
+  'time': 1000,
+  'match': /js-dest_[0-9-]*/
+}, // [熟成度合い別]
+{
+  'name': 'aging',
+  'time': 750,
+  'match': /js-aging_[A-z-]*/
+}]);
+
+/***/ }),
+
+/***/ "./resources/js/data/listDataWithPulldown.js":
+/*!***************************************************!*\
+  !*** ./resources/js/data/listDataWithPulldown.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// 各項目にプルダウンのあるリスト項目
+// [生産地方別]
+var area = [// [バジェス地方]
+{
+  'name': {
+    '0': 'local',
+    '1': 'area'
+  },
+  'time': 500,
+  'match': {
+    '0': 'valles',
+    '1': /js-area_valles_[a-z-]*/
+  },
+  'hide': {
+    '0': 'altos',
+    '1': 'centro',
+    '2': 'others'
+  }
+}, // [ロスアルトス地方]
+{
+  'name': {
+    '0': 'local',
+    '1': 'area'
+  },
+  'time': 500,
+  'match': {
+    '0': 'altos',
+    '1': /js-area_altos_[a-z-]*/
+  },
+  'hide': {
+    '0': 'valles',
+    '1': 'centro',
+    '2': 'others'
+  }
+}, // [ソナセントロ地方]
+{
+  'name': {
+    '0': 'local',
+    '1': 'area'
+  },
+  'time': 500,
+  'match': {
+    '0': 'centro',
+    '1': /js-area_centro_[a-z-]*/
+  },
+  'hide': {
+    '0': 'altos',
+    '1': 'valles',
+    '2': 'others'
+  }
+}, // [その他]
+{
+  'name': {
+    '0': 'local',
+    '1': 'area'
+  },
+  'time': 500,
+  'match': {
+    '0': 'others',
+    '1': /js-area_others_[a-z-]*/
+  },
+  'hide': {
+    '0': 'altos',
+    '1': 'centro',
+    '2': 'valles'
+  }
+}]; // リスト項目をまとめてエクスポート
+
+var data = {
+  area: area
+};
+/* harmony default export */ __webpack_exports__["default"] = (data);
 
 /***/ }),
 

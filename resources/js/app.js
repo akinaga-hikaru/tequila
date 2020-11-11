@@ -1,102 +1,68 @@
-require('./bootstrap');
+import './bootstrap';
+
+// data
+import listData from './data/listData.js';
+import listDataWithPulldown from './data/listDataWithPulldown.js';
 
 /* -----------------------------------------------
     画面共通処理
 ----------------------------------------------- */
-/* SPのグローバルメニューのリスト表示非表示 */
+/* --------------- SPのグローバルメニューのリスト表示設定 --------------- */
 $(function() {
     $('.js-global-menu__btn-sp').on('click', function(){
         $('.js-global-menu').slideToggle();
     });
 });
 
-/* サイドメニュー表示非表示 */
+
+/* --------------- サイドメニュー表示設定 --------------- */
 $('.js-type-toggle').on('click', function(){
-    // [項目選択]ボタンの表示非表示
+
+    // 1. [項目選択]ボタンの表示非表示
     $('.js-btn--type').slideToggle(500);
-    // 全てのリストを非表示
+
+    // 2. 全てのリストを非表示
     $('.js-btn--list').hide();
     $('.js-btn--down').hide();
-    // テキスト表示変更
-    var btn_text = $(this).text();
+
+    // 3. テキスト表示変更
+    let btn_text = $(this).text();
     if (btn_text == "項目一覧 ▼"){
         $(this).text('項目一覧 ▲');
     }else{
         $(this).text('項目一覧 ▼');
     }
+
 });
+
 
 /* -----------------------------------------------
     画面：商品紹介
 ----------------------------------------------- */
-/* 初期表示設定 */
+/* --------------- 初期表示設定 --------------- */
+
 // 全商品コンテナ・項目選択ボタン非表示
 $('.js-syouhin-container').hide();
 $('.js-btn--type').hide();
-// 登録内容確認画面時のみ表示
+
+// 登録内容確認画面時のみ表示（※例外パターン）
 $('.form-confirm').find('.js-syouhin-container').show();
 
-/* 変数設定 */
+
+/* ---------------　変数設定 ---------------　*/
+
 // CSS定義
-var bg_beige = {background:"beige",color:"rgb(94,61,30)"};
-var bg_orange = {background:"rgba(255,165,0,0.5)",color:"beige"};
+const bg_orange = {background:"rgba(255,165,0,0.5)",color:"beige"};
 
 // ボタン定義（[項目選択]-[商品一覧]）
-var lists = [
-    // [ブランド別]
-    {
-        'name': 'maker',
-        'time': 1000,
-        'match': /js-maker_[a-z-]*/
-    },
-    // [蒸留所別]
-    {
-        'name': 'dest',
-        'time': 1000,
-        'match': /js-dest_[0-9-]*/
-    },
-    // [熟成度合い別]
-    {
-        'name': 'aging',
-        'time': 750,
-        'match': /js-aging_[A-z-]*/
-    },
-];
+const lists = listData;
 
 // ボタン定義（[項目選択]-[商品一覧]-[プルダウン]）
-// [生産地方別]
-var pulldown__area = [
-    // [バジェス地方]
-    {
-        'name': {'0': 'local', '1': 'area'},
-        'time': 500,
-        'match': {'0': 'valles','1': /js-area_valles_[a-z-]*/},
-        'hide': {'0': 'altos', '1': 'centro', '2': 'others',}
-    },
-    // [ロスアルトス地方]
-    {
-        'name': {'0': 'local', '1': 'area'},
-        'time': 500,
-        'match': {'0': 'altos', '1': /js-area_altos_[a-z-]*/},
-        'hide': {'0': 'valles', '1': 'centro', '2': 'others',}
-    },
-    // [ソナセントロ地方]
-    {
-        'name': {'0': 'local', '1': 'area'},
-        'time': 500,
-        'match': {'0': 'centro', '1': /js-area_centro_[a-z-]*/},
-        'hide': {'0': 'altos', '1': 'valles', '2': 'others',}
-    },
-    // [その他]
-    {
-        'name': {'0': 'local', '1': 'area'},
-        'time': 500,
-        'match': {'0': 'others', '1': /js-area_others_[a-z-]*/},
-        'hide': {'0': 'altos', '1': 'centro', '2': 'valles',}
-    },
-];
+const pulldown__area = listDataWithPulldown['area'];
 
-/* 各ボタン押下時処理　*/
+
+/* ---------------　実行処理 ---------------　*/
+
 /**
  * 〜 [項目選択]ボタン押下時処理 〜
  * @param name string・・・[項目選択]名
@@ -114,6 +80,7 @@ function sortBtn(name, time){
         $('.js-'+name+'-list').slideToggle(time);
     });
 };
+
 // [項目選択]-[商品一覧]のみの時に適用
 $.each(lists, function(index, list){
     sortBtn(list['name'], list['time']);
@@ -143,6 +110,7 @@ function listBtn(name, match){
         $(show_class).slideDown(1000);
     });
 };
+
 // [項目選択]-[商品一覧]のみの時に適用
 $.each(lists, function(index, list){
     listBtn(list['name'], list['match']);
@@ -180,6 +148,7 @@ function listBtnWithDown(name, time, match, hide){
         $('.js-'+name[0]+'_'+match+'_').slideDown(time);
     });
 };
+
 // [項目選択]-[商品一覧]-[プルダウン]時に適用
 $.each(pulldown__area, function(index, list){
     listBtnWithDown(list['name'], list['time'], list['match'][0], list['hide']);
@@ -214,6 +183,7 @@ function DownBtn(name, time, match, hide){
         $(show_class).slideDown(time);
     });
 };
+
 // [項目選択]-[商品一覧]-[プルダウン]時に適用
 $.each(pulldown__area, function(index, list){
     DownBtn(list['name'], list['time'], list['match'], list['hide']);
