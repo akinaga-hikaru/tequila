@@ -199,7 +199,7 @@
                         ])
                         @endcomponent
                 @endforeach
-                <div class="message" hidden>
+                <div class="message js-syouhin-message" hidden>
                     <p>
                         現在、選択された区分に商品はありません。
                     </p>

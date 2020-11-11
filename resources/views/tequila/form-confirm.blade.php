@@ -2,7 +2,7 @@
 
 @section('title','登録内容確認')
 @section('section','登録内容確認')
-@section('body_class',' body form form-confirm syouhin')
+@section('body_class',' body form form-confirm syouhin js-form-confirm')
 
 @section('main')
     <main class="contents-frame ">

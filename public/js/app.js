@@ -19285,7 +19285,11 @@ module.exports = function(module) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 /* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_bootstrap__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _page_syouhin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page/syouhin */ "./resources/js/page/syouhin.js");
+/* harmony import */ var _data_classNames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data/classNames */ "./resources/js/data/classNames.js");
+/* harmony import */ var _function_hideClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./function/hideClass */ "./resources/js/function/hideClass.js");
+/* harmony import */ var _page_syouhin__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./page/syouhin */ "./resources/js/page/syouhin.js");
+
+
 
 /* -----------------------------------------------
     画面共通処理
@@ -19294,22 +19298,21 @@ __webpack_require__.r(__webpack_exports__);
 /* --------------- SPのグローバルメニューのリスト表示設定 --------------- */
 
 $(function () {
-  $('.js-global-menu__btn-sp').on('click', function () {
-    $('.js-global-menu').slideToggle();
+  $(_data_classNames__WEBPACK_IMPORTED_MODULE_1__["default"].global_menu__btn_sp).on('click', function () {
+    $(_data_classNames__WEBPACK_IMPORTED_MODULE_1__["default"].global_menu).slideToggle();
   });
 });
 /* --------------- サイドメニュー表示設定 --------------- */
 
-$('.js-type-toggle').on('click', function () {
-  // 1. [項目選択]ボタンの表示非表示
-  $('.js-btn--type').slideToggle(500); // 2. 全てのリストを非表示
+$(_data_classNames__WEBPACK_IMPORTED_MODULE_1__["default"].type_toggle).on('click', function () {
+  // 1. ①[項目選択]ボタンの表示設定
+  $(_data_classNames__WEBPACK_IMPORTED_MODULE_1__["default"].btn_type).slideToggle(500); // 2. ②③[商品一覧], ④[プルダウン] リストを非表示
 
-  $('.js-btn--list').hide();
-  $('.js-btn--down').hide(); // 3. テキスト表示変更
+  Object(_function_hideClass__WEBPACK_IMPORTED_MODULE_2__["default"])([_data_classNames__WEBPACK_IMPORTED_MODULE_1__["default"].btn_list, _data_classNames__WEBPACK_IMPORTED_MODULE_1__["default"].btn_down]); // 3. テキスト表示切替
 
   var btn_text = $(this).text();
 
-  if (btn_text == "項目一覧 ▼") {
+  if (btn_text === "項目一覧 ▼") {
     $(this).text('項目一覧 ▲');
   } else {
     $(this).text('項目一覧 ▼');
@@ -19352,6 +19355,63 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/data/classNames.js":
+/*!*****************************************!*\
+  !*** ./resources/js/data/classNames.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// JS処理用の共通classの設定
+
+/* ---------- クラス名定義 ---------- */
+// Prefix
+var js = '.js-'; // 商品コンテナ
+
+var syouhin_container = js + 'syouhin-container';
+var syouhin_title = js + 'syouhin-title';
+var syouhin_message = js + 'syouhin-message'; // グローバルメニュー
+
+var global_menu = js + 'global-menu';
+var global_menu__btn_sp = js + 'global-menu__btn-sp'; // サイドリスト
+
+var type_toggle = js + 'type-toggle';
+var btn = js + 'btn';
+var btn_type = btn + '--type';
+var btn_list = btn + '--list';
+var btn_down = btn + '--down'; // 商品一覧種別
+
+var aging_Joven = js + 'aging_Joven'; // 登録確認画面
+
+var form_confirm = js + 'form-confirm';
+/* ---------- まとめてエクスポート ---------- */
+
+var classNames = {
+  // Prefix
+  prefix: js,
+  // 商品コンテナ
+  syouhin_container: syouhin_container,
+  syouhin_title: syouhin_title,
+  syouhin_message: syouhin_message,
+  // グローバルメニュー
+  global_menu: global_menu,
+  global_menu__btn_sp: global_menu__btn_sp,
+  // サイドリスト
+  type_toggle: type_toggle,
+  btn_type: btn_type,
+  btn_list: btn_list,
+  btn_down: btn_down,
+  // 商品がないクラス
+  no_products: aging_Joven,
+  // 登録確認画面
+  form_confirm: form_confirm
+};
+/* harmony default export */ __webpack_exports__["default"] = (classNames);
 
 /***/ }),
 
@@ -19450,6 +19510,78 @@ var data = [area];
 
 /***/ }),
 
+/***/ "./resources/js/function/addCSS.js":
+/*!*****************************************!*\
+  !*** ./resources/js/function/addCSS.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/** 〜 サイドリストホバー時のCSSを設定する処理 〜
+ * @param clickElement this・・・クリックした要素
+ * @param btnType string・・・ボタン種別
+ * @param css object・・・適用させるCSS設定
+ */
+function addCSS(clickElement, btnType, css) {
+  // リストホバー時のCSS設定
+  $(btnType).find('a').css({
+    background: "none"
+  });
+  $(clickElement).find('a:hover').css(css);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (addCSS);
+
+/***/ }),
+
+/***/ "./resources/js/function/getClickClass.js":
+/*!************************************************!*\
+  !*** ./resources/js/function/getClickClass.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/** 〜 クリックしたリストのクラス名（js-〜）を取得する処理 〜
+ * @param clickElement this・・・クリックした要素
+ * @param match string・・・マッチさせる正規表現
+ */
+function getClickClass(clickElement, match) {
+  // クリックしたリストのみのjs-〜のクラス名を取得
+  var js_class = $(clickElement).attr('class').match(match);
+  return '.' + js_class + '_';
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (getClickClass);
+
+/***/ }),
+
+/***/ "./resources/js/function/hideClass.js":
+/*!********************************************!*\
+  !*** ./resources/js/function/hideClass.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/** 〜 指定した複数のクラスを非表示にする処理 〜
+ * @param hide_classes array・・・非表示にしたいクラス名の配列
+ */
+function hideClass(hide_classes) {
+  // 引数の配列のクラス名を非表示にする
+  $.each(hide_classes, function (index, hide_class) {
+    $(hide_class).hide();
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (hideClass);
+
+/***/ }),
+
 /***/ "./resources/js/function/listBtn.js":
 /*!******************************************!*\
   !*** ./resources/js/function/listBtn.js ***!
@@ -19459,35 +19591,41 @@ var data = [area];
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return listBtn; });
-/**
- * 〜 [商品一覧]ボタン押下時処理（[プルダウン]なし） 〜
+/* harmony import */ var _data_classNames__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/classNames */ "./resources/js/data/classNames.js");
+/* harmony import */ var _function_hideClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../function/hideClass */ "./resources/js/function/hideClass.js");
+/* harmony import */ var _function_getClickClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../function/getClickClass */ "./resources/js/function/getClickClass.js");
+/* harmony import */ var _function_addCSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../function/addCSS */ "./resources/js/function/addCSS.js");
+ // JS操作用classNameデータ
+
+
+
+
+/** 〜 [商品一覧]ボタン押下時処理（[プルダウン]なし） 〜
  * @param name string・・・[項目選択]名
  * @param match string・・・表示させるクラス抽出の正規表現
- */
+*/
+
 function listBtn(name, match) {
   // クリック時の処理
-  $('.js-' + name + '-list').click(function () {
+  $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].prefix + name + '-list').on('click', function () {
     // 1. クリックしたリストのみのテキストを取得し、タイトル(h3)のテキストを変更
     var text = $(this).text();
-    $('.js-syouhin-title').text(text); // 2. 選択中のリストのCSS指定
+    $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].syouhin_title).text(text); // 2. 選択中のリストのCSS指定
 
-    $('.js-btn--list').find('a').css({
-      background: "none"
-    });
-    $(this).find('a:hover').css({
+    Object(_function_addCSS__WEBPACK_IMPORTED_MODULE_3__["default"])(this, _data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].btn_list, {
       background: "rgba(255,165,0,0.5)"
-    }); // 3. クリックしたリストのみのjs-〜のクラス名を取得
+    }); // 3. 一度、商品コンテナとメッセージを非表示
 
-    var js_class = $(this).attr('class').match(match);
-    var show_class = '.' + js_class + '_'; // 4. クリックしたリストの商品コンテナのみを表示する
+    Object(_function_hideClass__WEBPACK_IMPORTED_MODULE_1__["default"])([_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].syouhin_container, _data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].syouhin_message]); // 4. クリックしたリストのみのjs-〜のクラス名を取得
 
-    $('.js-syouhin-container').hide();
-    $('.message').hide();
-    $(show_class).slideDown(1000);
+    var clickClass = Object(_function_getClickClass__WEBPACK_IMPORTED_MODULE_2__["default"])(this, match); // 5. クリックしたリストの商品コンテナのみを表示する
+
+    $(clickClass).slideDown(1000);
   });
 }
+
 ;
+/* harmony default export */ __webpack_exports__["default"] = (listBtn);
 
 /***/ }),
 
@@ -19500,40 +19638,45 @@ function listBtn(name, match) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return listWithPullDownBtn; });
-/**
- * 〜 [商品一覧]ボタン押下時処理（[プルダウン]あり） 〜
- * @param name['major'] string・・・[項目選択]名
- * @param name['minor'] string・・・[商品一覧]名
+/* harmony import */ var _data_classNames__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/classNames */ "./resources/js/data/classNames.js");
+/* harmony import */ var _function_hideClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../function/hideClass */ "./resources/js/function/hideClass.js");
+/* harmony import */ var _function_addCSS__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../function/addCSS */ "./resources/js/function/addCSS.js");
+ // JS操作用classNameデータ
+
+
+
+/** 〜 [商品一覧]ボタン押下時処理（[プルダウン]あり） 〜
+ * @param name[major] string・・・[項目選択]名
+ * @param name[minor] string・・・[商品一覧]名
  * @param time int・・・トグル表示の時間
- * @param match['name'] string・・・表示させるクラス抽出の正規表現
- * @param hide  array・・・非表示にさせたいクラス
+ * @param match[name] string・・・表示させるクラス抽出の正規表現
+ * @param hide array・・・非表示にさせたいクラス
  */
+
 function listWithPullDownBtn(name, time, match, hide) {
   // クリック時の処理
-  $('.js-' + name['major'] + '_' + match['name']).click(function () {
+  $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].prefix + name['major'] + '_' + match['name']).on('click', function () {
     // 1. 対象のエリアのリストを非表示
     $.each(hide, function (index, item) {
-      $('.js-' + name['minor'] + '_' + item).hide();
+      $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].prefix + name['minor'] + '_' + item).hide();
     }); // 2. クリックしたリストのみのテキストを取得し、タイトル(h3)のテキストを変更
 
     var text = $(this).text();
-    $('.js-syouhin-title').text(text); // 3. 選択中のリストのCSS指定
+    $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].syouhin_title).text(text); // 3. 選択中のリストのCSS指定
 
-    $('.js-btn--list').find('a').css({
-      background: "none"
-    });
-    $(this).find('a:hover').css({
+    Object(_function_addCSS__WEBPACK_IMPORTED_MODULE_2__["default"])(this, _data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].btn_list, {
       background: "rgba(255,165,0,0.5)"
-    }); // 4. クリックしたリストの商品コンテナのみを表示する
+    }); // 4. 一度、商品コンテナとメッセージを非表示
 
-    $('.js-syouhin-container').hide();
-    $('.message').hide();
-    $('.js-' + name['minor'] + '_' + match['name']).slideDown(time);
-    $('.js-' + name['major'] + '_' + match['name'] + '_').slideDown(time);
+    Object(_function_hideClass__WEBPACK_IMPORTED_MODULE_1__["default"])([_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].syouhin_container, _data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].syouhin_message]); // 5. クリックしたリストの商品コンテナのみを表示する
+
+    $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].prefix + name['minor'] + '_' + match['name']).slideDown(time);
+    $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].prefix + name['major'] + '_' + match['name'] + '_').slideDown(time);
   });
 }
+
 ;
+/* harmony default export */ __webpack_exports__["default"] = (listWithPullDownBtn);
 
 /***/ }),
 
@@ -19546,76 +19689,84 @@ function listWithPullDownBtn(name, time, match, hide) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return pulldownBtn; });
-/**
- * 〜 [プルダウン]ボタン押下時処理 〜
- * @param name['minor'] string・・・[商品一覧]名
+/* harmony import */ var _data_classNames__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/classNames */ "./resources/js/data/classNames.js");
+/* harmony import */ var _function_hideClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../function/hideClass */ "./resources/js/function/hideClass.js");
+/* harmony import */ var _function_getClickClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../function/getClickClass */ "./resources/js/function/getClickClass.js");
+/* harmony import */ var _function_addCSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../function/addCSS */ "./resources/js/function/addCSS.js");
+ // JS操作用classNameデータ
+
+
+
+
+/** 〜 [プルダウン]ボタン押下時処理 〜
+ * @param name[minor] string・・・[商品一覧]名
  * @param time int・・・トグル表示の時間
- * @param match['name'] string・・・表示させる個別の[商品一覧]名
- * @param match['way'] string・・・表示させるクラス抽出の正規表現
+ * @param match[name] string・・・表示させる個別の[商品一覧]名
+ * @param match[way] string・・・表示させるクラス抽出の正規表現
  */
+
 function pulldownBtn(name, time, match) {
   // クリック時の処理
-  $('.js-' + name['minor'] + '_' + match['name']).click(function () {
+  $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].prefix + name['minor'] + '_' + match['name']).on('click', function () {
     // 1. クリックしたリストのみのテキストを取得し、タイトル(h3)のテキストを変更
     var text = $(this).text();
-    $('.js-syouhin-title').text(text); // 2. 選択中のリストのCSS指定
+    $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].syouhin_title).text(text); // 2. 選択中のリストのCSS指定
 
-    $('.js-btn--down').find('a').css({
-      background: "none"
-    });
-    $(this).find('a:hover').css({
+    Object(_function_addCSS__WEBPACK_IMPORTED_MODULE_3__["default"])(this, _data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].btn_down, {
       background: "rgba(255,165,0,0.5)"
-    }); // 3. クリックしたリストのみのjs-〜のクラス名を取得
+    }); // 3. 一度、商品コンテナとメッセージを非表示
 
-    var js_class = $(this).attr('class').match(match['way']);
-    var show_class = '.' + js_class + '_'; // 4. クリックしたリストの商品コンテナのみを表示する
+    Object(_function_hideClass__WEBPACK_IMPORTED_MODULE_1__["default"])([_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].syouhin_container, _data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].syouhin_message]); // 4. クリックしたリストのみのjs-〜のクラス名を取得
 
-    $('.js-syouhin-container').hide();
-    $('.message').hide();
-    $(show_class).slideDown(time);
+    var clickClass = Object(_function_getClickClass__WEBPACK_IMPORTED_MODULE_2__["default"])(this, match['way']); // 5. クリックしたリストの商品コンテナのみを表示する
+
+    $(clickClass).slideDown(time);
   });
 }
+
 ;
+/* harmony default export */ __webpack_exports__["default"] = (pulldownBtn);
 
 /***/ }),
 
-/***/ "./resources/js/function/sortBtn.js":
+/***/ "./resources/js/function/typeBtn.js":
 /*!******************************************!*\
-  !*** ./resources/js/function/sortBtn.js ***!
+  !*** ./resources/js/function/typeBtn.js ***!
   \******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return sortBtn; });
-/**
- * 〜 [項目選択]ボタン押下時処理 〜
+/* harmony import */ var _data_classNames__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/classNames */ "./resources/js/data/classNames.js");
+/* harmony import */ var _function_hideClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../function/hideClass */ "./resources/js/function/hideClass.js");
+/* harmony import */ var _function_addCSS__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../function/addCSS */ "./resources/js/function/addCSS.js");
+ // JS操作用classNameデータ
+
+
+
+/** 〜 [項目選択]ボタン押下時処理 〜
  * @param name string・・・[項目選択]名
  * @param time int・・・トグル表示の時間
  */
-function sortBtn(name, time) {
-  // CSS定義
-  var bg_orange = {
-    background: "rgba(255,165,0,0.5)",
-    color: "beige"
-  }; // クリック時の処理
 
-  $('.js-' + name + '-type').click(function () {
+function typeBtn(name, time) {
+  // クリック時の処理
+  $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].prefix + name + '-type').on('click', function () {
     // 1. 選択中のリストのCSS指定
-    $('.js-btn--type').find('a').css({
-      background: "none"
-    });
-    $(this).find('a').css(bg_orange); // 2. クリックしたリストのみを表示する
+    Object(_function_addCSS__WEBPACK_IMPORTED_MODULE_2__["default"])(this, _data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].btn_type, {
+      background: "rgba(255,165,0,0.5)",
+      color: "beige"
+    }); // 2. 一度、[商品一覧]/[プルダウン]リストとメッセージを非表示
 
-    $('.message').hide();
-    $('.js-btn--list').hide();
-    $('.js-btn--down').hide();
-    $('.js-' + name + '-list').slideToggle(time);
+    Object(_function_hideClass__WEBPACK_IMPORTED_MODULE_1__["default"])([_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].syouhin_message, _data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].btn_list, _data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].btn_down]); // 3. クリックしたリストのみを表示する
+
+    $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].prefix + name + '-list').slideToggle(time);
   });
 }
+
 ;
+/* harmony default export */ __webpack_exports__["default"] = (typeBtn);
 
 /***/ }),
 
@@ -19628,29 +19779,32 @@ function sortBtn(name, time) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _data_listData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/listData.js */ "./resources/js/data/listData.js");
-/* harmony import */ var _data_listDataWithPulldown_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/listDataWithPulldown.js */ "./resources/js/data/listDataWithPulldown.js");
-/* harmony import */ var _function_sortBtn_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../function/sortBtn.js */ "./resources/js/function/sortBtn.js");
-/* harmony import */ var _function_listBtn_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../function/listBtn.js */ "./resources/js/function/listBtn.js");
-/* harmony import */ var _function_listWithPullDownBtn_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../function/listWithPullDownBtn.js */ "./resources/js/function/listWithPullDownBtn.js");
-/* harmony import */ var _function_pulldownBtn_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../function/pulldownBtn.js */ "./resources/js/function/pulldownBtn.js");
+/* harmony import */ var _data_listData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/listData */ "./resources/js/data/listData.js");
+/* harmony import */ var _data_listDataWithPulldown__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/listDataWithPulldown */ "./resources/js/data/listDataWithPulldown.js");
+/* harmony import */ var _data_classNames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data/classNames */ "./resources/js/data/classNames.js");
+/* harmony import */ var _function_typeBtn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../function/typeBtn */ "./resources/js/function/typeBtn.js");
+/* harmony import */ var _function_listBtn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../function/listBtn */ "./resources/js/function/listBtn.js");
+/* harmony import */ var _function_listWithPullDownBtn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../function/listWithPullDownBtn */ "./resources/js/function/listWithPullDownBtn.js");
+/* harmony import */ var _function_pulldownBtn__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../function/pulldownBtn */ "./resources/js/function/pulldownBtn.js");
 /* -----------------------------------------------
     画面：商品紹介
 ----------------------------------------------- */
 
 /***** ボタン名定義 ***************************
- * ① [項目選択]ボタン => sortボタン
+ * ① [項目選択]ボタン => typeボタン
  * ② [商品一覧]（プルダウンなし）ボタン => listボタン
  * ③ [商品一覧]（プルダウンあり）ボタン => listWithPulldownボタン
  * ④ [プルダウン]ボタン => pulldownボタン
 *********************************************/
 
-/* ---------------データ定義 ---------------　*/
+/* --------------- データ定義 ---------------　*/
  // ② [商品一覧]（プルダウンなし）データ
 
  // ③ [商品一覧]（プルダウンあり）データ
 
-/* ---------------Function定義 ---------------　*/
+ // JS操作用classNameデータ
+
+/* --------------- Function定義 ---------------　*/
 
  // ① [項目選択]ボタン処理
 
@@ -19664,35 +19818,36 @@ __webpack_require__.r(__webpack_exports__);
 
 /***** 0. 全商品コンテナ・項目選択ボタン非表示 *****/
 
-$('.js-syouhin-container').hide();
-$('.js-btn--type').hide();
+$(_data_classNames__WEBPACK_IMPORTED_MODULE_2__["default"].syouhin_container).hide();
+$(_data_classNames__WEBPACK_IMPORTED_MODULE_2__["default"].btn_type).hide();
 /***** ※. 登録内容確認画面時のみ表示（例外パターン） *****/
 
-$('.form-confirm').find('.js-syouhin-container').show();
+$(_data_classNames__WEBPACK_IMPORTED_MODULE_2__["default"].form_confirm).find(_data_classNames__WEBPACK_IMPORTED_MODULE_2__["default"].syouhin_container).show();
 /***** 1. [項目選択] > [商品一覧]に適用 *****/
 
-$.each(_data_listData_js__WEBPACK_IMPORTED_MODULE_0__["default"], function (index, list) {
+$.each(_data_listData__WEBPACK_IMPORTED_MODULE_0__["default"], function (index, list) {
   // ① [項目選択]ボタン押下時処理
-  Object(_function_sortBtn_js__WEBPACK_IMPORTED_MODULE_2__["default"])(list['name'], list['time']); // ② [商品一覧]（プルダウンなし）ボタン押下時処理
+  Object(_function_typeBtn__WEBPACK_IMPORTED_MODULE_3__["default"])(list['name'], list['time']); // ② [商品一覧]（プルダウンなし）ボタン押下時処理
 
-  Object(_function_listBtn_js__WEBPACK_IMPORTED_MODULE_3__["default"])(list['name'], list['match']);
+  Object(_function_listBtn__WEBPACK_IMPORTED_MODULE_4__["default"])(list['name'], list['match']);
 });
 /***** 2. [項目選択] > [商品一覧] > [プルダウン]に適用 *****/
 
-$.each(_data_listDataWithPulldown_js__WEBPACK_IMPORTED_MODULE_1__["default"], function (index, listWithPulldown) {
+$.each(_data_listDataWithPulldown__WEBPACK_IMPORTED_MODULE_1__["default"], function (index, listWithPulldown) {
   // ① [項目選択]ボタン押下時処理
-  Object(_function_sortBtn_js__WEBPACK_IMPORTED_MODULE_2__["default"])(listWithPulldown[0]['name']['major'], listWithPulldown[0]['time']);
+  Object(_function_typeBtn__WEBPACK_IMPORTED_MODULE_3__["default"])(listWithPulldown[0]['name']['major'], listWithPulldown[0]['time']);
   $.each(listWithPulldown, function (index, pulldown) {
     // ③ [商品一覧]（プルダウンあり）ボタン押下時処理
-    Object(_function_listWithPullDownBtn_js__WEBPACK_IMPORTED_MODULE_4__["default"])(pulldown['name'], pulldown['time'], pulldown['match'], pulldown['hide']); // ④ [プルダウン]ボタン押下時処理
+    Object(_function_listWithPullDownBtn__WEBPACK_IMPORTED_MODULE_5__["default"])(pulldown['name'], pulldown['time'], pulldown['match'], pulldown['hide']); // ④ [プルダウン]ボタン押下時処理
 
-    Object(_function_pulldownBtn_js__WEBPACK_IMPORTED_MODULE_5__["default"])(pulldown['name'], pulldown['time'], pulldown['match']);
+    Object(_function_pulldownBtn__WEBPACK_IMPORTED_MODULE_6__["default"])(pulldown['name'], pulldown['time'], pulldown['match']);
   });
 });
 /***** 3. 対象商品がないメッセージを表示させる商品種別 *****/
+// 現状はホベンの一覧のみ対象商品なし
 
-$('.js-aging_Joven').on('click', function () {
-  $('.message').show();
+$(_data_classNames__WEBPACK_IMPORTED_MODULE_2__["default"].no_products).on('click', function () {
+  $(_data_classNames__WEBPACK_IMPORTED_MODULE_2__["default"].syouhin_message).show();
 });
 
 /***/ }),

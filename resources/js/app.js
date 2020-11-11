@@ -1,31 +1,32 @@
 import './bootstrap';
+import js from './data/classNames'
+import hideClass from './function/hideClass'
 
 /* -----------------------------------------------
     画面共通処理
 ----------------------------------------------- */
 /* --------------- SPのグローバルメニューのリスト表示設定 --------------- */
 $(function() {
-    $('.js-global-menu__btn-sp').on('click', function(){
-        $('.js-global-menu').slideToggle();
+    $(js.global_menu__btn_sp).on('click', function(){
+        $(js.global_menu).slideToggle();
     });
 });
 
 
 /* --------------- サイドメニュー表示設定 --------------- */
-$('.js-type-toggle').on('click', function(){
+$(js.type_toggle).on('click', function(){
 
-    // 1. [項目選択]ボタンの表示非表示
-    $('.js-btn--type').slideToggle(500);
+    // 1. ①[項目選択]ボタンの表示設定
+    $(js.btn_type).slideToggle(500);
 
-    // 2. 全てのリストを非表示
-    $('.js-btn--list').hide();
-    $('.js-btn--down').hide();
+    // 2. ②③[商品一覧], ④[プルダウン] リストを非表示
+    hideClass([js.btn_list, js.btn_down]);
 
-    // 3. テキスト表示変更
-    let btn_text = $(this).text();
-    if (btn_text == "項目一覧 ▼"){
+    // 3. テキスト表示切替
+    const btn_text = $(this).text();
+    if (btn_text === "項目一覧 ▼"){
         $(this).text('項目一覧 ▲');
-    }else{
+    } else {
         $(this).text('項目一覧 ▼');
     }
 

@@ -3,48 +3,52 @@
 ----------------------------------------------- */
 
 /***** ボタン名定義 ***************************
- * ① [項目選択]ボタン => sortボタン
+ * ① [項目選択]ボタン => typeボタン
  * ② [商品一覧]（プルダウンなし）ボタン => listボタン
  * ③ [商品一覧]（プルダウンあり）ボタン => listWithPulldownボタン
  * ④ [プルダウン]ボタン => pulldownボタン
 *********************************************/
 
-/* ---------------データ定義 ---------------　*/
-import lists from '../data/listData.js'; // ② [商品一覧]（プルダウンなし）データ
-import listWithPulldowns from '../data/listDataWithPulldown.js'; // ③ [商品一覧]（プルダウンあり）データ
+/* --------------- データ定義 ---------------　*/
+import lists from '../data/listData'; // ② [商品一覧]（プルダウンなし）データ
+import listWithPulldowns from '../data/listDataWithPulldown'; // ③ [商品一覧]（プルダウンあり）データ
+import js from '../data/classNames'; // JS操作用classNameデータ
 
-/* ---------------Function定義 ---------------　*/
-import sortBtn from '../function/sortBtn.js'; // ① [項目選択]ボタン処理
-import listBtn from '../function/listBtn.js'; // ② [商品一覧]（プルダウンなし）ボタン処理
-import listWithPullDownBtn from '../function/listWithPullDownBtn.js'; // ③ [商品一覧]（プルダウンあり）ボタン処理
-import pulldownBtn from '../function/pulldownBtn.js'; // ④ [プルダウン]ボタン処理
+
+/* --------------- Function定義 ---------------　*/
+import typeBtn from '../function/typeBtn'; // ① [項目選択]ボタン処理
+import listBtn from '../function/listBtn'; // ② [商品一覧]（プルダウンなし）ボタン処理
+import listWithPullDownBtn from '../function/listWithPullDownBtn'; // ③ [商品一覧]（プルダウンあり）ボタン処理
+import pulldownBtn from '../function/pulldownBtn'; // ④ [プルダウン]ボタン処理
 
 
 /* ---------------　実行処理 ---------------　*/
-
 /***** 0. 全商品コンテナ・項目選択ボタン非表示 *****/
-$('.js-syouhin-container').hide();
-$('.js-btn--type').hide();
+$(js.syouhin_container).hide();
+$(js.btn_type).hide();
+
 
 /***** ※. 登録内容確認画面時のみ表示（例外パターン） *****/
-$('.form-confirm').find('.js-syouhin-container').show();
+$(js.form_confirm).find(js.syouhin_container).show();
+
 
 /***** 1. [項目選択] > [商品一覧]に適用 *****/
 $.each(lists, function(index, list){
 
     // ① [項目選択]ボタン押下時処理
-    sortBtn(list['name'], list['time']);
+    typeBtn(list['name'], list['time']);
 
     // ② [商品一覧]（プルダウンなし）ボタン押下時処理
     listBtn(list['name'], list['match']);
 
 });
 
+
 /***** 2. [項目選択] > [商品一覧] > [プルダウン]に適用 *****/
 $.each(listWithPulldowns, function(index, listWithPulldown){
 
     // ① [項目選択]ボタン押下時処理
-    sortBtn(listWithPulldown[0]['name']['major'], listWithPulldown[0]['time']);
+    typeBtn(listWithPulldown[0]['name']['major'], listWithPulldown[0]['time']);
 
     $.each(listWithPulldown, function(index, pulldown){
 
@@ -57,7 +61,9 @@ $.each(listWithPulldowns, function(index, listWithPulldown){
     });
 });
 
+
 /***** 3. 対象商品がないメッセージを表示させる商品種別 *****/
-$('.js-aging_Joven').on('click', function(){
-    $('.message').show();
+// 現状はホベンの一覧のみ対象商品なし
+$(js.no_products).on('click', function(){
+    $(js.syouhin_message).show();
 });
