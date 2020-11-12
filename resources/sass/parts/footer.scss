@@ -1,0 +1,16 @@
+/* -----------------------------------------------
+    フッターエリアコンテンツ設定
+----------------------------------------------- */
+// トップに戻るボタン
+&__top-btn {
+    margin: 50px;
+    a {
+        color: beige;
+        text-align: center;
+        background: $orange_skelton;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 1px 1px 68px 3px $beige;
+        font-style: normal;
+    }
+}

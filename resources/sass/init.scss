@@ -1,0 +1,54 @@
+/* -----------------------------------------------
+    初期設定
+----------------------------------------------- */
+// ボディ設定
+.body {
+    width: 100%;
+    max-width: $body_width;
+    margin: 0 auto;
+    background: $bg_wood_dark;
+    color: $brown;
+    line-height: 1.8;
+    font-family: 'Noto Serif JP', serif;
+    font-style: italic;
+    font-size: 15px;
+    @media screen and(max-width: $sp) {
+        font-size: 12px;
+    }
+}
+
+// リンク設定
+a {
+    text-decoration: none;
+    color: $brown;
+    &:hover {
+        color: $orange;
+    }
+}
+
+// 画像設定
+img {
+    width: 100%;
+    height: auto;
+}
+
+// テーブル設定
+.table-area {
+    // ヘッダー
+    .table-area__header {
+        background: $bg_wood_dark;
+        color: $beige;
+    }
+
+    // テーブルセル設定
+    th,td {
+        padding: 8px 12px;
+        border: 1px solid $brown;
+    }
+    th {
+        background: $beige;
+    }
+    td {
+        background: $bg_colk;
+    }
+}

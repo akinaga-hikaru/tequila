@@ -5,7 +5,11 @@
 ----------------------------------------------- */
 
 /* -----------------------------------------------
-    リセットCSS
+    変数設定
+----------------------------------------------- */
+
+/* -----------------------------------------------
+    リセットCSS設定
 ----------------------------------------------- */
 
 /*
@@ -201,6 +205,10 @@ select {
     初期設定
 ----------------------------------------------- */
 
+/* -----------------------------------------------
+    初期設定
+----------------------------------------------- */
+
 .body {
   width: 100%;
   max-width: 1280px;
@@ -219,28 +227,6 @@ select {
   }
 }
 
-.aside {
-  width: 25%;
-  border-right: 1px solid #5e3d1e;
-}
-
-@media screen and (max-width: 768px) {
-  .aside {
-    width: 100%;
-    border-right: none;
-  }
-}
-
-.main {
-  width: 75%;
-}
-
-@media screen and (max-width: 768px) {
-  .main {
-    width: 100%;
-  }
-}
-
 a {
   text-decoration: none;
   color: #5e3d1e;
@@ -255,62 +241,10 @@ img {
   height: auto;
 }
 
-/* -----------------------------------------------
-    共通メソッド：レイアウト
------------------------------------------------ */
-
-.contents-frame {
-  background: rgba(232, 223, 213, 0.5);
-  padding: 20px;
+.table-area .table-area__header {
+  background: url(/image/tequila/background/bg005.jpg);
+  color: beige;
 }
-
-.flex-box {
-  display: flex;
-  justify-content: space-around;
-}
-
-@media screen and (max-width: 768px) {
-  .flex-box {
-    display: block;
-  }
-}
-
-.scroll-area {
-  overflow: scroll;
-}
-
-.center {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.indent {
-  padding-left: 20px;
-}
-
-.hide-pc {
-  display: none;
-}
-
-@media screen and (max-width: 768px) {
-  .hide-pc {
-    display: block;
-  }
-}
-
-.hide-sp {
-  display: block;
-}
-
-@media screen and (max-width: 768px) {
-  .hide-sp {
-    display: none;
-  }
-}
-
-/* -----------------------------------------------
-    共通：テーブルエリア
------------------------------------------------ */
 
 .table-area th,
 .table-area td {
@@ -326,51 +260,20 @@ img {
   background: url(/image/tequila/background/bg037.gif);
 }
 
-.table-area .table-area__header {
-  background: url(/image/tequila/background/bg005.jpg);
-  color: beige;
-}
-
 /* -----------------------------------------------
-    共通：文章エリア
+    レイアウト設定
 ----------------------------------------------- */
 
-.letters-area {
-  background: url(/image/tequila/background/bg037.gif);
-  padding: 15px;
-}
-
-.letters-area img {
-  max-width: 300px;
-}
-
-.letters-area__title {
-  display: block;
-  font-size: 20px;
-  line-height: 2;
-  text-shadow: 1px 1px 4px orange;
-  border-bottom: 2px dotted #5e3d1e;
-}
-
-@media screen and (max-width: 768px) {
-  .letters-area__title {
-    font-size: 15px;
-  }
-}
-
-.letters-area__paragraph {
-  background: rgba(232, 223, 213, 0.5);
-  padding: 7px;
-  margin: 5px;
-}
-
 /* -----------------------------------------------
-    共通：ヘッダーエリア
+    レイアウト設定
 ----------------------------------------------- */
 
 .header-area {
   background-image: url(/image/tequila/tequila-lineup-sepia4.png);
   background-size: 2080px;
+  /* -----------------------------------------------
+      ヘッダーエリアコンテンツ設定
+  ----------------------------------------------- */
 }
 
 @media screen and (max-width: 768px) {
@@ -466,9 +369,137 @@ img {
   right: -10px;
 }
 
+.aside {
+  width: 25%;
+  border-right: 1px solid #5e3d1e;
+}
+
+@media screen and (max-width: 768px) {
+  .aside {
+    width: 100%;
+    border-right: none;
+  }
+}
+
+.main {
+  width: 75%;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    width: 100%;
+  }
+}
+
+.footer-area {
+  /* -----------------------------------------------
+      フッターエリアコンテンツ設定
+  ----------------------------------------------- */
+}
+
+.footer-area__top-btn {
+  margin: 50px;
+}
+
+.footer-area__top-btn a {
+  color: beige;
+  text-align: center;
+  background: rgba(255, 165, 0, 0.5);
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 68px 3px beige;
+  font-style: normal;
+}
+
 /* -----------------------------------------------
-    共通パーツ：見出し
+    共通設定
 ----------------------------------------------- */
+
+/* -----------------------------------------------
+    共通レイアウト設定
+----------------------------------------------- */
+
+.contents-frame {
+  background: rgba(232, 223, 213, 0.5);
+  padding: 20px;
+}
+
+.flex-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 768px) {
+  .flex-box {
+    display: block;
+  }
+}
+
+.scroll-area {
+  overflow: scroll;
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.indent {
+  padding-left: 20px;
+}
+
+.hide-pc {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .hide-pc {
+    display: block;
+  }
+}
+
+.hide-sp {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .hide-sp {
+    display: none;
+  }
+}
+
+/* -----------------------------------------------
+    共通パーツ設定
+----------------------------------------------- */
+
+.letters-area {
+  background: url(/image/tequila/background/bg037.gif);
+  padding: 15px;
+}
+
+.letters-area img {
+  max-width: 300px;
+}
+
+.letters-area__title {
+  display: block;
+  font-size: 20px;
+  line-height: 2;
+  text-shadow: 1px 1px 4px orange;
+  border-bottom: 2px dotted #5e3d1e;
+}
+
+@media screen and (max-width: 768px) {
+  .letters-area__title {
+    font-size: 15px;
+  }
+}
+
+.letters-area__paragraph {
+  background: rgba(232, 223, 213, 0.5);
+  padding: 7px;
+  margin: 5px;
+}
 
 .section-1 {
   background: rgba(255, 165, 0, 0.5);
@@ -504,10 +535,6 @@ img {
   }
 }
 
-/* -----------------------------------------------
-    共通パーツ：ボタン
------------------------------------------------ */
-
 .common-btn {
   border-bottom: 1px solid #5e3d1e;
 }
@@ -527,12 +554,12 @@ img {
   padding: 10px 20px;
 }
 
-.common-btn a .small-text {
-  font-size: 11px;
-}
-
 .common-btn a:hover {
   background: rgba(255, 255, 255, 0.5);
+}
+
+.common-btn a .small-text {
+  font-size: 11px;
 }
 
 .common-btn--type {
@@ -553,10 +580,6 @@ img {
   background: url(/image/tequila/background/bg037.gif);
 }
 
-/* -----------------------------------------------
-    共通パーツ：エラーメッセージ
------------------------------------------------ */
-
 .message {
   background: rgba(232, 223, 213, 0.5);
   border: 1px solid #5e3d1e;
@@ -568,25 +591,7 @@ img {
 }
 
 /* -----------------------------------------------
-    共通：フッターエリア
------------------------------------------------ */
-
-.footer-area__top-btn {
-  margin: 50px;
-}
-
-.footer-area__top-btn a {
-  color: beige;
-  text-align: center;
-  background: rgba(255, 165, 0, 0.5);
-  padding: 10px;
-  border-radius: 50%;
-  box-shadow: 1px 1px 68px 3px beige;
-  font-style: normal;
-}
-
-/* -----------------------------------------------
-    ページ別：テキーラとは
+    ページ設定
 ----------------------------------------------- */
 
 /* -----------------------------------------------
@@ -618,10 +623,6 @@ img {
   width: 100%;
   min-width: 1000px;
 }
-
-/* -----------------------------------------------
-    ページ別：商品紹介
------------------------------------------------ */
 
 /* -----------------------------------------------
     ページ別：商品紹介
@@ -705,10 +706,6 @@ img {
     ページ別：店舗紹介
 ----------------------------------------------- */
 
-/* -----------------------------------------------
-    ページ別：店舗紹介
------------------------------------------------ */
-
 .tenpo .table-area__scroll-frame {
   padding: 20px;
   margin: 0 auto;
@@ -717,11 +714,7 @@ img {
 }
 
 /* -----------------------------------------------
-    ページ別：登録情報登録
------------------------------------------------ */
-
-/* -----------------------------------------------
-    ページ別：店舗紹介
+    ページ別：データ情報登録
 ----------------------------------------------- */
 
 .form .table-area {

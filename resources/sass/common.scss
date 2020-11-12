@@ -1,0 +1,170 @@
+/* -----------------------------------------------
+    共通レイアウト設定
+----------------------------------------------- */
+// コンテンツコンテナ
+.contents-frame {
+    background: $white_skelton;
+    padding: 20px;
+}
+
+// フレックスボックス
+.flex-box {
+    display: flex;
+    justify-content: space-around;
+    @media screen and(max-width: $sp) {
+        display: block;
+    }
+}
+
+// スクロール設定
+.scroll-area {
+    overflow: scroll;
+}
+
+// 中央揃え
+.center {
+    margin: 0 auto;
+    text-align: center;
+}
+
+// テキストインデント
+.indent {
+    padding-left: 20px;
+}
+
+// PCで非表示設定
+.hide-pc {
+    display: none;
+    @media screen and(max-width: $sp) {
+        display: block;
+    }
+}
+
+// SPで非表示設定
+.hide-sp {
+    display: block;
+    @media screen and(max-width: $sp) {
+        display: none;
+    }
+}
+
+/* -----------------------------------------------
+    共通パーツ設定
+----------------------------------------------- */
+// 文章エリア
+.letters-area {
+    background: $bg_colk;
+    padding: 15px;
+
+    // 画像
+    img {
+        max-width: 300px;
+    }
+
+    // 見出し
+    &__title {
+        display: block;
+        font-size: 20px;
+        line-height: 2;
+        text-shadow: 1px 1px 4px $orange;
+        border-bottom: 2px dotted $brown;
+        @media screen and(max-width: $sp) {
+            font-size: 15px;
+        }
+    }
+
+    // 段落
+    &__paragraph {
+        background: $white_skelton;
+        padding: 7px;
+        margin: 5px;
+    }
+}
+
+// 大項目
+.section-1 {
+    background: $orange_skelton;
+    color: $beige;
+    font-size: 25px;
+    padding-bottom: 6px;
+    text-align: center;
+    border: 1px solid $brown;
+    border-left: none;
+    border-right: none;
+    @media screen and(max-width: $sp) {
+        font-size: 20px;
+        line-height: 1.5;
+        padding-bottom: 3px;
+    }
+}
+
+// 中項目
+.section-2 {
+    background: $bg_wood_dark;
+    color: $beige;
+    font-size: 20px;
+    padding-bottom: 6px;
+    text-align: center;
+    @media screen and(max-width: $sp) {
+        font-size: 14px;
+        padding-bottom: 3px;
+    }
+}
+
+// 共通ボタン
+.common-btn {
+    border-bottom: 1px solid $brown;
+    @media screen and(max-width: $sp) {
+        text-align: center;
+    }
+    &:last-child {
+        border-bottom: none;
+    }
+
+    // リンク
+    a {
+        display: block;
+        padding: 10px 20px;
+
+        // ホバー設定
+        &:hover {
+            background: rgba(255,255,255,0.5);
+        }
+
+        // 小文字
+        .small-text {
+            font-size: 11px;
+        }
+    }
+
+    // ①[項目選択]ボタン
+    &--type {
+        background: $bg_wood_dark;
+        border-bottom: none;
+        border-top: 1px solid $beige;
+        a {
+            color: $beige;
+        }
+    }
+
+    // ②③[商品一覧]ボタン
+    &--list {
+        background: $beige;
+    }
+
+    // ④[プルダウン]ボタン
+    &--down {
+        background: $bg_colk;
+    }
+}
+
+// 注釈メッセージ
+.message {
+    background: $white_skelton;
+    border: 1px solid $brown;
+    color: $brown;
+    border-radius: 8px;
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+}

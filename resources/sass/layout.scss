@@ -1,0 +1,45 @@
+/* -----------------------------------------------
+    レイアウト設定
+----------------------------------------------- */
+// ヘッダーエリア
+.header-area {
+    background-image: $bg_header;
+    background-size: 2080px;
+    @media screen and(max-width: $sp) {
+        background-size: 780px;
+    }
+
+    // 背景フレーム設定
+    &__bg-frame {
+        background-color: rgba(220,220,220,0.5);
+        padding: 20px;
+        padding-bottom: 0;
+    }
+
+    // コンテンツ設定
+    @import 'parts/header';
+}
+
+// サイドエリア
+.aside {
+    width: 25%;
+    border-right: 1px solid $brown;
+    @media screen and(max-width: $sp) {
+        width: 100%;
+        border-right: none;
+    }
+}
+
+// メインエリア
+.main {
+    width: 75%;
+    @media screen and(max-width: $sp) {
+        width: 100%;
+    }
+}
+
+// フッターエリア
+.footer-area {
+    // コンテンツ設定
+    @import 'parts/footer';
+}

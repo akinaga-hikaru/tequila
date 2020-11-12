@@ -37,18 +37,21 @@
             @media screen and(max-width: $sp) {
                 width: 100%;
             }
+
             // 見出し
             &__title {
                 padding: 0px 10px;
                 margin-bottom: 15px;
             }
-            // 内容
+
+            // 段落
             &__paragraph {
                 font-size: 14px;
                 @media screen and(max-width: $sp) {
                     font-size: 12px;
                 }
             }
+
             // スクロール領域
             &__scroll-frame {
                 padding: 15px;

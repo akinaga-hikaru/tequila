@@ -1,0 +1,75 @@
+/* -----------------------------------------------
+    ヘッダーエリアコンテンツ設定
+----------------------------------------------- */
+// メインロゴ
+&__main-logo {
+    font-size: 100px;
+    font-weight: bolder;
+    color: $brown;
+    display: inline;
+    line-height: 1;
+    text-shadow: 3px 3px 1px $orange_skelton;
+    @media screen and(max-width: $sp) {
+        font-size: 50px;
+        text-shadow: 1px 1px 1px $orange_skelton;
+    }
+}
+
+// サブロゴ
+&__sub-logo {
+    font-style: italic;
+    font-size: 50px;
+    line-height: 2;
+    display: inline;
+    text-shadow: 3px 3px 1px $orange_skelton;
+    @media screen and(max-width: $sp) {
+        font-size: 25px;
+        text-shadow: 1px 1px 1px $orange_skelton;
+    }
+}
+
+// グローバルメニュー
+.global-menu {
+    font-size: 20px;
+    border-top: 2px solid $brown;
+    padding: 5px;
+    @media screen and(max-width: $sp) {
+        font-size: 16px;
+    }
+
+    // メニューボタン
+    &__btn {
+        display: inline-block;
+        margin: 5px 0;
+        background: $bg_wood_dark;
+        color: $beige;
+        max-width: 240px;
+        width: 100%;
+        @media screen and(max-width: $sp) {
+            max-width: 300px;
+            margin-bottom: 5px;
+        }
+        a {
+            color: $beige;
+            display: block;
+            padding-bottom: 4px;
+            margin: 0px;
+            &:hover {
+                background: rgba(200,200,200,0.4);
+            }
+        }
+    }
+
+    // SPのメニューボタン（≡）
+    &__btn-sp {
+        font-size: 50px;
+        font-style: normal;
+        line-height: 1;
+        border-radius: 4px;
+        float: right;
+        position: relative;
+        top: -2px;
+        right: -10px;
+    }
+}
+

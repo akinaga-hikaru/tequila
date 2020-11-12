@@ -5,6 +5,7 @@
     // 文章エリア
     .letters-area {
         margin-bottom: 40px;
+
         // 見出し
         &__title {
             padding: 1px 5px;
@@ -14,7 +15,8 @@
                 font-size: 13px;
             }
         }
-        // 内容
+
+        // 段落
         &__paragraph {
             margin-bottom: 10px;
         }
