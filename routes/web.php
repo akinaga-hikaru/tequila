@@ -12,14 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('tequila/index');
+    return view('index');
 });
 Route::get('bunken', function () {
-    return view('tequila/bunken');
+    return view('bunken');
 });
 
 Route::get('tenpo', function () {
-    return view('tequila/tenpo');
+    return view('tenpo');
 });
 Route::get('syouhin', 'SyouhinController@syouhin');
 Route::get('form-input', 'FormController@input');

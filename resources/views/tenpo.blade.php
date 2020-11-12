@@ -1,4 +1,4 @@
-@extends('tequila.layout.layout')
+@extends('layout.layout')
 
 @section('title','取扱店紹介')
 @section('section','取扱店紹介')

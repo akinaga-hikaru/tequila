@@ -1,13 +1,13 @@
-@extends('tequila.layout.layout')
+@extends('layout.layout')
 
 @section('title','登録内容確認')
 @section('section','登録内容確認')
 @section('body_class',' body form form-confirm syouhin js-form-confirm')
 
 @section('main')
-    <main class="contents-frame ">
+    <main class="contents-frame">
         {{-- ブランドタイトルstart --}}
-            @component('tequila.component.section-2',[
+            @component('component.section-2',[
                 'js_class' => 'js-syouhin-title',
                 'section_name' => '項目名 / 入力内容',
                 ])
@@ -139,7 +139,7 @@
     <div class="flex-box">
         <aside class="aside contents-frame">
             {{-- 項目一覧ボタンstart --}}
-                @component('tequila.component.section-2',[
+                @component('component.section-2',[
                     'js_class' => 'js-type-toggle',
                     'section_name' => '項目一覧 ▼',
                     ])
@@ -152,7 +152,7 @@
         </aside>
         <main class="main contents-frame">
             {{-- ブランドタイトルstart --}}
-                @component('tequila.component.section-2',[
+                @component('component.section-2',[
                     'section_id' => 'section-2',
                     'js_class' => 'js-syouhin-title',
                     'section_name' => $input['title_name'],
@@ -160,7 +160,7 @@
                 @endcomponent
             {{-- ブランドタイトルend --}}
             {{-- 商品コンテナstart --}}
-                @component('tequila.component.syouhin-parts',[
+                @component('component.syouhin-parts',[
                     'title_id' => $input['title_id'],
                     'title_name' => $input['title_name'],
                     'alt_name' => $input['alt_name'],

@@ -1,4 +1,4 @@
-@extends('tequila.layout.layout')
+@extends('layout.layout')
 
 @section('title','商品紹介')
 @section('section','商品紹介')
@@ -8,7 +8,7 @@
     <div class="flex-box">
         <aside class="aside contents-frame">
             {{-- 項目一覧ボタンstart --}}
-                @component('tequila.component.section-2',[
+                @component('component.section-2',[
                     'js_class' => 'js-type-toggle',
                     'section_name' => '項目一覧 ▼',
                     ])
@@ -17,7 +17,7 @@
             {{-- 項目選択ボタンstart --}}
                 <ul>
                     @foreach ($types as $type)
-                        @component('tequila.component.common-btn',[
+                        @component('component.common-btn',[
                             'btn' => 'type',
                             'js_class_1' => $type['js_class_1'],
                             'hidden' => false,
@@ -30,7 +30,7 @@
             {{-- ブランドリストstart --}}
                 <ul>
                     @foreach ($titles as $title)
-                        @component('tequila.component.common-btn',[
+                        @component('component.common-btn',[
                             'btn' => 'list',
                             'js_class_1' => 'js-maker-list',
                             'js_class_2' => 'js-maker_' . $title['title_id'],
@@ -45,7 +45,7 @@
             {{-- 蒸留所リストstart --}}
                 <ul>
                     @foreach ($noms as $nom)
-                        @component('tequila.component.common-btn',[
+                        @component('component.common-btn',[
                             'btn' => 'list',
                             'js_class_1' => 'js-dest-list',
                             'js_class_2' => 'js-dest_' . $nom['nom'],
@@ -78,7 +78,7 @@
                         }
                     @endphp
                     @foreach ($locals as $local)
-                        @component('tequila.component.common-btn',[
+                        @component('component.common-btn',[
                             'btn' => 'list',
                             'js_class_1' => 'js-local-list',
                             'js_class_2' => 'js-local_' . $local['local_id'],
@@ -90,7 +90,7 @@
                         @endcomponent
                         @if($local['local_id'] == 'valles')
                             @foreach ($valles as $item)
-                                @component('tequila.component.common-btn',[
+                                @component('component.common-btn',[
                                     'btn' => 'down',
                                     'js_class_1' => 'js-area-list',
                                     'js_class_2' => 'js-area_' . $item['local_id'],
@@ -103,7 +103,7 @@
                             @endforeach
                         @elseif($local['local_id'] == 'altos')
                             @foreach ($altos as $item)
-                                @component('tequila.component.common-btn',[
+                                @component('component.common-btn',[
                                     'btn' => 'down',
                                     'js_class_1' => 'js-area-list',
                                     'js_class_2' => 'js-area_' . $item['local_id'],
@@ -121,7 +121,7 @@
                                         $item['area'] = 'その他地区';
                                     }
                                 @endphp
-                                @component('tequila.component.common-btn',[
+                                @component('component.common-btn',[
                                     'btn' => 'down',
                                     'js_class_1' => 'js-area-list',
                                     'js_class_2' => 'js-area_' . $item['local_id'],
@@ -134,7 +134,7 @@
                             @endforeach
                         @else
                             @foreach ($others as $item)
-                                @component('tequila.component.common-btn',[
+                                @component('component.common-btn',[
                                     'btn' => 'down',
                                     'js_class_1' => 'js-area-list',
                                     'js_class_2' => 'js-area_' . $item['local_id'],
@@ -152,7 +152,7 @@
             {{-- 熟成度合いリストstart --}}
                 <ul>
                     @foreach ($agings as $aging)
-                        @component('tequila.component.common-btn',[
+                        @component('component.common-btn',[
                             'btn' => 'list',
                             'js_class_1' => 'js-aging-list',
                             'js_class_2' => 'js-aging_' . $aging['aging_id'],
@@ -168,7 +168,7 @@
         </aside>
         <main class="main contents-frame">
             {{-- ブランドタイトルstart --}}
-                @component('tequila.component.section-2',[
+                @component('component.section-2',[
                     'section_id' => 'section-2',
                     'js_class' => 'js-syouhin-title',
                     'section_name' => '選択すると表示されます',
@@ -177,7 +177,7 @@
             {{-- ブランドタイトルend --}}
             {{-- 商品コンテナstart --}}
                 @foreach ($syouhin_data_all as $content)
-                        @component('tequila.component.syouhin-parts',[
+                        @component('component.syouhin-parts',[
                             'title_id' => $content->title_id,
                             'title_name' => $content->title_name,
                             'alt_name' => $content->alt_name,

@@ -1,4 +1,4 @@
-@extends('tequila.layout.layout')
+@extends('layout.layout')
 
 @section('title','登録情報入力')
 @section('section','登録情報入力')

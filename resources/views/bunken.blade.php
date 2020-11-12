@@ -1,4 +1,4 @@
-@extends('tequila.layout.layout')
+@extends('layout.layout')
 
 @section('title','参考文献')
 @section('section','参考文献')

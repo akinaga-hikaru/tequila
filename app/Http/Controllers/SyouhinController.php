@@ -34,7 +34,7 @@ class SyouhinController extends Controller
             }
             // 昇順に並び替え
             asort($lists);
-            // 重複削除した配列を返却
+            // 重複削除した配列を返す
             return $lists;
         }
 
@@ -92,7 +92,7 @@ class SyouhinController extends Controller
         $areas = doubleDelete($area, 'area_id');
         arsort($areas);
 
-        /** - 項目選択ボタン設定 -
+        /** - [項目選択]ボタン設定 -
          * 設定変数：$types */
         $types = [
             [
@@ -113,7 +113,7 @@ class SyouhinController extends Controller
             ],
         ];
 
-        return view('tequila.syouhin')->with([
+        return view('syouhin')->with([
             'syouhin_data_all' => $syouhin_data_all,
             'titles' => $titles,
             'locals' => $locals,

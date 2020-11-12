@@ -20,7 +20,7 @@ class FormController extends Controller
     */
     public function input(Request $request)
     {
-        return view('tequila.form-input');
+        return view('form-input');
     }
 
     /*
@@ -87,7 +87,7 @@ class FormController extends Controller
             $upload_file->move('./image/syouhin/sample', $file);
         }
 
-        return view('tequila.form-confirm')->with('input', $input);
+        return view('form-confirm')->with('input', $input);
     }
 
     /*
@@ -97,7 +97,7 @@ class FormController extends Controller
     */
     public function confirm()
     {
-        return view('tequila.form-confirm');
+        return view('form-confirm');
     }
 
     /*
@@ -133,7 +133,7 @@ class FormController extends Controller
         File::move('./image/syouhin/sample/' . $file, './image/syouhin/' . $file);
         // セッションクリア
         $request->session()->flush();
-        return view('tequila.form-complete');
+        return view('form-complete');
     }
 
     /*
@@ -143,6 +143,6 @@ class FormController extends Controller
     */
     public function complete()
     {
-        return view('tequila.form-complete');
+        return view('form-complete');
     }
 }
