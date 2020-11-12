@@ -15,37 +15,33 @@
         <div>
             <form method="POST" action="form-confirm" enctype="multipart/form-data">
             @csrf
-                <div class={{config('app_class_css.scroll_area')}}>
-                    <div class={{config('app_class_css.table_area__scroll_frame')}}>
-                        <table class={{config('app_class_css.table_area')}}>
-                                <tr>
-                                    <th class={{config('app_class_css.table_area__header')}}>項目名</th>
-                                    <th class={{config('app_class_css.table_area__header')}}>入力内容</th>
-                                    <th class={{config('app_class_css.table_area__header')}}>説明</th>
-                                    <th class={{config('app_class_css.table_area__header')}}>入力条件</th>
-                                    <th class={{config('app_class_css.table_area__header')}}>入力サンプル</th>
-                                </tr>
-                                {{-- インプット項目をconfigに定義 --}}
-                                @foreach (config('app_form_input') as $key => $value)
-                                    <tr>
-                                        <label>
-                                            <th>{{ $value['title'] }}</th>
-                                            <td>
-                                                <input
-                                                    type="{{ $value['type'] }}"
-                                                    name="{{ $key }}"
-                                                    value="{{ !empty(session($key)) ? session($key) : old($key) }}"
-                                                >
-                                            </td>
-                                        </label>
-                                        <td>{{ $value['description'] }}</td>
-                                        <td>{{ $value['terms'] }}</td>
-                                        <td>{{ $value['sample'] }}</td>
-                                    </tr>
-                                @endforeach
-                            </table>
-                    </div>
-                </div>
+                @component('component.table-area')
+                    <tr>
+                        <th class={{config('app_class_css.table_area__header')}}>項目名</th>
+                        <th class={{config('app_class_css.table_area__header')}}>入力内容</th>
+                        <th class={{config('app_class_css.table_area__header')}}>説明</th>
+                        <th class={{config('app_class_css.table_area__header')}}>入力条件</th>
+                        <th class={{config('app_class_css.table_area__header')}}>入力サンプル</th>
+                    </tr>
+                    {{-- インプット項目をconfigに定義 --}}
+                    @foreach (config('app_form_input') as $key => $value)
+                        <tr>
+                            <label>
+                                <th>{{ $value['title'] }}</th>
+                                <td>
+                                    <input
+                                        type="{{ $value['type'] }}"
+                                        name="{{ $key }}"
+                                        value="{{ !empty(session($key)) ? session($key) : old($key) }}"
+                                    >
+                                </td>
+                            </label>
+                            <td>{{ $value['description'] }}</td>
+                            <td>{{ $value['terms'] }}</td>
+                            <td>{{ $value['sample'] }}</td>
+                        </tr>
+                    @endforeach
+                @endcomponent
                 <button type="submit" name="submit">
                     確認する
                 </button>

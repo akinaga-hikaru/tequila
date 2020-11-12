@@ -13,119 +13,117 @@
                 ])
             @endcomponent
         {{-- ブランドタイトルend --}}
-        <div class={{config('app_class_css.table_area')}}>
-            <table>
-                    <tr>
-                        <label>
-                            <th>ブランドID</th>
-                            <td><div>{{ $input['title_id'] }}</div></td>
-                        </label>
-                    </tr>
-                    <tr>
-                        <label>
-                            <th>ブランド名</th>
-                            <td><div>{{ $input['title_name'] }}</div></td>
-                        </label>
-                    </tr>
-                    <tr>
-                        <label>
-                            <th>画像代替テキスト</th>
-                            <td><div>{{ $input['alt_name'] }}</div></td>
-                        </label>
-                    </tr>
-                    <tr>
-                        <label>
-                            <th>リンク</th>
-                            <td><div>{{ $input['url'] }}</div></td>
-                        </label>
-                    </tr>
-                    <tr>
-                        <label>
-                            <th>画像</th>
-                            <td><div>{{ $input['image'] }}</div></td>
-                        </label>
-                    </tr>
-                    <tr>
-                        <label>
-                            <th>熟成度ID</th>
-                            <td><div>{{ $input['aging_sort'] }}</div></td>
-                        </label>
-                    </tr>
-                    <tr>
-                        <label>
-                            <th>熟成度名</th>
-                            <td><div>{{ $input['aging'] }}</div></td>
-                        </label>
-                    </tr>
-                    <tr>
-                        <label>
-                            <th>度数/混成度</th>
-                            <td><div>{{ $input['contents_alc'] }}</div></td>
-                        </label>
-                    </tr>
-                    </tr>
-                    <tr>
-                        <label>
-                            <th>蒸留所名</th>
-                            <td><div>{{ $input['contents_dest'] }}</div></td>
-                        </label>
-                    </tr>
-                    <tr>
-                        <label>
-                            <th>NOM</th>
-                            <td><div>{{ $input['contents_nom'] }}</div></td>
-                        </label>
-                    </tr>
-                    <tr>
-                        <label>
-                            <th>生産地方ID</th>
-                            <td><div>{{ $input['contents_local_id'] }}</div></td>
-                        </label>
-                    </tr>
-                    <tr>
-                        <label>
-                            <th>生産地方名</th>
-                            <td><div>{{ $input['contents_local'] }}</div></td>
-                        </label>
-                    </tr>
-                    <tr>
-                        <label>
-                            <th>生産エリアID</th>
-                            <td><div>{{ $input['contents_area_id'] }}</div></td>
-                        </label>
-                    </tr>
-                    <tr>
-                        <label>
-                            <th>生産エリア名</th>
-                            <td><div>{{ $input['contents_area'] }}</div></td>
-                        </label>
-                    </tr>
-                    <tr>
-                        <label>
-                            <th>内容（情報）</th>
-                            <td><div>{{ $input['contents_info'] }}</div></td>
-                        </label>
-                    </tr>
-                    <tr>
-                        <label>
-                            <th>レビュー内容（香り）</th>
-                            <td><div>{{ $input['contents_review_flavor'] }}</div></td>
-                        </label>
-                    </tr>
-                    <tr>
-                        <label>
-                            <th>レビュー内容（味）</th>
-                            <td><div>{{ $input['contents_review_top'] }}</div></td>
-                        </label>
-                    </tr>
-                    <tr>
-                        <label>
-                            <th>レビュー内容（余韻）</th>
-                            <td><div>{{ $input['contents_review_after'] }}</div></td>
-                        </label>
-                    </tr>
-            </table>
-        </div>
+        @component('component.table-area')
+            <tr>
+                <label>
+                    <th>ブランドID</th>
+                    <td><div>{{ $input['title_id'] }}</div></td>
+                </label>
+            </tr>
+            <tr>
+                <label>
+                    <th>ブランド名</th>
+                    <td><div>{{ $input['title_name'] }}</div></td>
+                </label>
+            </tr>
+            <tr>
+                <label>
+                    <th>画像代替テキスト</th>
+                    <td><div>{{ $input['alt_name'] }}</div></td>
+                </label>
+            </tr>
+            <tr>
+                <label>
+                    <th>リンク</th>
+                    <td><div>{{ $input['url'] }}</div></td>
+                </label>
+            </tr>
+            <tr>
+                <label>
+                    <th>画像</th>
+                    <td><div>{{ $input['image'] }}</div></td>
+                </label>
+            </tr>
+            <tr>
+                <label>
+                    <th>熟成度ID</th>
+                    <td><div>{{ $input['aging_sort'] }}</div></td>
+                </label>
+            </tr>
+            <tr>
+                <label>
+                    <th>熟成度名</th>
+                    <td><div>{{ $input['aging'] }}</div></td>
+                </label>
+            </tr>
+            <tr>
+                <label>
+                    <th>度数/混成度</th>
+                    <td><div>{{ $input['contents_alc'] }}</div></td>
+                </label>
+            </tr>
+            </tr>
+            <tr>
+                <label>
+                    <th>蒸留所名</th>
+                    <td><div>{{ $input['contents_dest'] }}</div></td>
+                </label>
+            </tr>
+            <tr>
+                <label>
+                    <th>NOM</th>
+                    <td><div>{{ $input['contents_nom'] }}</div></td>
+                </label>
+            </tr>
+            <tr>
+                <label>
+                    <th>生産地方ID</th>
+                    <td><div>{{ $input['contents_local_id'] }}</div></td>
+                </label>
+            </tr>
+            <tr>
+                <label>
+                    <th>生産地方名</th>
+                    <td><div>{{ $input['contents_local'] }}</div></td>
+                </label>
+            </tr>
+            <tr>
+                <label>
+                    <th>生産エリアID</th>
+                    <td><div>{{ $input['contents_area_id'] }}</div></td>
+                </label>
+            </tr>
+            <tr>
+                <label>
+                    <th>生産エリア名</th>
+                    <td><div>{{ $input['contents_area'] }}</div></td>
+                </label>
+            </tr>
+            <tr>
+                <label>
+                    <th>内容（情報）</th>
+                    <td><div>{{ $input['contents_info'] }}</div></td>
+                </label>
+            </tr>
+            <tr>
+                <label>
+                    <th>レビュー内容（香り）</th>
+                    <td><div>{{ $input['contents_review_flavor'] }}</div></td>
+                </label>
+            </tr>
+            <tr>
+                <label>
+                    <th>レビュー内容（味）</th>
+                    <td><div>{{ $input['contents_review_top'] }}</div></td>
+                </label>
+            </tr>
+            <tr>
+                <label>
+                    <th>レビュー内容（余韻）</th>
+                    <td><div>{{ $input['contents_review_after'] }}</div></td>
+                </label>
+            </tr>
+        @endcomponent
         <div class={{config('app_class_css.center')}}>
             <button type="button" name="submit" onclick="history.back()">
                 修正する
