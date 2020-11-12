@@ -19,29 +19,66 @@
         </script>
     </head>
     <body class="@yield('body_class')">
-        <div class="header-area center">
-            <header id="top" class="header-area__bg-frame center">
+        <header
+            class="
+                {{config('app_class_css.header_area')}}
+                {{config('app_class_css.center')}}
+            "
+        >
+            <div
+                id="top"
+                class="
+                    {{config('app_class_css.header_area__bg_frame')}}
+                    {{config('app_class_css.center')}}
+                "
+            >
                 <a href="/">
-                    <h1 class="header-area__main-logo">テキーラ全書</h1><br>
-                    <h1 class="header-area__sub-logo">〜Tequipedia〜</h1>
+                    <h1 class={{config('app_class_css.header_area__main_logo')}}>
+                        テキーラ全書
+                    </h1><br>
+                    <h1 class={{config('app_class_css.header_area__sub_logo')}}>
+                        〜Tequipedia〜
+                    </h1>
                 </a>
-                <p class="global-menu__btn-sp js-global-menu__btn-sp hide-pc">≡</p>
-                <ul class="global-menu js-global-menu hide-sp">
-                    <li class="global-menu__btn"><a href="/">テキーラとは</a></li>
-                    <li class="global-menu__btn"><a href="syouhin">商品紹介</a></li>
-                    <li class="global-menu__btn"><a href="tenpo">取扱店紹介</a></li>
-                    <li class="global-menu__btn"><a href="bunken">参考文献</a></li>
+                <p
+                    class="
+                        {{config('app_class_css.global_menu__btn_sp')}}
+                        {{config('app_class_css.hide_pc')}}
+                        {{config('app_class_js.js_global_menu__btn_sp')}}
+                    "
+                >
+                    ≡
+                </p>
+                <ul
+                    class="
+                        {{config('app_class_css.global_menu')}}
+                        {{config('app_class_css.hide_sp')}}
+                        {{config('app_class_js.js_global_menu')}}
+                    "
+                >
+                    <li class={{config('app_class_css.global_menu__btn')}}><a href="/">テキーラとは</a></li>
+                    <li class={{config('app_class_css.global_menu__btn')}}><a href="syouhin">商品紹介</a></li>
+                    <li class={{config('app_class_css.global_menu__btn')}}><a href="tenpo">取扱店紹介</a></li>
+                    <li class={{config('app_class_css.global_menu__btn')}}><a href="bunken">参考文献</a></li>
                 </ul>
-            </header>
-        </div>
+            </div>
+        </header>
+
         <div>
-            <h2 class="section-1">@yield('section')</a></h2>
+            <h2 class={{config('app_class_css.page_title')}}>
+                @yield('section')
+            </h2>
         </div>
 
         @yield('main')
 
-        <footer class="footer-area center">
-            <div class="footer-area__top-btn">
+        <footer
+            class="
+                {{config('app_class_css.footer_area')}}
+                {{config('app_class_css.center')}}
+            "
+        >
+            <div class={{config('app_class_css.footer_area__top_btn')}}>
                 <a href="#top">TOP</a>
             </div>
         </footer>

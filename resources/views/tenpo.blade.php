@@ -5,14 +5,14 @@
 @section('body_class','body tenpo')
 
 @section('main')
-<div class="contents-frame ">
-    <div class="scroll-area">
-        <div class="table-area__scroll-frame">
-            <table class="table-area">
+<div class={{config('app_class_css.contents_frame')}}>
+    <div class={{config('app_class_css.scroll_area')}}>
+        <div class={{config('app_class_css.table_area__scroll_frame')}}>
+            <table class={{config('app_class_css.table_area')}}>
                 {{-- configで紹介店を定義 --}}
                 @foreach (config('app_tenpo') as $key => $values)
                     <tr>
-                        <th class="table-area__header">{{ $key }}</th>
+                        <th class={{config('app_class_css.table_area__header')}}>{{ $key }}</th>
                     </tr>
                     <tr>
                         <th>店名</th>
@@ -22,7 +22,14 @@
                     </tr>
                     @foreach ($values as $value)
                         <tr>
-                            <td><a href="{{ $value['url'] }}" target="_blank">{{ $value['name'] }}</a></td>
+                            <td>
+                                <a
+                                    href="{{ $value['url'] }}"
+                                    target="_blank"
+                                >
+                                    {{ $value['name'] }}
+                                </a>
+                            </td>
                             <td>{{ $value['contact'] }}</td>
                             <td>{{ $value['access'] }}</td>
                             <td>{{ $value['description'] }}</td>

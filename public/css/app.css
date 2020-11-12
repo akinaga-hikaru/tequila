@@ -598,27 +598,27 @@ img {
     ページ別：テキーラとは
 ----------------------------------------------- */
 
-.top_page .letters-area {
+.top .letters-area {
   margin-bottom: 40px;
 }
 
-.top_page .letters-area__title {
+.top .letters-area__title {
   padding: 1px 5px;
   margin-bottom: 2px;
   line-height: 1.3;
 }
 
 @media screen and (max-width: 768px) {
-  .top_page .letters-area__title {
+  .top .letters-area__title {
     font-size: 13px;
   }
 }
 
-.top_page .letters-area__paragraph {
+.top .letters-area__paragraph {
   margin-bottom: 10px;
 }
 
-.top_page .table-area__scroll-frame {
+.top .table-area__scroll-frame {
   padding-bottom: 20px;
   width: 100%;
   min-width: 1000px;

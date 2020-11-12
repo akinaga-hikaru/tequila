@@ -5,7 +5,7 @@
 @section('body_class',' body form form-confirm syouhin js-form-confirm')
 
 @section('main')
-    <main class="contents-frame">
+    <main class={{config('app_class_css.contents_frame')}}>
         {{-- ブランドタイトルstart --}}
             @component('component.section-2',[
                 'js_class' => 'js-syouhin-title',
@@ -13,7 +13,7 @@
                 ])
             @endcomponent
         {{-- ブランドタイトルend --}}
-        <div class="table-area">
+        <div class={{config('app_class_css.table_area')}}>
             <table>
                     <tr>
                         <label>
@@ -126,35 +126,52 @@
                     </tr>
             </table>
         </div>
-        <div class="center">
-            <button type="button" name="submit" onclick="history.back()">修正する</button>
+        <div class={{config('app_class_css.center')}}>
+            <button type="button" name="submit" onclick="history.back()">
+                修正する
+            </button>
             <br>
         </div>
-        <div class="message center">
+        <div
+            class="
+                {{config('app_class_css.message')}}
+                {{config('app_class_css.center')}}
+            "
+        >
             <p>
                 以下はプレビュー表示となります。
             </p>
         </div>
     </main>
-    <div class="flex-box">
-        <aside class="aside contents-frame">
+    <div class={{config('app_class_css.flex_box')}}>
+        <aside
+            class="
+                {{config('app_class_css.aside')}}
+                {{config('app_class_css.contents_frame')}}
+            "
+        >
             {{-- 項目一覧ボタンstart --}}
                 @component('component.section-2',[
-                    'js_class' => 'js-type-toggle',
+                    'js_class' => config('app_class_js.js_type_toggle'),
                     'section_name' => '項目一覧 ▼',
                     ])
                 @endcomponent
-                <div class="message">
+                <div class={{config('app_class_css.message')}}>
                     <p>
                         上の「項目一覧▼」ボタンを押すと、ここにブランド名などの一覧が表示されます
                     </p>
                 </div>
         </aside>
-        <main class="main contents-frame">
+        <main
+            class="
+                {{config('app_class_css.main')}}
+                {{config('app_class_css.contents_frame')}}
+            "
+        >
             {{-- ブランドタイトルstart --}}
                 @component('component.section-2',[
-                    'section_id' => 'section-2',
-                    'js_class' => 'js-syouhin-title',
+                    'section_id' => config('app_class_css.section_title'),
+                    'js_class' => config('app_class_js.js_syouhin_title'),
                     'section_name' => $input['title_name'],
                     ])
                 @endcomponent
@@ -184,15 +201,22 @@
             {{-- 商品コンテナend --}}
         </main>
     </div>
-    <div class="contents-frame">
-        <div class="message center">
+    <div class={{config('app_class_css.contents_frame')}}>
+        <div
+            class="
+                {{config('app_class_css.message')}}
+                {{config('app_class_css.center')}}
+            "
+        >
             <p>
                 間違いがないかご確認の上、ご登録ください。
             </p>
         </div>
-        <div class="center">
+        <div class={{config('app_class_css.center')}}>
             <br>
-            <button type="button" name="submit" onclick="location.href='form-complete'">登録する</button>
+            <button type="button" name="submit" onclick="location.href='form-complete'">
+                登録する
+            </button>
         </div>
     </div>
 @endsection

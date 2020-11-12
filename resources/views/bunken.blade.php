@@ -5,9 +5,9 @@
 @section('body_class','body bunken')
 
 @section('main')
-<div class="contents-frame">
+<div class={{config('app_class_css.contents_frame')}}>
     <center>
-        <table class="table-area">
+        <table class={{config('app_class_css.table_area')}}>
             <tr>
                 <th>著者名</th>
                 <th>文献名</th>
