@@ -49,8 +49,8 @@
                         また、このアガベを100%使用したものを特に「プレミアムテキーラ」と呼び、より純粋なアガベを堪能することができる。
                     </p>
                     <div class="flex-box center">
-                        <p><img src="/image/tequila/ryuzeturan.jpg" alt="竜舌蘭1"></p>
-                        <p><img src="/image/tequila/ryuzeturan2.jpg" alt="竜舌蘭2"></p>
+                        <p><img src="/image/ryuzeturan_1.jpg" alt="竜舌蘭1"></p>
+                        <p><img src="/image/ryuzeturan_2.jpg" alt="竜舌蘭2"></p>
                     </div>
                 </div>
             {{-- コンテンツ〜テキーラの原料〜end --}}
@@ -248,13 +248,13 @@
                         ■ メキシコ地図（テキーラ5州）
                     </h4>
                     <p class="letters-area__paragraph">
-                        <img src="/image/tequila/mexico_whitemap3.gif">
+                        <img src="/image/mexico_whitemap.gif">
                     </p>
                     <h4 class="letters-area__title">
                         ■ ハリスコ州地図
                     </h4>
                     <p class="letters-area__paragraph">
-                        <img src="/image/tequila/jalisco_colormap2.png">
+                        <img src="/image/jalisco_colormap.png">
                     </p>
                 </div>
             {{-- コンテンツ〜テキーラの5州〜end --}}

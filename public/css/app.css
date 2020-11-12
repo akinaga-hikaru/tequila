@@ -213,7 +213,7 @@ select {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  background: url(/image/tequila/background/bg005.jpg);
+  background: url(/image/background/bg005.jpg);
   color: #5e3d1e;
   line-height: 1.8;
   font-family: "Noto Serif JP", serif;
@@ -242,7 +242,7 @@ img {
 }
 
 .table-area .table-area__header {
-  background: url(/image/tequila/background/bg005.jpg);
+  background: url(/image/background/bg005.jpg);
   color: beige;
 }
 
@@ -257,7 +257,7 @@ img {
 }
 
 .table-area td {
-  background: url(/image/tequila/background/bg037.gif);
+  background: url(/image/background/bg037.gif);
 }
 
 /* -----------------------------------------------
@@ -269,7 +269,7 @@ img {
 ----------------------------------------------- */
 
 .header-area {
-  background-image: url(/image/tequila/tequila-lineup-sepia4.png);
+  background-image: url(/image/tequila-lineup-sepia_4.png);
   background-size: 2080px;
   /* -----------------------------------------------
       ヘッダーエリアコンテンツ設定
@@ -334,7 +334,7 @@ img {
 .header-area .global-menu__btn {
   display: inline-block;
   margin: 5px 0;
-  background: url(/image/tequila/background/bg005.jpg);
+  background: url(/image/background/bg005.jpg);
   color: beige;
   max-width: 240px;
   width: 100%;
@@ -473,7 +473,7 @@ img {
 ----------------------------------------------- */
 
 .letters-area {
-  background: url(/image/tequila/background/bg037.gif);
+  background: url(/image/background/bg037.gif);
   padding: 15px;
 }
 
@@ -521,7 +521,7 @@ img {
 }
 
 .section-2 {
-  background: url(/image/tequila/background/bg005.jpg);
+  background: url(/image/background/bg005.jpg);
   color: beige;
   font-size: 20px;
   padding-bottom: 6px;
@@ -563,7 +563,7 @@ img {
 }
 
 .common-btn--type {
-  background: url(/image/tequila/background/bg005.jpg);
+  background: url(/image/background/bg005.jpg);
   border-bottom: none;
   border-top: 1px solid beige;
 }
@@ -577,7 +577,7 @@ img {
 }
 
 .common-btn--down {
-  background: url(/image/tequila/background/bg037.gif);
+  background: url(/image/background/bg037.gif);
 }
 
 .message {

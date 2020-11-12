@@ -1,7 +1,7 @@
 <div class="flex-box syouhin-container js-syouhin-container js-dest_{{ $contents_nom }}_ js-maker_{{$title_id}}_ js-local_{{ $contents_local_id }}_ js-area_{{ $contents_area_id }}_ js-aging_{{ $aging_sort }}_">
     <div class="image-area">
         <a href="{{ $url }}" alt="{{ $alt_name }} 商品紹介" target="_blank">
-            <img src="/image/tequila/syouhin/{{ $image }}" alt="{{ $alt_name }}">
+            <img src="/image/syouhin/{{ $image }}" alt="{{ $alt_name }}">
         </a>
     </div>
     <div class="letters-area scroll-area">

@@ -84,7 +84,7 @@ class FormController extends Controller
         if (!empty($request->file('image')) && !empty($input['alt_name'])) {
             $file = $input['alt_name'] . '.jpg';
             $upload_file->storeAs('upload', $file);
-            $upload_file->move('./image/tequila/syouhin/sample', $file);
+            $upload_file->move('./image/syouhin/sample', $file);
         }
 
         return view('tequila.form-confirm')->with('input', $input);
@@ -130,7 +130,7 @@ class FormController extends Controller
             'contents_review_after' => session('contents_review_after'),
         ]);
         // アップロードしたファイルを正規フォルダに移動
-        File::move('./image/tequila/syouhin/sample/' . $file, './image/tequila/syouhin/' . $file);
+        File::move('./image/syouhin/sample/' . $file, './image/syouhin/' . $file);
         // セッションクリア
         $request->session()->flush();
         return view('tequila.form-complete');
