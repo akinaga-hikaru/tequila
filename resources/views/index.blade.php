@@ -6,19 +6,7 @@
 
 @section('main')
     <div class={{config('app_class_css.flex_box')}}>
-        <aside
-            class="
-                {{config('app_class_css.aside')}}
-                {{config('app_class_css.contents_frame')}}
-            "
-        >
-            {{-- 項目一覧ボタンstart --}}
-                @component('component.section-title',[
-                    'js_class' => config('app_class_js.js_type_toggle'),
-                    'section_name' => '項目一覧 ▼',
-                    ])
-                @endcomponent
-            {{-- 項目一覧ボタンend --}}
+        @component('component.aside')
             {{-- 項目選択ボタンstart --}}
                 <ul>
                     @foreach (config('app_index') as $item)
@@ -32,7 +20,7 @@
                     @endforeach
                 </ul>
             {{-- 項目選択ボタンend --}}
-        </aside>
+        @endcomponent
         <main
             class="
                 {{config('app_class_css.main')}}

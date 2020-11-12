@@ -142,24 +142,13 @@
         </div>
     </main>
     <div class={{config('app_class_css.flex_box')}}>
-        <aside
-            class="
-                {{config('app_class_css.aside')}}
-                {{config('app_class_css.contents_frame')}}
-            "
-        >
-            {{-- 項目一覧ボタンstart --}}
-                @component('component.section-title',[
-                    'js_class' => config('app_class_js.js_type_toggle'),
-                    'section_name' => '項目一覧 ▼',
-                    ])
-                @endcomponent
-                <div class={{config('app_class_css.message')}}>
-                    <p>
-                        上の「項目一覧▼」ボタンを押すと、ここにブランド名などの一覧が表示されます
-                    </p>
-                </div>
-        </aside>
+        @component('component.aside')
+            <div class={{config('app_class_css.message')}}>
+                <p>
+                    上の「項目一覧▼」ボタンを押すと、ここにブランド名などの一覧が表示されます
+                </p>
+            </div>
+        @endcomponent
         <main
             class="
                 {{config('app_class_css.main')}}
