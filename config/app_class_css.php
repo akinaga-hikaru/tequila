@@ -16,7 +16,7 @@ return [
 
     // 共通パーツ
     'page_title' => 'section-1',
-    'section_title' => 'section-2',
+    'section_title' => 'section-title',
     'message' => 'message',
     'letters_area' => 'letters-area',
     'letters_area__title' => 'letters-area__title',

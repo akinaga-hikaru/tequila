@@ -7,7 +7,7 @@
 @section('main')
     <main class={{config('app_class_css.contents_frame')}}>
         {{-- ブランドタイトルstart --}}
-            @component('component.section-2',[
+            @component('component.section-title',[
                 'js_class' => 'js-syouhin-title',
                 'section_name' => '項目名 / 入力内容',
                 ])
@@ -151,7 +151,7 @@
             "
         >
             {{-- 項目一覧ボタンstart --}}
-                @component('component.section-2',[
+                @component('component.section-title',[
                     'js_class' => config('app_class_js.js_type_toggle'),
                     'section_name' => '項目一覧 ▼',
                     ])
@@ -169,7 +169,7 @@
             "
         >
             {{-- ブランドタイトルstart --}}
-                @component('component.section-2',[
+                @component('component.section-title',[
                     'section_id' => config('app_class_css.section_title'),
                     'js_class' => config('app_class_js.js_syouhin_title'),
                     'section_name' => $input['title_name'],

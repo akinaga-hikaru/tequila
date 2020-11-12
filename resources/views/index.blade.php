@@ -13,7 +13,7 @@
             "
         >
             {{-- 項目一覧ボタンstart --}}
-                @component('component.section-2',[
+                @component('component.section-title',[
                     'js_class' => config('app_class_js.js_type_toggle'),
                     'section_name' => '項目一覧 ▼',
                     ])
@@ -40,7 +40,7 @@
             "
         >
             {{--セクションタイトル〜テキーラの原料〜start --}}
-                @component('component.section-2',[
+                @component('component.section-title',[
                     'section_id' => 'genryou',
                     'section_name' => 'テキーラの原料',
                     ])
@@ -70,7 +70,7 @@
                 </div>
             {{-- コンテンツ〜テキーラの原料〜end --}}
             {{--セクションタイトル〜テキーラの定義〜start --}}
-                @component('component.section-2',[
+                @component('component.section-title',[
                     'section_id' => 'teigi',
                     'section_name' => 'テキーラの定義',
                     ])
@@ -143,7 +143,7 @@
                 </div>
             {{-- コンテンツ〜テキーラの定義〜end --}}
             {{--セクションタイトル〜テキーラの起源〜start --}}
-                @component('component.section-2',[
+                @component('component.section-title',[
                     'section_id' => 'kigen',
                     'section_name' => 'テキーラの起源',
                     ])
@@ -211,7 +211,7 @@
                 </div>
             {{-- コンテンツ〜テキーラの起源〜end --}}
             {{--セクションタイトル〜テキーラの分類〜start --}}
-                @component('component.section-2',[
+                @component('component.section-title',[
                     'section_id' => 'bunrui',
                     'section_name' => 'テキーラの分類',
                     ])
@@ -248,7 +248,7 @@
                 </div>
             {{-- コンテンツ〜テキーラの分類〜end --}}
             {{--セクションタイトル〜熟成度合いによる呼称〜start --}}
-                @component('component.section-2',[
+                @component('component.section-title',[
                     'section_id' => 'kosyou',
                     'section_name' => '熟成度合いによる呼称',
                     ])
@@ -293,7 +293,7 @@
                 </div>
             {{-- コンテンツ〜熟成度合いによる呼称〜end --}}
             {{--セクションタイトル〜テキーラ5州〜start --}}
-                @component('component.section-2',[
+                @component('component.section-title',[
                     'section_id' => 'gosyu',
                     'section_name' => 'テキーラ5州',
                     ])
@@ -344,7 +344,7 @@
                 </div>
             {{-- コンテンツ〜テキーラの5州〜end --}}
             {{--セクションタイトル〜蒸留所リスト〜start --}}
-                @component('component.section-2',[
+                @component('component.section-title',[
                     'section_id' => 'joryujo',
                     'section_name' => '蒸留所リスト',
                     ])
