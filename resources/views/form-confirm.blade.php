@@ -5,7 +5,7 @@
 @section('body_class',' body form form-confirm syouhin js-form-confirm')
 
 @section('main')
-    <main class={{config('app_class_css.contents_frame')}}>
+    @component('component.main', ['main' => flase])
         {{-- ブランドタイトルstart --}}
             @component('component.section-title',[
                 'js_class' => 'js-syouhin-title',
@@ -133,19 +133,14 @@
         @component('component.message', ['center' => true])
             以下はプレビュー表示となります。
         @endcomponent
-    </main>
+    @endcomponent
     <div class={{config('app_class_css.flex_box')}}>
         @component('component.aside')
             @component('component.message')
                 上の「項目一覧▼」ボタンを押すと、ここにブランド名などの一覧が表示されます
             @endcomponent
         @endcomponent
-        <main
-            class="
-                {{config('app_class_css.main')}}
-                {{config('app_class_css.contents_frame')}}
-            "
-        >
+        @component('component.main')
             {{-- ブランドタイトルstart --}}
                 @component('component.section-title',[
                     'section_id' => config('app_class_css.section_title'),
@@ -177,7 +172,7 @@
                 ])
                 @endcomponent
             {{-- 商品コンテナend --}}
-        </main>
+        @endcomponent
     </div>
     <div class={{config('app_class_css.contents_frame')}}>
         @component('component.message', ['center' => true])

@@ -159,7 +159,7 @@
                 </ul>
             {{-- 熟成度合いリストend --}}
         @endcomponent
-        <main class="main contents-frame">
+        @component('component.main')
             {{-- ブランドタイトルstart --}}
                 @component('component.section-title',[
                     'section_id' => config('app_class_css.section_title'),
@@ -196,6 +196,6 @@
                     現在、選択された区分に商品はありません。
                 @endcomponent
             {{-- 商品コンテナend --}}
-        </main>
+        @endcomponent
     </div>
 @endsection

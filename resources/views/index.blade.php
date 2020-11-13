@@ -24,13 +24,7 @@
             {{-- 項目選択ボタンend --}}
         @endcomponent
 
-        <main
-            class="
-                {{config('app_class_css.main')}}
-                {{config('app_class_css.contents_frame')}}
-            "
-        >
-
+        @component('component.main')
             {{-- セクション start --}}
                 @foreach(config('app_index') as $key => $section)
                     {{-- タイトル start --}}
@@ -137,7 +131,6 @@
                     {{-- コンテンツ end --}}
                 @endforeach
             {{-- セクション end --}}
-
-        </main>
+        @endcomponent
     </div>
 @endsection
