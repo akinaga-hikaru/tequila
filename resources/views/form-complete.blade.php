@@ -7,7 +7,7 @@
 @section('main')
     @component('component.main', ['main' => false])
         @component('component.message', ['center' => true])
-            登録が完了しました。商品紹介ページで確認できます。
+            {{ config('app_message.form_complete') }}
         @endcomponent
     @endcomponent
 @endsection

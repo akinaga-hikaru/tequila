@@ -131,13 +131,13 @@
             <br>
         </div>
         @component('component.message', ['center' => true])
-            以下はプレビュー表示となります。
+            {{ config('app_message.form_confirm.preview') }}
         @endcomponent
     @endcomponent
     <div class={{config('app_class_css.flex_box')}}>
         @component('component.aside')
             @component('component.message')
-                上の「項目一覧▼」ボタンを押すと、ここにブランド名などの一覧が表示されます
+                {{ config('app_message.form_confirm.sidemenu') }}
             @endcomponent
         @endcomponent
         @component('component.main')
@@ -176,7 +176,7 @@
     </div>
     <div class={{config('app_class_css.contents_frame')}}>
         @component('component.message', ['center' => true])
-            間違いがないかご確認の上、ご登録ください。
+            {{ config('app_message.form_confirm.confirm') }}
         @endcomponent
         <div class={{config('app_class_css.center')}}>
             <br>

@@ -193,7 +193,7 @@
                         @endcomponent
                 @endforeach
                 @component('component.message', ['js_message' => true])
-                    現在、選択された区分に商品はありません。
+                    {{ config('app_message.syouhin.no_products') }}
                 @endcomponent
             {{-- 商品コンテナend --}}
         @endcomponent
