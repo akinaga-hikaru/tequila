@@ -192,17 +192,9 @@
                         ])
                         @endcomponent
                 @endforeach
-                <div
-                    class="
-                        {{config('app_class_css.message')}}
-                        {{config('app_class_js.js_syouhin_message')}}
-                    "
-                    hidden
-                >
-                    <p>
-                        現在、選択された区分に商品はありません。
-                    </p>
-                </div>
+                @component('component.message', ['js_message' => true])
+                    現在、選択された区分に商品はありません。
+                @endcomponent
             {{-- 商品コンテナend --}}
         </main>
     </div>

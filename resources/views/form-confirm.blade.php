@@ -130,24 +130,15 @@
             </button>
             <br>
         </div>
-        <div
-            class="
-                {{config('app_class_css.message')}}
-                {{config('app_class_css.center')}}
-            "
-        >
-            <p>
-                以下はプレビュー表示となります。
-            </p>
-        </div>
+        @component('component.message', ['center' => true])
+            以下はプレビュー表示となります。
+        @endcomponent
     </main>
     <div class={{config('app_class_css.flex_box')}}>
         @component('component.aside')
-            <div class={{config('app_class_css.message')}}>
-                <p>
-                    上の「項目一覧▼」ボタンを押すと、ここにブランド名などの一覧が表示されます
-                </p>
-            </div>
+            @component('component.message')
+                上の「項目一覧▼」ボタンを押すと、ここにブランド名などの一覧が表示されます
+            @endcomponent
         @endcomponent
         <main
             class="
@@ -189,16 +180,9 @@
         </main>
     </div>
     <div class={{config('app_class_css.contents_frame')}}>
-        <div
-            class="
-                {{config('app_class_css.message')}}
-                {{config('app_class_css.center')}}
-            "
-        >
-            <p>
-                間違いがないかご確認の上、ご登録ください。
-            </p>
-        </div>
+        @component('component.message', ['center' => true])
+            間違いがないかご確認の上、ご登録ください。
+        @endcomponent
         <div class={{config('app_class_css.center')}}>
             <br>
             <button type="button" name="submit" onclick="location.href='form-complete'">
