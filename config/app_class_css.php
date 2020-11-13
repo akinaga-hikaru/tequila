@@ -15,7 +15,7 @@ return [
     'hide_sp' => 'hide-sp',
 
     // 共通パーツ
-    'page_title' => 'section-1',
+    'page_title' => 'page-title',
     'section_title' => 'section-title',
     'message' => 'message',
     'letters_area' => 'letters-area',

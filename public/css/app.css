@@ -501,7 +501,7 @@ img {
   padding-left: 20px;
 }
 
-.section-1 {
+.page-title {
   background: rgba(255, 165, 0, 0.5);
   color: beige;
   font-size: 25px;
@@ -513,7 +513,7 @@ img {
 }
 
 @media screen and (max-width: 768px) {
-  .section-1 {
+  .page-title {
     font-size: 20px;
     line-height: 1.5;
     padding-bottom: 3px;
