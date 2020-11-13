@@ -8,7 +8,7 @@
 <div class={{config('app_class_css.contents_frame')}}>
     @component('component.table-area')
         {{-- configで紹介店を定義 --}}
-        @foreach (config('app_tenpo') as $key => $values)
+        @foreach (config('app_tenpo') as $key => $tenpos)
             <tr>
                 <th class={{config('app_class_css.table_area__header')}}>{{ $key }}</th>
             </tr>
@@ -18,19 +18,19 @@
                 <th>アクセス</th>
                 <th>詳細</th>
             </tr>
-            @foreach ($values as $value)
+            @foreach ($tenpos as $tenpo)
                 <tr>
                     <td>
                         <a
-                            href="{{ $value['url'] }}"
+                            href="{{ $tenpo['url'] }}"
                             target="_blank"
                         >
-                            {{ $value['name'] }}
+                            {{ $tenpo['name'] }}
                         </a>
                     </td>
-                    <td>{{ $value['contact'] }}</td>
-                    <td>{{ $value['access'] }}</td>
-                    <td>{{ $value['description'] }}</td>
+                    <td>{{ $tenpo['contact'] }}</td>
+                    <td>{{ $tenpo['access'] }}</td>
+                    <td>{{ $tenpo['description'] }}</td>
                 </tr>
             @endforeach
         @endforeach
