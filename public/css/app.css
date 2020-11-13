@@ -444,10 +444,6 @@ img {
   text-align: center;
 }
 
-.indent {
-  padding-left: 20px;
-}
-
 .hide-pc {
   display: none;
 }
@@ -499,6 +495,10 @@ img {
   background: rgba(232, 223, 213, 0.5);
   padding: 7px;
   margin: 5px;
+}
+
+.indent {
+  padding-left: 20px;
 }
 
 .section-1 {

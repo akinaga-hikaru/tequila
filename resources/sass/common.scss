@@ -27,11 +27,6 @@
     text-align: center;
 }
 
-// テキストインデント
-.indent {
-    padding-left: 20px;
-}
-
 // PCで非表示設定
 .hide-pc {
     display: none;
@@ -79,6 +74,11 @@
         padding: 7px;
         margin: 5px;
     }
+}
+
+// テキストインデント
+.indent {
+    padding-left: 20px;
 }
 
 // 大項目
