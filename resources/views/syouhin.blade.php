@@ -1,12 +1,14 @@
 @extends('layout.layout')
 
-@section('title','商品紹介')
-@section('section','商品紹介')
+@section('title', config('app_layout.global_menu.syouhin'))
+@section('section', config('app_layout.global_menu.syouhin'))
 @section('body_class','body syouhin')
 
-@section('main')
-    <div class={{config('app_class_css.flex_box')}}>
+@section('contents')
+    <div class={{ config('app_class_css.flex_box') }}>
+
         @component('component.aside')
+
             {{-- 項目選択ボタンstart --}}
                 <ul>
                     @foreach ($types as $type)
@@ -20,7 +22,8 @@
                     @endforeach
                 </ul>
             {{-- 項目選択ボタンend --}}
-            {{-- ブランドリストstart --}}
+
+            {{-- ブランドリスト start --}}
                 <ul>
                     @foreach ($titles as $title)
                         @component('component.common-btn',[
@@ -34,8 +37,9 @@
                         @endcomponent
                     @endforeach
                 </ul>
-            {{-- ブランドリストend --}}
-            {{-- 蒸留所リストstart --}}
+            {{-- ブランドリスト end --}}
+
+            {{-- 蒸留所リスト start --}}
                 <ul>
                     @foreach ($noms as $nom)
                         @component('component.common-btn',[
@@ -50,8 +54,9 @@
                         @endcomponent
                     @endforeach
                 </ul>
-            {{-- 蒸留所リストend --}}
-            {{-- 生産地方リストstart --}}
+            {{-- 蒸留所リスト end --}}
+
+            {{-- 生産地方リスト start --}}
                 <ul>
                     @php
                         $valles =[];
@@ -141,8 +146,9 @@
                         @endif
                     @endforeach
                 </ul>
-            {{-- 生産地方リストstart --}}
-            {{-- 熟成度合いリストstart --}}
+            {{-- 生産地方リスト start --}}
+
+            {{-- 熟成度合いリスト start --}}
                 <ul>
                     @foreach ($agings as $aging)
                         @component('component.common-btn',[
@@ -157,45 +163,54 @@
                         @endcomponent
                     @endforeach
                 </ul>
-            {{-- 熟成度合いリストend --}}
+            {{-- 熟成度合いリスト end --}}
+
         @endcomponent
+
         @component('component.main')
-            {{-- ブランドタイトルstart --}}
+
+            {{-- ブランドタイトル start --}}
                 @component('component.section-title',[
                     'section_id' => config('app_class_css.section_title'),
                     'js_class' => config('app_class_js.js_syouhin_title'),
                     'section_name' => '選択すると表示されます',
                     ])
                 @endcomponent
-            {{-- ブランドタイトルend --}}
-            {{-- 商品コンテナstart --}}
+            {{-- ブランドタイトル end --}}
+
+            {{-- 商品コンテナ start --}}
                 @foreach ($syouhin_data_all as $content)
-                        @component('component.syouhin-parts',[
-                            'title_id' => $content->title_id,
-                            'title_name' => $content->title_name,
-                            'alt_name' => $content->alt_name,
-                            'url' => $content->url,
-                            'image' => $content->image,
-                            'aging_sort' => $content->aging_sort,
-                            'aging' => $content->aging,
-                            'contents_alc' => $content->contents_alc,
-                            'contents_dest' => $content->contents_dest,
-                            'contents_nom' => $content->contents_nom,
-                            'contents_local_id' => $content->contents_local_id,
-                            'contents_local' => $content->contents_local,
-                            'contents_area_id' => $content->contents_local_id . '_' . $content->contents_area_id,
-                            'contents_area' => $content->contents_area,
-                            'contents_info' => $content->contents_info,
-                            'contents_review_flavor' => $content->contents_review_flavor,
-                            'contents_review_top' => $content->contents_review_top,
-                            'contents_review_after' => $content->contents_review_after,
-                        ])
-                        @endcomponent
+                    @component('component.syouhin-parts',[
+                        'title_id' => $content->title_id,
+                        'title_name' => $content->title_name,
+                        'alt_name' => $content->alt_name,
+                        'url' => $content->url,
+                        'image' => $content->image,
+                        'aging_sort' => $content->aging_sort,
+                        'aging' => $content->aging,
+                        'contents_alc' => $content->contents_alc,
+                        'contents_dest' => $content->contents_dest,
+                        'contents_nom' => $content->contents_nom,
+                        'contents_local_id' => $content->contents_local_id,
+                        'contents_local' => $content->contents_local,
+                        'contents_area_id' => $content->contents_local_id . '_' . $content->contents_area_id,
+                        'contents_area' => $content->contents_area,
+                        'contents_info' => $content->contents_info,
+                        'contents_review_flavor' => $content->contents_review_flavor,
+                        'contents_review_top' => $content->contents_review_top,
+                        'contents_review_after' => $content->contents_review_after,
+                    ])
+                    @endcomponent
                 @endforeach
+            {{-- 商品コンテナ end --}}
+
+            {{-- 商品なしメッセージ start --}}
                 @component('component.message', ['js_message' => true])
                     {{ config('app_message.syouhin.no_products') }}
                 @endcomponent
-            {{-- 商品コンテナend --}}
+            {{-- 商品なしメッセージ end --}}
+
         @endcomponent
+
     </div>
 @endsection

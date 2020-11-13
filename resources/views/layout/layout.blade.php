@@ -19,69 +19,94 @@
         </script>
     </head>
     <body class="@yield('body_class')">
-        <header
-            class="
-                {{config('app_class_css.header_area')}}
-                {{config('app_class_css.center')}}
-            "
-        >
-            <div
-                id="top"
+
+        {{-- ヘッダーエリア start --}}
+            <header
                 class="
-                    {{config('app_class_css.header_area__bg_frame')}}
-                    {{config('app_class_css.center')}}
+                    {{ config('app_class_css.header_area') }}
+                    {{ config('app_class_css.center') }}
                 "
             >
-                <a href="/">
-                    <h1 class={{config('app_class_css.header_area__main_logo')}}>
-                        テキーラ全書
-                    </h1><br>
-                    <h1 class={{config('app_class_css.header_area__sub_logo')}}>
-                        〜Tequipedia〜
-                    </h1>
-                </a>
-                <p
+                <div
+                    id="top"
                     class="
-                        {{config('app_class_css.global_menu__btn_sp')}}
-                        {{config('app_class_css.hide_pc')}}
-                        {{config('app_class_js.js_global_menu__btn_sp')}}
+                        {{ config('app_class_css.header_area__bg_frame') }}
+                        {{ config('app_class_css.center') }}
                     "
                 >
-                    ≡
-                </p>
-                <ul
-                    class="
-                        {{config('app_class_css.global_menu')}}
-                        {{config('app_class_css.hide_sp')}}
-                        {{config('app_class_js.js_global_menu')}}
-                    "
-                >
-                    <li class={{config('app_class_css.global_menu__btn')}}><a href="/">テキーラとは</a></li>
-                    <li class={{config('app_class_css.global_menu__btn')}}><a href="syouhin">商品紹介</a></li>
-                    <li class={{config('app_class_css.global_menu__btn')}}><a href="tenpo">取扱店紹介</a></li>
-                    <li class={{config('app_class_css.global_menu__btn')}}><a href="bunken">参考文献</a></li>
-                </ul>
-            </div>
-        </header>
 
-        <div>
-            <h2 class={{config('app_class_css.page_title')}}>
+                    {{-- タイトルエリア start --}}
+                        <a href="/">
+                            <h1 class={{ config('app_class_css.header_area__main_logo') }}>
+                                {{ config('app_layout.main_title') }}
+                            </h1><br>
+                            <h1 class={{ config('app_class_css.header_area__sub_logo') }}>
+                                {{ config('app_layout.sub_title') }}
+                            </h1>
+                        </a>
+                    {{-- タイトルエリア end --}}
+
+                    {{-- SPメニューボタン start --}}
+                        <p
+                            class="
+                                {{ config('app_class_css.global_menu__btn_sp') }}
+                                {{ config('app_class_css.hide_pc') }}
+                                {{ config('app_class_js.js_global_menu__btn_sp') }}
+                            "
+                        >
+                            ≡
+                        </p>
+                    {{-- SPメニューボタン end --}}
+
+                    {{-- グローバルメニュー start --}}
+                        <ul
+                            class="
+                                {{ config('app_class_css.global_menu') }}
+                                {{ config('app_class_css.hide_sp') }}
+                                {{ config('app_class_js.js_global_menu') }}
+                            "
+                        >
+                            @foreach (config('app_layout.global_menu') as $key => $menu)
+                                <li class={{ config('app_class_css.global_menu__btn') }}>
+                                    <a href={{ $key }}>
+                                        {{ $menu }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    {{-- グローバルメニュー end --}}
+
+                </div>
+            </header>
+        {{-- ヘッダーエリア end --}}
+
+        {{-- ページタイトル start --}}
+            <h2 class={{ config('app_class_css.page_title') }}>
                 @yield('section')
             </h2>
-        </div>
+        {{-- ページタイトル end --}}
 
-        @yield('main')
+        {{-- コンテンツエリア start --}}
+            @yield('contents')
+        {{-- コンテンツエリア end --}}
 
-        <footer
-            class="
-                {{config('app_class_css.footer_area')}}
-                {{config('app_class_css.center')}}
-            "
-        >
-            <div class={{config('app_class_css.footer_area__top_btn')}}>
-                <a href="#top">TOP</a>
-            </div>
-        </footer>
+        {{-- フッターエリア start --}}
+            <footer
+                class="
+                    {{ config('app_class_css.footer_area') }}
+                    {{ config('app_class_css.center') }}
+                "
+            >
+                {{-- トップボタン start --}}
+                    <div class={{ config('app_class_css.footer_area__top_btn') }}>
+                        <a href="#top">
+                            {{ config('app_layout.top_btn') }}
+                        </a>
+                    </div>
+                {{-- トップボタン end --}}
+            </footer>
+        {{-- フッターエリア end --}}
+
         <script src="{{ mix('js/app.js') }}"></script>
     </body>
 </html>

@@ -4,185 +4,114 @@
 @section('section','登録内容確認')
 @section('body_class',' body form form-confirm syouhin js-form-confirm')
 
-@section('main')
-    @component('component.main', ['main' => flase])
-        {{-- ブランドタイトルstart --}}
+@section('contents')
+
+    @component('component.main', ['main' => 'none'])
+
+        {{-- 項目名 start --}}
             @component('component.section-title',[
                 'js_class' => 'js-syouhin-title',
                 'section_name' => '項目名 / 入力内容',
                 ])
             @endcomponent
-        {{-- ブランドタイトルend --}}
-        @component('component.table-area')
-            <tr>
-                <label>
-                    <th>ブランドID</th>
-                    <td><div>{{ $input['title_id'] }}</div></td>
-                </label>
-            </tr>
-            <tr>
-                <label>
-                    <th>ブランド名</th>
-                    <td><div>{{ $input['title_name'] }}</div></td>
-                </label>
-            </tr>
-            <tr>
-                <label>
-                    <th>画像代替テキスト</th>
-                    <td><div>{{ $input['alt_name'] }}</div></td>
-                </label>
-            </tr>
-            <tr>
-                <label>
-                    <th>リンク</th>
-                    <td><div>{{ $input['url'] }}</div></td>
-                </label>
-            </tr>
-            <tr>
-                <label>
-                    <th>画像</th>
-                    <td><div>{{ $input['image'] }}</div></td>
-                </label>
-            </tr>
-            <tr>
-                <label>
-                    <th>熟成度ID</th>
-                    <td><div>{{ $input['aging_sort'] }}</div></td>
-                </label>
-            </tr>
-            <tr>
-                <label>
-                    <th>熟成度名</th>
-                    <td><div>{{ $input['aging'] }}</div></td>
-                </label>
-            </tr>
-            <tr>
-                <label>
-                    <th>度数/混成度</th>
-                    <td><div>{{ $input['contents_alc'] }}</div></td>
-                </label>
-            </tr>
-            </tr>
-            <tr>
-                <label>
-                    <th>蒸留所名</th>
-                    <td><div>{{ $input['contents_dest'] }}</div></td>
-                </label>
-            </tr>
-            <tr>
-                <label>
-                    <th>NOM</th>
-                    <td><div>{{ $input['contents_nom'] }}</div></td>
-                </label>
-            </tr>
-            <tr>
-                <label>
-                    <th>生産地方ID</th>
-                    <td><div>{{ $input['contents_local_id'] }}</div></td>
-                </label>
-            </tr>
-            <tr>
-                <label>
-                    <th>生産地方名</th>
-                    <td><div>{{ $input['contents_local'] }}</div></td>
-                </label>
-            </tr>
-            <tr>
-                <label>
-                    <th>生産エリアID</th>
-                    <td><div>{{ $input['contents_area_id'] }}</div></td>
-                </label>
-            </tr>
-            <tr>
-                <label>
-                    <th>生産エリア名</th>
-                    <td><div>{{ $input['contents_area'] }}</div></td>
-                </label>
-            </tr>
-            <tr>
-                <label>
-                    <th>内容（情報）</th>
-                    <td><div>{{ $input['contents_info'] }}</div></td>
-                </label>
-            </tr>
-            <tr>
-                <label>
-                    <th>レビュー内容（香り）</th>
-                    <td><div>{{ $input['contents_review_flavor'] }}</div></td>
-                </label>
-            </tr>
-            <tr>
-                <label>
-                    <th>レビュー内容（味）</th>
-                    <td><div>{{ $input['contents_review_top'] }}</div></td>
-                </label>
-            </tr>
-            <tr>
-                <label>
-                    <th>レビュー内容（余韻）</th>
-                    <td><div>{{ $input['contents_review_after'] }}</div></td>
-                </label>
-            </tr>
-        @endcomponent
-        <div class={{config('app_class_css.center')}}>
-            <button type="button" name="submit" onclick="history.back()">
-                修正する
-            </button>
-            <br>
-        </div>
-        @component('component.message', ['center' => true])
-            {{ config('app_message.form_confirm.preview') }}
-        @endcomponent
-    @endcomponent
-    <div class={{config('app_class_css.flex_box')}}>
-        @component('component.aside')
-            @component('component.message')
-                {{ config('app_message.form_confirm.sidemenu') }}
+        {{-- 項目名 end --}}
+
+        {{-- 入力項目表示 start --}}
+            @component('component.table-area')
+                @foreach ($input as $item)
+                    <tr>
+                        <label>
+                            <th>{{ $item['name'] }}</th>
+                            <td><div>{{ $item['input'] }}</div></td>
+                        </label>
+                    </tr>
+                @endforeach
             @endcomponent
-        @endcomponent
+        {{-- 入力項目表示 end --}}
+
+        {{-- 修正ボタン start --}}
+            <div class={{ config('app_class_css.center') }}>
+                <button type="button" name="submit" onclick="history.back()">
+                    {{ config('app_layout.correct_btn') }}
+                </button>
+                <br>
+            </div>
+        {{-- 修正ボタン end --}}
+
+        {{-- プレビューメッセージ start --}}
+            @component('component.message', ['center' => true])
+                {{ config('app_message.form_confirm.preview') }}
+            @endcomponent
+        {{-- プレビューメッセージ end --}}
+
+    @endcomponent
+
+    <div class={{ config('app_class_css.flex_box') }}>
+
+        {{-- サイドメニューメッセージ start --}}
+            @component('component.aside')
+                @component('component.message')
+                    {{ config('app_message.form_confirm.sidemenu') }}
+                @endcomponent
+            @endcomponent
+        {{-- サイドメニューメッセージ end --}}
+
         @component('component.main')
-            {{-- ブランドタイトルstart --}}
+
+            {{-- ブランドタイトル start --}}
                 @component('component.section-title',[
                     'section_id' => config('app_class_css.section_title'),
                     'js_class' => config('app_class_js.js_syouhin_title'),
-                    'section_name' => $input['title_name'],
+                    'section_name' => $input['title_name']['input'],
                     ])
                 @endcomponent
-            {{-- ブランドタイトルend --}}
-            {{-- 商品コンテナstart --}}
+            {{-- ブランドタイトル end --}}
+
+            {{-- プレビュー商品コンテナ start --}}
                 @component('component.syouhin-parts',[
-                    'title_id' => $input['title_id'],
-                    'title_name' => $input['title_name'],
-                    'alt_name' => $input['alt_name'],
-                    'url' => $input['url'],
-                    'image' => 'sample/' . $input['image'],
-                    'aging_sort' => $input['aging_sort'],
-                    'aging' => $input['aging'],
-                    'contents_alc' => $input['contents_alc'],
-                    'contents_dest' => $input['contents_dest'],
-                    'contents_nom' => $input['contents_nom'],
-                    'contents_local_id' => $input['contents_local_id'],
-                    'contents_local' => $input['contents_local'],
-                    'contents_area_id' => $input['contents_area_id'],
-                    'contents_area' => $input['contents_area'],
-                    'contents_info' => $input['contents_info'],
-                    'contents_review_flavor' => $input['contents_review_flavor'],
-                    'contents_review_top' => $input['contents_review_top'],
-                    'contents_review_after' => $input['contents_review_after'],
+                    'title_id' => $input['title_id']['input'],
+                    'title_name' => $input['title_name']['input'],
+                    'alt_name' => $input['alt_name']['input'],
+                    'url' => $input['url']['input'],
+                    'image' => 'sample/' . $input['image']['input'],
+                    'aging_sort' => $input['aging_sort']['input'],
+                    'aging' => $input['aging']['input'],
+                    'contents_alc' => $input['contents_alc']['input'],
+                    'contents_dest' => $input['contents_dest']['input'],
+                    'contents_nom' => $input['contents_nom']['input'],
+                    'contents_local_id' => $input['contents_local_id']['input'],
+                    'contents_local' => $input['contents_local']['input'],
+                    'contents_area_id' => $input['contents_area_id']['input'],
+                    'contents_area' => $input['contents_area']['input'],
+                    'contents_info' => $input['contents_info']['input'],
+                    'contents_review_flavor' => $input['contents_review_flavor']['input'],
+                    'contents_review_top' => $input['contents_review_top']['input'],
+                    'contents_review_after' => $input['contents_review_after']['input'],
                 ])
                 @endcomponent
-            {{-- 商品コンテナend --}}
+            {{-- プレビュー商品コンテナ end --}}
+
         @endcomponent
+
     </div>
-    <div class={{config('app_class_css.contents_frame')}}>
-        @component('component.message', ['center' => true])
-            {{ config('app_message.form_confirm.confirm') }}
-        @endcomponent
-        <div class={{config('app_class_css.center')}}>
-            <br>
-            <button type="button" name="submit" onclick="location.href='form-complete'">
-                登録する
-            </button>
-        </div>
+
+    <div class={{ config('app_class_css.contents_frame') }}>
+
+        {{-- 確認メッセージ start --}}
+            @component('component.message', ['center' => true])
+                {{ config('app_message.form_confirm.confirm') }}
+            @endcomponent
+        {{-- 確認メッセージ end --}}
+
+        {{-- 登録ボタン start --}}
+            <div class={{ config('app_class_css.center') }}>
+                <br>
+                <button type="button" name="submit" onclick="location.href='form-complete'">
+                    {{ config('app_layout.register_btn') }}
+                </button>
+            </div>
+        {{-- 登録ボタン end --}}
+
     </div>
+
 @endsection

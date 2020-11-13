@@ -1,32 +1,35 @@
 @extends('layout.layout')
 
-@section('title','参考文献')
-@section('section','参考文献')
+@section('title', config('app_layout.global_menu.bunken'))
+@section('section', config('app_layout.global_menu.bunken'))
 @section('body_class','body bunken')
 
-@section('main')
-<div class={{config('app_class_css.contents_frame')}}>
-    <center>
-        @component('component.table-area')
-                <tr>
-                    <th>著者名</th>
-                    <th>文献名</th>
-                    <th>出版社</th>
-                    <th>出版年</th>
-                </tr>
-                <tr>
-                    {{-- conifgで作品を著者ごとに定義 --}}
-                    @foreach (config('app_bunken') as $author)
+@section('contents')
+        @component('component.main', ['main' => 'none'])
+            <center>
+                @component('component.table-area')
+
+                    {{-- 項目名 start --}}
                         <tr>
-                            @foreach ($author as $value)
-                                <td>{{ $value }}</td>
+                            @foreach (config('app_bunken.title') as $title)
+                                <th>{{ $title }}</th>
                             @endforeach
                         </tr>
-                    @endforeach
-                </tr>
+                    {{-- 項目名 end --}}
+
+                    {{-- 項目内容 start --}}
+                        <tr>
+                            @foreach (config('app_bunken.authors') as $author)
+                                <tr>
+                                    @foreach ($author as $value)
+                                        <td>{{ $value }}</td>
+                                    @endforeach
+                                </tr>
+                            @endforeach
+                        </tr>
+                    {{-- 項目内容 end --}}
+
+                @endcomponent
+            </center>
         @endcomponent
-    </center>
-</div>
-<br>
-<br>
 @endsection

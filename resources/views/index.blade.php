@@ -1,11 +1,11 @@
 @extends('layout.layout')
 
-@section('title','テキーラ全書')
-@section('section','テキーラとは')
+@section('title', config('app_layout.global_menu./'))
+@section('section', config('app_layout.global_menu./'))
 @section('body_class','body top')
 
-@section('main')
-    <div class={{config('app_class_css.flex_box')}}>
+@section('contents')
+    <div class={{ config('app_class_css.flex_box') }}>
 
         @component('component.aside')
             {{-- 項目選択ボタンstart --}}
@@ -27,6 +27,7 @@
         @component('component.main')
             {{-- セクション start --}}
                 @foreach(config('app_index') as $key => $section)
+
                     {{-- タイトル start --}}
                         @component('component.section-title',[
                             'section_id' => $section['id'],
@@ -39,7 +40,7 @@
                         @switch($key)
 
                             @case(1) {{-- テキーラの原料 --}}
-                                <div class={{config('app_class_css.letters_area')}}>
+                                <div class={{ config('app_class_css.letters_area') }}>
                                     @foreach($section['texts'] as $content)
                                         @component('component.letters-area-parts', [
                                             'title' => !empty($content['title']) ? $content['title'] : '',
@@ -50,8 +51,8 @@
                                     @endforeach
                                     <div
                                         class="
-                                            {{config('app_class_css.flex_box')}}
-                                            {{config('app_class_css.center')}}
+                                            {{ config('app_class_css.flex_box') }}
+                                            {{ config('app_class_css.center') }}
                                         "
                                     >
                                         <p><img src="/image/ryuzeturan_1.jpg" alt="竜舌蘭1"></p>
@@ -64,7 +65,7 @@
                             @case(3) {{-- テキーラの起源 --}}
                             @case(4) {{-- テキーラの分類 --}}
                             @case(6) {{-- テキーラ5州 --}}
-                                <div class={{config('app_class_css.letters_area')}}>
+                                <div class={{ config('app_class_css.letters_area') }}>
                                     @foreach($section['texts'] as $content)
                                         @component('component.letters-area-parts', [
                                             'title' => !empty($content['title']) ? $content['title'] : '',
@@ -94,7 +95,7 @@
                             @break
 
                             @case(7) {{-- 蒸留所リスト --}}
-                                <div class={{config('app_class_css.letters_area')}}>
+                                <div class={{ config('app_class_css.letters_area') }}>
                                     @foreach($section['texts'] as $content)
                                         @component('component.letters-area-parts', [
                                             'title' => !empty($content['title']) ? $content['title'] : '',
@@ -107,7 +108,7 @@
                                 @component('component.table-area')
                                     @foreach($section['tables'] as $table)
                                         <tr>
-                                            <td class={{config('app_class_css.table_area__header')}}>
+                                            <td class={{ config('app_class_css.table_area__header') }}>
                                                 {{ $table['title'] }}
                                             </td>
                                         </tr>
@@ -129,6 +130,7 @@
 
                         @endswitch
                     {{-- コンテンツ end --}}
+
                 @endforeach
             {{-- セクション end --}}
         @endcomponent
