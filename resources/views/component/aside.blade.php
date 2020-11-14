@@ -1,10 +1,5 @@
 {{-- コンポーネント：サイドエリア --}}
-<aside
-    class="
-        {{ config('app_class_css.aside') }}
-        {{ config('app_class_css.contents_frame') }}
-    "
->
+<aside class={{ config('app_class_css.aside') }}>
 
     {{-- 項目一覧ボタン start --}}
         @component('component.section-title',[

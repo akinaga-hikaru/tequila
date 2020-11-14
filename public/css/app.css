@@ -345,6 +345,7 @@ img {
 }
 
 .aside {
+  background: rgba(232, 223, 213, 0.5);
   width: 25%;
   border-right: 1px solid #5e3d1e;
 }
@@ -357,6 +358,7 @@ img {
 }
 
 .main {
+  background: rgba(232, 223, 213, 0.5);
   width: 75%;
 }
 
@@ -364,6 +366,11 @@ img {
   .main {
     width: 100%;
   }
+}
+
+.main-no-aside {
+  background: rgba(232, 223, 213, 0.5);
+  width: 100%;
 }
 
 .footer-area {
@@ -395,7 +402,6 @@ img {
 ----------------------------------------------- */
 
 .contents-frame {
-  background: rgba(232, 223, 213, 0.5);
   padding: 20px;
 }
 
@@ -698,7 +704,6 @@ img {
 ----------------------------------------------- */
 
 .tenpo .table-area__scroll-frame {
-  padding: 20px;
   margin: 0 auto;
   width: 100%;
   min-width: 1000px;

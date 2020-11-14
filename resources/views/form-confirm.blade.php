@@ -6,7 +6,7 @@
 
 @section('contents')
 
-    @component('component.main', ['main' => 'none'])
+    @component('component.main', ['main' => 'no_aside'])
 
         {{-- 項目名 start --}}
             @component('component.section-title',[
@@ -29,20 +29,22 @@
             @endcomponent
         {{-- 入力項目表示 end --}}
 
-        {{-- 修正ボタン start --}}
-            <div class={{ config('app_class_css.center') }}>
-                <button type="button" name="submit" onclick="history.back()">
-                    {{ config('app_layout.correct_btn') }}
-                </button>
-                <br>
-            </div>
-        {{-- 修正ボタン end --}}
+        <div class={{ config('app_class_css.contents_frame') }}>
+            {{-- 修正ボタン start --}}
+                <div class={{ config('app_class_css.center') }}>
+                    <button type="button" name="submit" onclick="history.back()">
+                        {{ config('app_layout.correct_btn') }}
+                    </button>
+                    <br>
+                </div>
+            {{-- 修正ボタン end --}}
 
-        {{-- プレビューメッセージ start --}}
-            @component('component.message', ['center' => true])
-                {{ config('app_message.form_confirm.preview') }}
-            @endcomponent
-        {{-- プレビューメッセージ end --}}
+            {{-- プレビューメッセージ start --}}
+                @component('component.message', ['center' => true])
+                    {{ config('app_message.form_confirm.preview') }}
+                @endcomponent
+            {{-- プレビューメッセージ end --}}
+        </div>
 
     @endcomponent
 

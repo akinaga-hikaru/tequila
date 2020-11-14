@@ -19,6 +19,7 @@
 
 // サイドエリア
 .aside {
+    background: $white_clear;
     width: 25%;
     border-right: 1px solid $brown;
     @media screen and(max-width: $sp_width) {
@@ -29,8 +30,15 @@
 
 // メインエリア
 .main {
+    background: $white_clear;
     width: 100% - 25%;
     @media screen and(max-width: $sp_width) {
+        width: 100%;
+    }
+
+    // サイドエリアがない場合
+    &-no-aside {
+        background: $white_clear;
         width: 100%;
     }
 }

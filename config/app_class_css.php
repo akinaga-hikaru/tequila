@@ -40,6 +40,7 @@ return [
 
     // メインエリア
     'main' => 'main',
+    'main_no_aside' => 'main-no-aside',
 
     // フッターエリア
     'footer_area' => 'footer-area',

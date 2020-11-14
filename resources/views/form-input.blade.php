@@ -5,7 +5,7 @@
 @section('body_class','body form form-input')
 
 @section('contents')
-    @component('component.main', ['main' => 'none'])
+    @component('component.main', ['main' => 'no_aside'])
         <form method="POST" action="form-confirm" enctype="multipart/form-data">
         @csrf
             @component('component.table-area')
