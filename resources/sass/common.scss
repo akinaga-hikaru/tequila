@@ -3,7 +3,7 @@
 ----------------------------------------------- */
 // コンテンツコンテナ
 .contents-frame {
-    background: $white_skelton;
+    background: $white_clear;
     padding: 20px;
 }
 
@@ -11,7 +11,7 @@
 .flex-box {
     display: flex;
     justify-content: space-around;
-    @media screen and(max-width: $sp) {
+    @media screen and(max-width: $sp_width) {
         display: block;
     }
 }
@@ -30,7 +30,7 @@
 // PCで非表示設定
 .hide-pc {
     display: none;
-    @media screen and(max-width: $sp) {
+    @media screen and(max-width: $sp_width) {
         display: block;
     }
 }
@@ -38,7 +38,7 @@
 // SPで非表示設定
 .hide-sp {
     display: block;
-    @media screen and(max-width: $sp) {
+    @media screen and(max-width: $sp_width) {
         display: none;
     }
 }
@@ -63,22 +63,43 @@
         line-height: 2;
         text-shadow: 1px 1px 4px $orange;
         border-bottom: 2px dotted $brown;
-        @media screen and(max-width: $sp) {
+        @media screen and(max-width: $sp_width) {
             font-size: 15px;
         }
     }
 
     // 段落
     &__paragraph {
-        background: $white_skelton;
+        background: $white_clear;
         padding: 7px;
         margin: 5px;
     }
+
+    // テキストインデント
+    .indent {
+        padding-left: 20px;
+    }
 }
 
-// テキストインデント
-.indent {
-    padding-left: 20px;
+// テーブル設定
+.table-area {
+    // ヘッダー
+    .table-area__header {
+        background: $bg_wood_dark;
+        color: $beige;
+    }
+
+    // テーブルセル設定
+    th,td {
+        padding: 8px 12px;
+        border: 1px solid $brown;
+    }
+    th {
+        background: $beige;
+    }
+    td {
+        background: $bg_colk;
+    }
 }
 
 // 大項目
@@ -91,7 +112,7 @@
     border: 1px solid $brown;
     border-left: none;
     border-right: none;
-    @media screen and(max-width: $sp) {
+    @media screen and(max-width: $sp_width) {
         font-size: 20px;
         line-height: 1.5;
         padding-bottom: 3px;
@@ -105,7 +126,7 @@
     font-size: 20px;
     padding-bottom: 6px;
     text-align: center;
-    @media screen and(max-width: $sp) {
+    @media screen and(max-width: $sp_width) {
         font-size: 14px;
         padding-bottom: 3px;
     }
@@ -113,8 +134,9 @@
 
 // 共通ボタン
 .common-btn {
+    cursor: pointer;
     border-bottom: 1px solid $brown;
-    @media screen and(max-width: $sp) {
+    @media screen and(max-width: $sp_width) {
         text-align: center;
     }
     &:last-child {
@@ -128,10 +150,10 @@
 
         // ホバー設定
         &:hover {
-            background: rgba(255,255,255,0.5);
+            background: $white_clear_thick;
         }
 
-        // 小文字
+        // 小文字設定
         .small-text {
             font-size: 11px;
         }
@@ -160,7 +182,7 @@
 
 // 注釈メッセージ
 .message {
-    background: $white_skelton;
+    background: $white_clear;
     border: 1px solid $brown;
     color: $brown;
     border-radius: 8px;

@@ -210,14 +210,15 @@ select {
 ----------------------------------------------- */
 
 .body {
+  scroll-behavior: smooth;
   width: 100%;
   max-width: 1280px;
+  min-width: 375px;
   margin: 0 auto;
   background: url(/image/background/bg005.jpg);
   color: #5e3d1e;
   line-height: 1.8;
   font-family: "Noto Serif JP", serif;
-  font-style: italic;
   font-size: 15px;
 }
 
@@ -228,36 +229,13 @@ select {
 }
 
 a {
-  text-decoration: none;
   color: #5e3d1e;
-}
-
-a:hover {
-  color: orange;
+  text-decoration: none;
 }
 
 img {
   width: 100%;
   height: auto;
-}
-
-.table-area .table-area__header {
-  background: url(/image/background/bg005.jpg);
-  color: beige;
-}
-
-.table-area th,
-.table-area td {
-  padding: 8px 12px;
-  border: 1px solid #5e3d1e;
-}
-
-.table-area th {
-  background: beige;
-}
-
-.table-area td {
-  background: url(/image/background/bg037.gif);
 }
 
 /* -----------------------------------------------
@@ -270,7 +248,6 @@ img {
 
 .header-area {
   background-image: url(/image/tequila-lineup-sepia_4.png);
-  background-size: 2080px;
   /* -----------------------------------------------
       ヘッダーエリアコンテンツ設定
   ----------------------------------------------- */
@@ -283,9 +260,7 @@ img {
 }
 
 .header-area__bg-frame {
-  background-color: rgba(220, 220, 220, 0.5);
-  padding: 20px;
-  padding-bottom: 0;
+  background-color: rgba(232, 223, 213, 0.5);
 }
 
 .header-area__main-logo {
@@ -497,8 +472,27 @@ img {
   margin: 5px;
 }
 
-.indent {
+.letters-area .indent {
   padding-left: 20px;
+}
+
+.table-area .table-area__header {
+  background: url(/image/background/bg005.jpg);
+  color: beige;
+}
+
+.table-area th,
+.table-area td {
+  padding: 8px 12px;
+  border: 1px solid #5e3d1e;
+}
+
+.table-area th {
+  background: beige;
+}
+
+.table-area td {
+  background: url(/image/background/bg037.gif);
 }
 
 .page-title {
@@ -536,6 +530,7 @@ img {
 }
 
 .common-btn {
+  cursor: pointer;
   border-bottom: 1px solid #5e3d1e;
 }
 
@@ -646,17 +641,13 @@ img {
   color: beige;
 }
 
-.syouhin .syouhin-container .image-area,
-.syouhin .syouhin-container img,
-.syouhin .syouhin-container a {
+.syouhin .syouhin-container .image-area {
   width: 300px;
   height: 300px;
 }
 
 @media screen and (max-width: 768px) {
-  .syouhin .syouhin-container .image-area,
-  .syouhin .syouhin-container img,
-  .syouhin .syouhin-container a {
+  .syouhin .syouhin-container .image-area {
     width: 100%;
     max-width: 460px;
     height: auto;

@@ -32,7 +32,7 @@
         background: none;
         padding: 5px;
         &:hover {
-            background: $white_skelton;
+            background: $white_clear;
         }
         &:focus {
             outline-color: $orange;
@@ -51,7 +51,7 @@
         }
     }
 
-    // 登録・修正ボタン
+    // 確認・登録・修正ボタン
     button {
         width: 30%;
         max-width: 300px;
