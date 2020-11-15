@@ -2,13 +2,13 @@ import js from '../data/classNames'; // JS操作用classNameデータ
 import hideClass from '../function/hideClass';
 import getClickClass from '../function/getClickClass';
 import addCSS from '../function/addCSS';
+import checkUA from '../function/checkUA';
 
 /** 〜 [商品一覧]ボタン押下時処理（[プルダウン]なし） 〜
  * @param name string・・・[項目選択]名
  * @param match string・・・表示させるクラス抽出の正規表現
- * @param cond string・・・ユーザーエージェント判定条件文
 */
-function listBtn(name, match, cond){
+function onListBtn(name, match){
 
     // クリック時の処理
     $(js.prefix + name + '-list').on('click', function(){
@@ -24,7 +24,7 @@ function listBtn(name, match, cond){
         hideClass([js.syouhin_container, js.syouhin_message]);
 
         // 4. SP時サイドエリアを非表示
-        if(cond) {
+        if(checkUA()) {
             $(js.type_toggle).text('▼');
             $(js.aside).css({ height: 'auto' });
             hideClass([js.btn_type, js.btn_list, js.btn_down]);
@@ -34,9 +34,9 @@ function listBtn(name, match, cond){
         const clickClass = getClickClass(this, match);
 
         // 6. クリックしたリストの商品コンテナのみを表示する
-        $(clickClass).show(200);
+        $(clickClass).fadeIn(400);
 
     });
 
 };
-export default listBtn
+export default onListBtn

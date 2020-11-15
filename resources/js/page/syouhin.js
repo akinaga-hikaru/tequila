@@ -16,14 +16,11 @@ import js from '../data/classNames'; // JS操作用classNameデータ
 
 
 /* --------------- Function定義 ---------------　*/
-import typeBtn from '../function/typeBtn'; // ① [項目選択]ボタン処理
-import listBtn from '../function/listBtn'; // ② [商品一覧]（プルダウンなし）ボタン処理
-import listWithPullDownBtn from '../function/listWithPullDownBtn'; // ③ [商品一覧]（プルダウンあり）ボタン処理
-import pulldownBtn from '../function/pulldownBtn'; // ④ [プルダウン]ボタン処理
+import onTypeBtn from '../function/onTypeBtn'; // ① [項目選択]ボタン処理
+import onListBtn from '../function/onListBtn'; // ② [商品一覧]（プルダウンなし）ボタン処理
+import onListWithPullDownBtn from '../function/onListWithPullDownBtn'; // ③ [商品一覧]（プルダウンあり）ボタン処理
+import onPulldownBtn from '../function/onPulldownBtn'; // ④ [プルダウン]ボタン処理
 
-
-/* --------------- ユーザーエージェント判定 --------------- */
-import checkUA from '../function/checkUA';
 
 
 /* ---------------　実行処理 ---------------　*/
@@ -39,10 +36,10 @@ $(js.form_confirm).find(js.syouhin_container).show();
 $.each(lists, function(index, list){
 
     // ① [項目選択]ボタン押下時処理
-    typeBtn(list['name'], list['time']);
+    onTypeBtn(list['name'], list['time']);
 
     // ② [商品一覧]（プルダウンなし）ボタン押下時処理
-    listBtn(list['name'], list['match'], checkUA());
+    onListBtn(list['name'], list['match']);
 
 });
 
@@ -51,15 +48,15 @@ $.each(lists, function(index, list){
 $.each(listWithPulldowns, function(index, listWithPulldown){
 
     // ① [項目選択]ボタン押下時処理
-    typeBtn(listWithPulldown[0]['name']['major'], listWithPulldown[0]['time']);
+    onTypeBtn(listWithPulldown[0]['name']['major'], listWithPulldown[0]['time']);
 
     $.each(listWithPulldown, function(index, pulldown){
 
         // ③ [商品一覧]（プルダウンあり）ボタン押下時処理
-        listWithPullDownBtn(pulldown['name'], pulldown['time'], pulldown['match'], pulldown['hide']);
+        onListWithPullDownBtn(pulldown['name'], pulldown['match'], pulldown['hide']);
 
         // ④ [プルダウン]ボタン押下時処理
-        pulldownBtn(pulldown['name'], pulldown['time'], pulldown['match'], checkUA());
+        onPulldownBtn(pulldown['name'], pulldown['match']);
 
     });
 });

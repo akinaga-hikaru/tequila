@@ -6,7 +6,7 @@ import addCSS from '../function/addCSS';
  * @param name string・・・[項目選択]名
  * @param time int・・・トグル表示の時間
  */
-function typeBtn(name, time){
+function onTypeBtn(name, time){
 
     // クリック時の処理
     $(js.prefix + name + '-type').on('click', function(){
@@ -23,4 +23,4 @@ function typeBtn(name, time){
     });
 
 };
-export default typeBtn
+export default onTypeBtn

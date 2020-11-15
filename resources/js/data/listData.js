@@ -15,7 +15,7 @@ export default [
     // [熟成度合い別]
     {
         'name': 'aging',
-        'time': 750,
+        'time': 1000,
         'match': /js-aging_[A-z-]*/
     },
 ]

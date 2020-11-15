@@ -19460,7 +19460,7 @@ __webpack_require__.r(__webpack_exports__);
 }, // [熟成度合い別]
 {
   'name': 'aging',
-  'time': 750,
+  'time': 1000,
   'match': /js-aging_[A-z-]*/
 }]);
 
@@ -19635,10 +19635,10 @@ function hideClass(hide_classes) {
 
 /***/ }),
 
-/***/ "./resources/js/function/listBtn.js":
-/*!******************************************!*\
-  !*** ./resources/js/function/listBtn.js ***!
-  \******************************************/
+/***/ "./resources/js/function/onListBtn.js":
+/*!********************************************!*\
+  !*** ./resources/js/function/onListBtn.js ***!
+  \********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -19648,7 +19648,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _function_hideClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../function/hideClass */ "./resources/js/function/hideClass.js");
 /* harmony import */ var _function_getClickClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../function/getClickClass */ "./resources/js/function/getClickClass.js");
 /* harmony import */ var _function_addCSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../function/addCSS */ "./resources/js/function/addCSS.js");
+/* harmony import */ var _function_checkUA__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../function/checkUA */ "./resources/js/function/checkUA.js");
  // JS操作用classNameデータ
+
 
 
 
@@ -19656,10 +19658,9 @@ __webpack_require__.r(__webpack_exports__);
 /** 〜 [商品一覧]ボタン押下時処理（[プルダウン]なし） 〜
  * @param name string・・・[項目選択]名
  * @param match string・・・表示させるクラス抽出の正規表現
- * @param cond string・・・ユーザーエージェント判定条件文
 */
 
-function listBtn(name, match, cond) {
+function onListBtn(name, match) {
   // クリック時の処理
   $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].prefix + name + '-list').on('click', function () {
     // 1. クリックしたリストのみのテキストを取得し、タイトル(h3)のテキストを変更
@@ -19672,7 +19673,7 @@ function listBtn(name, match, cond) {
 
     Object(_function_hideClass__WEBPACK_IMPORTED_MODULE_1__["default"])([_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].syouhin_container, _data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].syouhin_message]); // 4. SP時サイドエリアを非表示
 
-    if (cond) {
+    if (Object(_function_checkUA__WEBPACK_IMPORTED_MODULE_4__["default"])()) {
       $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].type_toggle).text('▼');
       $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].aside).css({
         height: 'auto'
@@ -19683,19 +19684,19 @@ function listBtn(name, match, cond) {
 
     var clickClass = Object(_function_getClickClass__WEBPACK_IMPORTED_MODULE_2__["default"])(this, match); // 6. クリックしたリストの商品コンテナのみを表示する
 
-    $(clickClass).show(200);
+    $(clickClass).fadeIn(400);
   });
 }
 
 ;
-/* harmony default export */ __webpack_exports__["default"] = (listBtn);
+/* harmony default export */ __webpack_exports__["default"] = (onListBtn);
 
 /***/ }),
 
-/***/ "./resources/js/function/listWithPullDownBtn.js":
-/*!******************************************************!*\
-  !*** ./resources/js/function/listWithPullDownBtn.js ***!
-  \******************************************************/
+/***/ "./resources/js/function/onListWithPullDownBtn.js":
+/*!********************************************************!*\
+  !*** ./resources/js/function/onListWithPullDownBtn.js ***!
+  \********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -19711,12 +19712,11 @@ __webpack_require__.r(__webpack_exports__);
 /** 〜 [商品一覧]ボタン押下時処理（[プルダウン]あり） 〜
  * @param name[major] string・・・[項目選択]名
  * @param name[minor] string・・・[商品一覧]名
- * @param time int・・・トグル表示の時間
  * @param match[name] string・・・表示させるクラス抽出の正規表現
  * @param hide array・・・非表示にさせたいクラス
  */
 
-function listWithPullDownBtn(name, time, match, hide) {
+function onListWithPullDownBtn(name, match, hide) {
   // クリック時の処理
   $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].prefix + name['major'] + '_' + match['name']).on('click', function () {
     // 1. 対象のエリアのリストを非表示
@@ -19730,19 +19730,19 @@ function listWithPullDownBtn(name, time, match, hide) {
 
     Object(_function_hideClass__WEBPACK_IMPORTED_MODULE_1__["default"])([_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].syouhin_message]); // 4. クリックしたリストのプルダウンを表示する
 
-    $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].prefix + name['minor'] + '_' + match['name']).show(time); // $(js.prefix + name['major'] + '_' + match['name'] + '_').show(time); 商品コンテナは非表示
+    $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].prefix + name['minor'] + '_' + match['name']).toggle(400); // $(js.prefix + name['major'] + '_' + match['name'] + '_').show(time); 商品コンテナは非表示
   });
 }
 
 ;
-/* harmony default export */ __webpack_exports__["default"] = (listWithPullDownBtn);
+/* harmony default export */ __webpack_exports__["default"] = (onListWithPullDownBtn);
 
 /***/ }),
 
-/***/ "./resources/js/function/pulldownBtn.js":
-/*!**********************************************!*\
-  !*** ./resources/js/function/pulldownBtn.js ***!
-  \**********************************************/
+/***/ "./resources/js/function/onPulldownBtn.js":
+/*!************************************************!*\
+  !*** ./resources/js/function/onPulldownBtn.js ***!
+  \************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -19752,20 +19752,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _function_hideClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../function/hideClass */ "./resources/js/function/hideClass.js");
 /* harmony import */ var _function_getClickClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../function/getClickClass */ "./resources/js/function/getClickClass.js");
 /* harmony import */ var _function_addCSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../function/addCSS */ "./resources/js/function/addCSS.js");
+/* harmony import */ var _function_checkUA__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../function/checkUA */ "./resources/js/function/checkUA.js");
  // JS操作用classNameデータ
+
 
 
 
 
 /** 〜 [プルダウン]ボタン押下時処理 〜
  * @param name[minor] string・・・[商品一覧]名
- * @param time int・・・トグル表示の時間
  * @param match[name] string・・・表示させる個別の[商品一覧]名
  * @param match[way] string・・・表示させるクラス抽出の正規表現
- * @param cond string・・・ユーザーエージェント判定条件文
  */
 
-function pulldownBtn(name, time, match, cond) {
+function onPulldownBtn(name, match) {
   // クリック時の処理
   $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].prefix + name['minor'] + '_' + match['name']).on('click', function () {
     // 1. クリックしたリストのみのテキストを取得し、タイトル(h3)のテキストを変更
@@ -19778,7 +19778,7 @@ function pulldownBtn(name, time, match, cond) {
 
     Object(_function_hideClass__WEBPACK_IMPORTED_MODULE_1__["default"])([_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].syouhin_container, _data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].syouhin_message]); // 4. SP時サイドエリアを非表示
 
-    if (cond) {
+    if (Object(_function_checkUA__WEBPACK_IMPORTED_MODULE_4__["default"])()) {
       $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].type_toggle).text('▼');
       $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].aside).css({
         height: 'auto'
@@ -19789,19 +19789,19 @@ function pulldownBtn(name, time, match, cond) {
 
     var clickClass = Object(_function_getClickClass__WEBPACK_IMPORTED_MODULE_2__["default"])(this, match['way']); // 6. クリックしたリストの商品コンテナのみを表示する
 
-    $(clickClass).show(time);
+    $(clickClass).fadeIn(400);
   });
 }
 
 ;
-/* harmony default export */ __webpack_exports__["default"] = (pulldownBtn);
+/* harmony default export */ __webpack_exports__["default"] = (onPulldownBtn);
 
 /***/ }),
 
-/***/ "./resources/js/function/typeBtn.js":
-/*!******************************************!*\
-  !*** ./resources/js/function/typeBtn.js ***!
-  \******************************************/
+/***/ "./resources/js/function/onTypeBtn.js":
+/*!********************************************!*\
+  !*** ./resources/js/function/onTypeBtn.js ***!
+  \********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -19819,7 +19819,7 @@ __webpack_require__.r(__webpack_exports__);
  * @param time int・・・トグル表示の時間
  */
 
-function typeBtn(name, time) {
+function onTypeBtn(name, time) {
   // クリック時の処理
   $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].prefix + name + '-type').on('click', function () {
     // 1. 選択中のリストのCSS指定
@@ -19835,7 +19835,7 @@ function typeBtn(name, time) {
 }
 
 ;
-/* harmony default export */ __webpack_exports__["default"] = (typeBtn);
+/* harmony default export */ __webpack_exports__["default"] = (onTypeBtn);
 
 /***/ }),
 
@@ -19851,11 +19851,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _data_listData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/listData */ "./resources/js/data/listData.js");
 /* harmony import */ var _data_listDataWithPulldown__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/listDataWithPulldown */ "./resources/js/data/listDataWithPulldown.js");
 /* harmony import */ var _data_classNames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data/classNames */ "./resources/js/data/classNames.js");
-/* harmony import */ var _function_typeBtn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../function/typeBtn */ "./resources/js/function/typeBtn.js");
-/* harmony import */ var _function_listBtn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../function/listBtn */ "./resources/js/function/listBtn.js");
-/* harmony import */ var _function_listWithPullDownBtn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../function/listWithPullDownBtn */ "./resources/js/function/listWithPullDownBtn.js");
-/* harmony import */ var _function_pulldownBtn__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../function/pulldownBtn */ "./resources/js/function/pulldownBtn.js");
-/* harmony import */ var _function_checkUA__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../function/checkUA */ "./resources/js/function/checkUA.js");
+/* harmony import */ var _function_onTypeBtn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../function/onTypeBtn */ "./resources/js/function/onTypeBtn.js");
+/* harmony import */ var _function_onListBtn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../function/onListBtn */ "./resources/js/function/onListBtn.js");
+/* harmony import */ var _function_onListWithPullDownBtn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../function/onListWithPullDownBtn */ "./resources/js/function/onListWithPullDownBtn.js");
+/* harmony import */ var _function_onPulldownBtn__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../function/onPulldownBtn */ "./resources/js/function/onPulldownBtn.js");
 /* -----------------------------------------------
     画面：商品紹介
 ----------------------------------------------- */
@@ -19884,9 +19883,6 @@ __webpack_require__.r(__webpack_exports__);
 
  // ④ [プルダウン]ボタン処理
 
-/* --------------- ユーザーエージェント判定 --------------- */
-
-
 /* ---------------　実行処理 ---------------　*/
 
 /***** 0. 全商品コンテナ非表示 *****/
@@ -19899,20 +19895,20 @@ $(_data_classNames__WEBPACK_IMPORTED_MODULE_2__["default"].form_confirm).find(_d
 
 $.each(_data_listData__WEBPACK_IMPORTED_MODULE_0__["default"], function (index, list) {
   // ① [項目選択]ボタン押下時処理
-  Object(_function_typeBtn__WEBPACK_IMPORTED_MODULE_3__["default"])(list['name'], list['time']); // ② [商品一覧]（プルダウンなし）ボタン押下時処理
+  Object(_function_onTypeBtn__WEBPACK_IMPORTED_MODULE_3__["default"])(list['name'], list['time']); // ② [商品一覧]（プルダウンなし）ボタン押下時処理
 
-  Object(_function_listBtn__WEBPACK_IMPORTED_MODULE_4__["default"])(list['name'], list['match'], Object(_function_checkUA__WEBPACK_IMPORTED_MODULE_7__["default"])());
+  Object(_function_onListBtn__WEBPACK_IMPORTED_MODULE_4__["default"])(list['name'], list['match']);
 });
 /***** 2. [項目選択] > [商品一覧] > [プルダウン]に適用 *****/
 
 $.each(_data_listDataWithPulldown__WEBPACK_IMPORTED_MODULE_1__["default"], function (index, listWithPulldown) {
   // ① [項目選択]ボタン押下時処理
-  Object(_function_typeBtn__WEBPACK_IMPORTED_MODULE_3__["default"])(listWithPulldown[0]['name']['major'], listWithPulldown[0]['time']);
+  Object(_function_onTypeBtn__WEBPACK_IMPORTED_MODULE_3__["default"])(listWithPulldown[0]['name']['major'], listWithPulldown[0]['time']);
   $.each(listWithPulldown, function (index, pulldown) {
     // ③ [商品一覧]（プルダウンあり）ボタン押下時処理
-    Object(_function_listWithPullDownBtn__WEBPACK_IMPORTED_MODULE_5__["default"])(pulldown['name'], pulldown['time'], pulldown['match'], pulldown['hide']); // ④ [プルダウン]ボタン押下時処理
+    Object(_function_onListWithPullDownBtn__WEBPACK_IMPORTED_MODULE_5__["default"])(pulldown['name'], pulldown['match'], pulldown['hide']); // ④ [プルダウン]ボタン押下時処理
 
-    Object(_function_pulldownBtn__WEBPACK_IMPORTED_MODULE_6__["default"])(pulldown['name'], pulldown['time'], pulldown['match'], Object(_function_checkUA__WEBPACK_IMPORTED_MODULE_7__["default"])());
+    Object(_function_onPulldownBtn__WEBPACK_IMPORTED_MODULE_6__["default"])(pulldown['name'], pulldown['match']);
   });
 });
 /***** 3. 対象商品がないメッセージを表示させる商品種別 *****/

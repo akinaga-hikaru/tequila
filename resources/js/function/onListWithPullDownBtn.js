@@ -5,11 +5,10 @@ import addCSS from '../function/addCSS';
 /** 〜 [商品一覧]ボタン押下時処理（[プルダウン]あり） 〜
  * @param name[major] string・・・[項目選択]名
  * @param name[minor] string・・・[商品一覧]名
- * @param time int・・・トグル表示の時間
  * @param match[name] string・・・表示させるクラス抽出の正規表現
  * @param hide array・・・非表示にさせたいクラス
  */
-function listWithPullDownBtn(name, time, match, hide){
+function onListWithPullDownBtn(name, match, hide){
 
     // クリック時の処理
     $(js.prefix + name['major'] + '_' + match['name']).on('click', function(){
@@ -26,10 +25,10 @@ function listWithPullDownBtn(name, time, match, hide){
         hideClass([js.syouhin_message]);
 
         // 4. クリックしたリストのプルダウンを表示する
-        $(js.prefix + name['minor'] + '_' + match['name']).show(time);
+        $(js.prefix + name['minor'] + '_' + match['name']).toggle(400);
             // $(js.prefix + name['major'] + '_' + match['name'] + '_').show(time); 商品コンテナは非表示
 
     });
 
 };
-export default listWithPullDownBtn
+export default onListWithPullDownBtn

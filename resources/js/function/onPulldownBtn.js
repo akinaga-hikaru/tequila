@@ -2,15 +2,14 @@ import js from '../data/classNames'; // JS操作用classNameデータ
 import hideClass from '../function/hideClass';
 import getClickClass from '../function/getClickClass';
 import addCSS from '../function/addCSS';
+import checkUA from '../function/checkUA';
 
 /** 〜 [プルダウン]ボタン押下時処理 〜
  * @param name[minor] string・・・[商品一覧]名
- * @param time int・・・トグル表示の時間
  * @param match[name] string・・・表示させる個別の[商品一覧]名
  * @param match[way] string・・・表示させるクラス抽出の正規表現
- * @param cond string・・・ユーザーエージェント判定条件文
  */
-function pulldownBtn(name, time, match, cond){
+function onPulldownBtn(name, match){
 
     // クリック時の処理
     $(js.prefix + name['minor'] + '_' + match['name']).on('click', function(){
@@ -26,7 +25,7 @@ function pulldownBtn(name, time, match, cond){
         hideClass([js.syouhin_container, js.syouhin_message]);
 
         // 4. SP時サイドエリアを非表示
-        if(cond) {
+        if(checkUA()) {
             $(js.type_toggle).text('▼');
             $(js.aside).css({ height: 'auto' });
             hideClass([js.btn_type, js.btn_list, js.btn_down]);
@@ -36,9 +35,9 @@ function pulldownBtn(name, time, match, cond){
         const clickClass = getClickClass(this, match['way'])
 
         // 6. クリックしたリストの商品コンテナのみを表示する
-        $(clickClass).show(time);
+        $(clickClass).fadeIn(400);
 
     });
 
 };
-export default pulldownBtn
+export default onPulldownBtn
