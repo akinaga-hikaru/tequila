@@ -10,6 +10,7 @@ return [
     'js_global_menu__btn_sp' => 'js-global-menu__btn-sp',
 
     // サイドエリア
+    'js_aside' => 'js-aside',
     'js_type_toggle' => 'js-type-toggle',
 
     // コンポーネント：共通ボタン

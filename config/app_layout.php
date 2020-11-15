@@ -13,8 +13,8 @@ return [
         'tenpo' => '取扱店紹介',
         'bunken' => '参考文献',
     ],
-    'top_btn' => 'TOP',
     'confirm_btn' => '確認する',
     'correct_btn' => '修正する',
     'register_btn' => '登録する',
+    'footer_text' => 'presented by Tequipedia, producted by Laravel',
 ];

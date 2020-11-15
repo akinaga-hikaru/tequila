@@ -15,7 +15,6 @@ return [
     'hide_sp' => 'hide-sp',
 
     // 共通パーツ
-    'page_title' => 'page-title',
     'section_title' => 'section-title',
     'message' => 'message',
     'letters_area' => 'letters-area',
@@ -37,6 +36,7 @@ return [
 
     // サイドエリア
     'aside' => 'aside',
+    'sidemenu_sp' => 'sidemenu-sp',
 
     // メインエリア
     'main' => 'main',
@@ -44,7 +44,6 @@ return [
 
     // フッターエリア
     'footer_area' => 'footer-area',
-    'footer_area__top_btn' => 'footer-area__top-btn',
 
     // コンポーネント：共通ボタン
     'common_btn' => 'common-btn',
