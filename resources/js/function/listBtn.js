@@ -6,8 +6,9 @@ import addCSS from '../function/addCSS';
 /** 〜 [商品一覧]ボタン押下時処理（[プルダウン]なし） 〜
  * @param name string・・・[項目選択]名
  * @param match string・・・表示させるクラス抽出の正規表現
+ * @param cond string・・・ユーザーエージェント判定条件文
 */
-function listBtn(name, match){
+function listBtn(name, match, cond){
 
     // クリック時の処理
     $(js.prefix + name + '-list').on('click', function(){
@@ -22,11 +23,18 @@ function listBtn(name, match){
         // 3. 一度、商品コンテナとメッセージを非表示
         hideClass([js.syouhin_container, js.syouhin_message]);
 
-        // 4. クリックしたリストのみのjs-〜のクラス名を取得
+        // 4. SP時サイドエリアを非表示
+        if(cond) {
+            $(js.type_toggle).text('▼');
+            $(js.aside).css({ height: 'auto' });
+            hideClass([js.btn_type, js.btn_list, js.btn_down]);
+        }
+
+        // 5. クリックしたリストのみのjs-〜のクラス名を取得
         const clickClass = getClickClass(this, match);
 
-        // 5. クリックしたリストの商品コンテナのみを表示する
-        $(clickClass).slideDown(1000);
+        // 6. クリックしたリストの商品コンテナのみを表示する
+        $(clickClass).show(200);
 
     });
 

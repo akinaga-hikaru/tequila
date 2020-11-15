@@ -19,19 +19,15 @@ function listWithPullDownBtn(name, time, match, hide){
             $(js.prefix + name['minor'] + '_' + item).hide();
         })
 
-        // 2. クリックしたリストのみのテキストを取得し、タイトル(h3)のテキストを変更
-        const text =  $(this).text();
-        $(js.syouhin_title).text(text);
-
-        // 3. 選択中のリストのCSS指定
+        // 2. 選択中のリストのCSS指定
         addCSS(this, js.btn_list, { background: "rgba(255,165,0,0.5)" });
 
-        // 4. 一度、商品コンテナとメッセージを非表示
-        hideClass([js.syouhin_container, js.syouhin_message]);
+        // 3. 一度、商品コンテナとメッセージを非表示
+        hideClass([js.syouhin_message]);
 
-        // 5. クリックしたリストの商品コンテナのみを表示する
-        $(js.prefix + name['minor'] + '_' + match['name']).slideDown(time);
-        $(js.prefix + name['major'] + '_' + match['name'] + '_').slideDown(time);
+        // 4. クリックしたリストのプルダウンを表示する
+        $(js.prefix + name['minor'] + '_' + match['name']).show(time);
+            // $(js.prefix + name['major'] + '_' + match['name'] + '_').show(time); 商品コンテナは非表示
 
     });
 

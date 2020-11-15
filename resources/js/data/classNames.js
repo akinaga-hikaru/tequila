@@ -14,6 +14,7 @@ const global_menu = js + 'global-menu'
 const global_menu__btn_sp = js + 'global-menu__btn-sp'
 
 // サイドリスト
+const aside = js + 'aside'
 const type_toggle = js + 'type-toggle'
 const btn = js + 'btn'
 const btn_type = btn + '--type'
@@ -39,6 +40,7 @@ const classNames = {
     global_menu: global_menu,
     global_menu__btn_sp: global_menu__btn_sp,
     // サイドリスト
+    aside: aside,
     type_toggle: type_toggle,
     btn_type: btn_type,
     btn_list: btn_list,

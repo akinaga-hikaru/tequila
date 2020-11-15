@@ -15,7 +15,7 @@ function typeBtn(name, time){
         addCSS(this, js.btn_type, { background: "rgba(255,165,0,0.5)", color: "beige" });
 
         // 2. 一度、[商品一覧]/[プルダウン]リストとメッセージを非表示
-        hideClass([js.syouhin_message, js.btn_list, js.btn_down]);
+        hideClass([js.btn_list, js.btn_down]);
 
         // 3. クリックしたリストのみを表示する
         $(js.prefix + name + '-list').slideToggle(time);

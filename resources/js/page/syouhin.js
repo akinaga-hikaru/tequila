@@ -22,10 +22,13 @@ import listWithPullDownBtn from '../function/listWithPullDownBtn'; // ③ [商�
 import pulldownBtn from '../function/pulldownBtn'; // ④ [プルダウン]ボタン処理
 
 
+/* --------------- ユーザーエージェント判定 --------------- */
+import checkUA from '../function/checkUA';
+
+
 /* ---------------　実行処理 ---------------　*/
-/***** 0. 全商品コンテナ・項目選択ボタン非表示 *****/
+/***** 0. 全商品コンテナ非表示 *****/
 $(js.syouhin_container).hide();
-$(js.btn_type).hide();
 
 
 /***** ※. 登録内容確認画面時のみ表示（例外パターン） *****/
@@ -39,7 +42,7 @@ $.each(lists, function(index, list){
     typeBtn(list['name'], list['time']);
 
     // ② [商品一覧]（プルダウンなし）ボタン押下時処理
-    listBtn(list['name'], list['match']);
+    listBtn(list['name'], list['match'], checkUA());
 
 });
 
@@ -56,7 +59,7 @@ $.each(listWithPulldowns, function(index, listWithPulldown){
         listWithPullDownBtn(pulldown['name'], pulldown['time'], pulldown['match'], pulldown['hide']);
 
         // ④ [プルダウン]ボタン押下時処理
-        pulldownBtn(pulldown['name'], pulldown['time'], pulldown['match']);
+        pulldownBtn(pulldown['name'], pulldown['time'], pulldown['match'], checkUA());
 
     });
 });

@@ -1,6 +1,7 @@
 import './bootstrap';
 import js from './data/classNames'
 import hideClass from './function/hideClass'
+import checkUA from './function/checkUA'
 
 /* -----------------------------------------------
     画面共通処理
@@ -14,6 +15,12 @@ $(function() {
 
 
 /* --------------- サイドメニュー表示設定 --------------- */
+// ①[項目選択]ボタンの初期表示設定（PC時のみ表示）
+if (checkUA()) {
+    $(js.btn_type).hide();
+}
+
+// [項目一覧]ボタン押下時の処理
 $(js.type_toggle).on('click', function(){
 
     // 1. ①[項目選択]ボタンの表示設定
@@ -24,10 +31,18 @@ $(js.type_toggle).on('click', function(){
 
     // 3. テキスト表示切替
     const btn_text = $(this).text();
-    if (btn_text === "項目一覧 ▼"){
-        $(this).text('項目一覧 ▲');
-    } else {
-        $(this).text('項目一覧 ▼');
+    if (btn_text === "▼"){
+        $(this).text('▲');
+        $(js.aside).css({ height: '95%' });
+    }
+    else if (btn_text === "▲"){
+        $(this).text('▼');
+        $(js.aside).css({ height: 'auto' });
+    }
+    // 一度目のクリック時の処理
+    else {
+        $(this).text('▲');
+        $(js.aside).css({ height: '95%' });
     }
 
 });

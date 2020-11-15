@@ -8,8 +8,9 @@ import addCSS from '../function/addCSS';
  * @param time int・・・トグル表示の時間
  * @param match[name] string・・・表示させる個別の[商品一覧]名
  * @param match[way] string・・・表示させるクラス抽出の正規表現
+ * @param cond string・・・ユーザーエージェント判定条件文
  */
-function pulldownBtn(name, time, match){
+function pulldownBtn(name, time, match, cond){
 
     // クリック時の処理
     $(js.prefix + name['minor'] + '_' + match['name']).on('click', function(){
@@ -24,11 +25,18 @@ function pulldownBtn(name, time, match){
         // 3. 一度、商品コンテナとメッセージを非表示
         hideClass([js.syouhin_container, js.syouhin_message]);
 
-        // 4. クリックしたリストのみのjs-〜のクラス名を取得
+        // 4. SP時サイドエリアを非表示
+        if(cond) {
+            $(js.type_toggle).text('▼');
+            $(js.aside).css({ height: 'auto' });
+            hideClass([js.btn_type, js.btn_list, js.btn_down]);
+        }
+
+        // 5. クリックしたリストのみのjs-〜のクラス名を取得
         const clickClass = getClickClass(this, match['way'])
 
-        // 5. クリックしたリストの商品コンテナのみを表示する
-        $(clickClass).slideDown(time);
+        // 6. クリックしたリストの商品コンテナのみを表示する
+        $(clickClass).show(time);
 
     });
 
