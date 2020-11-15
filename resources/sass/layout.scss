@@ -4,13 +4,21 @@
 // ヘッダーエリア
 .header-area {
     background-image: $bg_header;
+    background-size: 30%;
     @media screen and(max-width: $sp_width) {
-        background-size: 780px;
+        height: $header_height_sp;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
     }
 
     // 背景フレーム設定
     &__bg-frame {
         background-color: $white_clear;
+        @media screen and(max-width: $sp_width) {
+            height: $header_height_sp;
+        }
     }
 
     // コンテンツ設定
@@ -19,19 +27,27 @@
 
 // サイドエリア
 .aside {
-    background: $white_clear;
     width: 25%;
     border-right: 1px solid $brown;
     @media screen and(max-width: $sp_width) {
         width: 100%;
         border-right: none;
+        position: fixed;
+        top: $header_height_sp;
+        left: 0;
+        background: unset;
+        color: $brown;
+        overflow: scroll;
     }
+
+    // コンテンツ設定
+    @import 'parts/aside';
 }
 
 // メインエリア
 .main {
     background: $white_clear;
-    width: 100% - 25%;
+    width: 75%;
     @media screen and(max-width: $sp_width) {
         width: 100%;
     }
@@ -39,12 +55,19 @@
     // サイドエリアがない場合
     &-no-aside {
         background: $white_clear;
+        padding-bottom: 5px;
         width: 100%;
+        @media screen and(max-width: $sp_width) {
+            padding-top: $header_height_sp;
+        }
     }
 }
 
 // フッターエリア
 .footer-area {
+    padding: 20px;
+    color: $beige;
+
     // コンテンツ設定
     @import 'parts/footer';
 }

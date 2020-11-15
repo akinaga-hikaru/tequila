@@ -1,7 +1,6 @@
 @extends('layout.layout')
 
 @section('title', config('app_layout.global_menu.bunken'))
-@section('section', config('app_layout.global_menu.bunken'))
 @section('body_class','body bunken')
 
 @section('contents')

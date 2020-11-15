@@ -1,7 +1,6 @@
 @extends('layout.layout')
 
 @section('title', config('app_layout.global_menu./'))
-@section('section', config('app_layout.global_menu./'))
 @section('body_class','body top')
 
 @section('contents')
@@ -78,20 +77,22 @@
                             @break
 
                             @case(5) {{-- 熟成度合いによる呼称 --}}
-                                @component('component.table-area')
-                                    <tr>
-                                        @foreach($section['table']['header'] as $header)
-                                            <th>{{ $header }}</th>
-                                        @endforeach
-                                    </tr>
-                                    @foreach($section['table']['cells'] as $cells)
+                                <div class={{ config('app_class_css.letters_area') }}>
+                                    @component('component.table-area')
                                         <tr>
-                                            @foreach($cells as $cell)
-                                                <td>{{ $cell }}</td>
+                                            @foreach($section['table']['header'] as $header)
+                                                <th>{{ $header }}</th>
                                             @endforeach
                                         </tr>
-                                    @endforeach
-                                @endcomponent
+                                        @foreach($section['table']['cells'] as $cells)
+                                            <tr>
+                                                @foreach($cells as $cell)
+                                                    <td>{{ $cell }}</td>
+                                                @endforeach
+                                            </tr>
+                                        @endforeach
+                                    @endcomponent
+                                </div>
                             @break
 
                             @case(7) {{-- 蒸留所リスト --}}
@@ -104,28 +105,29 @@
                                         ])
                                         @endcomponent
                                     @endforeach
-                                </div>
-                                @component('component.table-area')
                                     @foreach($section['tables'] as $table)
-                                        <tr>
-                                            <td class={{ config('app_class_css.table_area__header') }}>
-                                                {{ $table['title'] }}
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            @foreach($table['header'] as $header)
-                                                <th>{{ $header }}</th>
-                                            @endforeach
-                                        </tr>
-                                        @foreach($table['cells'] as $cells)
+                                        @component('component.letters-area-parts', [
+                                            'title' => !empty($table['title']) ? $table['title'] : '',
+                                            'paragraph' => !empty($table['paragraph']) ? $table['paragraph'] : '',
+                                            'indent' => !empty($table['indent']) ? $table['indent'] : '',
+                                        ])
+                                        @endcomponent
+                                        @component('component.table-area')
                                             <tr>
-                                                @foreach($cells as $cell)
-                                                    <td>{{ $cell }}</td>
+                                                @foreach($table['header'] as $header)
+                                                    <th>{{ $header }}</th>
                                                 @endforeach
                                             </tr>
-                                        @endforeach
+                                            @foreach($table['cells'] as $cells)
+                                                <tr>
+                                                    @foreach($cells as $cell)
+                                                        <td>{{ $cell }}</td>
+                                                    @endforeach
+                                                </tr>
+                                            @endforeach
+                                        @endcomponent
                                     @endforeach
-                                @endcomponent
+                                </div>
                             @break
 
                         @endswitch

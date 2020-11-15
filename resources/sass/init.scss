@@ -9,6 +9,7 @@
     min-width: $min_width;
     margin: 0 auto;
     background: $bg_wood_dark;
+    background-size: 25%;
     color: $brown;
     line-height: 1.8;
     font-family: 'Noto Serif JP', serif;
@@ -16,6 +17,7 @@
     @media screen and(max-width: $sp_width) {
         font-size: 12px;
     }
+
 }
 
 // リンク設定

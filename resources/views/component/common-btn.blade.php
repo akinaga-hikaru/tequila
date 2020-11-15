@@ -11,7 +11,7 @@
     {{ $hidden ? 'hidden' : '' }}
 >
     <a {{ !empty($link) ? 'href=' . $link : '' }}>
-        {{ $text }}
+        ◆ {{ $text }}
         @if(!empty($small_text))
             <br>
             <span class={{ config('app_class_css.small_text') }}>

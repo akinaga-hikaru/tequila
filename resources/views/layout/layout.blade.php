@@ -29,17 +29,14 @@
             >
                 <div
                     id="top"
-                    class="
-                        {{ config('app_class_css.header_area__bg_frame') }}
-                        {{ config('app_class_css.center') }}
-                    "
+                    class={{ config('app_class_css.header_area__bg_frame') }}
                 >
 
                     {{-- タイトルエリア start --}}
                         <a href="/">
                             <h1 class={{ config('app_class_css.header_area__main_logo') }}>
                                 {{ config('app_layout.main_title') }}
-                            </h1><br>
+                            </h1>
                             <h1 class={{ config('app_class_css.header_area__sub_logo') }}>
                                 {{ config('app_layout.sub_title') }}
                             </h1>
@@ -80,12 +77,6 @@
             </header>
         {{-- ヘッダーエリア end --}}
 
-        {{-- ページタイトル start --}}
-            <h2 class={{ config('app_class_css.page_title') }}>
-                @yield('section')
-            </h2>
-        {{-- ページタイトル end --}}
-
         {{-- コンテンツエリア start --}}
             @yield('contents')
         {{-- コンテンツエリア end --}}
@@ -97,13 +88,7 @@
                     {{ config('app_class_css.center') }}
                 "
             >
-                {{-- トップボタン start --}}
-                    <div class={{ config('app_class_css.footer_area__top_btn') }}>
-                        <a href="#top">
-                            {{ config('app_layout.top_btn') }}
-                        </a>
-                    </div>
-                {{-- トップボタン end --}}
+                {{ config('app_layout.footer_text') }}
             </footer>
         {{-- フッターエリア end --}}
 

@@ -1,7 +1,6 @@
 @extends('layout.layout')
 
 @section('title', config('app_layout.global_menu.syouhin'))
-@section('section', config('app_layout.global_menu.syouhin'))
 @section('body_class','body syouhin')
 
 @section('contents')
@@ -173,7 +172,7 @@
                 @component('component.section-title',[
                     'section_id' => config('app_class_css.section_title'),
                     'js_class' => config('app_class_js.js_syouhin_title'),
-                    'section_name' => '選択すると表示されます',
+                    'section_name' => '▼ からリストを選択して表示します',
                     ])
                 @endcomponent
             {{-- ブランドタイトル end --}}

@@ -3,73 +3,83 @@
 ----------------------------------------------- */
 // メインロゴ
 &__main-logo {
-    font-size: 100px;
+    font-size: 20px;
     font-weight: bolder;
-    color: $brown;
     display: inline;
-    line-height: 1;
     text-shadow: 3px 3px 1px $orange_skelton;
+    position: relative;
+    top: -2px;
+    left: 0;
     @media screen and(max-width: $sp_width) {
-        font-size: 50px;
         text-shadow: 1px 1px 1px $orange_skelton;
+        position: absolute;
+        top: -2px;
+        left: 20px;
     }
 }
 
 // サブロゴ
 &__sub-logo {
-    font-style: italic;
-    font-size: 50px;
-    line-height: 2;
+    font-size: 14px;
     display: inline;
     text-shadow: 3px 3px 1px $orange_skelton;
+    position: relative;
+    top: -3px;
+    left: 0;
     @media screen and(max-width: $sp_width) {
-        font-size: 25px;
         text-shadow: 1px 1px 1px $orange_skelton;
+        position: absolute;
+        top: 4px;
+        left: 145px;
     }
 }
 
 // グローバルメニュー
 .global-menu {
-    font-size: 20px;
-    border-top: 2px solid $brown;
-    padding: 5px;
+    font-size: 16px;
+    background: $orange_skelton;
+    width: 100%;
     @media screen and(max-width: $sp_width) {
-        font-size: 16px;
+        background: $brown;
+        position: absolute;
+        top: $header_height_sp;
+        left: 0;
     }
 
     // メニューボタン
     &__btn {
         display: inline-block;
-        margin: 5px 0;
-        background: $bg_wood_dark;
-        color: $beige;
-        max-width: 240px;
+        max-width: 150px;
         width: 100%;
         @media screen and(max-width: $sp_width) {
             max-width: 300px;
-            margin-bottom: 5px;
+            border-bottom: 1px dotted $beige;
+            &:last-child {
+                border-bottom: none;
+            }
         }
         a {
-            color: $beige;
+            color: $brown;
             display: block;
-            padding-bottom: 4px;
             margin: 0px;
+            @media screen and(max-width: $sp_width) {
+                color: $beige;
+            }
+
             &:hover {
-                background: rgba(200,200,200,0.4);
+                background: $white_clear_thick;
             }
         }
     }
 
     // SPのメニューボタン（≡）
     &__btn-sp {
-        font-size: 50px;
-        font-style: normal;
+        font-size: 30px;
         line-height: 1;
-        border-radius: 4px;
         float: right;
         position: relative;
-        top: -2px;
-        right: -10px;
+        top: 0;
+        right: 5px;
     }
 }
 

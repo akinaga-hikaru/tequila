@@ -1,0 +1,14 @@
+/* -----------------------------------------------
+    サイドエリアコンテンツ設定
+----------------------------------------------- */
+// SP時サイドメニューアイコン（▼）
+.sidemenu-sp {
+    @media screen and(max-width: $sp_width) {
+        position: fixed;
+        top: 3px;
+        right: 50px;
+        background: unset;
+        color: $brown;
+    }
+}
+

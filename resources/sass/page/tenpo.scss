@@ -11,4 +11,16 @@
             min-width: 1000px;
         }
     }
+
+    // 文章エリア
+    .letters-area {
+        // 見出し
+        &__title {
+            padding: 1px 5px;
+            margin-bottom: 20px;
+            @media screen and(max-width: $sp_width) {
+                font-size: 13px;
+            }
+        }
+    }
 }

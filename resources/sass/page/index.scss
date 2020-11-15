@@ -9,8 +9,6 @@
         // 見出し
         &__title {
             padding: 1px 5px;
-            margin-bottom: 2px;
-            line-height: 1.3;
             @media screen and(max-width: $sp_width) {
                 font-size: 13px;
             }
@@ -28,7 +26,10 @@
         &__scroll-frame {
             padding-bottom: 20px;
             width: 100%;
-            min-width: 1000px;
+        }
+        @media screen and(max-width: $sp_width) {
+            min-width: 200%;
+            font-size: 13px;
         }
     }
 }

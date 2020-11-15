@@ -47,7 +47,6 @@
 ----------------------------------------------- */
 // 文章エリア
 .letters-area {
-    background: $bg_colk;
     padding: 15px;
 
     // 画像
@@ -57,10 +56,10 @@
 
     // 見出し
     &__title {
+        color: $brown;
         display: block;
         font-size: 20px;
         line-height: 2;
-        text-shadow: 1px 1px 4px $orange;
         border-bottom: 2px dotted $brown;
         @media screen and(max-width: $sp_width) {
             font-size: 15px;
@@ -69,7 +68,7 @@
 
     // 段落
     &__paragraph {
-        background: $white_clear;
+        color: $light_brown;
         padding: 7px;
         margin: 5px;
     }
@@ -94,37 +93,21 @@
         border: 1px solid $brown;
     }
     th {
-        background: $beige;
+        background: $white_clear;
     }
     td {
-        background: $bg_colk;
+        background: unset;
     }
 }
 
-// 大項目
-.page-title {
-    background: $orange_skelton;
-    color: $beige;
-    font-size: 25px;
-    padding-bottom: 6px;
-    text-align: center;
-    border: 1px solid $brown;
-    border-left: none;
-    border-right: none;
-    @media screen and(max-width: $sp_width) {
-        font-size: 20px;
-        line-height: 1.5;
-        padding-bottom: 3px;
-    }
-}
-
-// 中項目
+// セクションタイトル
 .section-title {
     background: $bg_wood_dark;
+    background-size: 100%;
     color: $beige;
-    font-size: 20px;
+    font-size: 18px;
     padding-bottom: 6px;
-    text-align: center;
+    padding-left: 20px;
     @media screen and(max-width: $sp_width) {
         font-size: 14px;
         padding-bottom: 3px;
@@ -135,9 +118,6 @@
 .common-btn {
     cursor: pointer;
     border-bottom: 1px solid $brown;
-    @media screen and(max-width: $sp_width) {
-        text-align: center;
-    }
     &:last-child {
         border-bottom: none;
     }
@@ -160,7 +140,7 @@
 
     // ①[項目選択]ボタン
     &--type {
-        background: $bg_wood_dark;
+        background: $light_brown;
         border-bottom: none;
         border-top: 1px solid $beige;
         a {

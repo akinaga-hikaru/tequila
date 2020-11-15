@@ -1,51 +1,52 @@
 @extends('layout.layout')
 
 @section('title','登録内容確認')
-@section('section','登録内容確認')
 @section('body_class',' body form form-confirm syouhin js-form-confirm')
 
 @section('contents')
 
     @component('component.main', ['main' => 'no_aside'])
-
-        {{-- 項目名 start --}}
-            @component('component.section-title',[
-                'js_class' => 'js-syouhin-title',
-                'section_name' => '項目名 / 入力内容',
-                ])
-            @endcomponent
-        {{-- 項目名 end --}}
-
-        {{-- 入力項目表示 start --}}
-            @component('component.table-area')
-                @foreach ($input as $item)
-                    <tr>
-                        <label>
-                            <th>{{ $item['name'] }}</th>
-                            <td><div>{{ $item['input'] }}</div></td>
-                        </label>
-                    </tr>
-                @endforeach
-            @endcomponent
-        {{-- 入力項目表示 end --}}
-
         <div class={{ config('app_class_css.contents_frame') }}>
-            {{-- 修正ボタン start --}}
-                <div class={{ config('app_class_css.center') }}>
-                    <button type="button" name="submit" onclick="history.back()">
-                        {{ config('app_layout.correct_btn') }}
-                    </button>
-                    <br>
-                </div>
-            {{-- 修正ボタン end --}}
 
-            {{-- プレビューメッセージ start --}}
-                @component('component.message', ['center' => true])
-                    {{ config('app_message.form_confirm.preview') }}
+            {{-- 項目名 start --}}
+                @component('component.section-title',[
+                    'js_class' => 'js-syouhin-title',
+                    'section_name' => '項目名 / 入力内容',
+                    ])
                 @endcomponent
-            {{-- プレビューメッセージ end --}}
-        </div>
+            {{-- 項目名 end --}}
 
+            {{-- 入力項目表示 start --}}
+                @component('component.table-area')
+                    @foreach ($input as $item)
+                        <tr>
+                            <label>
+                                <th>{{ $item['name'] }}</th>
+                                <td><div>{{ $item['input'] }}</div></td>
+                            </label>
+                        </tr>
+                    @endforeach
+                @endcomponent
+            {{-- 入力項目表示 end --}}
+
+            <div class={{ config('app_class_css.contents_frame') }}>
+                {{-- 修正ボタン start --}}
+                    <div class={{ config('app_class_css.center') }}>
+                        <button type="button" name="submit" onclick="history.back()">
+                            {{ config('app_layout.correct_btn') }}
+                        </button>
+                        <br>
+                    </div>
+                {{-- 修正ボタン end --}}
+
+                {{-- プレビューメッセージ start --}}
+                    @component('component.message', ['center' => true])
+                        {{ config('app_message.form_confirm.preview') }}
+                    @endcomponent
+                {{-- プレビューメッセージ end --}}
+            </div>
+
+        </div>
     @endcomponent
 
     <div class={{ config('app_class_css.flex_box') }}>
