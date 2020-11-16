@@ -3,7 +3,6 @@
 ----------------------------------------------- */
 // ボディ設定
 .body {
-    scroll-behavior: smooth;
     width: 100%;
     max-width: $body_width;
     min-width: $min_width;
@@ -18,6 +17,9 @@
         font-size: 12px;
     }
 
+}
+html, body {
+    scroll-behavior: smooth;
 }
 
 // リンク設定

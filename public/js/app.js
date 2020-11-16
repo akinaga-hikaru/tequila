@@ -19621,7 +19621,9 @@ function onListBtn(name, match) {
 
     var clickClass = Object(_function_getClickClass__WEBPACK_IMPORTED_MODULE_1__["default"])(this, match); // 6. クリックしたリストの商品コンテナのみを表示する
 
-    $(clickClass).fadeIn(400);
+    $(clickClass).fadeIn(400); // 7. 画面トップへ
+
+    window.scrollTo(0, 0);
   });
 }
 
@@ -19720,7 +19722,9 @@ function onPulldownBtn(name, match) {
 
     var clickClass = Object(_function_getClickClass__WEBPACK_IMPORTED_MODULE_1__["default"])(this, match['way']); // 6. クリックしたリストの商品コンテナのみを表示する
 
-    $(clickClass).fadeIn(400);
+    $(clickClass).fadeIn(400); // 7. 画面トップへ
+
+    window.scrollTo(0, 0);
   });
 }
 

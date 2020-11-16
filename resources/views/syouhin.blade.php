@@ -30,7 +30,7 @@
                             'js_class_1' => config('app_class_js.maker_list'),
                             'js_class_2' => config('app_class_js.maker') . '_' . $title['title_id'],
                             'hidden' => true,
-                            'link' => '#' . config('app_class_css.section_title'),
+                            'link' => '',
                             'text' => $title['title'],
                             ])
                         @endcomponent
@@ -46,7 +46,7 @@
                             'js_class_1' => config('app_class_js.dest_list'),
                             'js_class_2' => config('app_class_js.dest') . '_' . $nom['nom'],
                             'hidden' => true,
-                            'link' => '#' . config('app_class_css.section_title'),
+                            'link' => '',
                             'text' => 'NOM ' . $nom['nom'],
                             'small_text' => $nom['dest'],
                             ])
@@ -80,7 +80,7 @@
                             'js_class_1' => config('app_class_js.local_list'),
                             'js_class_2' => config('app_class_js.local') . '_' . $local['local_id'],
                             'hidden' => true,
-                            'link' => '#' . config('app_class_css.section_title'),
+                            'link' => '',
                             'text' => $local['local'],
                             'small_text' => $local['description'],
                             ])
@@ -93,7 +93,7 @@
                                     'js_class_2' => config('app_class_js.area') . '_' . $item['local_id'],
                                     'js_class_3' => config('app_class_js.area') . '_' . $item['local_id'] . '_' . $item['area_id'],
                                     'hidden' => true,
-                                    'link' => '#' . config('app_class_css.section_title'),
+                                    'link' => '',
                                     'text' => $item['area'],
                                     ])
                                 @endcomponent
@@ -106,7 +106,7 @@
                                     'js_class_2' => config('app_class_js.area') . '_' . $item['local_id'],
                                     'js_class_3' => config('app_class_js.area') . '_' . $item['local_id'] . '_' . $item['area_id'],
                                     'hidden' => true,
-                                    'link' => '#' . config('app_class_css.section_title'),
+                                    'link' => '',
                                     'text' => $item['area'],
                                     ])
                                 @endcomponent
@@ -124,7 +124,7 @@
                                     'js_class_2' => config('app_class_js.area') . '_' . $item['local_id'],
                                     'js_class_3' => config('app_class_js.area') . '_' . $item['local_id'] . '_' . $item['area_id'],
                                     'hidden' => true,
-                                    'link' => '#' . config('app_class_css.section_title'),
+                                    'link' => '',
                                     'text' => $item['area'],
                                     ])
                                 @endcomponent
@@ -137,7 +137,7 @@
                                     'js_class_2' => config('app_class_js.area') . '_' . $item['local_id'],
                                     'js_class_3' => config('app_class_js.area') . '_' . $item['local_id'] . '_' . $item['area_id'],
                                     'hidden' => true,
-                                    'link' => '#' . config('app_class_css.section_title'),
+                                    'link' => '',
                                     'text' => $item['local'] . $item['area'],
                                     ])
                                 @endcomponent
@@ -155,7 +155,7 @@
                             'js_class_1' => config('app_class_js.aging_list'),
                             'js_class_2' => config('app_class_js.aging') . '_' . $aging['aging_id'],
                             'hidden' => true,
-                            'link' => '#' . config('app_class_css.section_title'),
+                            'link' => '',
                             'text' => $aging['aging_name'],
                             'small_text' => $aging['description'],
                             ])

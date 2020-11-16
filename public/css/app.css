@@ -210,7 +210,6 @@ select {
 ----------------------------------------------- */
 
 .body {
-  scroll-behavior: smooth;
   width: 100%;
   max-width: 1280px;
   min-width: 375px;
@@ -227,6 +226,11 @@ select {
   .body {
     font-size: 12px;
   }
+}
+
+html,
+body {
+  scroll-behavior: smooth;
 }
 
 a {

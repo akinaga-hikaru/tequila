@@ -35,6 +35,9 @@ function onListBtn(name, match){
         // 6. クリックしたリストの商品コンテナのみを表示する
         $(clickClass).fadeIn(400);
 
+        // 7. 画面トップへ
+        window.scrollTo(0, 0);
+
     });
 
 };
