@@ -3,7 +3,7 @@
     class="
         {{ config('app_class_css.common_btn') }}
         {{ config('app_class_css.common_btn') }}--{{ $btn }}
-        {{ config('app_class_js.js_btn') }}--{{ $btn }}
+        {{ config('app_class_js.btn') }}--{{ $btn }}
         {{ !empty($js_class_1) ? $js_class_1 : '' }}
         {{ !empty($js_class_2) ? $js_class_2 : '' }}
         {{ !empty($js_class_3) ? $js_class_3 : '' }}

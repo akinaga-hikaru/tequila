@@ -1,4 +1,3 @@
-import js from '../data/classNames'; // JS操作用classNameデータ
 import hideClass from '../function/hideClass';
 import addCSS from '../function/addCSS';
 

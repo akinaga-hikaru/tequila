@@ -64,7 +64,7 @@
             {{-- ブランドタイトル start --}}
                 @component('component.section-title',[
                     'section_id' => config('app_class_css.section_title'),
-                    'js_class' => config('app_class_js.js_syouhin_title'),
+                    'js_class' => config('app_class_js.syouhin_title'),
                     'section_name' => $input['title_name']['input'],
                     ])
                 @endcomponent

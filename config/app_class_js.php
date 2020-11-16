@@ -5,32 +5,44 @@
 |--------------------------------------------------------------------------
 */
 return [
+    // prefix
+    'prefix' => 'js-',
+
     // ヘッダーエリア
-    'js_global_menu' => 'js-global-menu',
-    'js_global_menu__btn_sp' => 'js-global-menu__btn-sp',
+    'global_menu' => 'js-global-menu',
+    'global_menu__btn_sp' => 'js-global-menu__btn-sp',
 
     // サイドエリア
-    'js_aside' => 'js-aside',
-    'js_type_toggle' => 'js-type-toggle',
+    'aside' => 'js-aside',
+    'type_toggle' => 'js-type-toggle',
 
     // コンポーネント：共通ボタン
-    'js_btn' => 'js-btn',
+    'btn' => 'js-btn',
+    'btn_type' => 'js-btn--type',
+    'btn_list' => 'js-btn--list',
+    'btn_down' => 'js-btn--down',
 
     // コンポーネント：共通セクションタイトル
-    'js_syouhin_title' => 'js-syouhin-title',
-    'js_syouhin_message' => 'js-syouhin-message',
+    'syouhin_title' => 'js-syouhin-title',
+    'syouhin_message' => 'js-syouhin-message',
 
     // コンポーネント：商品コンテナパーツ
-    'js_syouhin_container' => 'js-syouhin-container',
-    'js_maker' => 'js-maker',
-    'js_maker_list' => 'js-maker-list',
-    'js_dest' => 'js-dest',
-    'js_dest_list' => 'js-dest-list',
-    'js_local' => 'js-local',
-    'js_local_list' => 'js-local-list',
-    'js_area' => 'js-area',
-    'js_area_list' => 'js-area-list',
-    'js_aging' => 'js-aging',
-    'js_aging_list' => 'js-aging-list',
+    'syouhin_container' => 'js-syouhin-container',
+    'maker' => 'js-maker',
+    'maker_list' => 'js-maker-list',
+    'dest' => 'js-dest',
+    'dest_list' => 'js-dest-list',
+    'local' => 'js-local',
+    'local_list' => 'js-local-list',
+    'area' => 'js-area',
+    'area_list' => 'js-area-list',
+    'aging' => 'js-aging',
+    'aging_list' => 'js-aging-list',
+
+    // 個別名：商品一覧
+    'no_products' => 'js-aging_Joven',
+
+    // ページ
+    'form_confirm' => 'js-form-confirm',
 
 ];

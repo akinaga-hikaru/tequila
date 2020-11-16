@@ -3,12 +3,12 @@
     class="
         {{ config('app_class_css.flex_box') }}
         {{ config('app_class_css.syouhin_container') }}
-        {{ config('app_class_js.js_syouhin_container') }}
-        {{ config('app_class_js.js_dest') }}_{{ $contents_nom }}_
-        {{ config('app_class_js.js_maker') }}_{{ $title_id }}_
-        {{ config('app_class_js.js_local') }}_{{ $contents_local_id }}_
-        {{ config('app_class_js.js_area') }}_{{ $contents_area_id }}_
-        {{ config('app_class_js.js_aging') }}_{{ $aging_sort }}_
+        {{ config('app_class_js.syouhin_container') }}
+        {{ config('app_class_js.dest') }}_{{ $contents_nom }}_
+        {{ config('app_class_js.maker') }}_{{ $title_id }}_
+        {{ config('app_class_js.local') }}_{{ $contents_local_id }}_
+        {{ config('app_class_js.area') }}_{{ $contents_area_id }}_
+        {{ config('app_class_js.aging') }}_{{ $aging_sort }}_
     "
 >
     {{-- 画像エリア start --}}

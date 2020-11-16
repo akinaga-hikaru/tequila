@@ -27,8 +27,8 @@
                     @foreach ($titles as $title)
                         @component('component.common-btn',[
                             'btn' => 'list',
-                            'js_class_1' => config('app_class_js.js_maker_list'),
-                            'js_class_2' => config('app_class_js.js_maker') . '_' . $title['title_id'],
+                            'js_class_1' => config('app_class_js.maker_list'),
+                            'js_class_2' => config('app_class_js.maker') . '_' . $title['title_id'],
                             'hidden' => true,
                             'link' => '#' . config('app_class_css.section_title'),
                             'text' => $title['title'],
@@ -43,8 +43,8 @@
                     @foreach ($noms as $nom)
                         @component('component.common-btn',[
                             'btn' => 'list',
-                            'js_class_1' => config('app_class_js.js_dest_list'),
-                            'js_class_2' => config('app_class_js.js_dest') . '_' . $nom['nom'],
+                            'js_class_1' => config('app_class_js.dest_list'),
+                            'js_class_2' => config('app_class_js.dest') . '_' . $nom['nom'],
                             'hidden' => true,
                             'link' => '#' . config('app_class_css.section_title'),
                             'text' => 'NOM ' . $nom['nom'],
@@ -77,8 +77,8 @@
                     @foreach ($locals as $local)
                         @component('component.common-btn',[
                             'btn' => 'list',
-                            'js_class_1' => config('app_class_js.js_local_list'),
-                            'js_class_2' => config('app_class_js.js_local') . '_' . $local['local_id'],
+                            'js_class_1' => config('app_class_js.local_list'),
+                            'js_class_2' => config('app_class_js.local') . '_' . $local['local_id'],
                             'hidden' => true,
                             'link' => '#' . config('app_class_css.section_title'),
                             'text' => $local['local'],
@@ -89,9 +89,9 @@
                             @foreach ($valles as $item)
                                 @component('component.common-btn',[
                                     'btn' => 'down',
-                                    'js_class_1' => config('app_class_js.js_area_list'),
-                                    'js_class_2' => config('app_class_js.js_area') . '_' . $item['local_id'],
-                                    'js_class_3' => config('app_class_js.js_area') . '_' . $item['local_id'] . '_' . $item['area_id'],
+                                    'js_class_1' => config('app_class_js.area_list'),
+                                    'js_class_2' => config('app_class_js.area') . '_' . $item['local_id'],
+                                    'js_class_3' => config('app_class_js.area') . '_' . $item['local_id'] . '_' . $item['area_id'],
                                     'hidden' => true,
                                     'link' => '#' . config('app_class_css.section_title'),
                                     'text' => $item['area'],
@@ -102,9 +102,9 @@
                             @foreach ($altos as $item)
                                 @component('component.common-btn',[
                                     'btn' => 'down',
-                                    'js_class_1' => config('app_class_js.js_area_list'),
-                                    'js_class_2' => config('app_class_js.js_area') . '_' . $item['local_id'],
-                                    'js_class_3' => config('app_class_js.js_area') . '_' . $item['local_id'] . '_' . $item['area_id'],
+                                    'js_class_1' => config('app_class_js.area_list'),
+                                    'js_class_2' => config('app_class_js.area') . '_' . $item['local_id'],
+                                    'js_class_3' => config('app_class_js.area') . '_' . $item['local_id'] . '_' . $item['area_id'],
                                     'hidden' => true,
                                     'link' => '#' . config('app_class_css.section_title'),
                                     'text' => $item['area'],
@@ -120,9 +120,9 @@
                                 @endphp
                                 @component('component.common-btn',[
                                     'btn' => 'down',
-                                    'js_class_1' => config('app_class_js.js_area_list'),
-                                    'js_class_2' => config('app_class_js.js_area') . '_' . $item['local_id'],
-                                    'js_class_3' => config('app_class_js.js_area') . '_' . $item['local_id'] . '_' . $item['area_id'],
+                                    'js_class_1' => config('app_class_js.area_list'),
+                                    'js_class_2' => config('app_class_js.area') . '_' . $item['local_id'],
+                                    'js_class_3' => config('app_class_js.area') . '_' . $item['local_id'] . '_' . $item['area_id'],
                                     'hidden' => true,
                                     'link' => '#' . config('app_class_css.section_title'),
                                     'text' => $item['area'],
@@ -133,9 +133,9 @@
                             @foreach ($others as $item)
                                 @component('component.common-btn',[
                                     'btn' => 'down',
-                                    'js_class_1' => config('app_class_js.js_area_list'),
-                                    'js_class_2' => config('app_class_js.js_area') . '_' . $item['local_id'],
-                                    'js_class_3' => config('app_class_js.js_area') . '_' . $item['local_id'] . '_' . $item['area_id'],
+                                    'js_class_1' => config('app_class_js.area_list'),
+                                    'js_class_2' => config('app_class_js.area') . '_' . $item['local_id'],
+                                    'js_class_3' => config('app_class_js.area') . '_' . $item['local_id'] . '_' . $item['area_id'],
                                     'hidden' => true,
                                     'link' => '#' . config('app_class_css.section_title'),
                                     'text' => $item['local'] . $item['area'],
@@ -152,8 +152,8 @@
                     @foreach ($agings as $aging)
                         @component('component.common-btn',[
                             'btn' => 'list',
-                            'js_class_1' => config('app_class_js.js_aging_list'),
-                            'js_class_2' => config('app_class_js.js_aging') . '_' . $aging['aging_id'],
+                            'js_class_1' => config('app_class_js.aging_list'),
+                            'js_class_2' => config('app_class_js.aging') . '_' . $aging['aging_id'],
                             'hidden' => true,
                             'link' => '#' . config('app_class_css.section_title'),
                             'text' => $aging['aging_name'],
@@ -171,7 +171,7 @@
             {{-- ブランドタイトル start --}}
                 @component('component.section-title',[
                     'section_id' => config('app_class_css.section_title'),
-                    'js_class' => config('app_class_js.js_syouhin_title'),
+                    'js_class' => config('app_class_js.syouhin_title'),
                     'section_name' => '▼ からリストを選択して表示します',
                     ])
                 @endcomponent

@@ -45,7 +45,7 @@
                             class="
                                 {{ config('app_class_css.global_menu__btn_sp') }}
                                 {{ config('app_class_css.hide_pc') }}
-                                {{ config('app_class_js.js_global_menu__btn_sp') }}
+                                {{ config('app_class_js.global_menu__btn_sp') }}
                             "
                         >
                             ≡
@@ -57,7 +57,7 @@
                             class="
                                 {{ config('app_class_css.global_menu') }}
                                 {{ config('app_class_css.hide_sp') }}
-                                {{ config('app_class_js.js_global_menu') }}
+                                {{ config('app_class_js.global_menu') }}
                             "
                         >
                             @foreach (config('app_layout.global_menu') as $key => $menu)
@@ -89,6 +89,13 @@
             </footer>
         {{-- フッターエリア end --}}
 
+        <script>
+            // configで設定のclassNameをJSに渡す
+            const js = @json(config('app_class_js'));
+            for(let key in js) {
+                js[key] = '.' + js[key];
+            }
+        </script>
         <script src="{{ mix('js/app.js') }}"></script>
     </body>
 </html>

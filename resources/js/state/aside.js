@@ -1,4 +1,3 @@
-import js from '../data/classNames'; // JS操作用classNameデータ
 import hideClass from '../function/hideClass';
 /** 〜 サイドエリア表示状態管理 〜
  * @param on string・・・メニューを閉じる処理か開く処理かのフラグ（'open' or 'close'）

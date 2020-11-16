@@ -1,7 +1,9 @@
 import './bootstrap';
-import js from './data/classNames'
 import checkUA from './function/checkUA'
 import asideState from './state/aside'
+
+// ※1 使用するクラス名はconfig/app_class_js.phpで定義
+// ※2 定義はresources/views/layout/layout.blade.phpでグローバル変数「js」としてJSに渡している
 
 /* -----------------------------------------------
     画面共通処理

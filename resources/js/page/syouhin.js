@@ -12,7 +12,6 @@
 /* --------------- データ定義 ---------------　*/
 import lists from '../data/listData'; // ② [商品一覧]（プルダウンなし）データ
 import listWithPulldowns from '../data/listDataWithPulldown'; // ③ [商品一覧]（プルダウンあり）データ
-import js from '../data/classNames'; // JS操作用classNameデータ
 
 
 /* --------------- Function定義 ---------------　*/
@@ -20,7 +19,6 @@ import onTypeBtn from '../function/onTypeBtn'; // ① [項目選択]ボタン処
 import onListBtn from '../function/onListBtn'; // ② [商品一覧]（プルダウンなし）ボタン処理
 import onListWithPullDownBtn from '../function/onListWithPullDownBtn'; // ③ [商品一覧]（プルダウンあり）ボタン処理
 import onPulldownBtn from '../function/onPulldownBtn'; // ④ [プルダウン]ボタン処理
-
 
 
 /* ---------------　実行処理 ---------------　*/
