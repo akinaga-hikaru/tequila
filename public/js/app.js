@@ -19286,8 +19286,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 /* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_bootstrap__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _data_classNames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data/classNames */ "./resources/js/data/classNames.js");
-/* harmony import */ var _function_hideClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./function/hideClass */ "./resources/js/function/hideClass.js");
-/* harmony import */ var _function_checkUA__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./function/checkUA */ "./resources/js/function/checkUA.js");
+/* harmony import */ var _function_checkUA__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./function/checkUA */ "./resources/js/function/checkUA.js");
+/* harmony import */ var _state_aside__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./state/aside */ "./resources/js/state/aside.js");
 /* harmony import */ var _page_syouhin__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./page/syouhin */ "./resources/js/page/syouhin.js");
 
 
@@ -19298,49 +19298,48 @@ __webpack_require__.r(__webpack_exports__);
 ----------------------------------------------- */
 
 /* --------------- SPのグローバルメニューのリスト表示設定 --------------- */
+// ***** ■ SP時のみの動作 *****
 
 $(function () {
+  // ****  [項目一覧]ボタン押下時の処理 ****
   $(_data_classNames__WEBPACK_IMPORTED_MODULE_1__["default"].global_menu__btn_sp).on('click', function () {
-    $(_data_classNames__WEBPACK_IMPORTED_MODULE_1__["default"].global_menu).slideToggle();
+    // リストをトグル表示
+    $(_data_classNames__WEBPACK_IMPORTED_MODULE_1__["default"].global_menu).slideToggle(); // サイドエリアの表示状態：クローズ
+
+    Object(_state_aside__WEBPACK_IMPORTED_MODULE_3__["default"])('close');
   });
 });
 /* --------------- サイドメニュー表示設定 --------------- */
-// ①[項目選択]ボタンの初期表示設定（PC時のみ表示）
+// ***** ■ SP時のみの動作 *****
 
-if (Object(_function_checkUA__WEBPACK_IMPORTED_MODULE_3__["default"])()) {
-  $(_data_classNames__WEBPACK_IMPORTED_MODULE_1__["default"].btn_type).hide();
-} // [項目一覧]ボタン押下時の処理
+if (Object(_function_checkUA__WEBPACK_IMPORTED_MODULE_2__["default"])()) {
+  // ****  [項目一覧]ボタンを非表示 ****
+  $(_data_classNames__WEBPACK_IMPORTED_MODULE_1__["default"].btn_type).hide(); // ****  [項目一覧]ボタン押下時の処理 ****
 
+  $(_data_classNames__WEBPACK_IMPORTED_MODULE_1__["default"].type_toggle).on('click', function () {
+    // *** 1. ①[項目選択]ボタンの表示設定 ***
+    $(_data_classNames__WEBPACK_IMPORTED_MODULE_1__["default"].btn_type).slideToggle(500); // *** 2. テキスト表示切替 ***
 
-$(_data_classNames__WEBPACK_IMPORTED_MODULE_1__["default"].type_toggle).on('click', function () {
-  // 1. ①[項目選択]ボタンの表示設定
-  $(_data_classNames__WEBPACK_IMPORTED_MODULE_1__["default"].btn_type).slideToggle(500); // 2. ②③[商品一覧], ④[プルダウン] リストを非表示
+    var btn_text = $(this).text();
+    /* オープンの場合 */
 
-  Object(_function_hideClass__WEBPACK_IMPORTED_MODULE_2__["default"])([_data_classNames__WEBPACK_IMPORTED_MODULE_1__["default"].btn_list, _data_classNames__WEBPACK_IMPORTED_MODULE_1__["default"].btn_down]); // 3. テキスト表示切替
-
-  var btn_text = $(this).text();
-
-  if (btn_text === "▼") {
-    $(this).text('▲');
-    $(_data_classNames__WEBPACK_IMPORTED_MODULE_1__["default"].aside).css({
-      height: '95%'
-    });
-  } else if (btn_text === "▲") {
-    $(this).text('▼');
-    $(_data_classNames__WEBPACK_IMPORTED_MODULE_1__["default"].aside).css({
-      height: 'auto'
-    });
-  } // 一度目のクリック時の処理
-  else {
-      $(this).text('▲');
-      $(_data_classNames__WEBPACK_IMPORTED_MODULE_1__["default"].aside).css({
-        height: '95%'
-      });
+    if (btn_text === "▼") {
+      Object(_state_aside__WEBPACK_IMPORTED_MODULE_3__["default"])('open');
     }
-});
+    /* クローズの場合 */
+    else if (btn_text === "▲") {
+        Object(_state_aside__WEBPACK_IMPORTED_MODULE_3__["default"])('close');
+      }
+      /* 初期動作の場合 */
+      else {
+          Object(_state_aside__WEBPACK_IMPORTED_MODULE_3__["default"])('open');
+        }
+  });
+}
 /* -----------------------------------------------
     画面：商品紹介
 ----------------------------------------------- */
+
 
 
 
@@ -19581,7 +19580,7 @@ function checkUA() {
 
   var isAndroidTablet = ua.indexOf('android') > -1 && ua.indexOf('mobile') == -1; // SP
 
-  var cond = isiPhone || isiPad || isAndroid || isAndroidTablet;
+  var cond = isiPhone || isAndroid || isAndroidTablet;
   return cond;
 }
 
@@ -19917,6 +19916,52 @@ $.each(_data_listDataWithPulldown__WEBPACK_IMPORTED_MODULE_1__["default"], funct
 $(_data_classNames__WEBPACK_IMPORTED_MODULE_2__["default"].no_products).on('click', function () {
   $(_data_classNames__WEBPACK_IMPORTED_MODULE_2__["default"].syouhin_message).show();
 });
+
+/***/ }),
+
+/***/ "./resources/js/state/aside.js":
+/*!*************************************!*\
+  !*** ./resources/js/state/aside.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _data_classNames__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/classNames */ "./resources/js/data/classNames.js");
+/* harmony import */ var _function_hideClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../function/hideClass */ "./resources/js/function/hideClass.js");
+ // JS操作用classNameデータ
+
+
+/** 〜 サイドエリア表示状態管理 〜
+ * @param on string・・・メニューを閉じる処理か開く処理かのフラグ（'open' or 'close'）
+ */
+
+function asideState(on) {
+  // クローズの場合
+  if (on === 'close') {
+    // セクションメニュー（▼）ボタンのテキスト変更
+    $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].type_toggle).text('▼'); // サイドエリアの高さ調整（スクロールのため）
+
+    $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].aside).css({
+      height: 'auto'
+    }); // サイドリストを非表示
+
+    Object(_function_hideClass__WEBPACK_IMPORTED_MODULE_1__["default"])([_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].btn_type, _data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].btn_list, _data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].btn_down]);
+  } // オープンの場合
+  else if (on === 'open') {
+      // セクションメニュー（▼）ボタンのテキスト変更
+      $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].type_toggle).text('▲'); // サイドエリアの高さ調整（スクロールのため）
+
+      $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].aside).css({
+        height: '95%'
+      }); // グローバルメニューのリストを非表示
+
+      $(_data_classNames__WEBPACK_IMPORTED_MODULE_0__["default"].global_menu).hide();
+    }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (asideState);
 
 /***/ }),
 
