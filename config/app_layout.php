@@ -6,7 +6,6 @@
 */
 return [
     'main_title' => 'テキーラ全書',
-    'sub_title' => '〜Tequipedia〜',
     'global_menu' => [
         '/' => 'テキーラとは',
         'syouhin' => '商品紹介',

@@ -33,14 +33,11 @@
                 >
 
                     {{-- タイトルエリア start --}}
-                        <a href="/">
-                            <h1 class={{ config('app_class_css.header_area__main_logo') }}>
+                        <h1 class={{ config('app_class_css.header_area__main_logo') }}>
+                            <a href="/">
                                 {{ config('app_layout.main_title') }}
-                            </h1>
-                            <h1 class={{ config('app_class_css.header_area__sub_logo') }}>
-                                {{ config('app_layout.sub_title') }}
-                            </h1>
-                        </a>
+                            </a>
+                        </h1>
                     {{-- タイトルエリア end --}}
 
                     {{-- SPメニューボタン start --}}
