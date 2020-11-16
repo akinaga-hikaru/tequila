@@ -15,7 +15,7 @@ function checkUA() {
     let isAndroidTablet = (ua.indexOf('android') > -1) && (ua.indexOf('mobile') == -1);
 
     // SP
-    const cond = (isiPhone || isiPad || isAndroid || isAndroidTablet)
+    const cond = (isiPhone || isAndroid || isAndroidTablet)
 
     return cond
 
