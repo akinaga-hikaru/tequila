@@ -12,9 +12,6 @@
     left: 0;
     @media screen and(max-width: $sp_width) {
         text-shadow: 1px 1px 1px $orange_skelton;
-        position: fixed;
-        top: -2px;
-        left: 10px;
     }
 }
 
