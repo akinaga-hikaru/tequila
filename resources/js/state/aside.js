@@ -8,7 +8,7 @@ function asideState(on) {
     if(on === 'close') {
 
         // セクションメニュー（▼）ボタンのテキスト変更
-        $(js.type_toggle).text('▼');
+        $(js.type_toggle).text(aside_text.section_menu_close);
 
         // サイドエリアの高さ調整（スクロールのため）
         $(js.aside).css({ height: 'auto' });
@@ -21,7 +21,7 @@ function asideState(on) {
     else if(on === 'open') {
 
         // セクションメニュー（▼）ボタンのテキスト変更
-        $(js.type_toggle).text('▲');
+        $(js.type_toggle).text(aside_text.section_menu_open);
 
         // サイドエリアの高さ調整（スクロールのため）
         $(js.aside).css({ height: '95%' });

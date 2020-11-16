@@ -11,7 +11,7 @@
             {{-- 項目名 start --}}
                 @component('component.section-title',[
                     'js_class' => 'js-syouhin-title',
-                    'section_name' => '項目名 / 入力内容',
+                    'section_name' => config('app_form_input.title')[0] . ' / ' . config('app_form_input.title')[1],
                     ])
                 @endcomponent
             {{-- 項目名 end --}}

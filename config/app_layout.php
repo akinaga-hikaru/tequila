@@ -5,12 +5,21 @@
 |--------------------------------------------------------------------------
 */
 return [
+    'meta' => [
+        'description' => '各種テキーラを飲み比べたインデックス。テキーラの基礎知識も記載しているので、入門用に。',
+        'url' => 'http://ec2-54-250-241-251.ap-northeast-1.compute.amazonaws.com/',
+        'image' => './image/icon/tequila-icon.png',
+    ],
     'main_title' => 'テキーラ全書',
     'global_menu' => [
         '/' => 'テキーラとは',
         'syouhin' => '商品紹介',
         'tenpo' => '取扱店紹介',
         'bunken' => '参考文献',
+    ],
+    'aside' => [
+        'section_menu_open' => '▲',
+        'section_menu_close' => '▼',
     ],
     'confirm_btn' => '確認する',
     'correct_btn' => '修正する',

@@ -115,7 +115,7 @@
                             @foreach ($centro as $item)
                                 @php
                                     if($item['area'] == '-') {
-                                        $item['area'] = 'その他地区';
+                                        $item['area'] = config('app_syouhin.page.other_area');
                                     }
                                 @endphp
                                 @component('component.common-btn',[
@@ -172,7 +172,7 @@
                 @component('component.section-title',[
                     'section_id' => config('app_class_css.section_title'),
                     'js_class' => config('app_class_js.syouhin_title'),
-                    'section_name' => '▼ からリストを選択して表示します',
+                    'section_name' => config('app_syouhin.page.section_title'),
                     ])
                 @endcomponent
             {{-- ブランドタイトル end --}}

@@ -70,12 +70,12 @@ class SyouhinController extends Controller
         /** - 生産地方設定 -
          * 設定変数：$locals
          * 〜 configで定義 〜 */
-        $locals = config('app_syouhin.locals');
+        $locals = config('app_syouhin.list.locals');
 
         /** - 熟成度合い設定 -
          * 設定変数：$agings
          * 〜 configで定義 〜 */
-        $agings = config('app_syouhin.agings');
+        $agings = config('app_syouhin.list.agings');
 
         /** - 生産地区設定 -
          * 設定変数：$areas
@@ -97,19 +97,19 @@ class SyouhinController extends Controller
         $types = [
             [
                 'js_class_1' => 'js-maker-type',
-                'title' => 'ブランド別（' . count($titles) . '）'
+                'title' => config('app_syouhin.type.maker') . '（' . count($titles) . '）'
             ],
             [
                 'js_class_1' => 'js-dest-type',
-                'title' => '蒸留所別（' . count($noms) . '）'
+                'title' => config('app_syouhin.type.dest') . '（' . count($noms) . '）'
             ],
             [
                 'js_class_1' => 'js-local-type',
-                'title' => '生産地方別（' . count($locals) . '）'
+                'title' => config('app_syouhin.type.local') . '（' . count($locals) . '）'
             ],
             [
                 'js_class_1' => 'js-aging-type',
-                'title' => '熟成度合い別（' . count($agings) . '）'
+                'title' => config('app_syouhin.type.aging') . '（' . count($agings) . '）'
             ],
         ];
 

@@ -19323,11 +19323,11 @@ if (Object(_function_checkUA__WEBPACK_IMPORTED_MODULE_1__["default"])()) {
     var btn_text = $(this).text();
     /* オープンの場合 */
 
-    if (btn_text === "▼") {
+    if (btn_text === aside_text.section_menu_close) {
       Object(_state_aside__WEBPACK_IMPORTED_MODULE_2__["default"])('open');
     }
     /* クローズの場合 */
-    else if (btn_text === "▲") {
+    else if (btn_text === aside_text.section_menu_open) {
         Object(_state_aside__WEBPACK_IMPORTED_MODULE_2__["default"])('close');
       }
       /* 初期動作の場合 */
@@ -19864,7 +19864,7 @@ function asideState(on) {
   // クローズの場合
   if (on === 'close') {
     // セクションメニュー（▼）ボタンのテキスト変更
-    $(js.type_toggle).text('▼'); // サイドエリアの高さ調整（スクロールのため）
+    $(js.type_toggle).text(aside_text.section_menu_close); // サイドエリアの高さ調整（スクロールのため）
 
     $(js.aside).css({
       height: 'auto'
@@ -19874,7 +19874,7 @@ function asideState(on) {
   } // オープンの場合
   else if (on === 'open') {
       // セクションメニュー（▼）ボタンのテキスト変更
-      $(js.type_toggle).text('▲'); // サイドエリアの高さ調整（スクロールのため）
+      $(js.type_toggle).text(aside_text.section_menu_open); // サイドエリアの高さ調整（スクロールのため）
 
       $(js.aside).css({
         height: '95%'

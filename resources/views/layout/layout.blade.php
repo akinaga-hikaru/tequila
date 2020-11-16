@@ -2,13 +2,13 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="description" content="テキーラ商品紹介">
+        <meta name="description" content={{ config('app_layout.meta.description') }}>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta property="og:url" content="https://moon-gm.github.io/tequipedia">
-        <meta property="og:title" content="テキーラ全書～Tequipedia～">
-        <meta property="og:description" content="各種テキーラを飲み比べてデータ化したサイト。テキーラの基礎知識も記載しているため、入門用に。">
-        <meta property="og:image" content="./image/icon/tequila-icon.png">
+        <meta property="og:url" content={{ config('app_layout.meta.url') }}>
+        <meta property="og:title" content={{ config('app_layout.main_title') }}>
+        <meta property="og:description" content={{ config('app_layout.meta.description') }}>
+        <meta property="og:image" content={{ config('app_layout.meta.image') }}>
         <title>@yield('title')</title>
         <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
@@ -95,6 +95,8 @@
             for(let key in js) {
                 js[key] = '.' + js[key];
             }
+            // サイドエリアの文言
+            const aside_text = @json(config('app_layout.aside'));
         </script>
         <script src="{{ mix('js/app.js') }}"></script>
     </body>

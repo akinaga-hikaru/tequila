@@ -54,8 +54,18 @@
                                             {{ config('app_class_css.center') }}
                                         "
                                     >
-                                        <p><img src="/image/ryuzeturan_1.jpg" alt="竜舌蘭1"></p>
-                                        <p><img src="/image/ryuzeturan_2.jpg" alt="竜舌蘭2"></p>
+                                        <p>
+                                            <img
+                                                src={{ config('app_index.1.images.ryuzetsuran_1.src') }}
+                                                alt={{ config('app_index.1.images.ryuzetsuran_1.alt') }}
+                                            >
+                                        </p>
+                                        <p>
+                                            <img
+                                                src={{ config('app_index.1.images.ryuzetsuran_2.src') }}
+                                                alt={{ config('app_index.1.images.ryuzetsuran_2.alt') }}
+                                            >
+                                        </p>
                                     </div>
                                 </div>
                             @break

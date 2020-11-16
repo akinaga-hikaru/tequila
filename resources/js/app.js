@@ -42,8 +42,8 @@ if (checkUA()) {
         // *** 2. テキスト表示切替 ***
         const btn_text = $(this).text();
 
-        /* オープンの場合 */ if (btn_text === "▼"){ asideState('open'); }
-        /* クローズの場合 */ else if (btn_text === "▲"){ asideState('close'); }
+        /* オープンの場合 */ if (btn_text === aside_text.section_menu_close){ asideState('open'); }
+        /* クローズの場合 */ else if (btn_text === aside_text.section_menu_open){ asideState('close'); }
         /* 初期動作の場合 */ else { asideState('open'); }
 
     });

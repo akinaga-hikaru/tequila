@@ -19,7 +19,7 @@
                 target="_blank"
             >
                 <img
-                    src="/image/syouhin/{{ $image }}"
+                    src={{ config('app_syouhin.container.image.base_dir') . $image }}
                     alt={{ $alt_name }}
                 >
             </a>
@@ -46,21 +46,21 @@
                 {{-- 商品内容 start --}}
                     <div>
                         <p class={{ config('app_class_css.letters_area__paragraph') }}>
-                            ■ 度数：{!! $contents_alc !!}<br>
-                            ■ 蒸留所：{!! $contents_dest !!}<br>
-                            ■ 蒸留所番号：NOM {!! $contents_nom !!}<br>
-                            ■ 生産地域：{!! $contents_local !!} / {!! $contents_area !!}<br>
+                            ■ {{ config('app_syouhin.container.alc') }}：{!! $contents_alc !!}<br>
+                            ■ {{ config('app_syouhin.container.dest') }}：{!! $contents_dest !!}<br>
+                            ■ {{ config('app_syouhin.container.nom') }}：{!! 'NOM ' . $contents_nom !!}<br>
+                            ■ {{ config('app_syouhin.container.local') }}：{!! $contents_local !!} / {!! $contents_area !!}<br>
                             @if (!empty($contents_info))
-                                ■ 情報：{!! $contents_info !!}<br>
+                                ■ {{ config('app_syouhin.container.info') }}：{!! $contents_info !!}<br>
                             @endif
                             @if (!empty($contents_review_flavor))
-                                ■ 香り：{!! $contents_review_flavor !!}<br>
+                                ■ {{ config('app_syouhin.container.flavor') }}：{!! $contents_review_flavor !!}<br>
                             @endif
                             @if (!empty($contents_review_top))
-                                ■ 味：{!! $contents_review_top !!}<br>
+                                ■ {{ config('app_syouhin.container.top') }}：{!! $contents_review_top !!}<br>
                             @endif
                             @if (!empty($contents_review_after))
-                                ■ 余韻：{!! $contents_review_after !!}
+                                ■ {{ config('app_syouhin.container.after') }}：{!! $contents_review_after !!}<br>
                             @endif
                         </p>
                     </div>
