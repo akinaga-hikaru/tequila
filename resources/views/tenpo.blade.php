@@ -1,7 +1,7 @@
 @extends('layout.layout')
 
 @section('title', config('app_layout.global_menu.tenpo'))
-@section('body_class','body tenpo')
+@section('body_class','tenpo')
 
 @section('contents')
     @component('component.main', ['main' => 'no_aside'])

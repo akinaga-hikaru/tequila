@@ -27,12 +27,7 @@
     {{-- 画像エリア end --}}
 
     {{-- 文章エリア start --}}
-        <div
-            class="
-                {{ config('app_class_css.letters_area') }}
-                {{ config('app_class_css.scroll_area') }}
-            "
-        >
+        <div class={{ config('app_class_css.letters_area') }}>
             <div class={{ config('app_class_css.letters_area__scroll_frame') }}>
 
                 {{-- 商品タイトル start --}}

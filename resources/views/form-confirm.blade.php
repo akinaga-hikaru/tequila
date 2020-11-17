@@ -1,7 +1,7 @@
 @extends('layout.layout')
 
 @section('title','登録内容確認')
-@section('body_class',' body form form-confirm syouhin js-form-confirm')
+@section('body_class','form form-confirm syouhin js-form-confirm')
 
 @section('contents')
 

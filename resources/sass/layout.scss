@@ -1,17 +1,20 @@
 /* -----------------------------------------------
     レイアウト設定
 ----------------------------------------------- */
-// ヘッダーエリア
+/*********** ヘッダーエリア ***********/
 .header-area {
-    background-image: $bg_header;
-    background-size: 30%;
+
+    // レイアウト設定
     @media screen and(max-width: $sp_width) {
-        height: $header_height_sp;
         width: 100%;
         position: fixed;
         top: 0;
         left: 0;
     }
+
+    // 背景設定
+    background-image: $bg_header;
+    background-size: 30%;
 
     // 背景フレーム設定
     &__bg-frame {
@@ -23,51 +26,68 @@
 
     // コンテンツ設定
     @import 'parts/header';
+
 }
 
-// サイドエリア
+/*********** サイドエリア ***********/
 .aside {
+
+    // レイアウト設定
     width: 25%;
-    border-right: 1px solid $brown;
     @media screen and(max-width: $sp_width) {
         width: 100%;
-        border-right: none;
         position: fixed;
         top: $header_height_sp;
         left: 0;
-        background: unset;
-        color: $brown;
-        overflow: scroll;
     }
+
+    // 背景設定
+    @media screen and(max-width: $sp_width) {
+        background: unset;
+    }
+
+    // ボーダー設定
+    border-right: 1px solid $brown;
+    @media screen and(max-width: $sp_width) {
+        border-right: none;
+    }
+
+    // その他設定
+    overflow: scroll;
 
     // コンテンツ設定
     @import 'parts/aside';
+
 }
 
-// メインエリア
+/*********** メインエリア ***********/
 .main {
-    background: $white_clear;
+
+    // レイアウト設定
     width: 75%;
+    padding-bottom: 5px;
     @media screen and(max-width: $sp_width) {
         width: 100%;
+        padding-top: $header_height_sp;
     }
+
+    // 背景設定
+    background: $white_clear_80;
 
     // サイドエリアがない場合
     &-no-aside {
-        background: $white_clear;
-        padding-bottom: 5px;
         width: 100%;
-        @media screen and(max-width: $sp_width) {
-            padding-top: $header_height_sp;
-        }
     }
+
 }
 
-// フッターエリア
+/*********** フッターエリア ***********/
 .footer-area {
+
+    // レイアウト設定
     padding: 20px;
+
+    // フォント設定
     color: $beige;
 
-    // コンテンツ設定
-    @import 'parts/footer';
 }

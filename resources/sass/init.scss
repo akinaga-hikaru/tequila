@@ -1,36 +1,43 @@
 /* -----------------------------------------------
     初期設定
 ----------------------------------------------- */
-// ボディ設定
-.body {
+/*********** サイト全体の設定 ***********/
+html, body {
+
+    // レイアウト設定
     width: 100%;
     max-width: $body_width;
     min-width: $min_width;
     margin: 0 auto;
+
+    // 背景設定
     background: $bg_wood_dark;
     background-size: 25%;
+
+    // フォント設定
     color: $brown;
-    line-height: 1.8;
     font-family: 'Noto Serif JP', serif;
     font-size: 15px;
+    line-height: 1.8;
     @media screen and(max-width: $sp_width) {
-        font-size: 12px;
+        font-size: 13px;
     }
 
-}
-html, body {
+    // その他設定
     scroll-behavior: smooth;
+
 }
 
-// リンク設定
+/*********** リンク設定 ***********/
 a {
     color: $brown;
     text-decoration: none;
 }
 
-// 画像設定
+/*********** 画像設定 ***********/
 img {
     width: 100%;
     height: auto;
+    padding: 10px;
 }
 

@@ -2,16 +2,13 @@
     ページ別：テキーラとは
 ----------------------------------------------- */
 .top {
-    // 文章エリア
+    /*********** 文章エリア設定 ***********/
     .letters-area {
         margin-bottom: 40px;
 
         // 見出し
         &__title {
             padding: 1px 5px;
-            @media screen and(max-width: $sp_width) {
-                font-size: 13px;
-            }
         }
 
         // 段落
@@ -20,16 +17,17 @@
         }
     }
 
-    // テーブルエリア
+    /*********** テーブルエリア設定 ***********/
     .table-area {
+        @media screen and(max-width: $sp_width) {
+            min-width: 200%;
+            font-size: 13px;
+        }
+
         // スクロール領域
         &__scroll-frame {
             padding-bottom: 20px;
             width: 100%;
-        }
-        @media screen and(max-width: $sp_width) {
-            min-width: 200%;
-            font-size: 13px;
         }
     }
 }

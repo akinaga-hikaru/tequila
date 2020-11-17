@@ -19484,14 +19484,16 @@ __webpack_require__.r(__webpack_exports__);
 /** 〜 サイドリストホバー時のCSSを設定する処理 〜
  * @param clickElement this・・・クリックした要素
  * @param btnType string・・・ボタン種別
- * @param css object・・・適用させるCSS設定
  */
-function addCSS(clickElement, btnType, css) {
-  // リストホバー時のCSS設定
-  $(btnType).find('a').css({
-    background: "none"
+function addCSS(clickElement, btnType) {
+  // リストのCSS設定
+  $(btnType).css({
+    background: "rgba(255, 255, 255, 0.8)"
+  }); // PC
+
+  $(clickElement).css({
+    background: "rgba(255, 220, 150, 0.8)"
   });
-  $(clickElement).find('a:hover').css(css);
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (addCSS);
@@ -19604,9 +19606,7 @@ function onListBtn(name, match) {
     var text = $(this).text();
     $(js.syouhin_title).text(text); // 2. 選択中のリストのCSS指定
 
-    Object(_function_addCSS__WEBPACK_IMPORTED_MODULE_2__["default"])(this, js.btn_list, {
-      background: "rgba(255,165,0,0.5)"
-    }); // 3. 一度、商品コンテナとメッセージを非表示
+    Object(_function_addCSS__WEBPACK_IMPORTED_MODULE_2__["default"])(this, js.btn_list); // 3. 一度、商品コンテナとメッセージを非表示
 
     Object(_function_hideClass__WEBPACK_IMPORTED_MODULE_0__["default"])([js.syouhin_container, js.syouhin_message]); // 4. SP時サイドエリアを非表示
 
@@ -19658,13 +19658,9 @@ function onListWithPullDownBtn(name, match, hide) {
     // 1. 対象のエリアのリストを非表示
     $.each(hide, function (index, item) {
       $(js.prefix + name['minor'] + '_' + item).hide();
-    }); // 2. 選択中のリストのCSS指定
+    }); // 2. 一度、商品コンテナとメッセージを非表示
 
-    Object(_function_addCSS__WEBPACK_IMPORTED_MODULE_1__["default"])(this, js.btn_list, {
-      background: "rgba(255,165,0,0.5)"
-    }); // 3. 一度、商品コンテナとメッセージを非表示
-
-    Object(_function_hideClass__WEBPACK_IMPORTED_MODULE_0__["default"])([js.syouhin_message]); // 4. クリックしたリストのプルダウンを表示する
+    Object(_function_hideClass__WEBPACK_IMPORTED_MODULE_0__["default"])([js.syouhin_message]); // 3. クリックしたリストのプルダウンを表示する
 
     $(js.prefix + name['minor'] + '_' + match['name']).toggle(400); // $(js.prefix + name['major'] + '_' + match['name'] + '_').show(time); 商品コンテナは非表示
   });
@@ -19705,9 +19701,7 @@ function onPulldownBtn(name, match) {
     var text = $(this).text();
     $(js.syouhin_title).text(text); // 2. 選択中のリストのCSS指定
 
-    Object(_function_addCSS__WEBPACK_IMPORTED_MODULE_2__["default"])(this, js.btn_down, {
-      background: "rgba(255,165,0,0.5)"
-    }); // 3. 一度、商品コンテナとメッセージを非表示
+    Object(_function_addCSS__WEBPACK_IMPORTED_MODULE_2__["default"])(this, js.btn_down); // 3. 一度、商品コンテナとメッセージを非表示
 
     Object(_function_hideClass__WEBPACK_IMPORTED_MODULE_0__["default"])([js.syouhin_container, js.syouhin_message]); // 4. SP時サイドエリアを非表示
 
@@ -19755,10 +19749,7 @@ function onTypeBtn(name, time) {
   // クリック時の処理
   $(js.prefix + name + '-type').on('click', function () {
     // 1. 選択中のリストのCSS指定
-    Object(_function_addCSS__WEBPACK_IMPORTED_MODULE_1__["default"])(this, js.btn_type, {
-      background: "rgba(255,165,0,0.5)",
-      color: "beige"
-    }); // 2. 一度、[商品一覧]/[プルダウン]リストとメッセージを非表示
+    Object(_function_addCSS__WEBPACK_IMPORTED_MODULE_1__["default"])(this, js.btn_type); // 2. 一度、[商品一覧]/[プルダウン]リストとメッセージを非表示
 
     Object(_function_hideClass__WEBPACK_IMPORTED_MODULE_0__["default"])([js.btn_list, js.btn_down]); // 3. クリックしたリストのみを表示する
 

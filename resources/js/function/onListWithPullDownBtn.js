@@ -17,13 +17,10 @@ function onListWithPullDownBtn(name, match, hide){
             $(js.prefix + name['minor'] + '_' + item).hide();
         })
 
-        // 2. 選択中のリストのCSS指定
-        addCSS(this, js.btn_list, { background: "rgba(255,165,0,0.5)" });
-
-        // 3. 一度、商品コンテナとメッセージを非表示
+        // 2. 一度、商品コンテナとメッセージを非表示
         hideClass([js.syouhin_message]);
 
-        // 4. クリックしたリストのプルダウンを表示する
+        // 3. クリックしたリストのプルダウンを表示する
         $(js.prefix + name['minor'] + '_' + match['name']).toggle(400);
             // $(js.prefix + name['major'] + '_' + match['name'] + '_').show(time); 商品コンテナは非表示
 

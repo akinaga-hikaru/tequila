@@ -1,7 +1,7 @@
 @extends('layout.layout')
 
 @section('title','登録完了')
-@section('body_class',' body form form-complete')
+@section('body_class','form form-complete')
 
 @section('contents')
     @component('component.main', ['main' => 'no_aside'])

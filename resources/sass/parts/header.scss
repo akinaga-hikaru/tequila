@@ -1,37 +1,37 @@
 /* -----------------------------------------------
     ヘッダーエリアコンテンツ設定
 ----------------------------------------------- */
-// メインロゴ
+/*********** メインロゴ設定 ***********/
 &__main-logo {
-    font-size: 20px;
-    font-weight: bolder;
-    display: inline;
-    text-shadow: 3px 3px 1px $orange_skelton;
     position: relative;
     top: -2px;
     left: 0;
+    font-size: 20px;
+    font-weight: bolder;
+    text-shadow: 3px 3px 1px $orange_clear;
     @media screen and(max-width: $sp_width) {
-        text-shadow: 1px 1px 1px $orange_skelton;
+        display: inline;
+        text-shadow: 1px 1px 1px $orange_clear;
     }
 }
 
-// グローバルメニュー
+/*********** グローバルメニュー設定 ***********/
 .global-menu {
-    font-size: 16px;
-    background: $orange_skelton;
     width: 100%;
+    background: $orange_clear;
+    font-size: 16px;
     @media screen and(max-width: $sp_width) {
-        background: $brown;
         position: absolute;
         top: $header_height_sp;
         left: 0;
+        background: $bg_wood_dark;
     }
 
-    // メニューボタン
+    /****** メニューボタン設定 ******/
     &__btn {
         display: inline-block;
-        max-width: 150px;
         width: 100%;
+        max-width: 150px;
         @media screen and(max-width: $sp_width) {
             max-width: 300px;
             border-bottom: 1px dotted $beige;
@@ -48,12 +48,12 @@
             }
 
             &:hover {
-                background: $white_clear_thick;
+                background: $white_clear;
             }
         }
     }
 
-    // SPのメニューボタン（≡）
+    /****** SPのメニューボタン（≡）設定 ******/
     &__btn-sp {
         font-size: 30px;
         line-height: 1;

@@ -1,9 +1,10 @@
 /* -----------------------------------------------
     ページ別：データ情報登録
 ----------------------------------------------- */
-// 共通
+/*********** Form共通設定 ***********/
 .form {
-    // テーブルエリア
+
+    /****** テーブルエリア設定 ******/
     .table-area {
         width: 100%;
         padding-bottom: 20px;
@@ -16,13 +17,13 @@
         }
     }
 
-    // テーブルセル
+    /****** テーブルセル設定*******/
     th,
     td {
         vertical-align: middle;
     }
 
-    //インプット項目：テキスト入力
+    /****** インプット項目：テキスト入力設定 ******/
     input[type="text"] {
         width: 100%;
         height: 50px;
@@ -35,11 +36,11 @@
             background: $white_clear;
         }
         &:focus {
-            outline-color: $orange;
+            outline-color: $orange_clear;
         }
     }
 
-    // インプット項目：ファイルアップロード
+    /****** インプット項目：ファイルアップロード設定 ******/
     input[type="file"] {
         width: 100%;
         height: 50px;
@@ -47,11 +48,11 @@
         border: 1px dashed $brown;
         background: none;
         &:focus {
-            outline-color: $orange;
+            outline-color: $orange_clear;
         }
     }
 
-    // 確認・登録・修正ボタン
+    /****** 確認・登録・修正ボタン設定 ******/
     button {
         width: 30%;
         max-width: 300px;
@@ -63,16 +64,17 @@
         padding: 5px;
         margin-bottom: 20px;
         &:hover {
-            background: $orange_skelton;
+            background: $orange_clear;
             border: 1px solid $brown;
         }
         &:focus {
-            outline-color: $orange;
+            outline-color: $orange_clear;
         }
     }
+
 }
 
-// 確認画面
+/*********** 確認画面設定 ***********/
 .form-confirm {
     td {
         width: 80%;

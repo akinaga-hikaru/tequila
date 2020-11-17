@@ -1,7 +1,7 @@
 @extends('layout.layout')
 
 @section('title', config('app_layout.global_menu./'))
-@section('body_class','body top')
+@section('body_class','top')
 
 @section('contents')
     <div class={{ config('app_class_css.flex_box') }}>
@@ -14,6 +14,7 @@
                         @component('component.common-btn',[
                             'btn' => 'type',
                             'hidden' => false,
+                            'hide_sp' => true,
                             'link' => '#' . $item['id'],
                             'text' => $item['title'],
                             ])

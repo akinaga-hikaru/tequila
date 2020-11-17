@@ -1,7 +1,7 @@
 @extends('layout.layout')
 
 @section('title', config('app_layout.global_menu.bunken'))
-@section('body_class','body bunken')
+@section('body_class','bunken')
 
 @section('contents')
         @component('component.main', ['main' => 'no_aside'])

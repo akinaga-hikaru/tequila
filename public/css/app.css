@@ -209,7 +209,10 @@ select {
     初期設定
 ----------------------------------------------- */
 
-.body {
+/*********** サイト全体の設定 ***********/
+
+html,
+body {
   width: 100%;
   max-width: 1280px;
   min-width: 375px;
@@ -217,30 +220,32 @@ select {
   background: url(/image/background/bg005.jpg);
   background-size: 25%;
   color: #3f2913;
-  line-height: 1.8;
   font-family: "Noto Serif JP", serif;
   font-size: 15px;
+  line-height: 1.8;
+  scroll-behavior: smooth;
 }
 
 @media screen and (max-width: 768px) {
-  .body {
-    font-size: 12px;
+  html,
+  body {
+    font-size: 13px;
   }
 }
 
-html,
-body {
-  scroll-behavior: smooth;
-}
+/*********** リンク設定 ***********/
 
 a {
   color: #3f2913;
   text-decoration: none;
 }
 
+/*********** 画像設定 ***********/
+
 img {
   width: 100%;
   height: auto;
+  padding: 10px;
 }
 
 /* -----------------------------------------------
@@ -250,6 +255,8 @@ img {
 /* -----------------------------------------------
     レイアウト設定
 ----------------------------------------------- */
+
+/*********** ヘッダーエリア ***********/
 
 .header-area {
   background-image: url(/image/tequila-lineup-sepia_4.png);
@@ -257,11 +264,12 @@ img {
   /* -----------------------------------------------
       ヘッダーエリアコンテンツ設定
   ----------------------------------------------- */
+  /*********** メインロゴ設定 ***********/
+  /*********** グローバルメニュー設定 ***********/
 }
 
 @media screen and (max-width: 768px) {
   .header-area {
-    height: 36px;
     width: 100%;
     position: fixed;
     top: 0;
@@ -270,7 +278,7 @@ img {
 }
 
 .header-area__bg-frame {
-  background-color: rgba(232, 223, 213, 0.7);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 @media screen and (max-width: 768px) {
@@ -280,40 +288,42 @@ img {
 }
 
 .header-area__main-logo {
-  font-size: 20px;
-  font-weight: bolder;
-  display: inline;
-  text-shadow: 3px 3px 1px rgba(255, 165, 0, 0.5);
   position: relative;
   top: -2px;
   left: 0;
+  font-size: 20px;
+  font-weight: bolder;
+  text-shadow: 3px 3px 1px rgba(255, 165, 0, 0.5);
 }
 
 @media screen and (max-width: 768px) {
   .header-area__main-logo {
+    display: inline;
     text-shadow: 1px 1px 1px rgba(255, 165, 0, 0.5);
   }
 }
 
 .header-area .global-menu {
-  font-size: 16px;
-  background: rgba(255, 165, 0, 0.5);
   width: 100%;
+  background: rgba(255, 165, 0, 0.5);
+  font-size: 16px;
+  /****** メニューボタン設定 ******/
+  /****** SPのメニューボタン（≡）設定 ******/
 }
 
 @media screen and (max-width: 768px) {
   .header-area .global-menu {
-    background: #3f2913;
     position: absolute;
     top: 36px;
     left: 0;
+    background: url(/image/background/bg005.jpg);
   }
 }
 
 .header-area .global-menu__btn {
   display: inline-block;
-  max-width: 150px;
   width: 100%;
+  max-width: 150px;
 }
 
 @media screen and (max-width: 768px) {
@@ -352,24 +362,36 @@ img {
   right: 5px;
 }
 
+/*********** サイドエリア ***********/
+
 .aside {
   width: 25%;
   border-right: 1px solid #3f2913;
+  overflow: scroll;
   /* -----------------------------------------------
       サイドエリアコンテンツ設定
   ----------------------------------------------- */
+  /*********** SP時サイドメニューアイコン（▼）設定 ***********/
 }
 
 @media screen and (max-width: 768px) {
   .aside {
     width: 100%;
-    border-right: none;
     position: fixed;
     top: 36px;
     left: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .aside {
     background: unset;
-    color: #3f2913;
-    overflow: scroll;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .aside {
+    border-right: none;
   }
 }
 
@@ -383,35 +405,30 @@ img {
   }
 }
 
+/*********** メインエリア ***********/
+
 .main {
-  background: rgba(232, 223, 213, 0.7);
   width: 75%;
+  padding-bottom: 5px;
+  background: rgba(255, 255, 255, 0.8);
 }
 
 @media screen and (max-width: 768px) {
   .main {
     width: 100%;
-  }
-}
-
-.main-no-aside {
-  background: rgba(232, 223, 213, 0.7);
-  padding-bottom: 5px;
-  width: 100%;
-}
-
-@media screen and (max-width: 768px) {
-  .main-no-aside {
     padding-top: 36px;
   }
 }
 
+.main-no-aside {
+  width: 100%;
+}
+
+/*********** フッターエリア ***********/
+
 .footer-area {
   padding: 20px;
   color: beige;
-  /* -----------------------------------------------
-      フッターエリアコンテンツ設定
-  ----------------------------------------------- */
 }
 
 /* -----------------------------------------------
@@ -422,9 +439,13 @@ img {
     共通レイアウト設定
 ----------------------------------------------- */
 
+/*********** コンテンツコンテナ設定 ***********/
+
 .contents-frame {
   padding: 20px;
 }
+
+/*********** フレックスボックス設定 ***********/
 
 .flex-box {
   display: flex;
@@ -437,14 +458,20 @@ img {
   }
 }
 
+/*********** スクロール設定 ***********/
+
 .scroll-area {
   overflow: scroll;
 }
+
+/*********** 中央揃え設定 ***********/
 
 .center {
   margin: 0 auto;
   text-align: center;
 }
+
+/*********** 非表示設定 ***********/
 
 .hide-pc {
   display: none;
@@ -470,6 +497,8 @@ img {
     共通パーツ設定
 ----------------------------------------------- */
 
+/*********** 文章エリア設定 ***********/
+
 .letters-area {
   padding: 15px;
 }
@@ -479,8 +508,8 @@ img {
 }
 
 .letters-area__title {
-  color: #3f2913;
   display: block;
+  color: #3f2913;
   font-size: 20px;
   line-height: 2;
   border-bottom: 2px dotted #3f2913;
@@ -502,6 +531,8 @@ img {
   padding-left: 20px;
 }
 
+/*********** テーブル設定 ***********/
+
 .table-area .table-area__header {
   background: url(/image/background/bg005.jpg);
   color: beige;
@@ -514,12 +545,14 @@ img {
 }
 
 .table-area th {
-  background: rgba(232, 223, 213, 0.7);
+  background: rgba(255, 165, 0, 0.5);
 }
 
 .table-area td {
   background: unset;
 }
+
+/*********** セクションタイトル設定 ***********/
 
 .section-title {
   background: url(/image/background/bg005.jpg);
@@ -537,13 +570,15 @@ img {
   }
 }
 
+/*********** 共通ボタン設定 ***********/
+
 .common-btn {
   cursor: pointer;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
+  -wekit-backdrop-filter: blur(30px);
   border-bottom: 1px solid #3f2913;
-}
-
-.common-btn:last-child {
-  border-bottom: none;
 }
 
 .common-btn a {
@@ -559,32 +594,33 @@ img {
   font-size: 11px;
 }
 
-.common-btn--type {
-  background: #593a1c;
-  border-bottom: none;
-  border-top: 1px solid beige;
-}
-
-.common-btn--type a {
-  color: beige;
+.common-btn--type:first-child {
+  border-top: 1px solid #3f2913;
 }
 
 .common-btn--list {
-  background: beige;
+  padding-left: 1em;
 }
 
 .common-btn--down {
-  background: url(/image/background/bg037.gif);
+  padding-left: 2em;
+  border-bottom: 1px dotted #3f2913;
 }
 
+.common-btn--down:last-child {
+  border-bottom: none;
+}
+
+/*********** 注釈メッセージ設定 ***********/
+
 .message {
-  background: rgba(232, 223, 213, 0.7);
-  border: 1px solid #3f2913;
-  color: #3f2913;
-  border-radius: 8px;
   width: 80%;
   margin: 20px auto;
   padding: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  color: #3f2913;
+  border: 1px solid #3f2913;
+  border-radius: 8px;
 }
 
 /* -----------------------------------------------
@@ -595,6 +631,11 @@ img {
     ページ別：テキーラとは
 ----------------------------------------------- */
 
+.top {
+  /*********** 文章エリア設定 ***********/
+  /*********** テーブルエリア設定 ***********/
+}
+
 .top .letters-area {
   margin-bottom: 40px;
 }
@@ -603,19 +644,8 @@ img {
   padding: 1px 5px;
 }
 
-@media screen and (max-width: 768px) {
-  .top .letters-area__title {
-    font-size: 13px;
-  }
-}
-
 .top .letters-area__paragraph {
   margin-bottom: 10px;
-}
-
-.top .table-area__scroll-frame {
-  padding-bottom: 20px;
-  width: 100%;
 }
 
 @media screen and (max-width: 768px) {
@@ -625,9 +655,18 @@ img {
   }
 }
 
+.top .table-area__scroll-frame {
+  padding-bottom: 20px;
+  width: 100%;
+}
+
 /* -----------------------------------------------
     ページ別：商品紹介
 ----------------------------------------------- */
+
+.syouhin {
+  /*********** 商品コンテナ設定 ***********/
+}
 
 .syouhin .syouhin-container {
   margin-bottom: 20px;
@@ -635,6 +674,8 @@ img {
   padding: 20px 0;
   margin: 0 auto;
   align-items: center;
+  /****** 画像エリア設定 ******/
+  /****** 文章エリア設定 ******/
 }
 
 @media screen and (max-width: 768px) {
@@ -643,14 +684,10 @@ img {
   }
 }
 
-.syouhin .syouhin-container a:hover {
-  color: beige;
-}
-
 .syouhin .syouhin-container .image-area {
-  width: 100%;
-  height: 280px;
   max-width: 280px;
+  width: 40%;
+  height: 280px;
 }
 
 @media screen and (max-width: 768px) {
@@ -662,9 +699,11 @@ img {
 }
 
 .syouhin .syouhin-container .letters-area {
-  width: 50%;
+  width: 60%;
   max-width: 460px;
+  margin-right: 10px;
   padding: 0;
+  overflow: scroll;
 }
 
 @media screen and (max-width: 768px) {
@@ -675,17 +714,10 @@ img {
 
 .syouhin .syouhin-container .letters-area__title {
   padding: 0px 10px;
-  margin-bottom: 15px;
 }
 
 .syouhin .syouhin-container .letters-area__paragraph {
   font-size: 14px;
-}
-
-@media screen and (max-width: 768px) {
-  .syouhin .syouhin-container .letters-area__paragraph {
-    font-size: 12px;
-  }
 }
 
 .syouhin .syouhin-container .letters-area__scroll-frame {
@@ -703,6 +735,11 @@ img {
 /* -----------------------------------------------
     ページ別：店舗紹介
 ----------------------------------------------- */
+
+.tenpo {
+  /*********** テーブルエリア設定 ***********/
+  /*********** 文章エリア設定 ***********/
+}
 
 .tenpo .table-area__scroll-frame {
   margin: 0 auto;
@@ -724,6 +761,16 @@ img {
 /* -----------------------------------------------
     ページ別：データ情報登録
 ----------------------------------------------- */
+
+/*********** Form共通設定 ***********/
+
+.form {
+  /****** テーブルエリア設定 ******/
+  /****** テーブルセル設定*******/
+  /****** インプット項目：テキスト入力設定 ******/
+  /****** インプット項目：ファイルアップロード設定 ******/
+  /****** 確認・登録・修正ボタン設定 ******/
+}
 
 .form .table-area {
   width: 100%;
@@ -752,11 +799,11 @@ img {
 }
 
 .form input[type=text]:hover {
-  background: rgba(232, 223, 213, 0.7);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .form input[type=text]:focus {
-  outline-color: orange;
+  outline-color: rgba(255, 165, 0, 0.5);
 }
 
 .form input[type=file] {
@@ -768,7 +815,7 @@ img {
 }
 
 .form input[type=file]:focus {
-  outline-color: orange;
+  outline-color: rgba(255, 165, 0, 0.5);
 }
 
 .form button {
@@ -789,8 +836,10 @@ img {
 }
 
 .form button:focus {
-  outline-color: orange;
+  outline-color: rgba(255, 165, 0, 0.5);
 }
+
+/*********** 確認画面設定 ***********/
 
 .form-confirm td {
   width: 80%;

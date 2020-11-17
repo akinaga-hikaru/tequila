@@ -1,12 +1,12 @@
 /* -----------------------------------------------
     共通レイアウト設定
 ----------------------------------------------- */
-// コンテンツコンテナ
+/*********** コンテンツコンテナ設定 ***********/
 .contents-frame {
     padding: 20px;
 }
 
-// フレックスボックス
+/*********** フレックスボックス設定 ***********/
 .flex-box {
     display: flex;
     justify-content: space-around;
@@ -15,18 +15,19 @@
     }
 }
 
-// スクロール設定
+/*********** スクロール設定 ***********/
 .scroll-area {
     overflow: scroll;
 }
 
-// 中央揃え
+/*********** 中央揃え設定 ***********/
 .center {
     margin: 0 auto;
     text-align: center;
 }
 
-// PCで非表示設定
+/*********** 非表示設定 ***********/
+// PC
 .hide-pc {
     display: none;
     @media screen and(max-width: $sp_width) {
@@ -34,7 +35,7 @@
     }
 }
 
-// SPで非表示設定
+// SP
 .hide-sp {
     display: block;
     @media screen and(max-width: $sp_width) {
@@ -45,19 +46,19 @@
 /* -----------------------------------------------
     共通パーツ設定
 ----------------------------------------------- */
-// 文章エリア
+/*********** 文章エリア設定 ***********/
 .letters-area {
     padding: 15px;
 
-    // 画像
+    // 画像設定
     img {
         max-width: 300px;
     }
 
-    // 見出し
+    // 見出し設定
     &__title {
-        color: $brown;
         display: block;
+        color: $brown;
         font-size: 20px;
         line-height: 2;
         border-bottom: 2px dotted $brown;
@@ -66,22 +67,23 @@
         }
     }
 
-    // 段落
+    // 段落設定
     &__paragraph {
         color: $light_brown;
         padding: 7px;
         margin: 5px;
     }
 
-    // テキストインデント
+    // インデント設定
     .indent {
         padding-left: 20px;
     }
 }
 
-// テーブル設定
+/*********** テーブル設定 ***********/
 .table-area {
-    // ヘッダー
+
+    // テーブルヘッダー設定
     .table-area__header {
         background: $bg_wood_dark;
         color: $beige;
@@ -93,14 +95,14 @@
         border: 1px solid $brown;
     }
     th {
-        background: $white_clear;
+        background: $orange_clear;
     }
     td {
         background: unset;
     }
 }
 
-// セクションタイトル
+/*********** セクションタイトル設定 ***********/
 .section-title {
     background: $bg_wood_dark;
     background-size: 100%;
@@ -114,22 +116,22 @@
     }
 }
 
-// 共通ボタン
+/*********** 共通ボタン設定 ***********/
 .common-btn {
     cursor: pointer;
+    background: $white_clear_80;
+    backdrop-filter: blur(30px);
+    -wekit-backdrop-filter: blur(30px);
     border-bottom: 1px solid $brown;
-    &:last-child {
-        border-bottom: none;
-    }
 
-    // リンク
+    // リンク設定
     a {
         display: block;
         padding: 10px 20px;
 
         // ホバー設定
         &:hover {
-            background: $white_clear_thick;
+            background: $white_clear;
         }
 
         // 小文字設定
@@ -138,34 +140,37 @@
         }
     }
 
-    // ①[項目選択]ボタン
+    // ①[項目選択]ボタン設定
     &--type {
-        background: $light_brown;
-        border-bottom: none;
-        border-top: 1px solid $beige;
-        a {
-            color: $beige;
+        &:first-child {
+            border-top: 1px solid $brown;
         }
     }
 
-    // ②③[商品一覧]ボタン
+    // ②③[商品一覧]ボタン設定
     &--list {
-        background: $beige;
+        padding-left: 1em;
+
     }
 
-    // ④[プルダウン]ボタン
+    // ④[プルダウン]ボタン設定
     &--down {
-        background: $bg_colk;
+        padding-left: 2em;
+        border-bottom: 1px dotted $brown;
+        &:last-child {
+            border-bottom: none;
+        }
     }
+
 }
 
-// 注釈メッセージ
+/*********** 注釈メッセージ設定 ***********/
 .message {
-    background: $white_clear;
-    border: 1px solid $brown;
-    color: $brown;
-    border-radius: 8px;
     width: 80%;
     margin: 20px auto;
     padding: 10px;
+    background: $white_clear;
+    color: $brown;
+    border: 1px solid $brown;
+    border-radius: 8px;
 }

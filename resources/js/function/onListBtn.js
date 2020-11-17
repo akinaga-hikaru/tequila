@@ -17,7 +17,7 @@ function onListBtn(name, match){
         $(js.syouhin_title).text(text);
 
         // 2. 選択中のリストのCSS指定
-        addCSS(this, js.btn_list, { background: "rgba(255,165,0,0.5)" });
+        addCSS(this, js.btn_list);
 
         // 3. 一度、商品コンテナとメッセージを非表示
         hideClass([js.syouhin_container, js.syouhin_message]);

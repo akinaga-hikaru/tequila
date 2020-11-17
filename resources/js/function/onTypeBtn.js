@@ -11,7 +11,7 @@ function onTypeBtn(name, time){
     $(js.prefix + name + '-type').on('click', function(){
 
         // 1. 選択中のリストのCSS指定
-        addCSS(this, js.btn_type, { background: "rgba(255,165,0,0.5)", color: "beige" });
+        addCSS(this, js.btn_type);
 
         // 2. 一度、[商品一覧]/[プルダウン]リストとメッセージを非表示
         hideClass([js.btn_list, js.btn_down]);

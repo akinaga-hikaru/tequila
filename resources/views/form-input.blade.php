@@ -1,7 +1,7 @@
 @extends('layout.layout')
 
 @section('title','登録情報入力')
-@section('body_class','body form form-input')
+@section('body_class','form form-input')
 
 @section('contents')
     @component('component.main', ['main' => 'no_aside'])

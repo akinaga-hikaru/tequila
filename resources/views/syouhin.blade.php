@@ -1,7 +1,7 @@
 @extends('layout.layout')
 
 @section('title', config('app_layout.global_menu.syouhin'))
-@section('body_class','body syouhin')
+@section('body_class','syouhin')
 
 @section('contents')
     <div class={{ config('app_class_css.flex_box') }}>
@@ -15,6 +15,7 @@
                             'btn' => 'type',
                             'js_class_1' => $type['js_class_1'],
                             'hidden' => false,
+                            'hide_sp' => true,
                             'text' => $type['title'],
                             ])
                         @endcomponent
