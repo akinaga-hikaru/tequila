@@ -20,7 +20,7 @@
                 ■
                 @break
             @case('down')
-                ・
+                ▶︎
                 @break
         @endswitch
         {{ $text }}
