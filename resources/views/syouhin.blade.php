@@ -48,8 +48,8 @@
                             'js_class_2' => config('app_class_js.dest') . '_' . $nom['nom'],
                             'hidden' => true,
                             'link' => '',
-                            'text' => 'NOM ' . $nom['nom'],
-                            'small_text' => $nom['dest'],
+                            'text' => $nom['nom'] === '-' ? 'NOMなし' : 'NOM ' . $nom['nom'],
+                            'small_text' => $nom['dest'] === '-' ? 'その他蒸留所': $nom['dest'],
                             ])
                         @endcomponent
                     @endforeach
