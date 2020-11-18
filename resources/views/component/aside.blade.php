@@ -3,6 +3,7 @@
     class="
         {{ config('app_class_css.aside') }}
         {{ config('app_class_js.aside') }}
+        {{ !empty($scroll_on) ? config('app_class_js.aside_scroll_on') : '' }}
     "
 >
 

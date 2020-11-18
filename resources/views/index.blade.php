@@ -6,7 +6,9 @@
 @section('contents')
     <div class={{ config('app_class_css.flex_box') }}>
 
-        @component('component.aside')
+        @component('component.aside', [
+            'scroll_on' => true,
+        ])
             {{-- 項目選択ボタンstart --}}
                 <ul>
 
@@ -98,7 +100,7 @@
                                         @foreach($section['table']['cells'] as $cells)
                                             <tr>
                                                 @foreach($cells as $cell)
-                                                    <td>{{ $cell }}</td>
+                                                    <td>{!! $cell !!}</td>
                                                 @endforeach
                                             </tr>
                                         @endforeach
