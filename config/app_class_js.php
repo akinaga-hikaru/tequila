@@ -14,6 +14,7 @@ return [
 
     // サイドエリア
     'aside' => 'js-aside',
+    'aside_scroll_on' => 'js-aside-scroll-on',
     'type_toggle' => 'js-type-toggle',
 
     // コンポーネント：共通ボタン
