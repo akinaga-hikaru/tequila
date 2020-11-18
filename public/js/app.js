@@ -19518,6 +19518,37 @@ function addCSS(clickElement, btnType) {
 
 /***/ }),
 
+/***/ "./resources/js/function/changeSectionTitle.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/function/changeSectionTitle.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/** 〜 セクションタイトルのテキストを変更する処理 〜
+ * @param clickElement this・・・クリックした要素
+ */
+function changeSectionTitle(clickElement) {
+  // クリックした要素のテキストを取得
+  var text = $(clickElement)[0].innerText; // 取得したテキストを改行で分割
+
+  var split_text = text.split('\n'); // メインとサブのテキストをそれぞれ変更
+
+  $(js.syouhin_title).find(js.section_text_main).text(split_text[0]);
+
+  if (split_text[1]) {
+    $(js.syouhin_title).find(js.section_text_sub).text(split_text[1]);
+  } else {
+    $(js.syouhin_title).find(js.section_text_sub).text('');
+  }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (changeSectionTitle);
+
+/***/ }),
+
 /***/ "./resources/js/function/checkUA.js":
 /*!******************************************!*\
   !*** ./resources/js/function/checkUA.js ***!
@@ -19608,6 +19639,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _function_getClickClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../function/getClickClass */ "./resources/js/function/getClickClass.js");
 /* harmony import */ var _function_addCSS__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../function/addCSS */ "./resources/js/function/addCSS.js");
 /* harmony import */ var _function_checkUA__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../function/checkUA */ "./resources/js/function/checkUA.js");
+/* harmony import */ var _function_changeSectionTitle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../function/changeSectionTitle */ "./resources/js/function/changeSectionTitle.js");
+
 
 
 
@@ -19621,15 +19654,14 @@ function onListBtn(name, match) {
   // クリック時の処理
   $(js.prefix + name + '-list').on('click', function () {
     // 1. クリックしたリストのみのテキストを取得し、タイトル(h3)のテキストを変更
-    var text = $(this).text();
-    $(js.syouhin_title).text(text); // 2. 選択中のリストのCSS指定
+    Object(_function_changeSectionTitle__WEBPACK_IMPORTED_MODULE_4__["default"])(this); // 2. 選択中のリストのCSS指定
 
     Object(_function_addCSS__WEBPACK_IMPORTED_MODULE_2__["default"])(this, js.btn_list); // 3. 一度、商品コンテナとメッセージを非表示
 
     Object(_function_hideClass__WEBPACK_IMPORTED_MODULE_0__["default"])([js.syouhin_container, js.syouhin_message]); // 4. SP時サイドエリアを非表示
 
     if (Object(_function_checkUA__WEBPACK_IMPORTED_MODULE_3__["default"])()) {
-      $(js.type_toggle).text('▼');
+      $(js.type_toggle).text(aside_text.section_menu_close);
       $(js.aside).css({
         height: 'auto'
       });
@@ -19702,6 +19734,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _function_getClickClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../function/getClickClass */ "./resources/js/function/getClickClass.js");
 /* harmony import */ var _function_addCSS__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../function/addCSS */ "./resources/js/function/addCSS.js");
 /* harmony import */ var _function_checkUA__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../function/checkUA */ "./resources/js/function/checkUA.js");
+/* harmony import */ var _function_changeSectionTitle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../function/changeSectionTitle */ "./resources/js/function/changeSectionTitle.js");
+
 
 
 
@@ -19716,15 +19750,14 @@ function onPulldownBtn(name, match) {
   // クリック時の処理
   $(js.prefix + name['minor'] + '_' + match['name']).on('click', function () {
     // 1. クリックしたリストのみのテキストを取得し、タイトル(h3)のテキストを変更
-    var text = $(this).text();
-    $(js.syouhin_title).text(text); // 2. 選択中のリストのCSS指定
+    Object(_function_changeSectionTitle__WEBPACK_IMPORTED_MODULE_4__["default"])(this); // 2. 選択中のリストのCSS指定
 
     Object(_function_addCSS__WEBPACK_IMPORTED_MODULE_2__["default"])(this, js.btn_down); // 3. 一度、商品コンテナとメッセージを非表示
 
     Object(_function_hideClass__WEBPACK_IMPORTED_MODULE_0__["default"])([js.syouhin_container, js.syouhin_message]); // 4. SP時サイドエリアを非表示
 
     if (Object(_function_checkUA__WEBPACK_IMPORTED_MODULE_3__["default"])()) {
-      $(js.type_toggle).text('▼');
+      $(js.type_toggle).text(aside_text.section_menu_close);
       $(js.aside).css({
         height: 'auto'
       });

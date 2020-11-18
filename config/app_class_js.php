@@ -26,6 +26,8 @@ return [
     // コンポーネント：共通セクションタイトル
     'syouhin_title' => 'js-syouhin-title',
     'syouhin_message' => 'js-syouhin-message',
+    'section_text_main' => 'js-section-text-main',
+    'section_text_sub' => 'js-section-text-sub',
 
     // コンポーネント：商品コンテナパーツ
     'syouhin_container' => 'js-syouhin-container',

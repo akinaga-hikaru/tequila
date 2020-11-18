@@ -2,6 +2,7 @@ import hideClass from '../function/hideClass';
 import getClickClass from '../function/getClickClass';
 import addCSS from '../function/addCSS';
 import checkUA from '../function/checkUA';
+import changeSectionTitle from '../function/changeSectionTitle';
 
 /** 〜 [プルダウン]ボタン押下時処理 〜
  * @param name[minor] string・・・[商品一覧]名
@@ -14,8 +15,7 @@ function onPulldownBtn(name, match){
     $(js.prefix + name['minor'] + '_' + match['name']).on('click', function(){
 
         // 1. クリックしたリストのみのテキストを取得し、タイトル(h3)のテキストを変更
-        const text =  $(this).text();
-        $(js.syouhin_title).text(text);
+        changeSectionTitle(this);
 
         // 2. 選択中のリストのCSS指定
         addCSS(this, js.btn_down);
@@ -25,7 +25,7 @@ function onPulldownBtn(name, match){
 
         // 4. SP時サイドエリアを非表示
         if(checkUA()) {
-            $(js.type_toggle).text('▼');
+            $(js.type_toggle).text(aside_text.section_menu_close);
             $(js.aside).css({ height: 'auto' });
             hideClass([js.btn_type, js.btn_list, js.btn_down]);
         }

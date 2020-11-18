@@ -7,5 +7,20 @@
         {{ !empty($js_class) ? $js_class : '' }}
     "
 >
-    {{ $section_name }}
+
+    <span
+        class="
+            {{ config('app_class_css.section_text_main')}}
+            {{ config('app_class_js.section_text_main')}}
+        "
+    >
+        {{ $section_name }}
+    </span>
+    <span
+        class="
+            {{ config('app_class_css.section_text_sub')}}
+            {{ config('app_class_js.section_text_sub')}}
+        "
+    ></span>
+
 </h3>

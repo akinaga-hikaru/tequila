@@ -578,6 +578,19 @@ img {
   }
 }
 
+/*********** セクションテキスト設定 ***********/
+
+.section-text-sub {
+  padding-left: 0.5em;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  .section-text-sub {
+    font-size: 12px;
+  }
+}
+
 /*********** 共通ボタン設定 ***********/
 
 .common-btn {

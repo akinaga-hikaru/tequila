@@ -116,6 +116,17 @@
     }
 }
 
+/*********** セクションテキスト設定 ***********/
+.section-text {
+    &-sub {
+        padding-left: 0.5em;
+        font-size: 14px;
+        @media screen and(max-width: $sp_width) {
+            font-size: 12px;
+        }
+    }
+}
+
 /*********** 共通ボタン設定 ***********/
 .common-btn {
     cursor: pointer;

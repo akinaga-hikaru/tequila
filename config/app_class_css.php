@@ -16,6 +16,8 @@ return [
 
     // 共通パーツ
     'section_title' => 'section-title',
+    'section_text_main' => 'section-text-main',
+    'section_text_sub' => 'section-text-sub',
     'message' => 'message',
     'letters_area' => 'letters-area',
     'letters_area__title' => 'letters-area__title',
