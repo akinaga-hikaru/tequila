@@ -24,6 +24,7 @@ return [
     'table_area' => 'table-area',
     'table_area__header' => 'table-area__header',
     'table_area__scroll_frame' => 'table-area__scroll-frame',
+    'external_link' => 'external-link',
 
     // ヘッダーエリア
     'header_area' => 'header-area',

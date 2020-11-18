@@ -174,3 +174,15 @@
     border: 1px solid $brown;
     border-radius: 8px;
 }
+
+/*********** 外部リンク設定 ***********/
+.external-link {
+    text-decoration: underline;
+    padding: 10px;
+    &:visited {
+        color: $orange_clear;
+    }
+    &:hover {
+        color: $beige;
+    }
+}

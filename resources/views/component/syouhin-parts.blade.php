@@ -13,15 +13,16 @@
 >
     {{-- 画像エリア start --}}
         <div class={{ config('app_class_css.image_area') }}>
+            <img
+                src={{ config('app_syouhin.container.image.base_dir') . $image }}
+                alt={{ $alt_name }}
+            >
             <a
                 href={{ $url }}
-                alt="{{ $alt_name }}"
                 target="_blank"
+                class={{ config('app_class_css.external_link') }}
             >
-                <img
-                    src={{ config('app_syouhin.container.image.base_dir') . $image }}
-                    alt={{ $alt_name }}
-                >
+                {{ config('app_syouhin.container.image.link_text') }}
             </a>
         </div>
     {{-- 画像エリア end --}}

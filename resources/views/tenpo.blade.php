@@ -30,6 +30,7 @@
                                         <a
                                             href="{{ $tenpo['url'] }}"
                                             target="_blank"
+                                            class={{ config('app_class_css.external_link') }}
                                         >
                                             {{ $tenpo['name'] }}
                                         </a>

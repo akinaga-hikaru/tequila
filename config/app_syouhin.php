@@ -12,6 +12,7 @@ return [
     'container' => [
         'image' => [
            'base_dir' => '/image/syouhin/',
+           'link_text' => '外部の商品ページへ'
         ],
         'alc' => '度数',
         'dest' => '蒸留所',
