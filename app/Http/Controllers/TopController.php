@@ -37,19 +37,19 @@ class TopController extends Controller
             return $lists;
         }
 
-        /** - 商品データ取得 -
-         * 設定変数：$syouhin_data_all
-         * 〜 DB(tequila)のTable(syouhin)から全てのデータを取得 〜 */
+        // - 全商品データ取得 -
         $syouhin_data_all = DB::table('syouhin')->get();
 
-        /** - 蒸留所リスト設定 -
-         * 設定変数：$titles
-         * 〜 DBデータからブランド名を抽出し、連想配列化 〜 */
+        // - エリアデータ設定 -
         $valles = [];
         $altos = [];
         $centro = [];
         foreach ($syouhin_data_all as $item) {
+
+            // 生産エリアの「地区」を削除
             $cut_chiku = explode('地区', $item->contents_area);
+
+            // 取得するデータを設定（NOMでソート）
             $array = [
                 'dest_nom' => $item->contents_nom,
                 'title_name' => $item->title_name,
@@ -57,6 +57,8 @@ class TopController extends Controller
                 'local' => $item->contents_local,
                 'area' => $cut_chiku[0],
             ];
+
+            // 条件に合わせてそれぞれのエリアの配列に格納
             switch ($item->contents_local_id) {
                 case 'valles':
                     $valles[] = $array;
@@ -77,15 +79,24 @@ class TopController extends Controller
             }
         }
 
-        $dests = [
+        // 蒸留所一覧のデータ設定
+        $dest_lists = [
             'valles' => doubleDelete($valles, 'dest_name'),
             'altos' => doubleDelete($altos, 'dest_name'),
             'centro' => doubleDelete($centro, 'dest_name'),
             'other' => doubleDelete($other, 'dest_name'),
         ];
 
+        // テキーラ5州のデータ設定
+        $tequila_states = [
+            'valles' => doubleDelete($valles, 'area'),
+            'altos' => doubleDelete($altos, 'area'),
+            'centro' => doubleDelete($centro, 'area'),
+        ];
+
         return view('index')->with([
-            'dests' => $dests
+            'dest_lists' => $dest_lists,
+            'tequila_states' => $tequila_states
         ]);
     }
 }

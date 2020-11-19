@@ -56,7 +56,7 @@ $(function() {
             const scroll_top = $(window).scrollTop();
 
             // サイドエリアをスクロールさせたい位置設定
-            const header_height = 102;
+            const header_height = 64;
 
             // 指定のスクロール位置を越えたらサイドエリアを固定する処理
             if(scroll_top >= header_height) {
