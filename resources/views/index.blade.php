@@ -77,6 +77,7 @@
                             @case(3) {{-- テキーラの起源 --}}
                             @case(4) {{-- テキーラの分類 --}}
                             @case(6) {{-- テキーラ5州 --}}
+                            @case(7) {{-- NOMとは --}}
                                 <div class={{ config('app_class_css.letters_area') }}>
                                     @foreach($section['texts'] as $content)
                                         @component('component.letters-area-parts', [
@@ -89,7 +90,7 @@
                                 </div>
                             @break
 
-                            @case(5) {{-- 熟成度合いによる呼称 --}}
+                            @case(5) {{-- テキーラの熟成度 --}}
                                 <div class={{ config('app_class_css.letters_area') }}>
                                     @component('component.table-area')
                                         <tr>
@@ -108,16 +109,8 @@
                                 </div>
                             @break
 
-                            @case(7) {{-- 蒸留所リスト --}}
+                            @case(8) {{-- 蒸留所一覧 --}}
                                 <div class={{ config('app_class_css.letters_area') }}>
-                                    @foreach($section['texts'] as $content)
-                                        @component('component.letters-area-parts', [
-                                            'title' => !empty($content['title']) ? $content['title'] : '',
-                                            'paragraph' => !empty($content['paragraph']) ? $content['paragraph'] : '',
-                                            'indent' => !empty($content['indent']) ? $content['indent'] : '',
-                                        ])
-                                        @endcomponent
-                                    @endforeach
                                     @foreach($section['tables'] as $table)
                                         @component('component.letters-area-parts', [
                                             'title' => !empty($table['title']) ? $table['title'] : '',
@@ -131,11 +124,44 @@
                                                     <th>{{ $header }}</th>
                                                 @endforeach
                                             </tr>
-                                            @foreach($table['cells'] as $cells)
+                                            @foreach($dests as $key => $dest)
                                                 <tr>
-                                                    @foreach($cells as $cell)
-                                                        <td>{{ $cell }}</td>
-                                                    @endforeach
+                                                    <td>
+                                                        @if($key !== 'other')
+                                                            {{ $dest[0]['local'] }}
+                                                        @else
+                                                            ハリスコ州外
+                                                        @endif
+                                                    </td>
+                                                    <td>
+                                                        @if($key !== 'other')
+                                                            @foreach($dest as $cell)
+                                                                {{ $cell['dest_name'] }}<br>
+                                                            @endforeach
+                                                        @else
+                                                            @foreach($dest as $cell)
+                                                                {{ $cell['dest_name'] }}
+                                                            @endforeach
+                                                            @foreach($dest as $cell)
+                                                                （{{ $cell['local'] }}）<br>
+                                                            @endforeach
+                                                        @endif
+                                                    </td>
+                                                    <td>
+                                                        @foreach($dest as $cell)
+                                                            {{ $cell['dest_nom'] }}<br>
+                                                        @endforeach
+                                                    </td>
+                                                    <td>
+                                                        @foreach($dest as $cell)
+                                                            {{ $cell['title_name'] }}<br>
+                                                        @endforeach
+                                                    </td>
+                                                    <td>
+                                                        @foreach($dest as $cell)
+                                                            {{ $cell['area'] }}<br>
+                                                        @endforeach
+                                                    </td>
                                                 </tr>
                                             @endforeach
                                         @endcomponent

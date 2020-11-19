@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'TopController@index');
 Route::get('bunken', function () {
     return view('bunken');
 });
