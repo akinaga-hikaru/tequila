@@ -87,7 +87,7 @@ class TopController extends Controller
             'other' => doubleDelete($other, 'dest_name'),
         ];
 
-        // テキーラ5州のデータ設定
+        // テキーラの産地のデータ設定
         $tequila_states = [
             'valles' => doubleDelete($valles, 'area'),
             'altos' => doubleDelete($altos, 'area'),

@@ -83,7 +83,7 @@
                                 </div>
                             @break
 
-                            @case(3) {{-- テキーラ5州 --}}
+                            @case(3) {{-- テキーラの産地 --}}
                                 <div class={{ config('app_class_css.letters_area') }}>
                                     @foreach($section['tables'] as $table)
                                         @component('component.letters-area-parts', [
@@ -140,8 +140,14 @@
 
                             @case(6) {{-- テキーラの熟成度 --}}
                                 <div class={{ config('app_class_css.letters_area') }}>
-                                    @component('component.table-area')
-                                        @foreach($section['tables'] as $table)
+                                    @foreach($section['tables'] as $table)
+                                        @component('component.letters-area-parts', [
+                                            'title' => !empty($table['title']) ? $table['title'] : '',
+                                            'paragraph' => !empty($table['paragraph']) ? $table['paragraph'] : '',
+                                            'indent' => !empty($table['indent']) ? $table['indent'] : '',
+                                        ])
+                                        @endcomponent
+                                        @component('component.table-area')
                                             <tr>
                                                 @foreach($table['header'] as $header)
                                                     <th>{{ $header }}</th>
@@ -154,8 +160,8 @@
                                                     @endforeach
                                                 </tr>
                                             @endforeach
-                                        @endforeach
-                                    @endcomponent
+                                        @endcomponent
+                                    @endforeach
                                 </div>
                             @break
 
