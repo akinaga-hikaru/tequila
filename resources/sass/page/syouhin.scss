@@ -49,8 +49,9 @@
             // スクロール領域
             &__scroll-frame {
                 padding: 15px;
-                width: 460px;
                 height: 300px;
+                width: 250%;
+                max-width: $sp_width;
                 @media screen and(max-width: $sp_width) {
                     height: auto;
                 }

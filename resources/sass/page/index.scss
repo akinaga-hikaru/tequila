@@ -20,14 +20,14 @@
     /*********** テーブルエリア設定 ***********/
     .table-area {
         @media screen and(max-width: $sp_width) {
-            min-width: 200%;
             font-size: 13px;
         }
 
         // スクロール領域
         &__scroll-frame {
             padding-bottom: 20px;
-            width: 100%;
+            width: 250%;
+            max-width: 930px;
         }
     }
 }

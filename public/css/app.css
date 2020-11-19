@@ -686,14 +686,14 @@ img {
 
 @media screen and (max-width: 768px) {
   .top .table-area {
-    min-width: 200%;
     font-size: 13px;
   }
 }
 
 .top .table-area__scroll-frame {
   padding-bottom: 20px;
-  width: 100%;
+  width: 250%;
+  max-width: 930px;
 }
 
 /* -----------------------------------------------
@@ -758,8 +758,9 @@ img {
 
 .syouhin .syouhin-container .letters-area__scroll-frame {
   padding: 15px;
-  width: 460px;
   height: 300px;
+  width: 250%;
+  max-width: 768px;
 }
 
 @media screen and (max-width: 768px) {
