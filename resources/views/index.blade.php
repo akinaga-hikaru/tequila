@@ -12,13 +12,13 @@
             {{-- 項目選択ボタンstart --}}
                 <ul>
 
-                    @foreach (config('app_index') as $item)
+                    @foreach (config('app_index') as $key => $item)
                         @component('component.common-btn',[
                             'btn' => 'type',
                             'hidden' => false,
                             'hide_sp' => true,
                             'link' => '#' . $item['id'],
-                            'text' => $item['title'],
+                            'text' => $key . '. ' . $item['title'],
                             ])
                         @endcomponent
                     @endforeach
@@ -33,7 +33,7 @@
                     {{-- タイトル start --}}
                         @component('component.section-title',[
                             'section_id' => $section['id'],
-                            'section_name' => $section['title'],
+                            'section_name' => $key . '. ' . $section['title'],
                             ])
                         @endcomponent
                     {{-- タイトル end --}}
@@ -70,7 +70,8 @@
                             @case(2) {{-- テキーラの定義 --}}
                             @case(4) {{-- テキーラの起源 --}}
                             @case(5) {{-- テキーラの分類 --}}
-                            @case(7) {{-- NOMとは --}}
+                            @case(7) {{-- CRTとは --}}
+                            @case(8) {{-- NOMとは --}}
                                 <div class={{ config('app_class_css.letters_area') }}>
                                     @foreach($section['texts'] as $content)
                                         @component('component.letters-area-parts', [
@@ -165,7 +166,7 @@
                                 </div>
                             @break
 
-                            @case(8) {{-- 蒸留所一覧 --}}
+                            @case(9) {{-- 蒸留所一覧 --}}
                             <div class={{ config('app_class_css.letters_area') }}>
                                 @foreach($section['tables'] as $table)
                                     @component('component.letters-area-parts', [
