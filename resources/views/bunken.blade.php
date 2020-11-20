@@ -6,7 +6,12 @@
 @section('contents')
         @component('component.main', ['main' => 'no_aside'])
             <div class={{ config('app_class_css.contents_frame') }}>
-                <center>
+                <div class={{ config('app_class_css.letters_area') }}>
+                    @component('component.letters-area-parts', [
+                        'title' => config('app_bunken.section.title'),
+                        'paragraph' => config('app_bunken.section.contents'),
+                    ])
+                    @endcomponent
                     @component('component.table-area')
 
                         {{-- 項目名 start --}}
@@ -30,7 +35,7 @@
                         {{-- 項目内容 end --}}
 
                     @endcomponent
-                </center>
+                </div>
             </div>
         @endcomponent
 @endsection
