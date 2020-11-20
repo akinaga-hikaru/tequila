@@ -33,9 +33,9 @@
 
                 {{-- 商品タイトル start --}}
                     <div>
-                        <h4 class={{ config('app_class_css.letters_area__title') }}>
+                        <h2 class={{ config('app_class_css.letters_area__title') }}>
                             {{ $title_name }} / {{ $aging }}
-                        </h4>
+                        </h2>
                     </div>
                 {{-- 商品タイトル end --}}
 

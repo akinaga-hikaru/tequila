@@ -2,9 +2,9 @@
 
 @if(!empty($title))
     {{-- タイトル start --}}
-        <h4 class={{ config('app_class_css.letters_area__title') }}>
+        <h2 class={{ config('app_class_css.letters_area__title') }}>
             {{ $title }}
-        </h4>
+        </h2>
     {{-- タイトル end --}}
 @endif
 

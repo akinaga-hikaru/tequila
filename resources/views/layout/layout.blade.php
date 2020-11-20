@@ -27,21 +27,21 @@
                     {{ config('app_class_css.center') }}
                 "
             >
-                <div
+                <ul
                     id="top"
                     class={{ config('app_class_css.header_area__bg_frame') }}
                 >
 
                     {{-- タイトルエリア start --}}
-                        <h1 class={{ config('app_class_css.header_area__main_logo') }}>
+                        <li class={{ config('app_class_css.header_area__main_logo') }}>
                             <a href="/">
                                 {{ config('app_layout.main_title') }}
                             </a>
-                        </h1>
+                        </li>
                     {{-- タイトルエリア end --}}
 
                     {{-- SPメニューボタン start --}}
-                        <p
+                        <li
                             class="
                                 {{ config('app_class_css.global_menu__btn_sp') }}
                                 {{ config('app_class_css.hide_pc') }}
@@ -49,7 +49,7 @@
                             "
                         >
                             ≡
-                        </p>
+                        </li>
                     {{-- SPメニューボタン end --}}
 
                     {{-- グローバルメニュー start --}}
@@ -70,7 +70,7 @@
                         </ul>
                     {{-- グローバルメニュー end --}}
 
-                </div>
+                </ul>
             </header>
         {{-- ヘッダーエリア end --}}
 

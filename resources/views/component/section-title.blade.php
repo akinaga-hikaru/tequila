@@ -1,5 +1,5 @@
 {{-- コンポーネント：共通セクションタイトル --}}
-<h3
+<h1
     id="{{ !empty($section_id) ? $section_id : '' }}"
     class="
         {{ config('app_class_css.section_title') }}
@@ -23,4 +23,4 @@
         "
     ></span>
 
-</h3>
+</h1>
