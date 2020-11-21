@@ -5,46 +5,58 @@
 
 @section('contents')
     @component('component.main', ['main' => 'no_aside'])
-        <div class={{ config('app_class_css.contents_frame') }}>
-            @foreach (config('app_tenpo.shops') as $key => $tenpos)
-                <div class={{ config('app_class_css.letters_area') }}>
-                    @component('component.letters-area-parts', [
-                        'title' => !empty($key) ? $key : '',
-                        'paragraph' => !empty($tenpos['paragraph']) ? $tenpos['paragraph'] : '',
-                        'indent' => !empty($tenpos['indent']) ? $tenpos['indent'] : '',
+        @foreach (config('app_tenpo') as $section)
+
+            {{-- タイトル start --}}
+                @component('component.section-title',[
+                    'section_id' => $section['id'],
+                    'section_name' => $section['title'],
                     ])
-                    @endcomponent
-                    @component('component.table-area')
-                        {{-- 項目名 start --}}
-                            <tr>
-                                @foreach(config('app_tenpo.title') as $title)
-                                    <th>{{ $title }}</th>
-                                @endforeach
-                            </tr>
-                        {{-- 項目名 end --}}
+                @endcomponent
+            {{-- タイトル end --}}
 
-                        {{-- 項目内容 start --}}
-                            @foreach ($tenpos as $tenpo)
-                                <tr>
-                                    <td>
-                                        <a
-                                            href="{{ $tenpo['url'] }}"
-                                            target="_blank"
-                                            class={{ config('app_class_css.external_link') }}
-                                        >
-                                            {{ $tenpo['name'] }}
-                                        </a>
-                                    </td>
-                                    <td>{{ $tenpo['contact'] }}</td>
-                                    <td>{{ $tenpo['access'] }}</td>
-                                    <td>{{ $tenpo['description'] }}</td>
-                                </tr>
-                            @endforeach
-                        {{-- 項目内容 end --}}
+            {{-- コンテンツ start --}}
+                <div class={{ config('app_class_css.contents_frame') }}>
+                    @foreach ($section['contents'] as $key => $content)
+                        <div class={{ config('app_class_css.letters_area') }}>
+                            @component('component.letters-area-parts', [
+                                'title' => !empty($content['title']) ? $content['title'] : '',
+                                'paragraph' => !empty($content['paragraph']) ? $content['paragraph'] : '',
+                                'table' => !empty($content['table']) ? true : '',
+                            ])
+                                {{-- テーブルヘッダー start --}}
+                                    <tr>
+                                        @foreach($content['table']['header'] as $header)
+                                            <th>{{ $header }}</th>
+                                        @endforeach
+                                    </tr>
+                                {{-- テーブルヘッダー end --}}
 
-                    @endcomponent
+                                {{-- テーブルコンテンツ start --}}
+                                    @foreach ($content['table']['cells'] as $cell)
+                                        <tr>
+                                            <td>
+                                                <a
+                                                    href="{{ $cell['url'] }}"
+                                                    target="_blank"
+                                                    class={{ config('app_class_css.external_link') }}
+                                                >
+                                                    {{ $cell['name'] }}
+                                                </a>
+                                            </td>
+                                            <td>{{ $cell['contact'] }}</td>
+                                            <td>{{ $cell['access'] }}</td>
+                                            <td>{{ $cell['description'] }}</td>
+                                        </tr>
+                                    @endforeach
+                                {{-- テーブルコンテンツ end --}}
+
+                            @endcomponent
+                        </div>
+                    @endforeach
                 </div>
-            @endforeach
-        </div>
+            {{-- コンテンツ end --}}
+
+         @endforeach
     @endcomponent
 @endsection
