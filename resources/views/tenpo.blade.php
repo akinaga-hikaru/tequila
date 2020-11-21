@@ -57,6 +57,6 @@
                 </div>
             {{-- コンテンツ end --}}
 
-         @endforeach
+        @endforeach
     @endcomponent
 @endsection
