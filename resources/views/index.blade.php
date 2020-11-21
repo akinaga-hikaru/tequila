@@ -39,69 +39,44 @@
 
                     {{-- コンテンツ start --}}
                         <div class={{ config('app_class_css.letters_area') }}>
-                            @switch($key)
+                            @foreach($section['contents'] as $content)
+                                @component('component.letters-area-parts', [
+                                    'title' => !empty($content['title']) ? $content['title'] : '',
+                                    'paragraph' => !empty($content['paragraph']) ? $content['paragraph'] : '',
+                                    'indent' => !empty($content['indent']) ? $content['indent'] : '',
+                                    'table' => !empty($content['table']) ? true : '',
+                                    'image' => !empty($content['image']) ? true : '',
+                                ])
+                                    @switch($key)
 
-                                @case(1) {{---------- テキーラの原料 ----------}}
-                                    {{-- 文章エリア start --}}
-                                        @foreach($section['texts'] as $content)
-                                            @component('component.letters-area-parts', [
-                                                'title' => !empty($content['title']) ? $content['title'] : '',
-                                                'paragraph' => !empty($content['paragraph']) ? $content['paragraph'] : '',
-                                                'indent' => !empty($content['indent']) ? $content['indent'] : '',
-                                            ])
-                                            @endcomponent
-                                        @endforeach
-                                    {{-- 文章エリア end --}}
-                                    {{-- 画像エリア start --}}
-                                        <div
-                                            class="
-                                                {{ config('app_class_css.flex_box') }}
-                                                {{ config('app_class_css.center') }}
-                                            "
-                                        >
-                                            @foreach($section['images'] as $image)
-                                                <img
-                                                    src={{ $image['src'] }}
-                                                    alt={{ $image['alt'] }}
-                                                >
-                                            @endforeach
-                                        </div>
-                                    {{-- 画像エリア end --}}
-                                @break
+                                        @case(1) {{---------- テキーラの原料 ----------}}
+                                            {{-- 画像コンテンツ start --}}
+                                                @if(!empty($content['image']))
+                                                    @foreach($content['image'] as $image)
+                                                        <img
+                                                            src={{ $image['src'] }}
+                                                            alt={{ $image['alt'] }}
+                                                        >
+                                                    @endforeach
+                                                @endif
+                                            {{-- 画像コンテンツ end --}}
+                                        @break
 
-                                @case(2) {{---------- テキーラの定義 ----------}}
-                                @case(4) {{---------- テキーラの起源 ----------}}
-                                @case(5) {{---------- テキーラの分類 ----------}}
-                                @case(7) {{---------- CRTとは ----------}}
-                                @case(8) {{---------- NOMとは ----------}}
-                                    {{-- 文章エリア start --}}
-                                        @foreach($section['texts'] as $content)
-                                            @component('component.letters-area-parts', [
-                                                'title' => !empty($content['title']) ? $content['title'] : '',
-                                                'paragraph' => !empty($content['paragraph']) ? $content['paragraph'] : '',
-                                                'indent' => !empty($content['indent']) ? $content['indent'] : '',
-                                            ])
-                                            @endcomponent
-                                        @endforeach
-                                    {{-- 文章エリア end --}}
-                                @break
+                                        @case(2) {{---------- テキーラの定義 ----------}}
+                                        @case(4) {{---------- テキーラの起源 ----------}}
+                                        @case(5) {{---------- テキーラの分類 ----------}}
+                                        @case(7) {{---------- CRTとは ----------}}
+                                        @case(8) {{---------- NOMとは ----------}}
+                                        @break
 
-                                @case(3) {{---------- テキーラの産地 ----------}}
-                                    {{-- テーブルエリア start --}}
-                                        @foreach($section['tables'] as $table)
-                                            @component('component.letters-area-parts', [
-                                                'title' => !empty($table['title']) ? $table['title'] : '',
-                                                'paragraph' => !empty($table['paragraph']) ? $table['paragraph'] : '',
-                                                'indent' => !empty($table['indent']) ? $table['indent'] : '',
-                                            ])
-                                            @endcomponent
-                                            @component('component.table-area')
+                                        @case(3) {{---------- テキーラの産地 ----------}}
+                                            {{-- テーブルコンテンツ start --}}
                                                 <tr>
-                                                    @foreach($table['header'] as $header)
+                                                    @foreach($content['table']['header'] as $header)
                                                         <th>{{ $header }}</th>
                                                     @endforeach
                                                 </tr>
-                                                @if($table['id'] === 'jarisco')
+                                                @if($content['id'] === 'jarisco')
                                                     @foreach($tequila_states as $key => $data)
                                                         <tr>
                                                             <td>
@@ -119,69 +94,39 @@
                                                             </td>
                                                         </tr>
                                                     @endforeach
-                                                @elseif($table['id'] === 'map')
+                                                @elseif($content['id'] === 'map')
                                                     <tr>
-                                                        @foreach($table['cells'] as $data)
+                                                        @foreach($content['table']['cells'] as $data)
                                                             <td>
                                                                 {!! $data !!}
                                                             </td>
                                                         @endforeach
                                                     </tr>
                                                 @endif
-                                            @endcomponent
-                                        @endforeach
-                                    {{-- テーブルエリア end --}}
-                                    {{-- 文章エリア start --}}
-                                        @foreach($section['texts'] as $content)
-                                            @component('component.letters-area-parts', [
-                                                'title' => !empty($content['title']) ? $content['title'] : '',
-                                                'paragraph' => !empty($content['paragraph']) ? $content['paragraph'] : '',
-                                                'indent' => !empty($content['indent']) ? $content['indent'] : '',
-                                            ])
-                                            @endcomponent
-                                        @endforeach
-                                    {{-- 文章エリア end --}}
-                                @break
+                                            {{-- テーブルコンテンツ end --}}
+                                        @break
 
-                                @case(6) {{---------- テキーラの熟成度 ----------}}
-                                    {{-- テーブルエリア start --}}
-                                        @foreach($section['tables'] as $table)
-                                            @component('component.letters-area-parts', [
-                                                'title' => !empty($table['title']) ? $table['title'] : '',
-                                                'paragraph' => !empty($table['paragraph']) ? $table['paragraph'] : '',
-                                                'indent' => !empty($table['indent']) ? $table['indent'] : '',
-                                            ])
-                                            @endcomponent
-                                            @component('component.table-area')
+                                        @case(6) {{---------- テキーラの熟成度 ----------}}
+                                            {{-- テーブルコンテンツ start --}}
                                                 <tr>
-                                                    @foreach($table['header'] as $header)
+                                                    @foreach($content['table']['header'] as $header)
                                                         <th>{{ $header }}</th>
                                                     @endforeach
                                                 </tr>
-                                                @foreach($table['cells'] as $cells)
+                                                @foreach($content['table']['cells'] as $cells)
                                                     <tr>
                                                         @foreach($cells as $cell)
                                                             <td>{!! $cell !!}</td>
                                                         @endforeach
                                                     </tr>
                                                 @endforeach
-                                            @endcomponent
-                                        @endforeach
-                                    {{-- テーブルエリア end --}}
-                                @break
+                                            {{-- テーブルコンテンツ end --}}
+                                        @break
 
-                                @case(9) {{---------- 蒸留所一覧 ----------}}
-                                    {{-- テーブルエリア start --}}
-                                        @foreach($section['tables'] as $table)
-                                            @component('component.letters-area-parts', [
-                                                'title' => !empty($table['title']) ? $table['title'] : '',
-                                                'paragraph' => !empty($table['paragraph']) ? $table['paragraph'] : '',
-                                                'indent' => !empty($table['indent']) ? $table['indent'] : '',
-                                            ])
-                                            @endcomponent
-                                            @component('component.table-area')
+                                        @case(9) {{---------- 蒸留所一覧 ----------}}
+                                            {{-- テーブルコンテンツ start --}}
                                                 <tr>
-                                                    @foreach($table['header'] as $header)
+                                                    @foreach($content['table']['header'] as $header)
                                                         <th>{{ $header }}</th>
                                                     @endforeach
                                                 </tr>
@@ -225,12 +170,12 @@
                                                         </td>
                                                     </tr>
                                                 @endforeach
-                                            @endcomponent
-                                        @endforeach
-                                    {{-- テーブルエリア end --}}
-                                @break
+                                            {{-- テーブルコンテンツ end --}}
+                                        @break
 
-                            @endswitch
+                                    @endswitch
+                                @endcomponent
+                            @endforeach
                         </div>
                     {{-- コンテンツ end --}}
 
