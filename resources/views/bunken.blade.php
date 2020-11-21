@@ -4,38 +4,50 @@
 @section('body_class','bunken')
 
 @section('contents')
-        @component('component.main', ['main' => 'no_aside'])
-            <div class={{ config('app_class_css.contents_frame') }}>
-                <div class={{ config('app_class_css.letters_area') }}>
-                    @component('component.letters-area-parts', [
-                        'title' => config('app_bunken.section.title'),
-                        'paragraph' => config('app_bunken.section.contents'),
+    @component('component.main', ['main' => 'no_aside'])
+        @foreach (config('app_bunken') as $section)
+
+            {{-- タイトル start --}}
+                @component('component.section-title',[
+                    'section_id' => $section['id'],
+                    'section_name' => $section['title'],
                     ])
-                    @endcomponent
-                    @component('component.table-area')
+                @endcomponent
+            {{-- タイトル end --}}
 
-                        {{-- 項目名 start --}}
-                            <tr>
-                                @foreach (config('app_bunken.title') as $title)
-                                    <th>{{ $title }}</th>
-                                @endforeach
-                            </tr>
-                        {{-- 項目名 end --}}
-
-                        {{-- 項目内容 start --}}
-                            <tr>
-                                @foreach (config('app_bunken.authors') as $author)
+            {{-- コンテンツ start --}}
+                <div class={{ config('app_class_css.contents_frame') }}>
+                    @foreach ($section['contents'] as $key => $content)
+                        <div class={{ config('app_class_css.letters_area') }}>
+                            @component('component.letters-area-parts', [
+                                'title' => !empty($content['title']) ? $content['title'] : '',
+                                'paragraph' => !empty($content['paragraph']) ? $content['paragraph'] : '',
+                                'table' => !empty($content['table']) ? true : '',
+                            ])
+                                {{-- テーブルヘッダー start --}}
                                     <tr>
-                                        @foreach ($author as $value)
-                                            <td>{{ $value }}</td>
+                                        @foreach($content['table']['header'] as $header)
+                                            <th>{{ $header }}</th>
                                         @endforeach
                                     </tr>
-                                @endforeach
-                            </tr>
-                        {{-- 項目内容 end --}}
+                                {{-- テーブルヘッダー end --}}
 
-                    @endcomponent
+                                {{-- テーブルコンテンツ start --}}
+                                    @foreach ($content['table']['cells'] as $cell)
+                                        <tr>
+                                            @foreach ($cell as $author)
+                                                <td>{{ $author }}</td>
+                                            @endforeach
+                                        </tr>
+                                    @endforeach
+                                {{-- テーブルコンテンツ end --}}
+
+                            @endcomponent
+                        </div>
+                    @endforeach
                 </div>
-            </div>
-        @endcomponent
+            {{-- コンテンツ end --}}
+
+        @endforeach
+    @endcomponent
 @endsection
