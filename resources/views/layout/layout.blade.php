@@ -9,7 +9,7 @@
         <meta property="og:title" content={{ config('app_layout.main_title') }}>
         <meta property="og:description" content={{ config('app_layout.meta.description') }}>
         <meta property="og:image" content={{ config('app_layout.meta.image') }}>
-        <title>@yield('title')</title>
+        <title>@yield('title') | {{ config('app_layout.main_title') }}</title>
         <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
         <script
