@@ -4,22 +4,22 @@
 @section('body_class','bunken')
 
 @section('contents')
-    @component('component.main', ['main' => 'no_aside'])
+    @main(['main' => 'no_aside'])
         @foreach (config('app_bunken') as $section)
 
             {{-- タイトル start --}}
-                @component('component.section-title',[
+                @section_title([
                     'section_id' => $section['id'],
                     'section_name' => $section['title'],
                     ])
-                @endcomponent
+                @endsection_title
             {{-- タイトル end --}}
 
             {{-- コンテンツ start --}}
                 <div class={{ config('app_class_css.contents_frame') }}>
                     @foreach ($section['contents'] as $key => $content)
                         <div class={{ config('app_class_css.letters_area') }}>
-                            @component('component.letters-area-parts', [
+                            @letters_area_parts([
                                 'title' => !empty($content['title']) ? $content['title'] : '',
                                 'paragraph' => !empty($content['paragraph']) ? $content['paragraph'] : '',
                                 'table' => !empty($content['table']) ? true : '',
@@ -42,12 +42,12 @@
                                     @endforeach
                                 {{-- テーブルコンテンツ end --}}
 
-                            @endcomponent
+                            @endletters_area_parts
                         </div>
                     @endforeach
                 </div>
             {{-- コンテンツ end --}}
 
         @endforeach
-    @endcomponent
+    @endmain
 @endsection

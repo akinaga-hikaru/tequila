@@ -5,31 +5,32 @@
 
 @section('contents')
 
-    @component('component.main', ['main' => 'no_aside'])
+    @main(['main' => 'no_aside'])
         <div class={{ config('app_class_css.contents_frame') }}>
 
             {{-- 項目名 start --}}
-                @component('component.section-title',[
+                @section_title([
                     'js_class' => 'js-syouhin-title',
                     'section_name' => config('app_form_input.title')[0] . ' / ' . config('app_form_input.title')[1],
                     ])
-                @endcomponent
+                @endsection_title
             {{-- 項目名 end --}}
 
             {{-- 入力項目表示 start --}}
-                @component('component.table-area')
+                @letters_area_parts(['table' => true])
                     @foreach ($input as $item)
                         <tr>
                             <label>
                                 <th>{{ $item['name'] }}</th>
-                                <td><div>{{ $item['input'] }}</div></td>
+                                <td>{{ $item['input'] }}</td>
                             </label>
                         </tr>
                     @endforeach
-                @endcomponent
+                @endletters_area_parts
             {{-- 入力項目表示 end --}}
 
             <div class={{ config('app_class_css.contents_frame') }}>
+
                 {{-- 修正ボタン start --}}
                     <div class={{ config('app_class_css.center') }}>
                         <button type="button" name="submit" onclick="history.back()">
@@ -40,38 +41,39 @@
                 {{-- 修正ボタン end --}}
 
                 {{-- プレビューメッセージ start --}}
-                    @component('component.message', ['center' => true])
+                    @message(['center' => true])
                         {{ config('app_message.form_confirm.preview') }}
-                    @endcomponent
+                    @endmessage
                 {{-- プレビューメッセージ end --}}
+
             </div>
 
         </div>
-    @endcomponent
+    @endmain
 
     <div class={{ config('app_class_css.flex_box') }}>
 
         {{-- サイドメニューメッセージ start --}}
-            @component('component.aside')
-                @component('component.message')
+            @aside
+                @message
                     {{ config('app_message.form_confirm.sidemenu') }}
-                @endcomponent
-            @endcomponent
+                @endmessage
+            @endaside
         {{-- サイドメニューメッセージ end --}}
 
-        @component('component.main')
+        @main
 
             {{-- ブランドタイトル start --}}
-                @component('component.section-title',[
+                @section_title([
                     'section_id' => config('app_class_css.section_title'),
                     'js_class' => config('app_class_js.syouhin_title'),
                     'section_name' => $input['title_name']['input'],
                     ])
-                @endcomponent
+                @endsection_title
             {{-- ブランドタイトル end --}}
 
             {{-- プレビュー商品コンテナ start --}}
-                @component('component.syouhin-parts',[
+                @syouhin_parts([
                     'title_id' => $input['title_id']['input'],
                     'title_name' => $input['title_name']['input'],
                     'alt_name' => $input['alt_name']['input'],
@@ -91,19 +93,19 @@
                     'contents_review_top' => $input['contents_review_top']['input'],
                     'contents_review_after' => $input['contents_review_after']['input'],
                 ])
-                @endcomponent
+                @endsyouhin_parts
             {{-- プレビュー商品コンテナ end --}}
 
-        @endcomponent
+        @endmain
 
     </div>
 
     <div class={{ config('app_class_css.contents_frame') }}>
 
         {{-- 確認メッセージ start --}}
-            @component('component.message', ['center' => true])
+            @message(['center' => true])
                 {{ config('app_message.form_confirm.confirm') }}
-            @endcomponent
+            @endmessage
         {{-- 確認メッセージ end --}}
 
         {{-- 登録ボタン start --}}

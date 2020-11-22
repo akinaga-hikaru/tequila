@@ -6,41 +6,39 @@
 @section('contents')
     <div class={{ config('app_class_css.flex_box') }}>
 
-        @component('component.aside', [
-            'scroll_on' => true,
-        ])
+        @aside([ 'scroll_on' => true, ])
             {{-- 項目選択ボタンstart --}}
                 <ul>
                     @foreach (config('app_index') as $key => $item)
-                        @component('component.common-btn',[
+                        @common_btn([
                             'btn' => 'type',
                             'hidden' => false,
                             'hide_sp' => true,
                             'link' => '#' . $item['id'],
                             'text' => $key . '. ' . $item['title'],
                             ])
-                        @endcomponent
+                        @endcommon_btn
                     @endforeach
                 </ul>
             {{-- 項目選択ボタンend --}}
-        @endcomponent
+        @endaside
 
-        @component('component.main')
+        @main
             {{-- セクション start --}}
                 @foreach(config('app_index') as $key => $section)
 
                     {{-- タイトル start --}}
-                        @component('component.section-title',[
+                        @section_title([
                             'section_id' => $section['id'],
                             'section_name' => $key . '. ' . $section['title'],
                             ])
-                        @endcomponent
+                        @endsection_title
                     {{-- タイトル end --}}
 
                     {{-- コンテンツ start --}}
                         <div class={{ config('app_class_css.letters_area') }}>
                             @foreach($section['contents'] as $content)
-                                @component('component.letters-area-parts', [
+                                @letters_area_parts([
                                     'title' => !empty($content['title']) ? $content['title'] : '',
                                     'paragraph' => !empty($content['paragraph']) ? $content['paragraph'] : '',
                                     'indent' => !empty($content['indent']) ? $content['indent'] : '',
@@ -174,13 +172,13 @@
                                         @break
 
                                     @endswitch
-                                @endcomponent
+                                @endletters_area_parts
                             @endforeach
                         </div>
                     {{-- コンテンツ end --}}
 
                 @endforeach
             {{-- セクション end --}}
-        @endcomponent
+        @endmain
     </div>
 @endsection

@@ -4,13 +4,13 @@
 @section('body_class','form form-complete')
 
 @section('contents')
-    @component('component.main', ['main' => 'no_aside'])
+    @main(['main' => 'no_aside'])
         <div class={{ config('app_class_css.contents_frame') }}>
             {{-- 完了メッセージ start --}}
-                @component('component.message', ['center' => true])
+                @message(['center' => true])
                     {{ config('app_message.form_complete') }}
-                @endcomponent
+                @endmessage
             {{-- 完了メッセージ end --}}
         </div>
-    @endcomponent
+    @endmain
 @endsection

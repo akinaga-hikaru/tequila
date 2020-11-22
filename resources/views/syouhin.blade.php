@@ -6,19 +6,19 @@
 @section('contents')
     <div class={{ config('app_class_css.flex_box') }}>
 
-        @component('component.aside')
+        @aside
 
             {{-- 項目選択ボタンstart --}}
                 <ul>
                     @foreach ($types as $type)
-                        @component('component.common-btn',[
+                        @common_btn([
                             'btn' => 'type',
                             'js_class_1' => $type['js_class_1'],
                             'hidden' => false,
                             'hide_sp' => true,
                             'text' => $type['title'],
                             ])
-                        @endcomponent
+                        @endcommon_btn
                     @endforeach
                 </ul>
             {{-- 項目選択ボタンend --}}
@@ -26,7 +26,7 @@
             {{-- ブランドリスト start --}}
                 <ul>
                     @foreach ($titles as $title)
-                        @component('component.common-btn',[
+                        @common_btn([
                             'btn' => 'list',
                             'js_class_1' => config('app_class_js.maker_list'),
                             'js_class_2' => config('app_class_js.maker') . '_' . $title['title_id'],
@@ -34,7 +34,7 @@
                             'link' => '',
                             'text' => $title['title'],
                             ])
-                        @endcomponent
+                        @endcommon_btn
                     @endforeach
                 </ul>
             {{-- ブランドリスト end --}}
@@ -42,7 +42,7 @@
             {{-- 蒸留所リスト start --}}
                 <ul>
                     @foreach ($noms as $nom)
-                        @component('component.common-btn',[
+                        @common_btn([
                             'btn' => 'list',
                             'js_class_1' => config('app_class_js.dest_list'),
                             'js_class_2' => config('app_class_js.dest') . '_' . $nom['nom'],
@@ -51,7 +51,7 @@
                             'text' => $nom['nom'] === '-' ? 'NOMなし' : 'NOM ' . $nom['nom'],
                             'small_text' => $nom['dest'] === '-' ? 'その他蒸留所': $nom['dest'],
                             ])
-                        @endcomponent
+                        @endcommon_btn
                     @endforeach
                 </ul>
             {{-- 蒸留所リスト end --}}
@@ -76,7 +76,7 @@
                         }
                     @endphp
                     @foreach ($locals as $local)
-                        @component('component.common-btn',[
+                        @common_btn([
                             'btn' => 'list',
                             'js_class_1' => config('app_class_js.local_list'),
                             'js_class_2' => config('app_class_js.local') . '_' . $local['local_id'],
@@ -85,10 +85,10 @@
                             'text' => $local['local'],
                             'small_text' => $local['description'],
                             ])
-                        @endcomponent
+                        @endcommon_btn
                         @if($local['local_id'] == 'valles')
                             @foreach ($valles as $item)
-                                @component('component.common-btn',[
+                                @common_btn([
                                     'btn' => 'down',
                                     'js_class_1' => config('app_class_js.area_list'),
                                     'js_class_2' => config('app_class_js.area') . '_' . $item['local_id'],
@@ -97,11 +97,11 @@
                                     'link' => '',
                                     'text' => $item['area'],
                                     ])
-                                @endcomponent
+                                @endcommon_btn
                             @endforeach
                         @elseif($local['local_id'] == 'altos')
                             @foreach ($altos as $item)
-                                @component('component.common-btn',[
+                                @common_btn([
                                     'btn' => 'down',
                                     'js_class_1' => config('app_class_js.area_list'),
                                     'js_class_2' => config('app_class_js.area') . '_' . $item['local_id'],
@@ -110,7 +110,7 @@
                                     'link' => '',
                                     'text' => $item['area'],
                                     ])
-                                @endcomponent
+                                @endcommon_btn
                             @endforeach
                         @elseif($local['local_id'] == 'centro')
                             @foreach ($centro as $item)
@@ -119,7 +119,7 @@
                                         $item['area'] = config('app_syouhin.page.other_area');
                                     }
                                 @endphp
-                                @component('component.common-btn',[
+                                @common_btn([
                                     'btn' => 'down',
                                     'js_class_1' => config('app_class_js.area_list'),
                                     'js_class_2' => config('app_class_js.area') . '_' . $item['local_id'],
@@ -128,11 +128,11 @@
                                     'link' => '',
                                     'text' => $item['area'],
                                     ])
-                                @endcomponent
+                                @endcommon_btn
                             @endforeach
                         @else
                             @foreach ($others as $item)
-                                @component('component.common-btn',[
+                                @common_btn([
                                     'btn' => 'down',
                                     'js_class_1' => config('app_class_js.area_list'),
                                     'js_class_2' => config('app_class_js.area') . '_' . $item['local_id'],
@@ -141,7 +141,7 @@
                                     'link' => '',
                                     'text' => $item['local'] . $item['area'],
                                     ])
-                                @endcomponent
+                                @endcommon_btn
                             @endforeach
                         @endif
                     @endforeach
@@ -151,7 +151,7 @@
             {{-- 熟成度合いリスト start --}}
                 <ul>
                     @foreach ($agings as $aging)
-                        @component('component.common-btn',[
+                        @common_btn([
                             'btn' => 'list',
                             'js_class_1' => config('app_class_js.aging_list'),
                             'js_class_2' => config('app_class_js.aging') . '_' . $aging['aging_id'],
@@ -160,27 +160,27 @@
                             'text' => $aging['aging_name'],
                             'small_text' => $aging['description'],
                             ])
-                        @endcomponent
+                        @endcommon_btn
                     @endforeach
                 </ul>
             {{-- 熟成度合いリスト end --}}
 
-        @endcomponent
+        @endaside
 
-        @component('component.main')
+        @main
 
             {{-- ブランドタイトル start --}}
-                @component('component.section-title',[
+                @section_title([
                     'section_id' => config('app_class_css.section_title'),
                     'js_class' => config('app_class_js.syouhin_title'),
                     'section_name' => config('app_syouhin.page.section_title'),
                     ])
-                @endcomponent
+                @endsection_title
             {{-- ブランドタイトル end --}}
 
             {{-- 商品コンテナ start --}}
                 @foreach ($syouhin_data_all as $content)
-                    @component('component.syouhin-parts',[
+                    @syouhin_parts([
                         'title_id' => $content->title_id,
                         'title_name' => $content->title_name,
                         'alt_name' => $content->alt_name,
@@ -200,17 +200,17 @@
                         'contents_review_top' => $content->contents_review_top,
                         'contents_review_after' => $content->contents_review_after,
                     ])
-                    @endcomponent
+                    @endsyouhin_parts
                 @endforeach
             {{-- 商品コンテナ end --}}
 
             {{-- 商品なしメッセージ start --}}
-                @component('component.message', ['js_message' => true])
+                @message(['js_message' => true])
                     {{ config('app_message.syouhin.no_products') }}
-                @endcomponent
+                @endmessage
             {{-- 商品なしメッセージ end --}}
 
-        @endcomponent
+        @endmain
 
     </div>
 @endsection

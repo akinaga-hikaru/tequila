@@ -89,15 +89,21 @@
             </footer>
         {{-- フッターエリア end --}}
 
-        <script>
-            // configで設定のclassNameをJSに渡す
-            const js = @json(config('app_class_js'));
-            for(let key in js) {
-                js[key] = '.' + js[key];
-            }
-            // サイドエリアの文言
-            const aside_text = @json(config('app_layout.aside'));
-        </script>
-        <script src="{{ mix('js/app.js') }}"></script>
+        {{-- スクリプトエリア start --}}
+            <script>
+
+                // configで設定のclassNameをJSに渡す
+                const js = @json(config('app_class_js'));
+                for(let key in js) {
+                    js[key] = '.' + js[key];
+                }
+
+                // サイドエリアの文言
+                const aside_text = @json(config('app_layout.aside'));
+
+            </script>
+            <script src="{{ mix('js/app.js') }}"></script>
+        {{-- スクリプトエリア end --}}
+
     </body>
 </html>
