@@ -53,13 +53,8 @@
 
     <div class={{ config('app_class_css.flex_box') }}>
 
-        {{-- サイドメニューメッセージ start --}}
-            @aside
-                @message
-                    {{ config('app_message.form_confirm.sidemenu') }}
-                @endmessage
-            @endaside
-        {{-- サイドメニューメッセージ end --}}
+        @aside
+        @endaside
 
         @main
 
