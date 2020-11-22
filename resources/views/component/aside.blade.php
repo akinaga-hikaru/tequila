@@ -8,12 +8,12 @@
 >
 
     {{-- 項目一覧ボタン start --}}
-        @component('component.section-title',[
+        @section_title([
             'js_class' => config('app_class_js.type_toggle'),
             'section_name' => config('app_layout.aside.section_menu_close'),
             'sidemenu_sp' => 'true'
             ])
-        @endcomponent
+        @endsection_title
     {{-- 項目一覧ボタン end --}}
 
     {{ $slot }}
