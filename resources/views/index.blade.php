@@ -10,14 +10,14 @@
             {{-- 項目選択ボタンstart --}}
                 <ul>
                     @foreach (config('app_index') as $key => $item)
-                        @common_btn([
+                        @commonbtn([
                             'btn' => 'type',
                             'hidden' => false,
                             'hide_sp' => true,
                             'link' => '#' . $item['id'],
                             'text' => $key . '. ' . $item['title'],
                             ])
-                        @endcommon_btn
+                        @endcommonbtn
                     @endforeach
                 </ul>
             {{-- 項目選択ボタンend --}}
@@ -28,17 +28,17 @@
                 @foreach(config('app_index') as $key => $section)
 
                     {{-- タイトル start --}}
-                        @section_title([
+                        @sectiontitle([
                             'section_id' => $section['id'],
                             'section_name' => $key . '. ' . $section['title'],
                             ])
-                        @endsection_title
+                        @endsectiontitle
                     {{-- タイトル end --}}
 
                     {{-- コンテンツ start --}}
                         <div class={{ config('app_class_css.letters_area') }}>
                             @foreach($section['contents'] as $content)
-                                @letters_area_parts([
+                                @lettersareaparts([
                                     'title' => !empty($content['title']) ? $content['title'] : '',
                                     'paragraph' => !empty($content['paragraph']) ? $content['paragraph'] : '',
                                     'indent' => !empty($content['indent']) ? $content['indent'] : '',
@@ -172,7 +172,7 @@
                                         @break
 
                                     @endswitch
-                                @endletters_area_parts
+                                @endlettersareaparts
                             @endforeach
                         </div>
                     {{-- コンテンツ end --}}

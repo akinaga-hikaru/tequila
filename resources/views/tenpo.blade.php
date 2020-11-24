@@ -8,18 +8,18 @@
         @foreach (config('app_tenpo') as $section)
 
             {{-- タイトル start --}}
-                @section_title([
+                @sectiontitle([
                     'section_id' => $section['id'],
                     'section_name' => $section['title'],
                     ])
-                @endsection_title
+                @endsectiontitle
             {{-- タイトル end --}}
 
             {{-- コンテンツ start --}}
                 <div class={{ config('app_class_css.contents_frame') }}>
                     @foreach ($section['contents'] as $key => $content)
                         <div class={{ config('app_class_css.letters_area') }}>
-                            @letters_area_parts([
+                            @lettersareaparts([
                                 'title' => !empty($content['title']) ? $content['title'] : '',
                                 'paragraph' => !empty($content['paragraph']) ? $content['paragraph'] : '',
                                 'table' => !empty($content['table']) ? true : '',
@@ -51,7 +51,7 @@
                                     @endforeach
                                 {{-- テーブルコンテンツ end --}}
 
-                            @endletters_area_parts
+                            @endlettersareaparts
                         </div>
                     @endforeach
                 </div>

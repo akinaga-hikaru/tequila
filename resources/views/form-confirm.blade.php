@@ -9,15 +9,15 @@
         <div class={{ config('app_class_css.contents_frame') }}>
 
             {{-- 項目名 start --}}
-                @section_title([
+                @sectiontitle([
                     'js_class' => 'js-syouhin-title',
                     'section_name' => config('app_form_input.title')[0] . ' / ' . config('app_form_input.title')[1],
                     ])
-                @endsection_title
+                @endsectiontitle
             {{-- 項目名 end --}}
 
             {{-- 入力項目表示 start --}}
-                @letters_area_parts(['table' => true])
+                @lettersareaparts(['table' => true])
                     @foreach ($input as $item)
                         <tr>
                             <label>
@@ -26,7 +26,7 @@
                             </label>
                         </tr>
                     @endforeach
-                @endletters_area_parts
+                @endlettersareaparts
             {{-- 入力項目表示 end --}}
 
             <div class={{ config('app_class_css.contents_frame') }}>
@@ -59,16 +59,16 @@
         @main
 
             {{-- ブランドタイトル start --}}
-                @section_title([
+                @sectiontitle([
                     'section_id' => config('app_class_css.section_title'),
                     'js_class' => config('app_class_js.syouhin_title'),
                     'section_name' => $input['title_name']['input'],
                     ])
-                @endsection_title
+                @endsectiontitle
             {{-- ブランドタイトル end --}}
 
             {{-- プレビュー商品コンテナ start --}}
-                @syouhin_parts([
+                @syouhincontainer([
                     'title_id' => $input['title_id']['input'],
                     'title_name' => $input['title_name']['input'],
                     'alt_name' => $input['alt_name']['input'],
@@ -88,7 +88,7 @@
                     'contents_review_top' => $input['contents_review_top']['input'],
                     'contents_review_after' => $input['contents_review_after']['input'],
                 ])
-                @endsyouhin_parts
+                @endsyouhincontainer
             {{-- プレビュー商品コンテナ end --}}
 
         @endmain

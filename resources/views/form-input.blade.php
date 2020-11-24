@@ -8,7 +8,7 @@
         <div class={{ config('app_class_css.contents_frame') }}>
             <form method="POST" action="form-confirm" enctype="multipart/form-data">
             @csrf
-                @letters_area_parts(['table' => true])
+                @lettersareaparts(['table' => true])
 
                     {{-- 項目名 start --}}
                     <tr>
@@ -40,7 +40,7 @@
                         @endforeach
                     {{-- 入力項目 end --}}
 
-                @endletters_area_parts
+                @endlettersareaparts
 
                 {{-- 確認ボタン start --}}
                     <div class={{ config('app_class_css.center') }}>
