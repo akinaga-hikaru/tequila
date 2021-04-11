@@ -1,3 +1,55 @@
+# ローカル環境構築手順
+
+## ローカルPCにインストール
+
+- xampp(php,mysql)
+- Compoer
+- Node.js
+
+## Pathを通す(Windowsの場合)
+
+- 環境変数設定のPathで以下を設定
+    - php
+    - mysql
+    - composer
+
+## DB起動
+
+- mysqld（DBサーバーを起動）
+- mysql -uroot（DBサーバにログインできる)
+
+## Laravelの起動手順
+
+- composer install（依存ライブラリのインストール）
+- php artisan key:genarate（アプリのキーを作成）
+- php artisan serve（開発環境立ち上げ）
+- php artisan migrate（マイグレーションでテーブル作成）
+- http://localhost:8000で確認
+
+## Node.jsのコンパイルを実行
+
+- npm install（依存ライブラリのインストール）
+- npm run watch（ファイルを監視して変更があれば都度ビルド）
+
+# デプロイサーバーの操作（AWS EC2）
+
+## SSH接続
+
+- ssh -i AWSから取得した.pemファイル EC2ユーザー@EC2ホスト名
+
+コマンドが複雑なため~/.ssh/configで以下を設定すると以下のコマンドでSSH接続できる
+
+※ .pemの秘密鍵はAWSのEC2でインスタンスを作成時に生成される
+
+## デプロイ
+
+- Laravelプロジェクトがあるディレクトリに移動
+- git pull
+
+
+
+
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
