@@ -55,8 +55,8 @@ class SyouhinController extends Controller
                             'locals.description as description',
                             'states.id as state_id',
                             'states.name as state_name',
-                            'states.name_kana as state_name_kana',
-                        )->distinct()->get();
+                            'states.name_kana as state_name_kana'
+                        )->get();
 
         /** - ブランド名設定 -
          * 設定変数：$brand

@@ -27,6 +27,7 @@
 - php artisan db:seed（初期データ挿入）
     - php artisan migrate --seed（テーブル作成とデータ挿入を同時に行う）
 - http://localhost:8000で確認
+（うまくいかない場合は、composer dump-autoloadを実行）
 
 ## Node.jsのコンパイルを実行
 
@@ -45,7 +46,7 @@
 
 ## デプロイ
 
-- Laravelプロジェクトがあるディレクトリに移動
+- cd /var/www/{Laravelプロジェクト}(Laravelプロジェクトがあるディレクトリに移動)
 - git pull
 
 
