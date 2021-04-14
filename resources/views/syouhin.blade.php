@@ -33,6 +33,7 @@
                             'hidden' => true,
                             'link' => '',
                             'text' => $title['title'],
+                            'small_text' => $title['title_name_kana'],
                             ])
                         @endcommonbtn
                     @endforeach
@@ -179,7 +180,7 @@
             {{-- ブランドタイトル end --}}
 
             {{-- 商品コンテナ start --}}
-                @foreach ($syouhin_data_all as $content)
+                @foreach ($syouhin_data as $content)
                     @syouhincontainer([
                         'title_id' => $content->title_id,
                         'title_name' => $content->title_name,

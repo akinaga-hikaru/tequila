@@ -39,27 +39,43 @@ class SyouhinController extends Controller
         }
 
         /** - 商品データ設定 -
-         * 設定変数：$syouhin_data_all
-         * 〜 DB(tequila)のTable(syouhin)から全てのデータを取得 〜 */
-        $syouhin_data_all = DB::table('syouhin')->get();
+         * 設定変数：$syouhin_data
+         * 〜 商品データテーブルから全てのデータを取得 〜 */
+        $syouhin_data = DB::table('syouhin')->get();
+
+        /** - 生産地データ設定 -
+         * 設定変数：$locals_data
+         * 〜 州＋地方マスタテーブルから全てのデータを取得 〜 */
+        $locals_data = DB::table('locals')
+                        ->leftjoin('states', 'locals.state_id', '=', 'states.id')
+                        ->select(
+                            'locals.id as id',
+                            'locals.name as name',
+                            'locals.name_kana as name_kana',
+                            'locals.description as description',
+                            'states.id as state_id',
+                            'states.name as state_name',
+                            'states.name_kana as state_name_kana',
+                        )->distinct()->get();
 
         /** - ブランド名設定 -
          * 設定変数：$titles
-         * 〜 DBデータからブランド名を抽出し、連想配列化 〜 */
-        $title = [];
-        foreach ($syouhin_data_all as $item) {
+         * 〜 ブランドマスタテーブルからブランド名を抽出し、連想配列化 〜 */
+        $titles = [];
+        foreach (DB::table('brands')->get() as $item) {
             $title[] = [
-                'title' => $item->title_name,
-                'title_id' => $item->title_id,
+                'title_id' => $item->id,
+                'title' => $item->name,
+                'title_name_kana' => $item->name_kana,
             ];
         }
-        $titles = doubleDelete($title, 'title');
+        $titles = doubleDelete($title, 'title_id');
 
         /** - NOM設定 -
          * 設定変数：$noms
-         * 〜 DBデータからNOMを抽出し、連想配列化 〜 */
+         * 〜 商品データからNOMを抽出し、連想配列化 〜 */
         $nom = [];
-        foreach ($syouhin_data_all as $item) {
+        foreach ($syouhin_data as $item) {
             $nom[] = [
                 'nom' => $item->contents_nom,
                 'dest' => $item->contents_dest,
@@ -69,19 +85,33 @@ class SyouhinController extends Controller
 
         /** - 生産地方設定 -
          * 設定変数：$locals
-         * 〜 configで定義 〜 */
-        $locals = config('app_syouhin.list.locals');
+         * 〜 生産地方マスタテーブルから地方名を抽出し、連想配列化 〜 */
+        $locals = [];
+        foreach ($locals_data as $item) {
+            $locals[] = [
+                'local_id' => $item->id,
+                'local' => $item->id == "others" ? $item->name_kana : $item->state_name_kana . $item->name_kana,
+                'description' => $item->description,
+            ];
+        }
 
         /** - 熟成度合い設定 -
          * 設定変数：$agings
-         * 〜 configで定義 〜 */
-        $agings = config('app_syouhin.list.agings');
+         * 〜 熟成度マスタテーブルからブランド名を抽出し、連想配列化 〜 */
+        $agings = [];
+        foreach (DB::table('agings')->get() as $item) {
+            $agings[] = [
+                'aging_id' => $item->id,
+                'aging_name' => $item->name_kana,
+                'description' => $item->description,
+            ];
+        }
 
         /** - 生産地区設定 -
          * 設定変数：$areas
-         * 〜 DBデータから生産地区を抽出し、連想配列化 〜 */
+         * 〜 商品データから生産地区を抽出し、連想配列化 〜 */
         $area = [];
-        foreach ($syouhin_data_all as $item) {
+        foreach ($syouhin_data as $item) {
             $area[] = [
                 'area_id' => $item->contents_area_id,
                 'area' => $item->contents_area,
@@ -96,25 +126,25 @@ class SyouhinController extends Controller
          * 設定変数：$types */
         $types = [
             [
-                'js_class_1' => 'js-maker-type',
+                'js_class_1' => config('app_class_js.maker_type'),
                 'title' => config('app_syouhin.type.maker') . '（' . count($titles) . '）'
             ],
             [
-                'js_class_1' => 'js-dest-type',
+                'js_class_1' => config('app_class_js.dest_type'),
                 'title' => config('app_syouhin.type.dest') . '（' . count($noms) . '）'
             ],
             [
-                'js_class_1' => 'js-local-type',
+                'js_class_1' => config('app_class_js.local_type'),
                 'title' => config('app_syouhin.type.local') . '（' . count($locals) . '）'
             ],
             [
-                'js_class_1' => 'js-aging-type',
+                'js_class_1' => config('app_class_js.aging_type'),
                 'title' => config('app_syouhin.type.aging') . '（' . count($agings) . '）'
             ],
         ];
 
         return view('syouhin')->with([
-            'syouhin_data_all' => $syouhin_data_all,
+            'syouhin_data' => $syouhin_data,
             'titles' => $titles,
             'locals' => $locals,
             'noms' => $noms,

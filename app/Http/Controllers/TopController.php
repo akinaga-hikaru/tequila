@@ -38,13 +38,13 @@ class TopController extends Controller
         }
 
         // - 全商品データ取得 -
-        $syouhin_data_all = DB::table('syouhin')->get();
+        $syouhin_data = DB::table('syouhin')->get();
 
         // - エリアデータ設定 -
         $valles = [];
         $altos = [];
         $centro = [];
-        foreach ($syouhin_data_all as $item) {
+        foreach ($syouhin_data as $item) {
 
             // 生産エリアの「地区」を削除
             $cut_chiku = explode('地区', $item->contents_area);

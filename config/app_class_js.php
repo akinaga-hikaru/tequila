@@ -32,18 +32,22 @@ return [
     // コンポーネント：商品コンテナパーツ
     'syouhin_container' => 'js-syouhin-container',
     'maker' => 'js-maker',
+    'maker_type' => 'js-maker-type',
     'maker_list' => 'js-maker-list',
     'dest' => 'js-dest',
+    'dest_type' => 'js-dest-type',
     'dest_list' => 'js-dest-list',
     'local' => 'js-local',
+    'local_type' => 'js-local-type',
     'local_list' => 'js-local-list',
     'area' => 'js-area',
     'area_list' => 'js-area-list',
     'aging' => 'js-aging',
+    'aging_type' => 'js-aging-type',
     'aging_list' => 'js-aging-list',
 
     // 個別名：商品一覧
-    'no_products' => 'js-aging_Joven',
+    'no_products' => 'js-aging_joven',
 
     // ページ
     'form_confirm' => 'js-form-confirm',
