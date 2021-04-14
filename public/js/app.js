@@ -19335,7 +19335,7 @@ $(function () {
   } // ***** ■ PC時のみの動作 *****
   else {
       /* --------------- サイドエリアをスクロールしても常に表示する設定 --------------- */
-      $(window).scroll(function () {
+      $(window).on('scroll', function () {
         // ウインドウ上部のスクロール位置取得
         var scroll_top = $(window).scrollTop(); // サイドエリアをスクロールさせたい位置設定
 
@@ -19952,8 +19952,8 @@ function asideState(on) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/akinaga/Downloads/Github/Laravel/tequila/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/akinaga/Downloads/Github/Laravel/tequila/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\yoake\Desktop\Github\Laravel\tequila\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\yoake\Desktop\Github\Laravel\tequila\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

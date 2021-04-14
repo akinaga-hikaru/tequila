@@ -45,7 +45,7 @@
                             ■ {{ config('app_syouhin.container.alc') }}：{!! $contents_alc !!}<br>
                             ■ {{ config('app_syouhin.container.dest') }}：{!! $contents_dest !!}<br>
                             ■ {{ config('app_syouhin.container.nom') }}：{!! 'NOM ' . $contents_nom !!}<br>
-                            ■ {{ config('app_syouhin.container.local') }}：{!! $contents_local !!} / {!! $contents_area !!}<br>
+                            ■ {{ config('app_syouhin.container.local') }}：{!! $contents_local !!}{!! $contents_area !!}<br>
                             @if (!empty($contents_info))
                                 ■ {{ config('app_syouhin.container.info') }}：{!! $contents_info !!}<br>
                             @endif

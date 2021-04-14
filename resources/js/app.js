@@ -50,7 +50,7 @@ $(function() {
     else {
 
         /* --------------- サイドエリアをスクロールしても常に表示する設定 --------------- */
-        $(window).scroll(function() {
+        $(window).on('scroll', function() {
 
             // ウインドウ上部のスクロール位置取得
             const scroll_top = $(window).scrollTop();
