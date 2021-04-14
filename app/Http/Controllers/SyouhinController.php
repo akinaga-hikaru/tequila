@@ -55,7 +55,11 @@ class SyouhinController extends Controller
                             'locals.description as description',
                             'states.id as state_id',
                             'states.name as state_name',
+<<<<<<< HEAD
                             'states.name_kana as state_name_kana',
+=======
+                            'states.name_kana as state_name_kana'
+>>>>>>> 88a60e08c06800bf25d860b4a5f173a5466311b9
                         )->get();
 
         /** - ブランド名設定 -
