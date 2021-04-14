@@ -135,8 +135,8 @@ class SyouhinController extends Controller
          * 設定変数：$types */
         $types = [
             [
-                'js_class_1' => config('app_class_js.maker_type'),
-                'title' => config('app_syouhin.type.maker') . '（' . count($brands) . '）'
+                'js_class_1' => config('app_class_js.brand_type'),
+                'title' => config('app_syouhin.type.brand') . '（' . count($brands) . '）'
             ],
             [
                 'js_class_1' => config('app_class_js.dest_type'),

@@ -5,7 +5,7 @@
         {{ config('app_class_css.syouhin_container') }}
         {{ config('app_class_js.syouhin_container') }}
         {{ config('app_class_js.dest') }}_{{ $contents_nom }}_
-        {{ config('app_class_js.maker') }}_{{ $title_id }}_
+        {{ config('app_class_js.brand') }}_{{ $title_id }}_
         {{ config('app_class_js.local') }}_{{ $contents_local_id }}_
         {{ config('app_class_js.area') }}_{{ $contents_area_id }}_
         {{ config('app_class_js.aging') }}_{{ $aging_sort }}_

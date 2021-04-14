@@ -2,9 +2,9 @@
 export default [
     // [ブランド別]
     {
-        'name': 'maker',
+        'name': 'brand',
         'time': 1000,
-        'match': /js-maker_[a-z-]*/
+        'match': /js-brand_[a-z-]*/
     },
     // [蒸留所別]
     {

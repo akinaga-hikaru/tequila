@@ -31,9 +31,9 @@ return [
 
     // コンポーネント：商品コンテナパーツ
     'syouhin_container' => 'js-syouhin-container',
-    'maker' => 'js-maker',
-    'maker_type' => 'js-maker-type',
-    'maker_list' => 'js-maker-list',
+    'brand' => 'js-brand',
+    'brand_type' => 'js-brand-type',
+    'brand_list' => 'js-brand-list',
     'dest' => 'js-dest',
     'dest_type' => 'js-dest-type',
     'dest_list' => 'js-dest-list',

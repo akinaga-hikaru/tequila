@@ -19407,9 +19407,9 @@ __webpack_require__.r(__webpack_exports__);
 // 各項目にプルダウンのないリスト項目
 /* harmony default export */ __webpack_exports__["default"] = ([// [ブランド別]
 {
-  'name': 'maker',
+  'name': 'brand',
   'time': 1000,
-  'match': /js-maker_[a-z-]*/
+  'match': /js-brand_[a-z-]*/
 }, // [蒸留所別]
 {
   'name': 'dest',

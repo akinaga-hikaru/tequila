@@ -28,8 +28,8 @@
                     @foreach ($brands as $brand)
                         @commonbtn([
                             'btn' => 'list',
-                            'js_class_1' => config('app_class_js.maker_list'),
-                            'js_class_2' => config('app_class_js.maker') . '_' . $brand['brand_id'],
+                            'js_class_1' => config('app_class_js.brand_list'),
+                            'js_class_2' => config('app_class_js.brand') . '_' . $brand['brand_id'],
                             'hidden' => true,
                             'text' => $brand['brand_name'],
                             'small_text' => $brand['brand_name_kana'],
