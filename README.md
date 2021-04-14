@@ -24,6 +24,8 @@
 - php artisan key:genarate（アプリのキーを作成）
 - php artisan serve（開発環境立ち上げ）
 - php artisan migrate（マイグレーションでテーブル作成）
+- php artisan db:seed（初期データ挿入）
+    - php artisan migrate --seed（テーブル作成とデータ挿入を同時に行う）
 - http://localhost:8000で確認
 
 ## Node.jsのコンパイルを実行
