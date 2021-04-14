@@ -59,29 +59,29 @@ class SyouhinController extends Controller
                         )->distinct()->get();
 
         /** - ブランド名設定 -
-         * 設定変数：$titles
+         * 設定変数：$brand
          * 〜 ブランドマスタテーブルからブランド名を抽出し、連想配列化 〜 */
-        $titles = [];
+        $brands = [];
         foreach (DB::table('brands')->get() as $item) {
-            $title[] = [
-                'title_id' => $item->id,
-                'title' => $item->name,
-                'title_name_kana' => $item->name_kana,
+            $brand[] = [
+                'brand_id' => $item->id,
+                'brand_name' => $item->name,
+                'brand_name_kana' => $item->name_kana,
             ];
         }
-        $titles = doubleDelete($title, 'title_id');
+        $brands = doubleDelete($brand, 'brand_id');
 
         /** - NOM設定 -
          * 設定変数：$noms
          * 〜 商品データからNOMを抽出し、連想配列化 〜 */
-        $nom = [];
+        $destiladors = [];
         foreach ($syouhin_data as $item) {
-            $nom[] = [
+            $destilador[] = [
                 'nom' => $item->contents_nom,
-                'dest' => $item->contents_dest,
+                'dest_name_kana' => $item->contents_dest,
             ];
         }
-        $noms = doubleDelete($nom, 'nom');
+        $destiladors = doubleDelete($destilador, 'nom');
 
         /** - 生産地方設定 -
          * 設定変数：$locals
@@ -90,7 +90,7 @@ class SyouhinController extends Controller
         foreach ($locals_data as $item) {
             $locals[] = [
                 'local_id' => $item->id,
-                'local' => $item->id == "others" ? $item->name_kana : $item->state_name_kana . $item->name_kana,
+                'local_name_kana' => $item->id == "others" ? $item->name_kana : $item->state_name_kana . $item->name_kana,
                 'description' => $item->description,
             ];
         }
@@ -102,7 +102,7 @@ class SyouhinController extends Controller
         foreach (DB::table('agings')->get() as $item) {
             $agings[] = [
                 'aging_id' => $item->id,
-                'aging_name' => $item->name_kana,
+                'aging_name_kana' => $item->name_kana,
                 'description' => $item->description,
             ];
         }
@@ -114,24 +114,33 @@ class SyouhinController extends Controller
         foreach ($syouhin_data as $item) {
             $area[] = [
                 'area_id' => $item->contents_area_id,
-                'area' => $item->contents_area,
+                'area_name_kana' => $item->contents_area,
                 'local_id' => $item->contents_local_id,
-                'local' => $item->contents_local,
+                'local_name_kana' => $item->contents_local,
             ];
         }
-        $areas = doubleDelete($area, 'area_id');
-        arsort($areas);
+        $areas['all'] = doubleDelete($area, 'area_id');
+        arsort($areas['all']);
+
+        // 地方ごとにデータを整形
+        foreach ($areas['all'] as $key => $value) {
+            if ($value['area_name_kana'] === '-') {
+                $value['area_name_kana'] = config('app_syouhin.page.other_area');
+            }
+            $areas[$value['local_id']][] = $value;
+        }
+        array_shift($areas);
 
         /** - [項目選択]ボタン設定 -
          * 設定変数：$types */
         $types = [
             [
                 'js_class_1' => config('app_class_js.maker_type'),
-                'title' => config('app_syouhin.type.maker') . '（' . count($titles) . '）'
+                'title' => config('app_syouhin.type.maker') . '（' . count($brands) . '）'
             ],
             [
                 'js_class_1' => config('app_class_js.dest_type'),
-                'title' => config('app_syouhin.type.dest') . '（' . count($noms) . '）'
+                'title' => config('app_syouhin.type.dest') . '（' . count($destiladors) . '）'
             ],
             [
                 'js_class_1' => config('app_class_js.local_type'),
@@ -145,9 +154,9 @@ class SyouhinController extends Controller
 
         return view('syouhin')->with([
             'syouhin_data' => $syouhin_data,
-            'titles' => $titles,
+            'brands' => $brands,
             'locals' => $locals,
-            'noms' => $noms,
+            'destiladors' => $destiladors,
             'agings' => $agings,
             'areas' => $areas,
             'types' => $types,

@@ -25,15 +25,14 @@
 
             {{-- ブランドリスト start --}}
                 <ul>
-                    @foreach ($titles as $title)
+                    @foreach ($brands as $brand)
                         @commonbtn([
                             'btn' => 'list',
                             'js_class_1' => config('app_class_js.maker_list'),
-                            'js_class_2' => config('app_class_js.maker') . '_' . $title['title_id'],
+                            'js_class_2' => config('app_class_js.maker') . '_' . $brand['brand_id'],
                             'hidden' => true,
-                            'link' => '',
-                            'text' => $title['title'],
-                            'small_text' => $title['title_name_kana'],
+                            'text' => $brand['brand_name'],
+                            'small_text' => $brand['brand_name_kana'],
                             ])
                         @endcommonbtn
                     @endforeach
@@ -42,15 +41,14 @@
 
             {{-- 蒸留所リスト start --}}
                 <ul>
-                    @foreach ($noms as $nom)
+                    @foreach ($destiladors as $destilador)
                         @commonbtn([
                             'btn' => 'list',
                             'js_class_1' => config('app_class_js.dest_list'),
-                            'js_class_2' => config('app_class_js.dest') . '_' . $nom['nom'],
+                            'js_class_2' => config('app_class_js.dest') . '_' . $destilador['nom'],
                             'hidden' => true,
-                            'link' => '',
-                            'text' => $nom['nom'] === '-' ? 'NOMなし' : 'NOM ' . $nom['nom'],
-                            'small_text' => $nom['dest'] === '-' ? 'その他蒸留所': $nom['dest'],
+                            'text' => $destilador['nom'] === '-' ? 'NOMなし' : 'NOM ' . $destilador['nom'],
+                            'small_text' => $destilador['dest_name_kana'] === '-' ? 'その他蒸留所': $destilador['dest_name_kana'],
                             ])
                         @endcommonbtn
                     @endforeach
@@ -59,88 +57,61 @@
 
             {{-- 生産地方リスト start --}}
                 <ul>
-                    @php
-                        $valles =[];
-                        $altos = [];
-                        $centro = [];
-                        $others = [];
-                        foreach ($areas as $key => $value) {
-                            if ($value['local_id'] == 'valles') {
-                                $valles[] = $value;
-                            }elseif ($value['local_id'] == 'altos') {
-                                $altos[] = $value;
-                            }elseif ($value['local_id'] == 'centro') {
-                                $centro[] = $value;
-                            }else {
-                                $others[] = $value;
-                            }
-                        }
-                    @endphp
                     @foreach ($locals as $local)
                         @commonbtn([
                             'btn' => 'list',
                             'js_class_1' => config('app_class_js.local_list'),
                             'js_class_2' => config('app_class_js.local') . '_' . $local['local_id'],
                             'hidden' => true,
-                            'link' => '',
-                            'text' => $local['local'],
+                            'text' => $local['local_name_kana'],
                             'small_text' => $local['description'],
                             ])
                         @endcommonbtn
                         @if($local['local_id'] == 'valles')
-                            @foreach ($valles as $item)
+                            @foreach ($areas['valles'] as $item)
                                 @commonbtn([
                                     'btn' => 'down',
                                     'js_class_1' => config('app_class_js.area_list'),
                                     'js_class_2' => config('app_class_js.area') . '_' . $item['local_id'],
                                     'js_class_3' => config('app_class_js.area') . '_' . $item['local_id'] . '_' . $item['area_id'],
                                     'hidden' => true,
-                                    'link' => '',
-                                    'text' => $item['area'],
-                                    ])
+                                    'text' => $item['area_name_kana'],
+                                ])
                                 @endcommonbtn
                             @endforeach
                         @elseif($local['local_id'] == 'altos')
-                            @foreach ($altos as $item)
+                            @foreach ($areas['altos'] as $item)
                                 @commonbtn([
                                     'btn' => 'down',
                                     'js_class_1' => config('app_class_js.area_list'),
                                     'js_class_2' => config('app_class_js.area') . '_' . $item['local_id'],
                                     'js_class_3' => config('app_class_js.area') . '_' . $item['local_id'] . '_' . $item['area_id'],
                                     'hidden' => true,
-                                    'link' => '',
-                                    'text' => $item['area'],
+                                    'text' => $item['area_name_kana'],
                                     ])
                                 @endcommonbtn
                             @endforeach
                         @elseif($local['local_id'] == 'centro')
-                            @foreach ($centro as $item)
-                                @php
-                                    if($item['area'] == '-') {
-                                        $item['area'] = config('app_syouhin.page.other_area');
-                                    }
-                                @endphp
+                            @foreach ($areas['centro'] as $item)
                                 @commonbtn([
                                     'btn' => 'down',
                                     'js_class_1' => config('app_class_js.area_list'),
                                     'js_class_2' => config('app_class_js.area') . '_' . $item['local_id'],
                                     'js_class_3' => config('app_class_js.area') . '_' . $item['local_id'] . '_' . $item['area_id'],
                                     'hidden' => true,
-                                    'link' => '',
-                                    'text' => $item['area'],
+                                    'text' => $item['area_name_kana'],
                                     ])
                                 @endcommonbtn
                             @endforeach
                         @else
-                            @foreach ($others as $item)
+                            @foreach ($areas['others'] as $item)
                                 @commonbtn([
                                     'btn' => 'down',
                                     'js_class_1' => config('app_class_js.area_list'),
                                     'js_class_2' => config('app_class_js.area') . '_' . $item['local_id'],
                                     'js_class_3' => config('app_class_js.area') . '_' . $item['local_id'] . '_' . $item['area_id'],
                                     'hidden' => true,
-                                    'link' => '',
-                                    'text' => $item['local'] . $item['area'],
+                                    'text' => $item['local_name_kana'] . $item['area_name_kana'],
                                     ])
                                 @endcommonbtn
                             @endforeach
@@ -157,8 +128,7 @@
                             'js_class_1' => config('app_class_js.aging_list'),
                             'js_class_2' => config('app_class_js.aging') . '_' . $aging['aging_id'],
                             'hidden' => true,
-                            'link' => '',
-                            'text' => $aging['aging_name'],
+                            'text' => $aging['aging_name_kana'],
                             'small_text' => $aging['description'],
                             ])
                         @endcommonbtn
