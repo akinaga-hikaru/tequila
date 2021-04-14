@@ -34,22 +34,22 @@ return [
         'locals' => [
             [
                 'local_id' => 'valles',
-                'local' => 'バジェス地方',
+                'local' => 'ハリスコ州バジェス地方',
                 'description' => '〜新樽を用い辛味・苦味が特徴〜'
             ],
             [
                 'local_id' => 'altos',
-                'local' => 'ロスアルトス地方',
+                'local' => 'ハリスコ州ロスアルトス地方',
                 'description' => '〜中古樽を用い旨味・甘味が特徴〜'
             ],
             [
                 'local_id' => 'centro',
-                'local' => 'ソナ・セントロ地方',
+                'local' => 'ハリスコ州ソナ・セントロ地方',
                 'description' => '〜上記二つの地方の中間に位置する〜'
             ],
             [
                 'local_id' => 'others',
-                'local' => 'その他',
+                'local' => 'その他の州',
                 'description' => '〜テキーラ5州で作られたもの〜'
             ],
 
