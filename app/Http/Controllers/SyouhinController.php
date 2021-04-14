@@ -48,15 +48,7 @@ class SyouhinController extends Controller
          * 〜 州＋地方マスタテーブルから全てのデータを取得 〜 */
         $locals_data = DB::table('locals')
                         ->leftjoin('states', 'locals.state_id', '=', 'states.id')
-                        ->select(
-                            'locals.id as id',
-                            'locals.name as name',
-                            'locals.name_kana as name_kana',
-                            'locals.description as description',
-                            'states.id as state_id',
-                            'states.name as state_name',
-                            'states.name_kana as state_name_kana',
-                        )->distinct()->get();
+                        ->select('locals.id as id','locals.name as name','locals.name_kana as name_kana','locals.description as description','states.id as state_id','states.name as state_name','states.name_kana as state_name_kana')->get();
 
         /** - ブランド名設定 -
          * 設定変数：$brand
