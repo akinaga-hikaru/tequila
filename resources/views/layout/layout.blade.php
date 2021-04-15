@@ -12,6 +12,7 @@
         <title>@yield('title') | {{ config('app_layout.main_title') }}</title>
         <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
+        <link rel="shortcut icon" href="{{ asset('/favicon.ico') }}">
         <script
             src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
