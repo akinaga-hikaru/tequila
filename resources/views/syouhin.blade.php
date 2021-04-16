@@ -160,6 +160,7 @@
                         'aging_sort' => $content->aging_sort,
                         'aging' => $content->aging,
                         'contents_alc' => $content->contents_alc,
+                        'mix_degree' => $content->mix_degree,
                         'contents_dest' => $content->contents_dest,
                         'contents_nom' => $content->contents_nom,
                         'contents_local_id' => $content->contents_local_id,

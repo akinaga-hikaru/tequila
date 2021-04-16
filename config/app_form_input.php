@@ -63,11 +63,18 @@ return [
             'sample' => '「Silver」 => 「Silver」',
         ],
         'contents_alc' => [
-            'title' => '度数/混成度',
+            'title' => '度数',
             'type' => 'text',
             'description' => 'アルコール度数',
             'terms' => '半角英数字推奨',
-            'sample' => '「40%でアガベ100%」 => 「40%/100%AGAVE」',
+            'sample' => '「40%」 => 「40%」',
+        ],
+        'mix_degree' => [
+            'title' => '混合度',
+            'type' => 'text',
+            'description' => 'アガベ混合度数',
+            'terms' => '半角英数字推奨',
+            'sample' => '「アガベ100%」 => 「100% de Agave」',
         ],
         'contents_dest' => [
             'title' => '蒸留所名',

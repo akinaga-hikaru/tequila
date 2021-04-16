@@ -39,6 +39,7 @@ class FormController extends Controller
             'aging_sort' => $request->input('aging_sort'),
             'aging' => $request->input('aging'),
             'contents_alc' => $request->input('contents_alc'),
+            'mix_degree' => $request->input('mix_degree'),
             'contents_dest' => $request->input('contents_dest'),
             'contents_nom' => $request->input('contents_nom'),
             'contents_local_id' => $request->input('contents_local_id'),
@@ -91,6 +92,10 @@ class FormController extends Controller
             'contents_alc' => [
                 'input' => session('contents_alc'),
                 'name' => config('app_form_input.contents.contents_alc.title'),
+            ],
+            'mix_degree' => [
+                'input' => session('mix_degree'),
+                'name' => config('app_form_input.contents.mix_degree.title'),
             ],
             'contents_dest' => [
                 'input' => session('contents_dest'),
@@ -172,6 +177,7 @@ class FormController extends Controller
             'aging_sort' => session('aging_sort'),
             'aging' => session('aging'),
             'contents_alc' => session('contents_alc'),
+            'mix_degree' => session('mix_degree'),
             'contents_dest' => session('contents_dest'),
             'contents_nom' => session('contents_nom'),
             'contents_local_id' => session('contents_local_id'),

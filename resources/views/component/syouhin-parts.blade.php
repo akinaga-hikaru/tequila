@@ -42,7 +42,7 @@
                 {{-- 商品内容 start --}}
                     <div>
                         <p class={{ config('app_class_css.letters_area__paragraph') }}>
-                            ■ {{ config('app_syouhin.container.alc') }}：{!! $contents_alc !!}<br>
+                            ■ {{ config('app_syouhin.container.alc') }}：{!! $contents_alc !!}/{!! $mix_degree !!}<br>
                             ■ {{ config('app_syouhin.container.dest') }}：{!! $contents_dest !!}<br>
                             ■ {{ config('app_syouhin.container.nom') }}：{!! 'NOM ' . $contents_nom !!}<br>
                             ■ {{ config('app_syouhin.container.local') }}：{!! $contents_local !!}{!! $contents_area !!}<br>

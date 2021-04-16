@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(MixesTableSeeder::class); // mixesテーブル
         $this->call(BrandsTableSeeder::class); // brandsテーブル
         $this->call(AgingsTableSeeder::class); // agingsテーブル
         $this->call(StatesTableSeeder::class); // statesテーブル

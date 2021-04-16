@@ -77,6 +77,7 @@
                     'aging_sort' => $input['aging_sort']['input'],
                     'aging' => $input['aging']['input'],
                     'contents_alc' => $input['contents_alc']['input'],
+                    'mix_degree' => $input['mix_degree']['input'],
                     'contents_dest' => $input['contents_dest']['input'],
                     'contents_nom' => $input['contents_nom']['input'],
                     'contents_local_id' => $input['contents_local_id']['input'],
