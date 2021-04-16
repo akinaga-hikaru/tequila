@@ -25,10 +25,12 @@ html, body {
 
     // その他設定
     scroll-behavior: smooth;
+    // iPhoneのSafariで文字サイズ指定が効かないのを解消
     -webkit-text-size-adjust: 100%;
 
 }
 
+// Windowsでスクロールバーが表示されるのを解消
 * {
     scrollbar-width: none;
     -ms-overflow-style: none;
