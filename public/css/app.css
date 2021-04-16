@@ -232,6 +232,7 @@ body {
   font-size: 15px;
   line-height: 1.8;
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 @media screen and (max-width: 768px) {
@@ -559,14 +560,6 @@ img {
 .table-area td {
   padding: 8px 12px;
   border: 1px solid #3f2913;
-  font-size: 15px;
-}
-
-@media screen and (max-width: 768px) {
-  .table-area th,
-  .table-area td {
-    font-size: 13px;
-  }
 }
 
 .table-area th {
