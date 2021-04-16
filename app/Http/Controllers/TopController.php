@@ -13,90 +13,79 @@ class TopController extends Controller
     |--------------------------------------------------------------------------
     */
     public function index()
-    {
-        /**
-         * 配列内の重複する値を削除して昇順にする
-         *
-         * @param array $list・・・重複削除する配列
-         * @param string $delete_key・・・重複削除のキー
-         * @return array $lists・・・重複削除後の配列
-         */
-        function doubleDelete($list, $delete_key)
-        {
-            // 連想配列の（$delete_key）のValueで重複を削除
-            $value_confirm = $lists = [];
-            foreach ($list as $value) {
-                if (!in_array($value[$delete_key], $value_confirm)) {
-                    $value_confirm[] = $value[$delete_key];
-                    $lists[] = $value;
-                }
-            }
-            // 昇順に並び替え
-            asort($lists);
-            // 重複削除した配列を返す
-            return $lists;
-        }
-
-        // - 全商品データ取得 -
-        $syouhin_data = DB::table('syouhin')->get();
-
-        // - エリアデータ設定 -
-        $valles = [];
-        $altos = [];
-        $centro = [];
-        foreach ($syouhin_data as $item) {
-
-            // 生産エリアの「地区」を削除
-            $cut_chiku = explode('地区', $item->contents_area);
-
-            // 取得するデータを設定（NOMでソート）
-            $array = [
-                'dest_nom' => $item->contents_nom,
-                'title_name' => $item->title_name,
-                'dest_name' => $item->contents_dest,
-                'local' => $item->contents_local,
-                'area' => $cut_chiku[0],
+    {   
+        // - 熟成度合いデータ設定 -　$agings
+        $aging_data = DB::table('agings')
+        ->where('type', '=', 'tequila')->get();
+        foreach ($aging_data as $item) {
+            $agings[] = [
+                $item->name_kana,
+                $item->definition,
+                $item->rule,
             ];
-
-            // 条件に合わせてそれぞれのエリアの配列に格納
-            switch ($item->contents_local_id) {
-                case 'valles':
-                    $valles[] = $array;
-                    break;
-                case 'altos':
-                    $altos[] = $array;
-                    break;
-                case 'centro':
-                    if ($item->contents_nom !== '-') {
-                        $centro[] = $array;
-                    }
-                    break;
-                default:
-                    if ($item->contents_nom !== '-') {
-                        $other[] = $array;
-                    }
-                    break;
+        }
+        
+        // - テキーラの産地データ設定 - $areas
+        $area_data = DB::table('areas')
+        ->join('locals', 'areas.local_id', '=', 'locals.id')
+        ->select('areas.name_kana as area_name_kana', 'locals.name_kana as local_name_kana', 'locals.id as local_id', 'areas.state_id as state_id')
+        ->where('areas.state_id', '=', 'jalisco')->get();
+        foreach ($area_data as $item) {
+            $array = [
+                'local_name_kana' => $item->local_name_kana,
+                'area_name_kana' => explode('地区', $item->area_name_kana)[0],
+            ];
+            if ($item->local_id == 'valles') {
+                $area_valles[] = $array;
+                $areas[$item->local_id] = $area_valles;
+            } elseif ($item->local_id == 'altos') {
+                $area_altos[] = $array;
+                $areas[$item->local_id] = $area_altos;
+            } elseif ($item->local_id == 'centro') {
+                $area_centro[] = $array;
+                $areas[$item->local_id] = $area_centro;
+            } else {
+                $area_others[] = $array;
+                $areas[$item->local_id] = $area_others;
             }
         }
 
-        // 蒸留所一覧のデータ設定
-        $dest_lists = [
-            'valles' => doubleDelete($valles, 'dest_name'),
-            'altos' => doubleDelete($altos, 'dest_name'),
-            'centro' => doubleDelete($centro, 'dest_name'),
-            'other' => doubleDelete($other, 'dest_name'),
-        ];
-
-        // テキーラの産地のデータ設定
-        $tequila_states = [
-            'valles' => doubleDelete($valles, 'area'),
-            'altos' => doubleDelete($altos, 'area'),
-            'centro' => doubleDelete($centro, 'area'),
-        ];
+        // - 蒸留所一覧データ設定 - $destiladors
+        $dest_data = DB::table('destiladors')
+        ->join('areas', 'areas.id', '=', 'destiladors.area_id')
+        ->join('locals', 'areas.local_id', '=', 'locals.id')
+        ->join('states', 'areas.state_id', '=', 'states.id')
+        ->join('brands', 'brands.id', '=', 'destiladors.main_brand')
+        ->select('areas.name_kana as area_name_kana', 'locals.name_kana as local_name_kana', 'locals.id as local_id', 'destiladors.nom as dest_nom', 'destiladors.name_kana as dest_name_kana', 'brands.name_kana as brand_name_kana', 'states.name_kana as state_name_kana')
+        ->get();
+        $array = [];
+        foreach ($dest_data as $item) {
+            $array = [
+                'dest_nom' => $item->dest_nom,
+                'dest_name_kana' => $item->dest_name_kana,
+                'brand_name_kana' => $item->brand_name_kana,
+                'area_name_kana' => $item->area_name_kana,
+                'local_name_kana' => $item->local_id == 'others' ? $item->state_name_kana : $item->local_name_kana,
+            ];
+            if ($item->local_id == 'valles') {
+                $dest_valles[] = $array;
+                $destiladors[$item->local_id] = $dest_valles;
+            } elseif ($item->local_id == 'altos') {
+                $dest_altos[] = $array;
+                $destiladors[$item->local_id] = $dest_altos;
+            } elseif ($item->local_id == 'centro') {
+                $dest_centro[] = $array;
+                $destiladors[$item->local_id] = $dest_centro;
+            } else {
+                $dest_others[] = $array;
+                $destiladors[$item->local_id] = $dest_others;
+            }
+        }
 
         return view('index')->with([
-            'dest_lists' => $dest_lists,
-            'tequila_states' => $tequila_states
+            'agings' => $agings,
+            'destiladors' => $destiladors,
+            'areas' => $areas
         ]);
     }
 }

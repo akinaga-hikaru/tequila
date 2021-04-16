@@ -75,17 +75,17 @@
                                                     @endforeach
                                                 </tr>
                                                 @if($content['id'] === 'jarisco')
-                                                    @foreach($tequila_states as $key => $data)
+                                                    @foreach($areas as $key => $data)
                                                         <tr>
                                                             <td>
                                                                 @if($key !== 'other')
-                                                                    {{ $data[0]['local'] }}
+                                                                    {{ $data[0]['local_name_kana'] }}
                                                                 @endif
                                                             </td>
                                                             <td>
                                                                 @if($key !== 'other')
                                                                     @foreach($data as $cell)
-                                                                        {{ $cell['area'] }} /
+                                                                        {{ $cell['area_name_kana'] }} /
                                                                     @endforeach
                                                                 @endif
                                                                 etc...
@@ -111,7 +111,7 @@
                                                         <th>{{ $header }}</th>
                                                     @endforeach
                                                 </tr>
-                                                @foreach($content['table']['cells'] as $cells)
+                                                @foreach($agings as $cells)
                                                     <tr>
                                                         @foreach($cells as $cell)
                                                             <td>{!! $cell !!}</td>
@@ -128,26 +128,23 @@
                                                         <th>{{ $header }}</th>
                                                     @endforeach
                                                 </tr>
-                                                @foreach($dest_lists as $key => $dest_list)
+                                                @foreach($destiladors as $key => $dest_list)
                                                     <tr>
                                                         <td>
-                                                            @if($key !== 'other')
-                                                                {{ $dest_list[0]['local'] }}
+                                                            @if($key !== 'others')
+                                                                {{ $dest_list[0]['local_name_kana'] }}
                                                             @else
                                                                 ハリスコ州外
                                                             @endif
                                                         </td>
                                                         <td>
-                                                            @if($key !== 'other')
+                                                            @if($key !== 'others')
                                                                 @foreach($dest_list as $cell)
-                                                                    {{ $cell['dest_name'] }}<br>
+                                                                    {{ $cell['dest_name_kana'] }}<br>
                                                                 @endforeach
                                                             @else
                                                                 @foreach($dest_list as $cell)
-                                                                    {{ $cell['dest_name'] }}
-                                                                @endforeach
-                                                                @foreach($dest_list as $cell)
-                                                                    （{{ $cell['local'] }}）<br>
+                                                                    {{ $cell['dest_name_kana'] }}（{{ $cell['local_name_kana'] }}）<br>
                                                                 @endforeach
                                                             @endif
                                                         </td>
@@ -158,12 +155,12 @@
                                                         </td>
                                                         <td>
                                                             @foreach($dest_list as $cell)
-                                                                {{ $cell['title_name'] }}<br>
+                                                                {{ $cell['brand_name_kana'] }}<br>
                                                             @endforeach
                                                         </td>
                                                         <td>
                                                             @foreach($dest_list as $cell)
-                                                                {{ $cell['area'] }}<br>
+                                                                {{ $cell['area_name_kana'] }}<br>
                                                             @endforeach
                                                         </td>
                                                     </tr>
