@@ -7,7 +7,7 @@
 return [
     'meta' => [
         'description' => '各種テキーラを飲み比べたインデックス。テキーラの基礎知識も記載しているので、入門用に。',
-        'url' => 'http://ec2-54-250-241-251.ap-northeast-1.compute.amazonaws.com/',
+        'url' => 'http://www.tequipedia.com/',
         'image' => './image/icon/tequila-icon.png',
     ],
     'main_title' => 'テキーラ全書',
