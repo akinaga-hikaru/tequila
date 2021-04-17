@@ -47,8 +47,9 @@ class SyouhinController extends Controller
          * 設定変数：$locals_data
          * 〜 州＋地方マスタテーブルから全てのデータを取得 〜 */
         $locals_data = DB::table('locals')
-                        ->leftjoin('states', 'locals.state_id', '=', 'states.id')
-                        ->select('locals.id as id','locals.name as name','locals.name_kana as name_kana','locals.description as description','states.id as state_id','states.name as state_name','states.name_kana as state_name_kana')->get();
+        ->leftjoin('states', 'locals.state_id', '=', 'states.id')
+        ->select('locals.id as id','locals.name as name','locals.name_kana as name_kana','locals.description as description','states.id as state_id','states.name as state_name','states.name_kana as state_name_kana')
+        ->get();
 
         /** - ブランド名設定 -
          * 設定変数：$brand
@@ -69,8 +70,8 @@ class SyouhinController extends Controller
         $destiladors = [];
         foreach ($syouhin_data as $item) {
             $destilador[] = [
-                'nom' => $item->contents_nom,
-                'dest_name_kana' => $item->contents_dest,
+                'nom' => $item->dest_nom,
+                'dest_name_kana' => $item->dest_name_kana,
             ];
         }
         $destiladors = doubleDelete($destilador, 'nom');
@@ -105,10 +106,10 @@ class SyouhinController extends Controller
         $area = [];
         foreach ($syouhin_data as $item) {
             $area[] = [
-                'area_id' => $item->contents_area_id,
-                'area_name_kana' => $item->contents_area,
-                'local_id' => $item->contents_local_id,
-                'local_name_kana' => $item->contents_local,
+                'area_id' => $item->area_id,
+                'area_name_kana' => $item->area_name_kana,
+                'local_id' => $item->local_id,
+                'local_name_kana' => $item->local_name_kana,
             ];
         }
         $areas['all'] = doubleDelete($area, 'area_id');

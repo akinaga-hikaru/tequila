@@ -14,7 +14,7 @@ return [
            'base_dir' => '/image/syouhin/',
            'link_text' => '外部の商品ページへ'
         ],
-        'alc' => '度数',
+        'alc' => '度数/混合度',
         'dest' => '蒸留所',
         'nom' => '蒸留所番号',
         'local' => '生産地域',

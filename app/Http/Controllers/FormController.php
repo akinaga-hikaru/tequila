@@ -32,24 +32,25 @@ class FormController extends Controller
     {
         // 入力項目をセッションに保存
         $request->session()->put([
-            'title_id' => $request->input('title_id'),
-            'title_name' => $request->input('title_name'),
-            'alt_name' => $request->input('alt_name'),
-            'url' => $request->input('url'),
+            'brand_id' => $request->input('brand_id'),
+            'brand_name' => $request->input('brand_name'),
+            'syouhin_id' => $request->input('syouhin_id'),
+            'syouhin_url' => $request->input('syouhin_url'),
             'aging_sort' => $request->input('aging_sort'),
-            'aging' => $request->input('aging'),
-            'contents_alc' => $request->input('contents_alc'),
+            'aging_id' => $request->input('aging_id'),
+            'aging_name' => $request->input('aging_name'),
+            'alc_degree' => $request->input('alc_degree'),
             'mix_degree' => $request->input('mix_degree'),
-            'contents_dest' => $request->input('contents_dest'),
-            'contents_nom' => $request->input('contents_nom'),
-            'contents_local_id' => $request->input('contents_local_id'),
-            'contents_local' => $request->input('contents_local'),
-            'contents_area_id' => $request->input('contents_area_id'),
-            'contents_area' => $request->input('contents_area'),
-            'contents_info' => $request->input('contents_info'),
-            'contents_review_flavor' => $request->input('contents_review_flavor'),
-            'contents_review_top' => $request->input('contents_review_top'),
-            'contents_review_after' => $request->input('contents_review_after'),
+            'dest_name_kana' => $request->input('dest_name_kana'),
+            'dest_nom' => $request->input('dest_nom'),
+            'local_id' => $request->input('local_id'),
+            'local_name_kana' => $request->input('local_name_kana'),
+            'area_id' => $request->input('area_id'),
+            'area_name_kana' => $request->input('area_name_kana'),
+            'information' => $request->input('information'),
+            'review_flavor' => $request->input('review_flavor'),
+            'review_top' => $request->input('review_top'),
+            'review_after' => $request->input('review_after'),
         ]);
 
         // アップロードファイル定義
@@ -61,87 +62,91 @@ class FormController extends Controller
 
         // インプット項目をセッションから取得
         $input = [
-            'title_id' => [
-                'input' => session('title_id'),
-                'name' => config('app_form_input.contents.title_id.title'),
+            'brand_id' => [
+                'input' => session('brand_id'),
+                'name' => config('app_form_input.contents.brand_id.title'),
             ],
-            'title_name' => [
-                'input' => session('title_name'),
-                'name' => config('app_form_input.contents.title_name.title'),
+            'brand_name' => [
+                'input' => session('brand_name'),
+                'name' => config('app_form_input.contents.brand_name.title'),
             ],
-            'alt_name' => [
-                'input' => session('alt_name'),
-                'name' => config('app_form_input.contents.alt_name.title'),
+            'syouhin_id' => [
+                'input' => session('syouhin_id'),
+                'name' => config('app_form_input.contents.syouhin_id.title'),
             ],
-            'url' => [
-                'input' => session('url'),
-                'name' => config('app_form_input.contents.url.title'),
+            'syouhin_url' => [
+                'input' => session('syouhin_url'),
+                'name' => config('app_form_input.contents.syouhin_url.title'),
             ],
             'image' => [
-                'input' => session('alt_name') . '.jpg',
+                'input' => session('syouhin_id') . '.jpg',
                 'name' => config('app_form_input.contents.image.title'),
             ],
             'aging_sort' => [
                 'input' => session('aging_sort'),
                 'name' => config('app_form_input.contents.aging_sort.title'),
             ],
-            'aging' => [
-                'input' => session('aging'),
-                'name' => config('app_form_input.contents.aging.title'),
+            'aging_id' => [
+                'input' => session('aging_id'),
+                'name' => config('app_form_input.contents.aging_id.title'),
             ],
-            'contents_alc' => [
-                'input' => session('contents_alc'),
-                'name' => config('app_form_input.contents.contents_alc.title'),
+            'aging_name' => [
+                'input' => session('aging_name'),
+                'name' => config('app_form_input.contents.aging_name.title'),
+            ],
+            'alc_degree' => [
+                'input' => session('alc_degree'),
+                'name' => config('app_form_input.contents.alc_degree.title'),
             ],
             'mix_degree' => [
                 'input' => session('mix_degree'),
                 'name' => config('app_form_input.contents.mix_degree.title'),
             ],
-            'contents_dest' => [
-                'input' => session('contents_dest'),
-                'name' => config('app_form_input.contents.contents_dest.title'),
+            'dest_name_kana' => [
+                'input' => session('dest_name_kana'),
+                'name' => config('app_form_input.contents.dest_name_kana.title'),
             ],
-            'contents_nom' => [
-                'input' => session('contents_nom'),
-                'name' => config('app_form_input.contents.contents_nom.title'),
+            'dest_nom' => [
+                'input' => session('dest_nom'),
+                'name' => config('app_form_input.contents.dest_nom.title'),
             ],
-            'contents_local_id' => [
-                'input' => session('contents_local_id'),
-                'name' => config('app_form_input.contents.contents_local_id.title'),
+            'local_id' => [
+                'input' => session('local_id'),
+                'name' => config('app_form_input.contents.local_id.title'),
             ],
-            'contents_local' => [
-                'input' => session('contents_local'),
-                'name' => config('app_form_input.contents.contents_local.title'),
+            'local_name_kana' => [
+                'input' => session('local_name_kana'),
+                'name' => config('app_form_input.contents.local_name_kana.title'),
             ],
-            'contents_area_id' => [
-                'input' => session('contents_area_id'),
-                'name' => config('app_form_input.contents.contents_area_id.title'),
+            'area_id' => [
+                'input' => session('area_id'),
+                'name' => config('app_form_input.contents.area_id.title'),
             ],
-            'contents_area' => [
-                'input' => session('contents_area'),
-                'name' => config('app_form_input.contents.contents_area.title'),
+            'area_name_kana' => [
+                'input' => session('area_name_kana'),
+                'name' => config('app_form_input.contents.area_name_kana.title'),
             ],
-            'contents_info' => [
-                'input' => session('contents_info'),
-                'name' => config('app_form_input.contents.contents_info.title'),
+            'information' => [
+                'input' => session('information'),
+                'name' => config('app_form_input.contents.information.title'),
             ],
-            'contents_review_flavor' => [
-                'input' => session('contents_review_flavor'),
-                'name' => config('app_form_input.contents.contents_review_flavor.title'),
+            'review_flavor' => [
+                'input' => session('review_flavor'),
+                'name' => config('app_form_input.contents.review_flavor.title'),
             ],
-            'contents_review_top' => [
-                'input' => session('contents_review_top'),
-                'name' => config('app_form_input.contents.contents_review_top.title'),
+            'review_top' => [
+                'input' => session('review_top'),
+                'name' => config('app_form_input.contents.review_top.title'),
             ],
-            'contents_review_after' => [
-                'input' => session('contents_review_after'),
-                'name' => config('app_form_input.contents.contents_review_after.title'),
+            'review_after' => [
+                'input' => session('review_after'),
+                'name' => config('app_form_input.contents.review_after.title'),
             ],
         ];
 
         // アップロードファイルがあれば一時フォルダに格納（プレビュー表示させるため）
-        if (!empty($request->file('image')) && !empty($input['alt_name']['input'])) {
-            $file = $input['alt_name']['input'] . '.jpg';
+        if (!empty($request->file('image')) && !empty($input['syouhin_id']['input'])) {
+            $file = $input['syouhin_id']['input'] . '.jpg';
             $upload_file->storeAs('upload', $file);
             $upload_file->move('./image/syouhin/sample', $file);
         }
@@ -167,27 +172,28 @@ class FormController extends Controller
     public function postConfirm(Request $request)
     {
         // DBにデータを挿入
-        $file = session('alt_name') . '.jpg';
+        $file = session('syouhin_id') . '.jpg';
         DB::table('syouhin')->insert([
-            'title_id' => session('title_id'),
-            'title_name' => session('title_name'),
-            'alt_name' => session('alt_name'),
-            'url' => session('url'),
+            'brand_id' => session('brand_id'),
+            'brand_name' => session('brand_name'),
+            'syouhin_id' => session('syouhin_id'),
+            'syouhin_url' => session('syouhin_url'),
             'image' => $file,
             'aging_sort' => session('aging_sort'),
-            'aging' => session('aging'),
-            'contents_alc' => session('contents_alc'),
+            'aging_id' => session('aging_id'),
+            'aging_name' => session('aging_name'),
+            'alc_degree' => session('alc_degree'),
             'mix_degree' => session('mix_degree'),
-            'contents_dest' => session('contents_dest'),
-            'contents_nom' => session('contents_nom'),
-            'contents_local_id' => session('contents_local_id'),
-            'contents_local' => session('contents_local'),
-            'contents_area_id' => session('contents_area_id'),
-            'contents_area' => session('contents_area'),
-            'contents_info' => session('contents_info'),
-            'contents_review_flavor' => session('contents_review_flavor'),
-            'contents_review_top' => session('contents_review_top'),
-            'contents_review_after' => session('contents_review_after'),
+            'dest_name_kana' => session('dest_name_kana'),
+            'dest_nom' => session('dest_nom'),
+            'local_id' => session('local_id'),
+            'local_name_kana' => session('local_name_kana'),
+            'area_id' => session('area_id'),
+            'area_name_kana' => session('area_name_kana'),
+            'information' => session('information'),
+            'review_flavor' => session('review_flavor'),
+            'review_top' => session('review_top'),
+            'review_after' => session('review_after'),
         ]);
         // アップロードしたファイルを正規フォルダに移動
         File::move('./image/syouhin/sample/' . $file, './image/syouhin/' . $file);

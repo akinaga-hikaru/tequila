@@ -62,32 +62,33 @@
                 @sectiontitle([
                     'section_id' => config('app_class_css.section_title'),
                     'js_class' => config('app_class_js.syouhin_title'),
-                    'section_name' => $input['title_name']['input'],
+                    'section_name' => $input['brand_name']['input'],
                     ])
                 @endsectiontitle
             {{-- ブランドタイトル end --}}
 
             {{-- プレビュー商品コンテナ start --}}
                 @syouhincontainer([
-                    'title_id' => $input['title_id']['input'],
-                    'title_name' => $input['title_name']['input'],
-                    'alt_name' => $input['alt_name']['input'],
-                    'url' => $input['url']['input'],
+                    'brand_id' => $input['brand_id']['input'],
+                    'brand_name' => $input['brand_name']['input'],
+                    'syouhin_id' => $input['syouhin_id']['input'],
+                    'syouhin_url' => $input['syouhin_url']['input'],
                     'image' => 'sample/' . $input['image']['input'],
                     'aging_sort' => $input['aging_sort']['input'],
-                    'aging' => $input['aging']['input'],
-                    'contents_alc' => $input['contents_alc']['input'],
+                    'aging_id' => $input['aging_id']['input'],
+                    'aging_name' => $input['aging_name']['input'],
+                    'alc_degree' => $input['alc_degree']['input'],
                     'mix_degree' => $input['mix_degree']['input'],
-                    'contents_dest' => $input['contents_dest']['input'],
-                    'contents_nom' => $input['contents_nom']['input'],
-                    'contents_local_id' => $input['contents_local_id']['input'],
-                    'contents_local' => $input['contents_local']['input'],
-                    'contents_area_id' => $input['contents_area_id']['input'],
-                    'contents_area' => $input['contents_area']['input'],
-                    'contents_info' => $input['contents_info']['input'],
-                    'contents_review_flavor' => $input['contents_review_flavor']['input'],
-                    'contents_review_top' => $input['contents_review_top']['input'],
-                    'contents_review_after' => $input['contents_review_after']['input'],
+                    'dest_name_kana' => $input['dest_name_kana']['input'],
+                    'dest_nom' => $input['dest_nom']['input'],
+                    'local_id' => $input['local_id']['input'],
+                    'local_name_kana' => $input['local_name_kana']['input'],
+                    'area_id' => $input['area_id']['input'],
+                    'area_name_kana' => $input['area_name_kana']['input'],
+                    'information' => $input['information']['input'],
+                    'review_flavor' => $input['review_flavor']['input'],
+                    'review_top' => $input['review_top']['input'],
+                    'review_after' => $input['review_after']['input'],
                 ])
                 @endsyouhincontainer
             {{-- プレビュー商品コンテナ end --}}
