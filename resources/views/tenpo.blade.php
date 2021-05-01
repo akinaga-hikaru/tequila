@@ -44,8 +44,9 @@
                                                     {{ $cell['name'] }}
                                                 </a>
                                             </td>
-                                            <td>{{ $cell['contact'] }}</td>
-                                            <td>{{ $cell['access'] }}</td>
+                                            @if (!empty($cell['access']))
+                                                <td>{{ $cell['access'] }}</td>
+                                            @endif
                                             <td>{{ $cell['description'] }}</td>
                                         </tr>
                                     @endforeach
