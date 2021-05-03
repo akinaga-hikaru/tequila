@@ -27,6 +27,7 @@ class CreateSyouhinTable extends Migration
             $table->string('image')->comment('画像ファイル名');
             $table->string('alc_degree')->comment('アルコール度数');
             $table->string('mix_degree')->comment('アガベ混合度');
+            $table->string('min_price')->comment('参考価格');
             $table->string('dest_nom')->comment('蒸留所番号');
             $table->string('dest_name_kana')->comment('蒸留所名');
             $table->string('local_id')->comment('生産地方ID');

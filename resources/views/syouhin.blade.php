@@ -161,6 +161,7 @@
                         'aging_name' => $content->aging_name,
                         'alc_degree' => $content->alc_degree,
                         'mix_degree' => $content->mix_degree,
+                        'min_price' => $content->min_price,
                         'dest_name_kana' => $content->dest_name_kana,
                         'dest_nom' => $content->dest_nom,
                         'local_id' => $content->local_id,

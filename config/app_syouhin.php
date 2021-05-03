@@ -14,9 +14,9 @@ return [
            'base_dir' => '/image/syouhin/',
            'link_text' => '外部の商品ページへ'
         ],
-        'alc' => '度数/混合度',
+        'alc' => '度数 / 混合度',
         'dest' => '蒸留所',
-        'nom' => '蒸留所番号',
+        'price' => '参考価格',
         'local' => '生産地域',
         'info' => '情報',
         'flavor' => '香り',

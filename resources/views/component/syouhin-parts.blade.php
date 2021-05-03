@@ -43,8 +43,8 @@
                     <div>
                         <p class={{ config('app_class_css.letters_area__paragraph') }}>
                             ■ {{ config('app_syouhin.container.alc') }}：{!! $alc_degree !!} / {!! $mix_degree !!}<br>
-                            ■ {{ config('app_syouhin.container.dest') }}：{!! $dest_name_kana !!}<br>
-                            ■ {{ config('app_syouhin.container.nom') }}：{!! 'NOM ' . $dest_nom !!}<br>
+                            ■ {{ config('app_syouhin.container.dest') }}：{!! $dest_name_kana !!}（{!! 'NOM ' . $dest_nom !!}）<br>
+                            ■ {{ config('app_syouhin.container.price') }}：¥ {!! number_format(intval($min_price)) !!} ～<br>
                             ■ {{ config('app_syouhin.container.local') }}：{!! $local_name_kana !!}{!! $area_name_kana !!}<br>
                             @if (!empty($information))
                                 ■ {{ config('app_syouhin.container.info') }}：{!! $information !!}<br>

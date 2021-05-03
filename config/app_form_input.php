@@ -83,6 +83,13 @@ return [
             'terms' => '半角英数字推奨',
             'sample' => '「アガベ100%」 => 「100% de Agave」',
         ],
+        'min_price' => [
+            'title' => '参考価格',
+            'type' => 'text',
+            'description' => '販売される価格の相場',
+            'terms' => '半角英数字推奨',
+            'sample' => '「¥1580」 => 「¥1500」',
+        ],
         'dest_name_kana' => [
             'title' => '蒸留所名',
             'type' => 'text',

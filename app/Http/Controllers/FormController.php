@@ -102,6 +102,10 @@ class FormController extends Controller
                 'input' => session('mix_degree'),
                 'name' => config('app_form_input.contents.mix_degree.title'),
             ],
+            'min_price' => [
+                'input' => session('min_price'),
+                'name' => config('app_form_input.contents.min_price.title'),
+            ],
             'dest_name_kana' => [
                 'input' => session('dest_name_kana'),
                 'name' => config('app_form_input.contents.dest_name_kana.title'),
@@ -184,6 +188,7 @@ class FormController extends Controller
             'aging_name' => session('aging_name'),
             'alc_degree' => session('alc_degree'),
             'mix_degree' => session('mix_degree'),
+            'min_price' => session('min_price'),
             'dest_name_kana' => session('dest_name_kana'),
             'dest_nom' => session('dest_nom'),
             'local_id' => session('local_id'),

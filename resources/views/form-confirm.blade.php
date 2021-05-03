@@ -79,6 +79,7 @@
                     'aging_name' => $input['aging_name']['input'],
                     'alc_degree' => $input['alc_degree']['input'],
                     'mix_degree' => $input['mix_degree']['input'],
+                    'min_price' => $input['min_price']['input'],
                     'dest_name_kana' => $input['dest_name_kana']['input'],
                     'dest_nom' => $input['dest_nom']['input'],
                     'local_id' => $input['local_id']['input'],
