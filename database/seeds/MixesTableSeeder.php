@@ -13,9 +13,9 @@ class MixesTableSeeder extends Seeder
     {
         // 挿入データの設定
         $mixes =[
-            ['id' => 'mixed', 'name' => 'Mixed',],
-            ['id' => 'agave100', 'name' => '100% de Agave',],
-            ['id' => 'liquor', 'name' => 'Liquor',],
+            ['id' => 'mixed', 'name' => 'Mixed','name_kana' => 'ミクスト',],
+            ['id' => 'agave100', 'name' => '100% de Agave','name_kana' => 'アガベ100%',],
+            ['id' => 'liquor', 'name' => 'Liquor','name_kana' => 'リキュール',],
         ];
 
         // テーブルにデータを挿入
@@ -23,6 +23,7 @@ class MixesTableSeeder extends Seeder
             DB::table('mixes')->insert([
                 'id' => $mix['id'],
                 'name' => $mix['name'],
+                'name_kana' => $mix['name_kana'],
             ]);
         }
     }

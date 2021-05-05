@@ -16,6 +16,7 @@ class CreateMixesTable extends Migration
         Schema::create('mixes', function (Blueprint $table) {
             $table->string('id');
             $table->string('name');
+            $table->string('name_kana');
             $table->timestamps();
         });
     }
