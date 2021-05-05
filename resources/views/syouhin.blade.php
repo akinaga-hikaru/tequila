@@ -111,7 +111,7 @@
                                     'js_class_2' => config('app_class_js.area') . '_' . $item['local_id'],
                                     'js_class_3' => config('app_class_js.area') . '_' . $item['local_id'] . '_' . $item['area_id'],
                                     'hidden' => true,
-                                    'text' => $item['local_name_kana'] . $item['area_name_kana'],
+                                    'text' => !empty($item['area_name_kana']) ? $item['local_name_kana'] . $item['area_name_kana'] : 'その他州',
                                     ])
                                 @endcommonbtn
                             @endforeach
