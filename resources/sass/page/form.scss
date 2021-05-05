@@ -23,8 +23,9 @@
         vertical-align: middle;
     }
 
-    /****** インプット項目：テキスト入力設定 ******/
-    input[type="text"] {
+    /****** インプット項目：テキスト入力・セレクト設定 ******/
+    input[type="text"],
+    select {
         width: 100%;
         height: 50px;
         font-size: 20px;
