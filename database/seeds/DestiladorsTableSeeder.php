@@ -47,6 +47,7 @@ class DestiladorsTableSeeder extends Seeder
             'tequilena' => ['id' => 'tequilena','name' => 'Tequilena','name_kana' => 'テキレーニャ蒸留所','nom' => '1146','area_id' => 'tequila','main_brand' => 'donfulano',],
             'tequilasdelsenor' => ['id' => 'tequilasdelsenor','name' => 'Tequilas del Senor','name_kana' => 'テキーラス・デル・セニョール蒸留所','nom' => '1124','area_id' => 'guadalajara','main_brand' => 'lachica',],
             'tequilaelviejito' => ['id' => 'tequilaelviejito','name' => 'Tequila el Viejitor','name_kana' => 'エル・ビエヒート蒸留所','nom' => '1107','area_id' => 'atotonirco','main_brand' => 'karma',],
+            'tequileralasjuntas' => ['id' => 'tequileralasjuntas','name' => 'Tequilera Las Juntas','name_kana' => 'テキレラ・ラスフンタス蒸留所','nom' => '1500','area_id' => 'amatitan','main_brand' => 'shizuku',],
         ];
         // テーブルにデータを挿入
         foreach ($destiladors as $destilador) {

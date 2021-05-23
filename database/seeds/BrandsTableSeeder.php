@@ -69,6 +69,7 @@ class BrandsTableSeeder extends Seeder
             'tresmujeres' => ['id' => 'tresmujeres', 'name' => 'Tres Mujeres', 'name_kana' => 'トレスムヘレス'],
             'kirkland' => ['id' => 'kirkland', 'name' => 'KIRKLAND', 'name_kana' => 'カークランド'],
             'thunderstruck' => ['id' => 'thunderstruck', 'name' => 'THUNDER STRUCK', 'name_kana' => 'サンダーストラック'],
+            'shizuku' => ['id' => 'shizuku', 'name' => 'Shizuku', 'name_kana' => '雫'],
         ];
 
         // テーブルにデータを挿入

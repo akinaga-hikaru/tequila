@@ -1949,6 +1949,30 @@ class SyouhinTableSeeder extends Seeder
                 'review_top' => 'ホワイトペッパーの風味',
                 'review_after' => 'なめらかで繊細なスパイス',
             ],
+            // Shizuku
+            [
+                'brand_id' => $brands['shizuku']->id,
+                'brand_name' => $brands['shizuku']->name,
+                'aging_id' => $aging_id = 'blanco',
+                'aging_name' => 'Blanco',
+                'aging_sort' => $agings['blanco']->id,
+                'syouhin_id' => $syouhin_id = $brands['shizuku']->id . '_' . $aging_id,
+                'syouhin_url' => 'https://www.amazon.co.jp/%E9%9B%AB-%E3%81%97%E3%81%9A%E3%81%8F-%E3%83%96%E3%83%A9%E3%83%B3%E3%82%B3-750ml/dp/B06XTST153',
+                'image' => $syouhin_id . '.jpg',
+                'alc_degree' => '38%',
+                'mix_degree' => $mixes['agave100']->name,
+                'min_price' => '5400',
+                'dest_name_kana' => $destiladors['tequileralasjuntas']->name_kana,
+                'dest_nom' => $destiladors['tequileralasjuntas']->nom,
+                'local_id' => $locals['valles']->id,
+                'local_name_kana' => $states['jalisco']->name_kana . $locals['valles']->name_kana,
+                'area_id' => $areas['amatitan']->id,
+                'area_name_kana' => $areas['amatitan']->name_kana,
+                'information' => '世界初の日本人プロデュースブランド',
+                'review_flavor' => '甘くすっきりとした爽やかな香り',
+                'review_top' => '水のごとくするっとした舌触り',
+                'review_after' => 'とてつもない爽快感とほのかな苦み',
+            ],
         ];
 
         // テーブルにデータを挿入
