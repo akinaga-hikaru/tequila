@@ -186,6 +186,13 @@
     border-radius: 8px;
 }
 
+.input-error {
+    width: 100%;
+    margin: 10px 0px;
+    color: $red;
+    border-color: $red;
+}
+
 /*********** 外部リンク設定 ***********/
 .external-link {
     text-decoration: underline;
