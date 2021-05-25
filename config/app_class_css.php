@@ -20,6 +20,7 @@ return [
     'section_text_sub' => 'section-text-sub',
     'message' => 'message',
     'input_error' => 'input-error',
+    'input_error_top' => 'input-error-top',
     'letters_area' => 'letters-area',
     'letters_area__title' => 'letters-area__title',
     'letters_area__paragraph' => 'letters-area__paragraph',

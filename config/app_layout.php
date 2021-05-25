@@ -16,7 +16,7 @@ return [
         'syouhin' => '商品紹介',
         'tenpo' => '取扱店紹介',
         'bunken' => '参考文献',
-        // 'form-input' => 'データ登録',
+        'form-input' => '商品登録',
     ],
     'aside' => [
         'section_menu_open' => '▲',

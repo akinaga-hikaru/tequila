@@ -21,7 +21,7 @@
                     @foreach ($input as $item)
                         <tr>
                             <label>
-                                <th>{{ $item['name'] }}</th>
+                                <th>{!! $item['name'] !!}</th>
                                 <td>{{ $item['input'] }}</td>
                             </label>
                         </tr>

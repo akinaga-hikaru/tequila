@@ -19288,6 +19288,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _function_checkUA__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./function/checkUA */ "./resources/js/function/checkUA.js");
 /* harmony import */ var _state_aside__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./state/aside */ "./resources/js/state/aside.js");
 /* harmony import */ var _page_syouhin__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./page/syouhin */ "./resources/js/page/syouhin.js");
+/* harmony import */ var _page_form__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./page/form */ "./resources/js/page/form.js");
+/* harmony import */ var _page_form__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_page_form__WEBPACK_IMPORTED_MODULE_5__);
 
 
  // ※1 使用するクラス名はconfig/app_class_js.phpで定義
@@ -19357,6 +19359,11 @@ $(function () {
 });
 /* -----------------------------------------------
     画面：商品紹介
+----------------------------------------------- */
+
+
+/* -----------------------------------------------
+    画面：商品登録
 ----------------------------------------------- */
 
 
@@ -19810,6 +19817,28 @@ function onTypeBtn(name, time) {
 
 ;
 /* harmony default export */ __webpack_exports__["default"] = (onTypeBtn);
+
+/***/ }),
+
+/***/ "./resources/js/page/form.js":
+/*!***********************************!*\
+  !*** ./resources/js/page/form.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* -----------------------------------------------
+    画面：商品登録
+----------------------------------------------- */
+
+/* --------------- データ定義 ---------------　*/
+var inputFileElement = $('.form').find('input[type="file"]');
+/* ---------------　実行処理 ---------------　*/
+
+inputFileElement.on('change', function () {
+  var getData = inputFileElement.prop('files')[0].name;
+  inputFileElement.next('input[name="image-text"]').val(getData);
+});
 
 /***/ }),
 

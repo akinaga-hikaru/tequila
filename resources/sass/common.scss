@@ -191,6 +191,11 @@
     margin: 10px 0px;
     color: $red;
     border-color: $red;
+    &-top {
+        margin-top: 0;
+        color: $red;
+        border-color: $red;
+    }
 }
 
 /*********** 外部リンク設定 ***********/
